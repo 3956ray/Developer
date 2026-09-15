@@ -7,7 +7,7 @@ import androidx.lifecycle.ViewModel
 import kotlinx.coroutines.*
 import java.util.concurrent.Executors
 
-enum class NotesPage { HOME, CATEGORIES, TRASH, REMINDERS }
+enum class NotesPage { HOME, CATEGORIES, TRASH, REMINDERS, BACKUP }
 
 enum class DraftState { UNSAVED, SAVING, SAVED, FORMAL, ERROR }
 data class NotesState(
@@ -16,6 +16,7 @@ data class NotesState(
     val total: Int = 0, val loading: Boolean = true, val busy: Boolean = false,
     val editor: Editing? = null, val draftState: DraftState = DraftState.UNSAVED,
     val error: String? = null, val notice: String? = null,
+    val backupCopies: Set<String> = emptySet(),
     val page: NotesPage = NotesPage.HOME, val trash: List<TrashItem> = emptyList(),
 )
 
@@ -48,18 +49,18 @@ class NotesModel(
             try {
                 val result=withContext(worker) {
                     val db=store()
-                    Snapshot(db.search(query,category,prior.size),db.drafts(),db.categories(),db.trash())
+                    Snapshot(db.search(query,category,prior.size),db.drafts(),db.categories(),db.trash(),db.backupCopies())
                 }
                 if(token==searchToken && state.editor==null) state=state.copy(
                     notes=prior+result.search.notes,total=result.search.total,drafts=result.drafts,
-                    categories=result.categories,trash=result.trash,loading=false)
+                    categories=result.categories,trash=result.trash,backupCopies=result.copies,loading=false)
             } catch(e: Exception) {
                 if(token==searchToken) state=state.copy(loading=false,notes=emptyList(),error=
                     if(e is IllegalArgumentException) "搜索最多128个字、8组关键词。" else "无法读取本机笔记，请重试。")
             }
         }
     }
-    private data class Snapshot(val search: SearchPage,val drafts: List<Note>,val categories: List<Category>,val trash: List<TrashItem>)
+    private data class Snapshot(val search: SearchPage,val drafts: List<Note>,val categories: List<Category>,val trash: List<TrashItem>,val copies: Set<String>)
     fun search(text: String) { if(state.busy || state.editor!=null) return; state=state.copy(query=text); refresh() }
     fun filter(category: String?) { if(state.busy || state.editor!=null) return; state=state.copy(category=category); refresh() }
     fun newNote() {
@@ -73,11 +74,11 @@ class NotesModel(
         state=state.copy(busy=true,error=null)
         scope.launch {
             try {
-                val (editing,hasDraft)=withContext(worker) {
+                val (editing,hasDraft,copies)=withContext(worker) {
                     val db=store()
-                    Pair(db.open(id) ?: error(if(db.isTrashed(id)) "trashed_note" else "missing_note"),db.drafts().any { it.id==id })
+                    Triple(db.open(id) ?: error(if(db.isTrashed(id)) "trashed_note" else "missing_note"),db.drafts().any { it.id==id },db.backupCopies())
                 }
-                if(token==editorToken) state=state.copy(editor=editing,busy=false,loading=false,
+                if(token==editorToken) state=state.copy(editor=editing,busy=false,loading=false,backupCopies=copies,
                     draftState=if(hasDraft) DraftState.SAVED else DraftState.FORMAL)
             } catch(e: Exception) { if(token==editorToken) state=state.copy(busy=false,loading=false,error=when(e.message) {
                 "trashed_note" -> "这条笔记已在回收站，可返回首页后到回收站恢复。"

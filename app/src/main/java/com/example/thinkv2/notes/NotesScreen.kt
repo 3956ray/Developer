@@ -21,7 +21,7 @@ import java.text.DateFormat
 import java.util.Date
 
 @Composable
-fun NotesScreen(model: NotesModel,modifier: Modifier = Modifier,onReminders: (String?)->Unit = {}) {
+fun NotesScreen(model: NotesModel,modifier: Modifier = Modifier,onReminders: (String?)->Unit = {},onBackup: ()->Unit = {}) {
     val s=model.state
     val editor=s.editor
     var confirmation by rememberSaveable { mutableStateOf("") }
@@ -39,6 +39,7 @@ fun NotesScreen(model: NotesModel,modifier: Modifier = Modifier,onReminders: (St
                 TextButton(onClick={ model.navigate(NotesPage.TRASH) },enabled=!s.busy,modifier=Modifier.weight(1f).heightIn(min=56.dp)) { Text("回收站（${s.trash.size}）",fontSize=18.sp) }
             }
             OutlinedButton(onClick={ onReminders(null) },enabled=!s.busy,modifier=Modifier.fillMaxWidth().heightIn(min=56.dp)) { Text("提醒计划与记录",fontSize=18.sp) }
+            OutlinedButton(onClick=onBackup,enabled=!s.busy,modifier=Modifier.fillMaxWidth().heightIn(min=56.dp)) { Text("备份与恢复",fontSize=18.sp) }
             s.notice?.let { Text(it,fontSize=18.sp) }
             OutlinedTextField(value=s.query,onValueChange=model::search,label={ Text("搜索标题或正文") },
                 singleLine=true,enabled=!s.busy,modifier=Modifier.fillMaxWidth(),textStyle=LocalTextStyle.current.copy(fontSize=18.sp),
@@ -58,11 +59,11 @@ fun NotesScreen(model: NotesModel,modifier: Modifier = Modifier,onReminders: (St
                 } else {
                     if(s.query.isBlank() && s.category==null && s.drafts.isNotEmpty()) {
                         item { Text("未完成草稿",fontSize=20.sp,modifier=Modifier.semantics { heading() }) }
-                        items(s.drafts,key={ "draft-${it.id}" }) { note -> NoteCard(note,"草稿","",{ model.open(note.id) }) }
+                        items(s.drafts,key={ "draft-${it.id}" }) { note -> NoteCard(note,if(note.id in s.backupCopies) "草稿 · 备份冲突副本" else "草稿","",{ model.open(note.id) }) }
                     }
                     item { Text("已保存 · ${s.total} 条",fontSize=20.sp,modifier=Modifier.semantics { heading() }) }
                     if(s.notes.isEmpty()) item { Text(if(s.query.isBlank() && s.category==null) "还没有笔记，写下第一个想法吧。" else "没有匹配的笔记。试试其他关键词或分类。",fontSize=18.sp) }
-                    items(s.notes,key={ it.id }) { note -> NoteCard(note,note.category.ifBlank { "未分类" },s.query,{ model.open(note.id) }) }
+                    items(s.notes,key={ it.id }) { note -> NoteCard(note,note.category.ifBlank { "未分类" }+(if(note.id in s.backupCopies) " · 备份冲突副本" else ""),s.query,{ model.open(note.id) }) }
                     if(s.notes.size<s.total) item { OutlinedButton(onClick={ model.refresh(true) },modifier=Modifier.fillMaxWidth().heightIn(min=56.dp)) { Text("加载更多",fontSize=18.sp) } }
                 }
             }
@@ -73,6 +74,7 @@ fun NotesScreen(model: NotesModel,modifier: Modifier = Modifier,onReminders: (St
                 TextButton(onClick=model::back,enabled=!s.busy,modifier=Modifier.weight(1f).heightIn(min=56.dp)) { Text("返回 · 保留草稿",fontSize=18.sp) }
                 Button(onClick=model::save,enabled=!s.busy && editor.note.body.isNotBlank(),modifier=Modifier.weight(0.5f).heightIn(min=56.dp)) { Text("保存",fontSize=18.sp) }
             }
+            if(editor.note.id in s.backupCopies) Text("备份冲突副本 · 原本机版本保持不变",fontSize=18.sp)
             Text(if(s.busy) "正在处理…" else when(s.draftState) {
                 DraftState.UNSAVED -> "尚未保存"; DraftState.SAVING -> "正在保存草稿…"
                 DraftState.SAVED -> "草稿已保存在本机，尚未正式保存"

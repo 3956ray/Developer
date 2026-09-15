@@ -72,6 +72,7 @@ internal fun LifecycleScreen(model: NotesModel,modifier: Modifier) {
                     OutlinedCard(Modifier.fillMaxWidth()) {
                         Column(Modifier.padding(16.dp),verticalArrangement=Arrangement.spacedBy(8.dp)) {
                             Text(item.note.title,fontSize=20.sp,fontWeight=FontWeight.SemiBold)
+                            if(item.note.id in s.backupCopies) Text("备份冲突副本",fontSize=18.sp)
                             Text(matchingExcerpt(item.note.body,""),fontSize=18.sp)
                             Text("原分类：${item.note.category.ifBlank { "未分类" }}",fontSize=18.sp)
                             if(item.categoryMissing) Text("原分类已不存在，恢复时将移至未分类。",fontSize=18.sp)

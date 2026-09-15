@@ -1,6 +1,6 @@
 # 思 · thinkV2
 
-从独立空白 Android 模板开发的本地笔记应用。当前任务为 `V2-REMINDERS-001`；文字核心、分类与回收站已验收。
+从独立空白 Android 模板开发的本地笔记应用。当前任务为 `V2-BACKUP-RESTORE-001`；文字核心、分类、回收站与提醒已验收。
 
 当前范围见 [分类与回收站合同](doc/lifecycle-requirements.md)，上一单文字范围见 [需求基线](doc/requirements.md)。实现位于 `app/src/main/java/com/example/thinkv2/notes`。
 
@@ -13,10 +13,12 @@
 
 已保存笔记可设置一次、每天或每周多个选日的本地提醒；首页可查看提醒计划和触发记录。提醒采用系统非精确调度，可能延迟；通知权限关闭时会保留规则并显示未启用。
 
-语音暂不可用。备份导入导出、日历迁移和关系图谱尚未实现。本版本不代表家庭试用已通过。
+首页「备份与恢复」可通过系统文件选择器导出明文备份、预览并合并恢复；冲突默认保留本机并另存副本，导入提醒保持关闭。请将备份保存到安全位置，选择云盘可能上传文件。
 
-构建和验证的实际命令与结果见 [提醒验证报告](doc/reminders-verification.md)。真机/家庭试用尚未验证。
+语音暂不可用。日历迁移和关系图谱尚未实现。本版本不代表家庭试用已通过。
+
+构建和验证的实际命令与结果见 [备份验证报告](doc/backup-verification.md)。真机/家庭试用尚未验证。
 
 正式完整产品范围：[2026-09-16独立产品基线](doc/product-baseline-decision-2026-09-16.md)。当前可在编辑器把笔记移入回收站，并在首页回收站恢复原记录；没有永久删除。分类管理支持创建、改名和确认删除分类，笔记内容保留。
 
-本单结果见 [提醒验证报告](doc/reminders-verification.md)。[分类与回收站验证报告](doc/lifecycle-verification.md)及文字核心报告保留为历史证据。
+本单结果见 [备份验证报告](doc/backup-verification.md)，格式见 [备份格式](doc/backup-format.md)。[提醒验证报告](doc/reminders-verification.md)、[分类与回收站验证报告](doc/lifecycle-verification.md)及文字核心报告保留为历史证据。

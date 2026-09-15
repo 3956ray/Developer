@@ -16,11 +16,15 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.thinkv2.notes.*
 import com.example.thinkv2.reminders.*
+import com.example.thinkv2.backup.*
 import com.example.thinkv2.ui.theme.ThinkV2Theme
 
 class MainActivity : ComponentActivity() {
     private lateinit var notes: NotesModel
     private lateinit var reminders: ReminderModel
+    private lateinit var backups: BackupModel
+    private val createBackup=registerForActivityResult(ActivityResultContracts.CreateDocument("application/json")) { backups.exportPicked(it) }
+    private val openBackup=registerForActivityResult(ActivityResultContracts.OpenDocument()) { backups.importPicked(it) }
     private lateinit var runtime: ReminderRuntime
     private var permissionState: String?=null
     private val notificationPermission=registerForActivityResult(ActivityResultContracts.RequestPermission()) {
@@ -35,11 +39,12 @@ class MainActivity : ComponentActivity() {
                 return when(modelClass) {
                     NotesModel::class.java -> NotesModel({ NoteRepository(AndroidSql(app)) },worker=runtime.dispatcher,closeWorkerOnShutdown=false,onTrashed=runtime::cancelForNote)
                     ReminderModel::class.java -> ReminderModel(runtime)
+                    BackupModel::class.java -> BackupModel(app,runtime)
                     else -> error("unknown_model")
                 } as T
             }
         })
-        notes=provider[NotesModel::class.java];reminders=provider[ReminderModel::class.java]
+        notes=provider[NotesModel::class.java];reminders=provider[ReminderModel::class.java];backups=provider[BackupModel::class.java]
         runtime.activityStart()
         handleLink(intent,false)
         setContent { ThinkV2Theme {
@@ -47,7 +52,10 @@ class MainActivity : ComponentActivity() {
                 val modifier=Modifier.fillMaxSize().padding(padding)
                 if(notes.state.page==NotesPage.REMINDERS) ReminderScreen(reminders,modifier,notes::closeReminders,
                     { notes.openIncoming(it,true) },{ if(Build.VERSION.SDK_INT>=33) notificationPermission.launch(Manifest.permission.POST_NOTIFICATIONS) else openNotificationSettings() },::openNotificationSettings)
-                else NotesScreen(notes,modifier) { id -> reminders.open(id);notes.showReminders() }
+                else if(notes.state.page==NotesPage.BACKUP) BackupScreen(backups,modifier,{ notes.navigate(NotesPage.HOME) },
+                    { backups.prepareExport { createBackup.launch(it) } },{ backups.beginImport { openBackup.launch(arrayOf("*/*")) } },
+                    { notes.refresh() },{ notes.openIncoming(it,true) })
+                else NotesScreen(notes,modifier,onReminders={ id -> reminders.open(id);notes.showReminders() },onBackup={ notes.navigate(NotesPage.BACKUP) })
             }
         } }
     }
