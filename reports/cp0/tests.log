@@ -1,0 +1,31 @@
+
+> gym-miniapp@0.0.0 test
+> node --test test/*.test.mjs
+
+✖ durable probe survives full process restart and abrupt termination (100.228375ms)
+ℹ migration: {"migrations":[{"name":"001-foundation.sql","sha256":"f3efa02831adad9a5e73cee958cb48b3e3911cb325327cc0828af94c4ab2ee5d"}],"integrity":{"integrity_check":"ok"}}
+✔ migration replay is stable; changed migration rejected without modifying ledger (4.240125ms)
+✔ failed new migration rolls back DDL and ledger atomically (2.347041ms)
+✔ write rollback preserves original value and no partial row (1.443541ms)
+✔ environment/store namespaces, keys and persistent files are isolated (137.597583ms)
+✔ configuration, simulation, keys and accidental initialization fail closed (56.623209ms)
+✔ cross-process writer lock prevents partial competing write (2278.03675ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 6
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2640.074708
+
+✖ failing tests:
+
+test at test/foundation.test.mjs:40:1
+✖ durable probe survives full process restart and abrupt termination (100.228375ms)
+  Error: Server exited 1: SERVER_START_FAILED: EPERM
+
+      at ChildProcess.<anonymous> (file:///Users/orderly_ray/Projects/gym-miniapp/test/foundation.test.mjs:27:60)
+      at Object.onceWrapper (node:events:631:26)
+      at ChildProcess.emit (node:events:509:28)
+      at ChildProcess._handle.onexit (node:internal/child_process:295:12)

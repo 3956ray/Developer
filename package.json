@@ -1,0 +1,17 @@
+{
+  "name": "gym-miniapp",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": "24.18.x"
+  },
+  "scripts": {
+    "init:local": "node scripts/init-local.mjs",
+    "start": "node server/main.mjs",
+    "migrate": "node scripts/db.mjs migrate",
+    "probe": "node scripts/db.mjs",
+    "test": "node --test test/*.test.mjs",
+    "check": "node scripts/check.mjs"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "pages": [
+    "pages/venue/index",
+    "pages/me/index"
+  ],
+  "window": {
+    "navigationBarTitleText": "健身房",
+    "navigationBarTextStyle": "black",
+    "navigationBarBackgroundColor": "#ffffff"
+  },
+  "tabBar": {
+    "color": "#666666",
+    "selectedColor": "#204b44",
+    "list": [
+      {
+        "pagePath": "pages/venue/index",
+        "text": "场馆"
+      },
+      {
+        "pagePath": "pages/me/index",
+        "text": "我的"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

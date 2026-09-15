@@ -1,0 +1,12 @@
+{
+  "description": "GYM CP0 native scaffold; no platform verification yet",
+  "miniprogramRoot": "miniprogram/",
+  "compileType": "miniprogram",
+  "appid": "touristappid",
+  "projectname": "gym-miniapp",
+  "setting": {
+    "es6": true,
+    "minified": false,
+    "urlCheck": true
+  }
+}

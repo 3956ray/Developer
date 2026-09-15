@@ -1,0 +1,4 @@
+page { background: #fafaf7; color: #202b28; font-family: sans-serif; }
+.page { padding: 48rpx; }
+.title { font-size: 48rpx; font-weight: 600; margin-bottom: 24rpx; }
+.note { font-size: 28rpx; line-height: 1.7; color: #5b6661; }

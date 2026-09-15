@@ -1,0 +1,51 @@
+{
+  "task_id": "GYM-CP0-FOUNDATION-001",
+  "owner": "developer",
+  "checkpoint": "CP0",
+  "assigned_thread_id": "01a0a64b-85f8-7790-88d9-fd1188ece566",
+  "status": "dispatched",
+  "goal": "Establish the independent native WeChat mini-program repository, runnable local backend and persistent database, and complete the frozen CP0 technical contracts.",
+  "scope": [
+    "Only /Users/orderly_ray/Projects/gym-miniapp. Recheck ownership before initialization. Read /Users/orderly_ray/Projects/AGENTS.md and use its project template. Create project-specific AGENTS/README and local Git repository if absent.",
+    "Copy the accepted PRD/acceptance/checkpoints into doc as immutable reference copies with original paths and SHA-256; do not change product behavior.",
+    "Native mini-program scaffold and minimal local backend with database migration and health endpoint. Persist a synthetic non-member probe across a full server restart. Use isolated test and store configuration and no fallback to simulation.",
+    "Choose existing supported runtime/database/testing tools with minimum dependencies, verifying official documentation and security/permission/license provenance before introducing or executing third-party code. Local preflight is input, not sufficient evidence.",
+    "Define every required API action and request/response/error/transaction boundary, session/operator revocation, persistent limits, idempotency, server time, stable secrets, pairing encryption and collision handling, deletion receipts and cleanup, current schedule constraints; implement only CP0 shared foundation.",
+    "Provide reproducible local commands and bounded meaningful tests covering migration restart/idempotence, durable probe and environment isolation. Commit only this project's reviewed files locally; never include credentials, runtime databases or unrelated files."
+  ],
+  "out_of_scope": [
+    "No CP1 identity functionality, CP2 observation functionality, CP3 membership or CP4 schedule workflows beyond contracts/scaffolding. Do not implement all MVP at once.",
+    "No production member data, real credentials in messages or files tracked by Git, dependency downloads before security review, purchase, cloud deployment, upload/preview/release, or edits to Leader root Android orchestration/thinkV2/other products."
+  ],
+  "acceptance": [
+    "AC-E01 engineering: verified new repository boundary, clear own-file changes, documented minimal dependencies and actual runnable startup/health/migration evidence.",
+    "AC-D01 foundation: real persistent database retains synthetic non-member probe after server process restart; test/store environment separation and fail-closed missing configuration proven.",
+    "AC-I01 contract: scope/key/body digest, 24-hour ledger, creation intent windows, expected revision and historical result versus current state specified per operation.",
+    "AC-F01/R01/R02/C01/C02/Z01 contracts: selected database and mechanisms can satisfy lifecycle, persistent counts, collision rollback, deletion/cleanup restart, stable keys and single current schedule without weakening PRD.",
+    "Native mini-program project manifest and scaffold exist; local API tests passing must not be described as actual WeChat compile or real-login evidence.",
+    "Provide input document hashes, local commit and clean scoped Git status or precise remaining changes, test commands/exit codes/logs and individually named unverified conditions."
+  ],
+  "evidence_required": [
+    "RESULT: COMPLETE, BLOCKED or PRODUCT_DECISION_REQUIRED; changed files and purpose; tests and results; per-criterion evidence; scope check; unresolved external items; baseline/final commit.",
+    "reports/cp0/ contains manifest, dependency review, runtime/configuration details, migration and restart logs, contract review mapping and final developer report. Use synthetic data, never secrets."
+  ],
+  "stop_conditions": [
+    "Stop after CP0 and send result to commander 01a0a64a-8f38-7503-a202-29ed08322b14; do not start CP1 before acceptance.",
+    "If target contains unexplained existing files, stop affected writes and report ownership. No deletion/reset/overwrite.",
+    "If technical constraints require changing product/data/permission semantics, report PRODUCT_DECISION_REQUIRED with concrete conflict. Missing AppID does not prevent local foundation but must remain unverified."
+  ],
+  "input_documents": [
+    {
+      "path": "/Users/orderly_ray/Documents/Products Manager/product-knowledge-base/ideas/gym-occupancy/prd-mvp-v1.0-2026-09-16.md",
+      "sha256": "7d9948f302f13119120c03043902fba7455437764eb57d4923efebda4254e1bd"
+    },
+    {
+      "path": "/Users/orderly_ray/Documents/Products Manager/product-knowledge-base/ideas/gym-occupancy/acceptance-mvp-v1.0-2026-09-16.md",
+      "sha256": "89cded4a468deaa20e6090d19b35dc31c77b6a01e3e45081d3d996484188ae71"
+    },
+    {
+      "path": "/Users/orderly_ray/Documents/Products Manager/product-knowledge-base/ideas/gym-occupancy/checkpoints-mvp-v1.0-2026-09-16.md",
+      "sha256": "13060548afb17731e033364817f0e7ee6b0569c334bbfc4138e308ee64678882"
+    }
+  ]
+}

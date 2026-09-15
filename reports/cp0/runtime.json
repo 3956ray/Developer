@@ -1,0 +1,9 @@
+{
+  "node": "v24.18.0",
+  "executable": "/Users/orderly_ray/.nvm/versions/node/v24.18.0/bin/node",
+  "executableSha256": "ee6fb0e015284d83a91e8ec5213f43a157f8a392b58555301682892ba928c04a",
+  "platform": "darwin",
+  "arch": "arm64",
+  "sqlite": "3.53.1",
+  "openssl": "3.5.7"
+}
