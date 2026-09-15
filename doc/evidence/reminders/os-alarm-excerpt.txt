@@ -34,4 +34,3 @@
         Snapshot:
           type=RTC_WAKEUP tag=*walarm*:com.example.thinkv2.REMINDER
           policyWhenElapsed: requester=+7d6h37m3s703ms app_standby=-5m46s756ms device_idle=-- battery_saver=-5m46s756ms
-
