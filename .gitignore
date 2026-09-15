@@ -1,0 +1,37 @@
+# Independent repositories are linked from README.md.
+/Faraway-Verse/
+/iknewit/
+/peiban/
+/think/
+
+# Local caches and generated files.
+.DS_Store
+node_modules/
+.pnpm-store/
+.next/
+.gradle/
+.kotlin/
+build/
+dist/
+coverage/
+playwright-report/
+test-results/
+*.tsbuildinfo
+*.log
+.firecrawl/
+
+# Credentials and machine-specific state.
+.env
+.env.*
+!.env.example
+!.env.*.example
+auth.json
+credentials.json
+*.pem
+*.key
+*.p12
+*.pfx
+local.properties
+.codex/auth.json
+.codex/sessions/
+.codex/log/

@@ -1,0 +1,10 @@
+# 仅适用于从 Projects 根目录启动的 Codex 会话。
+# 各子项目可在自己的 .codex/config.toml 定义项目专属设定。
+
+[agents]
+enabled = true
+max_concurrent_threads_per_session = 3
+interrupt_message = true
+
+# 当前官方配置没有 max_depth 或 routing_policy 键。
+# 单层委派和角色路由由根 AGENTS.md 与各 agent 的 developer_instructions 约束。
