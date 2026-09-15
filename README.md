@@ -1,8 +1,8 @@
 # 思 · thinkV2
 
-从独立空白 Android 模板开发的本地笔记应用。当前任务为 `V2-NOTES-CORE-001`。
+从独立空白 Android 模板开发的本地笔记应用。当前任务为 `V2-NOTES-LIFECYCLE-001`；上一单文字核心已验收。
 
-产品范围与验收见 [需求基线](doc/requirements.md)。实现位于 `app/src/main/java/com/example/thinkv2/notes`。
+当前范围见 [分类与回收站合同](doc/lifecycle-requirements.md)，上一单文字范围见 [需求基线](doc/requirements.md)。实现位于 `app/src/main/java/com/example/thinkv2/notes`。
 
 ## 使用路径
 
@@ -15,4 +15,6 @@
 
 构建和验证的实际命令与结果见 [本单验证报告](doc/verification.md)（20项host测试、3项Android模拟器测试通过；真机/家庭试用尚未验证）。
 
-正式完整产品范围：[2026-09-16独立产品基线](doc/product-baseline-decision-2026-09-16.md)。当前单不提供正式笔记删除；后续回收站单实现可恢复软删除。
+正式完整产品范围：[2026-09-16独立产品基线](doc/product-baseline-decision-2026-09-16.md)。当前可在编辑器把笔记移入回收站，并在首页回收站恢复原记录；没有永久删除。分类管理支持创建、改名和确认删除分类，笔记内容保留。
+
+本单结果见 [分类与回收站验证报告](doc/lifecycle-verification.md)。上一单报告保留为历史证据。

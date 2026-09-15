@@ -11,13 +11,21 @@ data class Note(
     val created: Long = System.currentTimeMillis(),
     val updated: Long = created,
     val revision: Long = 0,
+    val categoryId: String = "",
+    val categorySource: String = "manual",
 ) {
     fun bodyChanged(text: String) = copy(body = text,
         title = if (manualTitle) title else automaticTitle(text), revision = revision + 1)
     fun titleChanged(text: String) = copy(title = if (text.isBlank()) automaticTitle(body) else text,
         manualTitle = text.isNotBlank(), revision = revision + 1)
-    fun categoryChanged(text: String) = copy(category = text, revision = revision + 1)
+    fun categoryChanged(text: String) = copy(category = text, categoryId = "", categorySource = "manual", revision = revision + 1)
+    fun categorized(category: Category?) = copy(category = category?.name.orEmpty(),
+        categoryId = category?.id.orEmpty(), categorySource = "manual", revision = revision + 1)
 }
+
+data class Category(val id: String, val name: String, val revision: Long = 0)
+data class TrashItem(val note: Note, val deletedAt: Long, val categoryMissing: Boolean, val hasDraft: Boolean = false)
+data class RestoreResult(val note: Note, val categoryMissing: Boolean)
 
 fun automaticTitle(body: String): String {
     val first = body.trim().split('\n', '\r', '。', '！', '？', '.', '!', '?')

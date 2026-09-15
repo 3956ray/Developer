@@ -13,10 +13,10 @@ class AndroidPersistenceTest {
     @Test fun actualAndroidSqliteRebuildAndRollback() {
         val context=InstrumentationRegistry.getInstrumentation().targetContext
         val name="synthetic-persistence-${UUID.randomUUID()}.db"
-        val draft=Editing(Note().bodyChanged("合成Android原文").titleChanged("人工标题").categoryChanged("分类甲"))
+        var draft=Editing(Note().bodyChanged("合成Android原文").titleChanged("人工标题").categoryChanged("分类甲"))
         try {
             NoteRepository(AndroidSql(context,name)).use { r ->
-                r.initialize();assertEquals(0,r.search("").total);r.persistDraft(draft)
+                r.initialize();assertEquals(0,r.search("").total);draft=r.persistDraft(draft)
             }
             NoteRepository(AndroidSql(context,name)).use { r ->
                 r.initialize();assertEquals(draft,r.open(draft.note.id));r.save(draft)
@@ -27,9 +27,8 @@ class AndroidPersistenceTest {
                 assertEquals("人工标题",saved.title);assertEquals("分类甲",saved.category)
                 val editing=r.open(saved.id)!!
                 r.persistDraft(editing);r.save(editing);assertTrue(r.drafts().isEmpty())
-                val changed=editing.copy(note=editing.note.bodyChanged("合成更新").categoryChanged("分类乙"))
-                r.persistDraft(changed)
-                sql.execute("CREATE TRIGGER synthetic_failure BEFORE INSERT ON notes BEGIN SELECT RAISE(ABORT,'synthetic'); END")
+                val changed=r.persistDraft(editing.copy(note=editing.note.bodyChanged("合成更新").categoryChanged("分类乙")))
+                sql.execute("CREATE TRIGGER synthetic_failure BEFORE UPDATE ON notes BEGIN SELECT RAISE(ABORT,'synthetic'); END")
                 var failed=false
                 try { r.save(changed) } catch(_: Exception) { failed=true }
                 assertTrue(failed);assertEquals(saved,r.find(saved.id));assertEquals(changed,r.open(saved.id))

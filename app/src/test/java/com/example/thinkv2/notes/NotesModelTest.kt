@@ -65,7 +65,7 @@ class NotesModelTest {
     @Test fun formalFailureRetainsEditorAndRetryReallySaves() = scenario { model,ui,sql ->
         val id=saved(model,ui)
         runBlocking(ui) { model.open(id) };await(ui,model) { it.editor!=null && !it.busy }
-        sql.execute("CREATE TRIGGER fail_note BEFORE INSERT ON notes BEGIN SELECT RAISE(ABORT,'synthetic'); END")
+        sql.execute("CREATE TRIGGER fail_note BEFORE UPDATE ON notes BEGIN SELECT RAISE(ABORT,'synthetic'); END")
         runBlocking(ui) { model.body("更新失败后重试");model.save() }
         val failure=await(ui,model) { !it.busy && it.error!=null }
         assertNotNull(failure.editor);assertEquals(DraftState.ERROR,failure.draftState)
@@ -81,7 +81,42 @@ class NotesModelTest {
         runBlocking(ui) { model.body("完全更新");model.category("读书");model.save() }
         val result=await(ui,model) { it.editor==null && !it.loading }
         assertEquals("原始",result.query);assertTrue(result.notes.isEmpty())
-        runBlocking(ui) { model.search("");model.filter("读书") }
+        runBlocking(ui) { model.search("");model.filter(model.state.categories.single { it.name=="读书" }.id) }
         assertEquals(id,await(ui,model) { !it.loading }.notes.single().id)
+    }
+
+    @Test fun lifecycleRetainsUnsavedDraftAndReportsMissingCategoryOnRestore() = scenario { model,ui,_ ->
+        val id=saved(model,ui)
+        runBlocking(ui) { model.open(id) };await(ui,model) { it.editor!=null && !it.busy }
+        runBlocking(ui) { model.body("回收站保留的草稿");model.moveToTrash() }
+        val trashed=await(ui,model) { !it.loading && !it.busy && it.editor==null }
+        assertTrue(trashed.notes.isEmpty());assertEquals(1,trashed.trash.size);assertTrue(trashed.trash.single().hasDraft)
+        val category=trashed.categories.single { it.name=="生活" }
+        runBlocking(ui) { model.navigate(NotesPage.CATEGORIES) };await(ui,model) { !it.loading }
+        runBlocking(ui) { model.deleteCategory(category) };await(ui,model) { !it.busy && !it.loading }
+        runBlocking(ui) { model.navigate(NotesPage.TRASH) };val bin=await(ui,model) { !it.loading }
+        runBlocking(ui) { model.restore(bin.trash.single().note) }
+        val restored=await(ui,model) { !it.busy && !it.loading }
+        assertTrue(restored.notice!!.contains("原分类已不存在"));assertEquals(id,restored.notes.single().id)
+        runBlocking(ui) { model.navigate(NotesPage.HOME) };await(ui,model) { !it.loading }
+        runBlocking(ui) { model.open(id) }
+        val editor=await(ui,model) { it.editor!=null && !it.busy }.editor!!
+        assertEquals("回收站保留的草稿",editor.note.body);assertEquals("",editor.note.categoryId)
+    }
+    @Test fun failedTrashAndRestoreKeepVisibleStateUntilRetry() = scenario { model,ui,sql ->
+        val id=saved(model,ui)
+        runBlocking(ui) { model.open(id) };await(ui,model) { it.editor!=null && !it.busy }
+        sql.execute("CREATE TRIGGER reject_trash BEFORE UPDATE OF deleted_at ON notes WHEN NEW.deleted_at>0 BEGIN SELECT RAISE(ABORT,'synthetic'); END")
+        runBlocking(ui) { model.moveToTrash() }
+        assertNotNull(await(ui,model) { !it.busy && it.error!=null }.editor)
+        sql.execute("DROP TRIGGER reject_trash")
+        runBlocking(ui) { model.moveToTrash() };val trash=await(ui,model) { it.editor==null && !it.busy && !it.loading }.trash.single()
+        sql.execute("CREATE TRIGGER reject_restore BEFORE UPDATE OF deleted_at ON notes WHEN NEW.deleted_at=0 BEGIN SELECT RAISE(ABORT,'synthetic'); END")
+        runBlocking(ui) { model.restore(trash.note) }
+        val failed=await(ui,model) { !it.busy && it.error!=null };assertEquals(trash,failed.trash.single());assertTrue(failed.notes.isEmpty())
+        sql.execute("DROP TRIGGER reject_restore")
+        runBlocking(ui) { model.restore(trash.note) }
+        val success=await(ui,model) { !it.busy && !it.loading && it.error==null }
+        assertTrue(success.trash.isEmpty());assertEquals(id,success.notes.single().id)
     }
 }

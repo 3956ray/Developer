@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.thinkv2.notes.NoteLifecycleTest" tests="11" skipped="0" failures="0" errors="0" timestamp="2026-09-15T17:14:48.820Z" hostname="OrderlyRaydeMBP" time="1.574">
+  <properties/>
+  <testcase name="categoryMutationFailureRollsBackEverything" classname="com.example.thinkv2.notes.NoteLifecycleTest" time="0.13"/>
+  <testcase name="duplicateNamesAndStaleCategoryConfirmationAreRejected" classname="com.example.thinkv2.notes.NoteLifecycleTest" time="0.14"/>
+  <testcase name="missingDraftCategoryAlsoProducesRestoreNotice" classname="com.example.thinkv2.notes.NoteLifecycleTest" time="0.104"/>
+  <testcase name="renamedCategoryInvalidatesOldEditorsButKeepsDraftUsable" classname="com.example.thinkv2.notes.NoteLifecycleTest" time="0.107"/>
+  <testcase name="deletingDraftCategoryDoesNotChangeFormalCategoryOrBody" classname="com.example.thinkv2.notes.NoteLifecycleTest" time="0.199"/>
+  <testcase name="failedSoftDeleteAndRestoreAreAtomic" classname="com.example.thinkv2.notes.NoteLifecycleTest" time="0.106"/>
+  <testcase name="categoryIdsRenameAndManualProvenanceSurviveReopen" classname="com.example.thinkv2.notes.NoteLifecycleTest" time="0.167"/>
+  <testcase name="softDeleteRetainsLatestDraftAndRestoreOriginalIdWithMissingCategoryNotice" classname="com.example.thinkv2.notes.NoteLifecycleTest" time="0.153"/>
+  <testcase name="migrationPreservesExactLegacyNotesAndDraftOnlyCategories" classname="com.example.thinkv2.notes.NoteLifecycleTest" time="0.24"/>
+  <testcase name="migrationFailureRollsBackSchemaVersionAndOriginalRows" classname="com.example.thinkv2.notes.NoteLifecycleTest" time="0.146"/>
+  <testcase name="deletingFormalCategoryDoesNotChangeDifferentDraftCategory" classname="com.example.thinkv2.notes.NoteLifecycleTest" time="0.08"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

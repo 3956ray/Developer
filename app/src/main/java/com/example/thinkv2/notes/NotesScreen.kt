@@ -25,7 +25,8 @@ fun NotesScreen(model: NotesModel,modifier: Modifier = Modifier) {
     val s=model.state
     val editor=s.editor
     var confirmation by rememberSaveable { mutableStateOf("") }
-    BackHandler(editor!=null) { if(!s.busy) model.back() }
+    BackHandler(editor!=null || s.page!=NotesPage.HOME) { if(!s.busy) { if(editor!=null) model.back() else model.navigate(NotesPage.HOME) } }
+    if(editor==null && s.page!=NotesPage.HOME) { LifecycleScreen(model,modifier);return }
     if(editor==null) {
         Column(modifier.padding(horizontal=16.dp).imePadding()) {
             Row(Modifier.fillMaxWidth(),horizontalArrangement=Arrangement.SpaceBetween) {
@@ -33,14 +34,19 @@ fun NotesScreen(model: NotesModel,modifier: Modifier = Modifier) {
                 Button(onClick=model::newNote,enabled=!s.loading && !s.busy && s.error==null,
                     modifier=Modifier.heightIn(min=56.dp)) { Text("新增文字",fontSize=18.sp) }
             }
+            Row(Modifier.fillMaxWidth(),horizontalArrangement=Arrangement.spacedBy(8.dp)) {
+                TextButton(onClick={ model.navigate(NotesPage.CATEGORIES) },enabled=!s.busy,modifier=Modifier.weight(1f).heightIn(min=56.dp)) { Text("管理分类",fontSize=18.sp) }
+                TextButton(onClick={ model.navigate(NotesPage.TRASH) },enabled=!s.busy,modifier=Modifier.weight(1f).heightIn(min=56.dp)) { Text("回收站（${s.trash.size}）",fontSize=18.sp) }
+            }
+            s.notice?.let { Text(it,fontSize=18.sp) }
             OutlinedTextField(value=s.query,onValueChange=model::search,label={ Text("搜索标题或正文") },
                 singleLine=true,enabled=!s.busy,modifier=Modifier.fillMaxWidth(),textStyle=LocalTextStyle.current.copy(fontSize=18.sp),
                 trailingIcon={ if(s.query.isNotEmpty()) TextButton(onClick={ model.search("") },modifier=Modifier.heightIn(min=56.dp)) { Text("清空") } })
             LazyRow(horizontalArrangement=Arrangement.spacedBy(8.dp)) {
                 item { FilterChip(selected=s.category==null,onClick={ model.filter(null) },label={ Text("全部") },modifier=Modifier.heightIn(min=56.dp)) }
                 item { FilterChip(selected=s.category=="",onClick={ model.filter("") },label={ Text("未分类") },modifier=Modifier.heightIn(min=56.dp)) }
-                items(s.categories) { category -> FilterChip(selected=s.category==category,onClick={ model.filter(category) },
-                    label={ Text(category,maxLines=2,overflow=TextOverflow.Ellipsis) },modifier=Modifier.heightIn(min=56.dp)) }
+                items(s.categories,key={ it.id }) { category -> FilterChip(selected=s.category==category.id,onClick={ model.filter(category.id) },
+                    label={ Text(category.name,maxLines=2,overflow=TextOverflow.Ellipsis) },modifier=Modifier.heightIn(min=56.dp)) }
             }
             LazyColumn(Modifier.weight(1f),verticalArrangement=Arrangement.spacedBy(12.dp),contentPadding=PaddingValues(bottom=24.dp)) {
                 item { VoiceUnavailable() }
@@ -82,18 +88,18 @@ fun NotesScreen(model: NotesModel,modifier: Modifier = Modifier) {
                 if(editor.note.manualTitle) TextButton(onClick={ model.title("") },enabled=!s.busy,modifier=Modifier.heightIn(min=56.dp)) { Text("恢复自动标题",fontSize=18.sp) }
                 OutlinedTextField(value=editor.note.body,onValueChange=model::body,label={ Text("正文") },placeholder={ Text("写下想法…") },
                     enabled=!s.busy,modifier=Modifier.fillMaxWidth().heightIn(min=240.dp),textStyle=LocalTextStyle.current.copy(fontSize=18.sp))
-                OutlinedTextField(value=editor.note.category,onValueChange=model::category,label={ Text("分类（可修改，留空为未分类）") },
-                    enabled=!s.busy,modifier=Modifier.fillMaxWidth(),textStyle=LocalTextStyle.current.copy(fontSize=18.sp))
+                CategorySelector(model)
                 VoiceUnavailable()
                 OutlinedButton(onClick={ confirmation="discard" },enabled=!s.busy,modifier=Modifier.fillMaxWidth().heightIn(min=56.dp)) { Text("放弃这次编辑",fontSize=18.sp) }
+                if(editor.baseRevision>=0) OutlinedButton(onClick={ confirmation="trash" },enabled=!s.busy,modifier=Modifier.fillMaxWidth().heightIn(min=56.dp)) { Text("移入回收站",fontSize=18.sp) }
 
             }
         }
     }
     if(confirmation.isNotEmpty() && editor!=null) AlertDialog(onDismissRequest={ confirmation="" },
-        title={ Text("放弃这次编辑？") },
-        text={ Text("清除本次草稿，保留上次正式保存的笔记。") },
-        confirmButton={ TextButton(onClick={ confirmation=""; model.discard() },modifier=Modifier.heightIn(min=56.dp)) { Text("确认") } },
+        title={ Text(if(confirmation=="trash") "移入回收站？" else "放弃这次编辑？") },
+        text={ Text(if(confirmation=="trash") "已保存的笔记和当前草稿都会保留，可在回收站恢复。" else "清除本次草稿，保留上次正式保存的笔记。") },
+        confirmButton={ TextButton(onClick={ val trash=confirmation=="trash";confirmation="";if(trash) model.moveToTrash() else model.discard() },modifier=Modifier.heightIn(min=56.dp)) { Text("确认") } },
         dismissButton={ TextButton(onClick={ confirmation="" },modifier=Modifier.heightIn(min=56.dp)) { Text("取消") } })
 }
 

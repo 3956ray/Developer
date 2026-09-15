@@ -26,8 +26,8 @@ class NoteRepositoryTest {
         assertTrue(excerpt.contains("关键词"));assertTrue(excerpt.startsWith("…"))
     }
     @Test fun emptyAndDurableDraftThenSameIdEdit() {
-        val file=temp.newFile(); val e=editing().let { it.copy(note=it.note.categoryChanged("生活")) }
-        NoteRepository(PythonSql(file)).use { r -> r.initialize(); assertEquals(0,r.search("").total); r.persistDraft(e) }
+        val file=temp.newFile(); var e=editing().let { it.copy(note=it.note.categoryChanged("生活")) }
+        NoteRepository(PythonSql(file)).use { r -> r.initialize(); assertEquals(0,r.search("").total); e=r.persistDraft(e) }
         NoteRepository(PythonSql(file)).use { r ->
             r.initialize(); assertEquals(e,r.open(e.note.id)); assertEquals(0,r.search("").total)
             r.save(e,100); assertTrue(r.drafts().isEmpty())
@@ -79,7 +79,7 @@ class NoteRepositoryTest {
             r.initialize(); val saved=r.save(editing("原文","固定标题"))
             val next=r.open(saved.id)!!.let { it.copy(note=it.note.bodyChanged("新版")) }
             r.persistDraft(next)
-            sql.execute("CREATE TRIGGER fail_save BEFORE INSERT ON notes BEGIN SELECT RAISE(ABORT,'synthetic'); END")
+            sql.execute("CREATE TRIGGER fail_save BEFORE UPDATE ON notes BEGIN SELECT RAISE(ABORT,'synthetic'); END")
             fails { r.save(next) }
             assertEquals(saved,r.find(saved.id)); assertEquals(next,r.open(saved.id))
             assertEquals(1,r.search("原文").total); assertEquals(0,r.search("新版").total)
@@ -116,7 +116,7 @@ class NoteRepositoryTest {
             val first=r.search("");assertEquals(105,first.total);assertEquals(100,first.notes.size)
             assertEquals(5,r.search("",offset=100).notes.size)
             val e=r.open(first.notes.first().id)!!;r.save(e.copy(note=e.note.categoryChanged("")))
-            assertEquals(1,r.search("",category="").total);assertEquals(104,r.search("",category="读书").total)
+            assertEquals(1,r.search("",category="").total);assertEquals(104,r.search("",category=r.categories().single { it.name=="读书" }.id).total)
         }
     }
     @Test fun unknownDatabaseIsPreserved() {
