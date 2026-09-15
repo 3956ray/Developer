@@ -32,7 +32,7 @@ RESULT=COMPLETE：当前文字核心实现与下述工程验证完成，待指�
 JAVA_HOME='/Applications/Android Studio.app/Contents/jbr/Contents/Home' ./gradlew --offline :app:assembleDebug :app:assembleDebugAndroidTest :app:testDebugUnitTest :app:lintDebug --no-daemon --console=plain
 ```
 
-最终构建18秒成功。20项host测试（14仓库/模型规则、5ViewModel、1模板），0失败/错误/跳过；lint 0 errors、12 warnings（模板已有的1冗余label、7无用颜色、4依赖新版本提示，不屏蔽）。最终日志和JUnit XML在`evidence/`。
+最终构建18秒成功。20项host测试（14仓库/模型规则、5ViewModel、1模板），0失败/错误/跳过；lint 0 errors、12 warnings（模板已有的1冗余label、7无用颜色、4依赖新版本提示，不屏蔽）。最终日志和JUnit XML在`evidence/`；Git内build日志仅去除行尾空格，外部目录保留原始输出。
 
 host测试用新写的测试桥执行生产Kotlin SQL，对接Python标准库真实磁盘SQLite，不用伪造查询结果。1000条合成笔记/40次查询的最终host P95=10.958667ms，包含测试桥开销，不含Compose或Android端到端渲染；这是该语料/机器参考，不是所有数据规模承诺。LIKE仍可能扫描候选行，没有声称使用全文索引。
 
