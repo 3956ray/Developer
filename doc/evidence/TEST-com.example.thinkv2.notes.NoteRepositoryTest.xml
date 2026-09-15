@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.thinkv2.notes.NoteRepositoryTest" tests="14" skipped="0" failures="0" errors="0" timestamp="2026-09-15T16:52:41.204Z" hostname="OrderlyRaydeMBP" time="3.388">
+  <properties/>
+  <testcase name="realSqlFailureRollsBackFormalAndKeepsCommittedDraft" classname="com.example.thinkv2.notes.NoteRepositoryTest" time="0.2"/>
+  <testcase name="literalChineseAndRankingAndEditIndex" classname="com.example.thinkv2.notes.NoteRepositoryTest" time="0.078"/>
+  <testcase name="lateWritesCannotReviveSavedOrDiscardedDrafts" classname="com.example.thinkv2.notes.NoteRepositoryTest" time="0.088"/>
+  <testcase name="categoryCorrectionAndPaging" classname="com.example.thinkv2.notes.NoteRepositoryTest" time="0.422"/>
+  <testcase name="emptyBodyCannotBecomeFormal" classname="com.example.thinkv2.notes.NoteRepositoryTest" time="0.064"/>
+  <testcase name="titleOwnershipAndUnicode" classname="com.example.thinkv2.notes.NoteRepositoryTest" time="0.002"/>
+  <testcase name="saveRetryAndUnchangedOpenHaveNoPhantomDraft" classname="com.example.thinkv2.notes.NoteRepositoryTest" time="0.076"/>
+  <testcase name="emptyAndDurableDraftThenSameIdEdit" classname="com.example.thinkv2.notes.NoteRepositoryTest" time="0.252"/>
+  <testcase name="unknownDatabaseIsPreserved" classname="com.example.thinkv2.notes.NoteRepositoryTest" time="0.088"/>
+  <testcase name="thousandNoteSearchBenchmark" classname="com.example.thinkv2.notes.NoteRepositoryTest" time="1.853"/>
+  <testcase name="conflictingEditorsCannotOverwriteNewVersion" classname="com.example.thinkv2.notes.NoteRepositoryTest" time="0.081"/>
+  <testcase name="tombstoneFailureRollsBackNoteWrite" classname="com.example.thinkv2.notes.NoteRepositoryTest" time="0.057"/>
+  <testcase name="saveRevertedContentClearsDraftWithoutChangingFormal" classname="com.example.thinkv2.notes.NoteRepositoryTest" time="0.069"/>
+  <testcase name="oldDraftCannotOverwriteNewerDraft" classname="com.example.thinkv2.notes.NoteRepositoryTest" time="0.056"/>
+  <system-out><![CDATA[HOST_SQLITE_1000_NOTES_P95_MS=10.958667; excludes Android and Compose
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

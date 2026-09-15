@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.thinkv2.notes.NotesModelTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2026-09-15T16:52:44.594Z" hostname="OrderlyRaydeMBP" time="1.262">
+  <properties/>
+  <testcase name="formalFailureRetainsEditorAndRetryReallySaves" classname="com.example.thinkv2.notes.NotesModelTest" time="0.193"/>
+  <testcase name="searchRefreshesAfterEditingAndCategoryCorrection" classname="com.example.thinkv2.notes.NotesModelTest" time="0.176"/>
+  <testcase name="autosaveAndBackKeepDraftSeparateFromFormal" classname="com.example.thinkv2.notes.NotesModelTest" time="0.596"/>
+  <testcase name="discardThenReopenEditDoesNotHitOldTombstone" classname="com.example.thinkv2.notes.NotesModelTest" time="0.155"/>
+  <testcase name="realViewModelReopenUnchangedSaveAndReturn" classname="com.example.thinkv2.notes.NotesModelTest" time="0.141"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
