@@ -73,7 +73,11 @@ class NotesUiTest {
         ui.waitUntil(10000) { ui.onAllNodesWithText("已保存 · 1 条").fetchSemanticsNodes().isNotEmpty() }
     }
     private fun createCategory(oldName: String,name: String) {
-        ui.onNodeWithText("分类：$oldName").performScrollTo().performClick()
+        androidx.test.espresso.Espresso.closeSoftKeyboard()
+        ui.onNodeWithText("分类：$oldName").performScrollTo()
+        ui.waitForIdle()
+        ui.onNodeWithText("分类：$oldName").performClick()
+        ui.waitUntil(10000) { ui.onAllNodesWithText("新建分类").fetchSemanticsNodes().isNotEmpty() }
         ui.onNodeWithText("新建分类").performClick()
         ui.onNodeWithText("分类名称").performTextInput(name)
         ui.onNodeWithText("保存分类").performClick()

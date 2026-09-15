@@ -7,7 +7,7 @@ import androidx.lifecycle.ViewModel
 import kotlinx.coroutines.*
 import java.util.concurrent.Executors
 
-enum class NotesPage { HOME, CATEGORIES, TRASH }
+enum class NotesPage { HOME, CATEGORIES, TRASH, REMINDERS }
 
 enum class DraftState { UNSAVED, SAVING, SAVED, FORMAL, ERROR }
 data class NotesState(
@@ -24,6 +24,8 @@ class NotesModel(
     private val createRepository: () -> NoteRepository,
     ui: CoroutineDispatcher = Dispatchers.Main.immediate,
     private val worker: CoroutineDispatcher = Executors.newSingleThreadExecutor().asCoroutineDispatcher(),
+    private val closeWorkerOnShutdown: Boolean = true,
+    private val onTrashed: (String)->Unit = {},
 ) : ViewModel() {
     var state by mutableStateOf(NotesState())
         private set
@@ -73,11 +75,15 @@ class NotesModel(
             try {
                 val (editing,hasDraft)=withContext(worker) {
                     val db=store()
-                    Pair(db.open(id) ?: error("missing_note"),db.drafts().any { it.id==id })
+                    Pair(db.open(id) ?: error(if(db.isTrashed(id)) "trashed_note" else "missing_note"),db.drafts().any { it.id==id })
                 }
                 if(token==editorToken) state=state.copy(editor=editing,busy=false,loading=false,
                     draftState=if(hasDraft) DraftState.SAVED else DraftState.FORMAL)
-            } catch(_: Exception) { if(token==editorToken) state=state.copy(busy=false,loading=false,error="无法打开笔记，请返回重试。") }
+            } catch(e: Exception) { if(token==editorToken) state=state.copy(busy=false,loading=false,error=when(e.message) {
+                "trashed_note" -> "这条笔记已在回收站，可返回首页后到回收站恢复。"
+                "missing_note" -> "这条笔记已不存在。"
+                else -> "无法打开笔记，请返回重试。"
+            }) }
         }
     }
     fun body(text: String) = edit { it.bodyChanged(text) }
@@ -113,7 +119,7 @@ class NotesModel(
     fun discard() = finish(Action.DISCARD)
     fun moveToTrash() = finish(Action.TRASH)
     private enum class Action { SAVE, KEEP, DISCARD, TRASH }
-    private fun finish(action: Action) {
+    private fun finish(action: Action,nextId: String?=null) {
         val editing=state.editor ?: return
         if(state.busy || (action==Action.SAVE && editing.note.body.isBlank())) return
         timer?.cancel()
@@ -125,18 +131,29 @@ class NotesModel(
                         Action.SAVE -> { store().persistDraft(editing); store().save(editing) }
                         Action.KEEP -> store().persistDraft(editing)
                         Action.DISCARD -> store().discard(editing)
-                        Action.TRASH -> store().softDelete(editing)
+                        Action.TRASH -> { store().softDelete(editing);runCatching { onTrashed(editing.note.id) } }
                     }
                 }
                 editorToken++
                 state=state.copy(editor=null,busy=false,notice=if(action==Action.TRASH) "已移入回收站，可随时恢复。" else null)
-                refresh()
+                if(nextId!=null) open(nextId) else refresh()
             } catch(_: Exception) {
                 state=state.copy(busy=false,draftState=DraftState.ERROR,
                     error="操作未完成，当前编辑仍保留。请重试。")
             }
         }
     }
+    private var initialLinkHandled=false
+    fun openIncoming(id: String,newIntent: Boolean=false) {
+        if(!newIntent && initialLinkHandled) return
+        if(state.busy) { scope.launch { delay(100);openIncoming(id,newIntent) };return }
+        initialLinkHandled=true
+        state=state.copy(page=NotesPage.HOME)
+        if(state.editor?.note?.id==id) return
+        if(state.editor!=null) finish(Action.KEEP,id) else open(id)
+    }
+    fun showReminders() { if(!state.busy) state=state.copy(page=NotesPage.REMINDERS) }
+    fun closeReminders() { state=state.copy(page=NotesPage.HOME);if(state.editor==null) refresh() }
     fun navigate(page: NotesPage) {
         if(state.busy || state.editor!=null) return
         state=state.copy(page=page,error=null,notice=null)
@@ -181,13 +198,14 @@ class NotesModel(
     }
     fun restore(note: Note) = lifecycle {
         val result=restore(note)
-        if(result.categoryMissing) "笔记已恢复；原分类已不存在，相关内容已移至未分类。" else "笔记已恢复，原有内容和草稿均保留。"
+        (if(result.categoryMissing) "笔记已恢复；原分类已不存在，相关内容已移至未分类。" else "笔记已恢复，原有内容和草稿均保留。") +
+            if(result.reminderDisabled) "提醒保持关闭，需重新设置才能启用。" else ""
     }
     internal fun shutdown() {
         timer?.cancel(); scope.cancel()
         CoroutineScope(worker).launch {
             repository?.close()
-            (worker as? ExecutorCoroutineDispatcher)?.close()
+            if(closeWorkerOnShutdown) (worker as? ExecutorCoroutineDispatcher)?.close()
         }
     }
     override fun onCleared() { shutdown() }

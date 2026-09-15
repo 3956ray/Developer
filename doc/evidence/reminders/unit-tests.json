@@ -1,0 +1,32 @@
+[
+  {
+    "name": "com.example.thinkv2.ExampleUnitTest",
+    "tests": "1",
+    "failures": "0",
+    "errors": "0"
+  },
+  {
+    "name": "com.example.thinkv2.notes.NoteRepositoryTest",
+    "tests": "14",
+    "failures": "0",
+    "errors": "0"
+  },
+  {
+    "name": "com.example.thinkv2.notes.NoteLifecycleTest",
+    "tests": "11",
+    "failures": "0",
+    "errors": "0"
+  },
+  {
+    "name": "com.example.thinkv2.notes.NotesModelTest",
+    "tests": "7",
+    "failures": "0",
+    "errors": "0"
+  },
+  {
+    "name": "com.example.thinkv2.reminders.ReminderTest",
+    "tests": "19",
+    "failures": "0",
+    "errors": "0"
+  }
+]

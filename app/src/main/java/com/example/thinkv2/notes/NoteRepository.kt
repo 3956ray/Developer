@@ -2,6 +2,7 @@ package com.example.thinkv2.notes
 
 import java.util.Locale
 import java.util.UUID
+import com.example.thinkv2.reminders.ReminderSchema
 
 /** One serial caller owns this repository. SQL values are always bound parameters. */
 class NoteRepository(private val db: Sql) : AutoCloseable {
@@ -12,7 +13,7 @@ class NoteRepository(private val db: Sql) : AutoCloseable {
 
     fun initialize() = transaction {
         val version = db.query("PRAGMA user_version").single().single().toInt()
-        check(version in 0..2) { "unsupported_schema" }
+        check(version in 0..3) { "unsupported_schema" }
         if (version == 0) {
             check(db.query("SELECT name FROM sqlite_master WHERE type='table' AND name NOT LIKE 'sqlite_%' AND name!='android_metadata'").isEmpty()) { "unknown_database" }
             db.execute("CREATE TABLE notes ($fields, title_fold TEXT NOT NULL, body_fold TEXT NOT NULL)")
@@ -38,6 +39,7 @@ class NoteRepository(private val db: Sql) : AutoCloseable {
             db.execute("CREATE INDEX notes_lifecycle ON notes(deleted_at,updated DESC,id)")
             db.execute("PRAGMA user_version=2")
         }
+        if(version<3) { ReminderSchema.migrate(db);db.execute("PRAGMA user_version=3") }
     }
 
     private fun note(r: List<String>) = Note(r[0],r[1],r[2],r[3]=="1",r[4],r[5].toLong(),r[6].toLong(),r[7].toLong(),r[8],r[9])
@@ -100,7 +102,7 @@ class NoteRepository(private val db: Sql) : AutoCloseable {
         val category=categories().firstOrNull { it.name==name } ?: insertCategory(name)
         return note.copy(category=category.name,categoryId=category.id)
     }
-    private fun isTrashed(id: String) = db.query("SELECT id FROM notes WHERE id=? AND deleted_at>0",listOf(id)).isNotEmpty()
+    fun isTrashed(id: String) = db.query("SELECT id FROM notes WHERE id=? AND deleted_at>0",listOf(id)).isNotEmpty()
     private fun anyNote(id: String) = db.query("SELECT $columns FROM notes WHERE id=?",listOf(id)).firstOrNull()?.let(::note)
     private fun anyDraft(id: String): Pair<Editing,Boolean>? = db.query("SELECT $columns,base_revision,active FROM drafts WHERE id=?",listOf(id))
         .firstOrNull()?.let { Pair(Editing(note(it),it[10].toLong()),it[11]=="1") }
@@ -194,6 +196,8 @@ class NoteRepository(private val db: Sql) : AutoCloseable {
         if(draft?.second==true || !sameContent(formal,e.note)) writeDraft(e,true)
         val next=maxOf(formal.revision,e.note.revision,draft?.first?.note?.revision ?: -1)+1
         db.execute("UPDATE notes SET deleted_at=?,revision=? WHERE id=?",listOf(now.toString(),next.toString(),formal.id))
+        db.execute("UPDATE reminders SET requested=0,revision=revision+1,status='CANCEL_PENDING',next_key='',next_at=0,problem='' WHERE note_id=?",listOf(formal.id))
+        db.execute("UPDATE reminder_events SET reported=4 WHERE reminder_id IN (SELECT id FROM reminders WHERE note_id=?) AND reported=0",listOf(formal.id))
         anyDraft(formal.id)?.let { (saved,active) ->
             writeDraft(saved.copy(note=saved.note.copy(revision=next+1),baseRevision=next),active)
         }
@@ -216,7 +220,7 @@ class NoteRepository(private val db: Sql) : AutoCloseable {
         updateNote(restored)
         db.execute("UPDATE notes SET deleted_at=0 WHERE id=?",listOf(formal.id))
         if(draft!=null) writeDraft(Editing(recover(draft.first.note).copy(revision=next+1),next),draft.second)
-        RestoreResult(restored,missing)
+        RestoreResult(restored,missing,db.query("SELECT id FROM reminders WHERE note_id=?",listOf(formal.id)).isNotEmpty())
     }
     private fun <T> transaction(action: () -> T): T {
         db.begin()

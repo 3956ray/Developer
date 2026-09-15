@@ -25,7 +25,7 @@ data class Note(
 
 data class Category(val id: String, val name: String, val revision: Long = 0)
 data class TrashItem(val note: Note, val deletedAt: Long, val categoryMissing: Boolean, val hasDraft: Boolean = false)
-data class RestoreResult(val note: Note, val categoryMissing: Boolean)
+data class RestoreResult(val note: Note, val categoryMissing: Boolean, val reminderDisabled: Boolean = false)
 
 fun automaticTitle(body: String): String {
     val first = body.trim().split('\n', '\r', '。', '！', '？', '.', '!', '?')

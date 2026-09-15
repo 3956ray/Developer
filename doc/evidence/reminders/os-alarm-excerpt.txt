@@ -1,0 +1,37 @@
+    RTC_WAKEUP #40: Alarm{8440df5 type 0 origWhen 1790125200000 whenElapsed 628994597 com.example.thinkv2}
+      tag=*walarm*:com.example.thinkv2.REMINDER
+      type=RTC_WAKEUP origWhen=2026-09-23 09:00:00.000 window=+1h0m0s0ms repeatInterval=0 count=0 flags=0x20
+      policyWhenElapsed: requester=+7d6h37m3s703ms app_standby=-370ms device_idle=-- battery_saver=-370ms
+      whenElapsed=+7d6h37m3s703ms maxWhenElapsed=+7d7h37m3s703ms
+      operation=PendingIntent{1b8c78a: PendingIntentRecord{73531fb com.example.thinkv2 broadcastIntent}}
+      idle-options=Bundle[{android.pendingIntent.backgroundActivityAllowed=2, android:broadcast.temporaryAppAllowlistReasonCode=-1, android:broadcast.temporaryAppAllowlistDuration=10000, android:broadcast.temporaryAppAllowlistReason=, android:broadcast.temporaryAppAllowlistType=1, android:broadcast.flags=8}]
+    u0a229:
+      #1: Reason=alarm_cancelled elapsed=-371ms rtc=2026-09-16 02:22:55.926
+        Snapshot:
+          type=RTC_WAKEUP tag=*walarm*:com.example.thinkv2.REMINDER
+          policyWhenElapsed: requester=+7d6h37m3s703ms app_standby=-1s302ms device_idle=-- battery_saver=-1s302ms
+      #2: Reason=pi_cancelled elapsed=-2s606ms rtc=2026-09-16 02:22:53.691
+        Snapshot:
+          type=RTC_WAKEUP tag=*walarm*:com.example.thinkv2.REMINDER
+          policyWhenElapsed: requester=+7d6h37m3s703ms app_standby=-3m50s520ms device_idle=-- battery_saver=-2s655ms
+      #3: Reason=alarm_cancelled elapsed=-3m50s534ms rtc=2026-09-16 02:19:05.763
+        Snapshot:
+          type=RTC_WAKEUP tag=*walarm*:com.example.thinkv2.REMINDER
+          policyWhenElapsed: requester=+7d6h37m3s703ms app_standby=-3m51s502ms device_idle=-- battery_saver=-3m51s502ms
+      #4: Reason=pi_cancelled elapsed=-3m53s291ms rtc=2026-09-16 02:19:03.006
+        Snapshot:
+          type=RTC_WAKEUP tag=*walarm*:com.example.thinkv2.REMINDER
+          policyWhenElapsed: requester=+7d6h37m3s703ms app_standby=-4m25s254ms device_idle=-- battery_saver=-3m53s296ms
+      #5: Reason=alarm_cancelled elapsed=-4m25s254ms rtc=2026-09-16 02:18:31.043
+        Snapshot:
+          type=RTC_WAKEUP tag=*walarm*:com.example.thinkv2.REMINDER
+          policyWhenElapsed: requester=+7d6h37m3s704ms app_standby=-4m52s878ms device_idle=-- battery_saver=-4m25s292ms
+      #6: Reason=alarm_cancelled elapsed=-4m52s879ms rtc=2026-09-16 02:18:03.417
+        Snapshot:
+          type=RTC_WAKEUP tag=*walarm*:com.example.thinkv2.REMINDER
+          policyWhenElapsed: requester=+7d18h37m3s703ms app_standby=-5m40s68ms device_idle=-- battery_saver=-5m40s68ms
+      #7: Reason=alarm_cancelled elapsed=-5m40s68ms rtc=2026-09-16 02:17:16.228
+        Snapshot:
+          type=RTC_WAKEUP tag=*walarm*:com.example.thinkv2.REMINDER
+          policyWhenElapsed: requester=+7d6h37m3s703ms app_standby=-5m46s756ms device_idle=-- battery_saver=-5m46s756ms
+
