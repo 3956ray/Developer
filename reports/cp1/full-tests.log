@@ -1,0 +1,39 @@
+
+> gym-miniapp@0.0.0 test
+> node --test test/*.test.mjs
+
+✔ R01/F01: four real processes share 120-count bucket, one identity, five-session cap; restart stays limited (731.143083ms)
+✔ durable probe survives full process restart and abrupt termination (669.952792ms)
+ℹ migration: {"migrations":[{"name":"001-foundation.sql","sha256":"f3efa02831adad9a5e73cee958cb48b3e3911cb325327cc0828af94c4ab2ee5d"},{"name":"002-identity.sql","sha256":"7aaff7aa4bf881049a1680125d204a4dbf6699ff5ec776752eea5f142fdddde4"}],"integrity":{"integrity_check":"ok"}}
+ℹ health: {"ok":true,"serverNow":"2026-09-15T19:48:28.393Z","data":{"status":"ready","checkpoint":"CP1","environment":"test","gymId":"cp0-3b064a39-de59-47fc-be8c-ddf91f2a2a85","simulation":false,"identityMode":"disabled","migrations":2}}
+ℹ full restart: pid changed; persisted {"probe_id":"probe-restart","value":"synthetic-non-member","created_at":1789501708464}
+ℹ abrupt SIGKILL restart: same committed probe retained
+✔ migration replay is stable; changed migration rejected without modifying ledger (7.011083ms)
+✔ failed new migration rolls back DDL and ledger atomically (3.69025ms)
+✔ write rollback preserves original value and no partial row (2.094042ms)
+✔ environment/store namespaces, keys and persistent files are isolated (209.533333ms)
+✔ configuration, simulation, keys and accidental initialization fail closed (54.199167ms)
+✔ cross-process writer lock prevents partial competing write (2256.206417ms)
+✔ HTTP: strict body, status/Retry-After, authorization, response loss/restart, no secret diagnostics (489.260292ms)
+✔ F01: exact idle/absolute boundaries, interactive extension and poll non-extension (27.785458ms)
+✔ F01/L01: concurrent first exchange has one identity, five active sessions, oldest eviction (52.194458ms)
+✔ L01/F01: invalid/replayed/platform code never creates identity; logout current only; deleting lock reserved (33.562458ms)
+✔ R01: 120 including platform failures; fixed minute recovery and restart (480.418458ms)
+✔ R01: time sampled after BEGIN IMMEDIATE, crossing old full window uses new window (5.66025ms)
+✔ M04/I01: role inspect, grant/revoke, cached historical result, CAS and audit atomicity (32.280542ms)
+✔ L01/R01: DB failure does not authenticate or bypass count; account creation rolls back with audit (41.022542ms)
+✔ adapter isolation: store refuses fixture mode, namespace cannot silently switch (10.824584ms)
+✔ official adapter transport contract: strict platform errors, missing fields, redirect and secret suppression (39.7845ms)
+✔ strict input: escaped/nested duplicate keys, prototype keys, malformed numbers and extra fields (3.726125ms)
+✔ real role CLI: inspect/apply/result is local, versioned and audited (163.045875ms)
+✔ P01: public/refusal path never calls wx.login or exchanges identity (3.647292ms)
+✔ P01/L01: only explicit consent logs in; simulation label and token outside view data (1.1355ms)
+✔ F01/P01: foreground polls never relogin; failures/401 are honest; hidden timer sends nothing (4.359958ms)
+ℹ tests 23
+ℹ suites 0
+ℹ pass 23
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 3274.699583

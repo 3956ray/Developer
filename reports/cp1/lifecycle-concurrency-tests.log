@@ -1,0 +1,17 @@
+✔ R01/F01: four real processes share 120-count bucket, one identity, five-session cap; restart stays limited (345.567791ms)
+✔ M04: concurrent management write waits for revoke commit; reverse order preserves committed write (78.61775ms)
+✔ P01: public/refusal path never calls wx.login or exchanges identity (2.014292ms)
+✔ P01/L01: only explicit consent logs in; simulation label and token outside view data (1.351542ms)
+✔ F01/P01: foreground polls never relogin; failures/401 are honest; hidden timer sends nothing (3.149125ms)
+✔ F01: logged in -> hidden past expiry -> foreground pending/failure/401 never shows stale authenticated state (1.097041ms)
+✔ F01: response from before hiding cannot restore authenticated state or an expiry timer (0.76225ms)
+✔ F01: hide/show and late A response serialize queued B/manual refresh with one in-flight session read (0.816208ms)
+✔ native request boundary: non-2xx/business failure rejected, cross-environment cached token ignored (8.415042ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 9
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 487.065375

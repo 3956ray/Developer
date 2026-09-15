@@ -1,0 +1,53 @@
+{
+  "task_id": "GYM-CP1-IDENTITY-001",
+  "owner": "developer",
+  "checkpoint": "CP1",
+  "assigned_thread_id": "01a0a64b-85f8-7790-88d9-fd1188ece566",
+  "status": "dispatched",
+  "baseline_commit": "0fdede77301c6c21d0e6fdd7cfe9865a937cb8d7",
+  "input_documents": [
+    {
+      "path": "/Users/orderly_ray/Documents/Products Manager/product-knowledge-base/ideas/gym-occupancy/prd-mvp-v1.0-2026-09-16.md",
+      "sha256": "7d9948f302f13119120c03043902fba7455437764eb57d4923efebda4254e1bd"
+    },
+    {
+      "path": "/Users/orderly_ray/Documents/Products Manager/product-knowledge-base/ideas/gym-occupancy/acceptance-mvp-v1.0-2026-09-16.md",
+      "sha256": "89cded4a468deaa20e6090d19b35dc31c77b6a01e3e45081d3d996484188ae71"
+    },
+    {
+      "path": "/Users/orderly_ray/Documents/Products Manager/product-knowledge-base/ideas/gym-occupancy/checkpoints-mvp-v1.0-2026-09-16.md",
+      "sha256": "13060548afb17731e033364817f0e7ee6b0569c334bbfc4138e308ee64678882"
+    }
+  ],
+  "goal": "Implement and verify the CP1 revocable business sessions and server-side operator authorization foundation in the accepted native mini-program project.",
+  "scope": [
+    "Only /Users/orderly_ray/Projects/gym-miniapp from accepted CP0 commit; verify clean ownership before changes. Follow frozen PRD, matrix, checkpoints and reviewed technical contract.",
+    "Implement real code2Session backend adapter with strict success/error handling and explicit isolated test adapter; never enable test identity fallback in store. No real credentials are required for local tests.",
+    "Persistent identity uniqueness, opaque token digests, seven-day absolute and twenty-four-hour idle limits, polling without idle renewal, maximum five sessions, logout and exact expiry behavior.",
+    "Server-side operator inspect/grant/revoke CLI with audit and transactional authorization ordering; protected role/session reads, no client self-grant; original account identity/role fields reserved for later deletion work.",
+    "Persistent global login attempts limit 120 per fixed minute across processes/restarts, correct 429 recovery and fail-closed storage behavior.",
+    "Native My page user-initiated login/logout and honest session state, application purpose/privacy explanation and refusal path; public scaffold remains available, no membership or occupancy functionality. Keep simulation clearly labeled and separated.",
+    "Build only shared strict request parsing/idempotency/audit/transaction mechanisms necessary for CP1 actions. Test invalid/duplicate-key/malformed requests and no secret logging. Preserve previous foundation tests. Update project AGENTS/README to current CP and reports/cp1. Local scoped commit authorized."
+  ],
+  "out_of_scope": [
+    "No observation business, member pairing/verification, member status, deletion workflow, schedule, or later-CP cleanup implementation. No wholesale MVP implementation.",
+    "No real account configuration, cloud purchase/deploy, preview/upload/release, real user data, external contacts, or editing frozen product documents."
+  ],
+  "acceptance": [
+    "AC-L01 engineering: adapter rejects platform/invalid/replayed code failures, session only establishes business identity, isolated deterministic tests, no tokens/code/session_key/AppSecret in diagnostics.",
+    "AC-F01: exact 24h idle and 7d absolute boundaries; polling does not extend idle; sixth session evicts oldest; concurrent initial login produces one business identity; logout only current session; storage failure cannot authenticate.",
+    "AC-M04 role foundation: forged role/openid/gym scope cannot grant access; inspected role version available; grants/revokes audited; old session management request rejected after revoke; competing writes honor commit order.",
+    "AC-R01 login: 120/min UTC fixed bucket, persistent atomic count including platform failures, same behavior across restart/processes, correct Retry-After, no memory fallback when DB fails.",
+    "AC-P01 foundation: public viewing does not require login or excess permissions, user can refuse and view purpose explanation; no claim that actual platform privacy config was verified.",
+    "All CP0 tests remain passing; per-AC report records engineering versus unverified real-WeChat/tool/device layers, exact files/commands/results and clean scoped commit."
+  ],
+  "evidence_required": [
+    "RESULT COMPLETE/BLOCKED/PRODUCT_DECISION_REQUIRED; per-AC status and evidence, source baseline/final commit, file purposes, commands and logs, fixtures provenance, scope deviations and unverified items.",
+    "reports/cp1 includes boundary/concurrency/restart tests, adapter and fixture isolation evidence, UI state evidence without secrets, and updated technical contract only if clarifying implementation without changing frozen product behavior."
+  ],
+  "stop_conditions": [
+    "Stop after CP1 and return results to commander; do not begin CP2 without acceptance.",
+    "If product behavior or data boundaries must change, stop affected work and report the exact decision needed.",
+    "Missing real AppID blocks only actual platform verification; no fake success, bypassing permission review or secrets in reports."
+  ]
+}

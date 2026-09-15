@@ -1,0 +1,46 @@
+
+> gym-miniapp@0.0.0 test
+> node --test test/*.test.mjs
+
+✔ R01/F01: four real processes share 120-count bucket, one identity, five-session cap; restart stays limited (534.649125ms)
+✔ M04: concurrent management write waits for revoke commit; reverse order preserves committed write (96.896333ms)
+✔ durable probe survives full process restart and abrupt termination (556.628ms)
+ℹ migration: {"migrations":[{"name":"001-foundation.sql","sha256":"f3efa02831adad9a5e73cee958cb48b3e3911cb325327cc0828af94c4ab2ee5d"},{"name":"002-identity.sql","sha256":"7aaff7aa4bf881049a1680125d204a4dbf6699ff5ec776752eea5f142fdddde4"}],"integrity":{"integrity_check":"ok"}}
+ℹ health: {"ok":true,"serverNow":"2026-09-15T19:57:09.612Z","data":{"status":"ready","checkpoint":"CP1","environment":"test","gymId":"cp0-dbd6370e-fefa-4893-a699-1da0a5ccbc15","simulation":false,"identityMode":"disabled","migrations":2}}
+ℹ full restart: pid changed; persisted {"probe_id":"probe-restart","value":"synthetic-non-member","created_at":1789502229691}
+ℹ abrupt SIGKILL restart: same committed probe retained
+✔ migration replay is stable; changed migration rejected without modifying ledger (5.599625ms)
+✔ failed new migration rolls back DDL and ledger atomically (3.795041ms)
+✔ write rollback preserves original value and no partial row (2.537917ms)
+✔ environment/store namespaces, keys and persistent files are isolated (136.41575ms)
+✔ configuration, simulation, keys and accidental initialization fail closed (48.260375ms)
+✔ cross-process writer lock prevents partial competing write (2278.433167ms)
+✔ HTTP: strict body, status/Retry-After, authorization, response loss/restart, no secret diagnostics (364.162625ms)
+✔ F01: exact idle/absolute boundaries, interactive extension and poll non-extension (28.267417ms)
+✔ F01/L01: concurrent first exchange has one identity, five active sessions, oldest eviction (16.790791ms)
+✔ L01/F01: invalid/replayed/platform code never creates identity; logout current only; deleting lock reserved (18.9065ms)
+✔ R01: 120 including platform failures; fixed minute recovery and restart (276.145ms)
+✔ R01: time sampled after BEGIN IMMEDIATE, crossing old full window uses new window (7.557ms)
+✔ M04/I01: role inspect, grant/revoke, cached historical result, CAS and audit atomicity (13.245042ms)
+✔ L01/R01: DB failure does not authenticate or bypass count; account creation rolls back with audit (11.3085ms)
+✔ adapter isolation: store refuses fixture mode, namespace cannot silently switch (5.736834ms)
+✔ official adapter transport contract: strict platform errors, missing fields, redirect and secret suppression (23.644625ms)
+✔ strict input: escaped/nested duplicate keys, prototype keys, malformed numbers and extra fields (3.71775ms)
+✔ real role CLI: inspect/apply/result is local, versioned and audited (165.180417ms)
+✔ M04/I01: foreign-store token denied, logout audit failure rolls back, intent window boundaries enforced (8.664916ms)
+✔ P01: public/refusal path never calls wx.login or exchanges identity (6.0995ms)
+✔ P01/L01: only explicit consent logs in; simulation label and token outside view data (1.652125ms)
+✔ F01/P01: foreground polls never relogin; failures/401 are honest; hidden timer sends nothing (6.77825ms)
+✔ F01: logged in -> hidden past expiry -> foreground pending/failure/401 never shows stale authenticated state (2.536ms)
+✔ F01: response from before hiding cannot restore authenticated state or an expiry timer (2.612541ms)
+✔ F01: hide/show and late A response serialize queued B/manual refresh with one in-flight session read (2.222125ms)
+✔ native request boundary: non-2xx/business failure rejected, cross-environment cached token ignored (2.394875ms)
+✔ I01: unconfirmed logout retains original operation key until explicit retry resolves (1.523334ms)
+ℹ tests 30
+ℹ suites 0
+ℹ pass 30
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 3110.622

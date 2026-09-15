@@ -1,0 +1,10 @@
+✔ R01/F01: four real processes share 120-count bucket, one identity, five-session cap; restart stays limited (328.201916ms)
+✔ M04: concurrent management write waits for revoke commit; reverse order preserves committed write (116.31325ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 2
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 504.181583

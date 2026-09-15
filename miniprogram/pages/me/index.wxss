@@ -1,0 +1,4 @@
+.status { font-size: 38rpx; font-weight: 600; margin-bottom: 20rpx; }
+button { margin-top: 24rpx; font-size: 30rpx; }
+.testing { padding: 20rpx; margin-bottom: 28rpx; background: #fff0c4; color: #514313; font-size: 26rpx; }
+.privacy { margin-top: 28rpx; }

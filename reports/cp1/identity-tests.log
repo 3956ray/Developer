@@ -1,0 +1,60 @@
+✔ R01/F01: four real processes share 120-count bucket, one identity, five-session cap; restart stays limited (416.412042ms)
+✖ M04: concurrent management write waits for revoke commit; reverse order preserves committed write (75.4475ms)
+
+Interrupted while running:
+
+⚠ test/concurrency.test.mjs (test/concurrency.test.mjs:1:1)
+⚠ test/identity.test.mjs (test/identity.test.mjs:1:1)
+⚠ test/native-session.test.mjs (test/native-session.test.mjs:1:1)
+✖ test/concurrency.test.mjs (84236.693791ms)
+✔ F01: exact idle/absolute boundaries, interactive extension and poll non-extension (21.898291ms)
+✔ F01/L01: concurrent first exchange has one identity, five active sessions, oldest eviction (18.157667ms)
+✔ L01/F01: invalid/replayed/platform code never creates identity; logout current only; deleting lock reserved (23.999917ms)
+✔ R01: 120 including platform failures; fixed minute recovery and restart (200.543333ms)
+✔ R01: time sampled after BEGIN IMMEDIATE, crossing old full window uses new window (6.534167ms)
+✔ M04/I01: role inspect, grant/revoke, cached historical result, CAS and audit atomicity (8.768917ms)
+✔ L01/R01: DB failure does not authenticate or bypass count; account creation rolls back with audit (8.704125ms)
+✔ adapter isolation: store refuses fixture mode, namespace cannot silently switch (3.66275ms)
+✔ official adapter transport contract: strict platform errors, missing fields, redirect and secret suppression (24.906541ms)
+✔ strict input: escaped/nested duplicate keys, prototype keys, malformed numbers and extra fields (4.484666ms)
+✔ real role CLI: inspect/apply/result is local, versioned and audited (172.96325ms)
+✔ P01: public/refusal path never calls wx.login or exchanges identity (1.563708ms)
+✔ P01/L01: only explicit consent logs in; simulation label and token outside view data (1.612375ms)
+✔ F01/P01: foreground polls never relogin; failures/401 are honest; hidden timer sends nothing (2.565ms)
+ℹ tests 17
+ℹ suites 0
+ℹ pass 15
+ℹ fail 1
+ℹ cancelled 1
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 84239.929375
+
+✖ failing tests:
+
+test at test/concurrency.test.mjs:30:1
+✖ M04: concurrent management write waits for revoke commit; reverse order preserves committed write (75.4475ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+
+    [
+      'ready',
+  +   undefined
+    ]
+
+      at worker (file:///Users/orderly_ray/Projects/gym-miniapp/test/concurrency.test.mjs:39:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async TestContext.<anonymous> (file:///Users/orderly_ray/Projects/gym-miniapp/test/concurrency.test.mjs:41:13)
+      at async Test.run (node:internal/test_runner/test:1332:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:911:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ 'ready', undefined ],
+    expected: [ 'ready' ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at test/concurrency.test.mjs:1:1
+✖ test/concurrency.test.mjs (84236.693791ms)
+  'Promise resolution is still pending but the event loop has already resolved'
