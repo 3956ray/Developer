@@ -1,0 +1,14 @@
+✔ S01/S02/B01 draft private, explicit empty, coverage replacement/withdrawal never revive history (53.730292ms)
+✔ S03/Z01 stable ID reschedule/cancel, item CAS, full set omission rejection, overlap only blocks publication (22.179292ms)
+✔ Z01 local/UTC exact boundaries, cross-midnight/week, DST missing/repeated and date coverage validation (9.900292ms)
+✔ I01/M04 dual CAS, same-key replay/conflict, audit rollback, current role denial and observation TTL unchanged (12.189375ms)
+✔ C01/D01 bounded cleanup rollback/restart preserves current snapshot/draft/withdrawn; published timezone frozen (77.956541ms)
+✔ X01 account deletion scrubs schedule audit/operations without deleting shared publication (19.9295ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 265.410625

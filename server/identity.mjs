@@ -134,7 +134,7 @@ export function createIdentityService(db, c, options = {}) {
       });
     },
     domainOperation(token, type, body, options, apply) {
-      const allowed = ['pairing.create','pairing.cancel','membership.bind','membership.restore','membership.revoke','membership.reverify','membership.unbind','account.delete'];
+      const allowed = ['schedule.draft.save','schedule.publish','schedule.withdraw','pairing.create','pairing.cancel','membership.bind','membership.restore','membership.revoke','membership.reverify','membership.unbind','account.delete'];
       if (!allowed.includes(type)) fail(422, 'INVALID_OPERATION');
       return this.authorized(token, options, context => operation(context.userId, type, body, context.time, () => {
         const result = apply(context);
@@ -187,9 +187,9 @@ export function createIdentityService(db, c, options = {}) {
       });
     },
     operationResult(token, id, type) {
-      if (!uuidPattern.test(id) || !['session.logout','observation.publish','observation.control','pairing.create','pairing.cancel','membership.bind','membership.restore','membership.revoke','membership.reverify','membership.unbind','account.delete'].includes(type)) fail(422, 'INVALID_OPERATION');
+      if (!uuidPattern.test(id) || !['session.logout','observation.publish','observation.control','schedule.draft.save','schedule.publish','schedule.withdraw','pairing.create','pairing.cancel','membership.bind','membership.restore','membership.revoke','membership.reverify','membership.unbind','account.delete'].includes(type)) fail(422, 'INVALID_OPERATION');
       return transaction(db, () => {
-        const time = now(), s = authenticate(token, time, type.startsWith('observation.') || ['membership.bind','membership.restore','membership.revoke','membership.reverify'].includes(type));
+        const time = now(), s = authenticate(token, time, type.startsWith('observation.') || type.startsWith('schedule.') || ['membership.bind','membership.restore','membership.revoke','membership.reverify'].includes(type));
         const row = db.prepare('SELECT * FROM operations WHERE actor_id=? AND operation_type=? AND operation_key=?').get(s.user_id, type, id);
         if (!row || time >= row.created_at + DAY) return { state: 'unknown' };
         return { state: 'committed', appliedRevision: row.applied_revision, committedAt: new Date(row.created_at).toISOString(), result: JSON.parse(row.result_json), refreshRequired: true };

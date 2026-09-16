@@ -10,7 +10,7 @@ function load() {
   catch (_) { return null; }
 }
 function save(token) { wx.setStorageSync(STORAGE, { scope: scope(), token }); }
-function clear() { for (const key of [STORAGE,'gym.member-intent.v1','gym.observation-write.v1','gym.operator-member-operation.v1']) { try { wx.removeStorageSync(key); } catch (_) {} } }
+function clear() { for (const key of [STORAGE,'gym.member-intent.v1','gym.observation-write.v1','gym.operator-member-operation.v1','gym.schedule-operation.v1']) { try { wx.removeStorageSync(key); } catch (_) {} } }
 function request(path, method, data, token, scheme = 'Bearer') {
   if (!configured()) return Promise.reject({ code: 'NOT_CONFIGURED' });
   return new Promise((resolve, reject) => wx.request({

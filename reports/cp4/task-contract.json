@@ -1,0 +1,54 @@
+{
+  "task_id": "GYM-CP4-SCHEDULE-001",
+  "owner": "developer",
+  "checkpoint": "CP4",
+  "assigned_thread_id": "01a0a64b-85f8-7790-88d9-fd1188ece566",
+  "status": "dispatched",
+  "goal": "Implement a single-store schedule from native operator draft editing and atomic publication through reliable public today/week viewing, cancellation, rescheduling and withdrawal.",
+  "dispatch_precondition": "CP3 accepted at exact baseline_commit; clean ownership verified before dispatch.",
+  "scope": [
+    "Only /Users/orderly_ray/Projects/gym-miniapp; frozen PRD/matrix/CP4 and technical contract. Complete native operator and public interfaces with actual persistent backend.",
+    "Stable course IDs, one private current draft and one public current snapshot. Edit full draft with course revisions; atomic publication CAS both draft and publication, explicit replaceCoverageConfirmed. No fallback to old publication on withdrawal.",
+    "Coverage 1-14 configured local days, half-open intervals, explicit covered-empty versus unpublished/outside coverage. Public today/week and current-course summary require no login. Unknown real schedule data stays empty.",
+    "Correct cancellation and rescheduling with same course ID; scheduled interval overlap rejects, touching endpoints allowed, cancelled courses excluded from current course/conflict. Cross-day/week and configured IANA timezone conversions validated, including DST missing/repeated local times and explicit offset selection.",
+    "Existing transaction/role/audit/idempotency/fresh intent conventions apply; include path target in digest, freeze confirmed versions/form snapshots, handle unknown write results with original operation keys and fresh current-state reads.",
+    "Foreground polling and lifecycle: one inflight per resource, hide stops and old callbacks cannot replace current data. Offline/error states explicit, never insert fixture courses or treat no course as empty venue.",
+    "Bounded recoverable schedule history cleanup preserves draft/current head/control and current snapshot. Account deletion must scrub any newly added personal links. Preserve prior membership/session/observation semantics and TTL; no additional dependencies without gate.",
+    "Local scoped commit authorized; reports/cp4 required, including implementation clarification and per-AC evidence."
+  ],
+  "out_of_scope": [
+    "No bookings, capacity, waitlists, attendance, payments, coach profiles, push or real schedule invention. No CP5 tool acceptance or CP6/7 claims.",
+    "No deployment/upload/publication, credentials, real user data, frozen product baseline edits or unrelated scope."
+  ],
+  "acceptance": [
+    "AC-S01/B01 course: draft invisible, atomic full published snapshot, independent public clients read same revision, no login required.",
+    "AC-S02: explicit covered-empty, outside coverage, unpublished and withdrawn remain distinct; never revive old publication or infer venue occupancy.",
+    "AC-S03/Z01: stable IDs across cancel/reschedule, one current publication, competing draft/publish CAS, interval overlap validation and deterministic local date/UTC/DST boundaries.",
+    "AC-S04: HTTP/business/offline/error states and retry actions correct; unknown writes query original operation then current state; old fixtures never replace unavailable data.",
+    "AC-M04/D01/I01/C01 schedule: current server roles and namespace enforced, actual service-process restart persistence, same-key body/target conflicts, bounded cleanup rollback/recovery preserving current snapshot.",
+    "Full prior regression, synthetic fixtures, actual native logic tests, exact source hashes and clean scoped commit. Tool/device/real venue layers explicitly unverified."
+  ],
+  "evidence_required": [
+    "RESULT COMPLETE/BLOCKED/PRODUCT_DECISION_REQUIRED; reports/cp4 per-AC and layer, source/final commit, file purposes, commands/exit codes/logs, tested source manifest, scope and unverified items.",
+    "Independent HTTP clients, real competing processes, publication/withdrawal snapshots, coverage/cancellation/timezone boundary tests, failed transaction and cleanup/restart evidence."
+  ],
+  "stop_conditions": [
+    "Only CP4; stop after delivery and await commander acceptance.",
+    "If behavior or data boundary must change, stop affected work and report exact product decision; do not silently weaken schedule maintenance or time validation."
+  ],
+  "baseline_commit": "22369e6320a64b96949acc31f195461134bba52d",
+  "input_documents": [
+    {
+      "path": "/Users/orderly_ray/Documents/Products Manager/product-knowledge-base/ideas/gym-occupancy/prd-mvp-v1.0-2026-09-16.md",
+      "sha256": "7d9948f302f13119120c03043902fba7455437764eb57d4923efebda4254e1bd"
+    },
+    {
+      "path": "/Users/orderly_ray/Documents/Products Manager/product-knowledge-base/ideas/gym-occupancy/acceptance-mvp-v1.0-2026-09-16.md",
+      "sha256": "89cded4a468deaa20e6090d19b35dc31c77b6a01e3e45081d3d996484188ae71"
+    },
+    {
+      "path": "/Users/orderly_ray/Documents/Products Manager/product-knowledge-base/ideas/gym-occupancy/checkpoints-mvp-v1.0-2026-09-16.md",
+      "sha256": "13060548afb17731e033364817f0e7ee6b0569c334bbfc4138e308ee64678882"
+    }
+  ]
+}

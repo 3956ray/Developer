@@ -1,1 +1,2 @@
-Page(require('../../lib/observation-page')(false));
+const observation=require('../../lib/observation-page')(false),schedule=require('../../lib/schedule-public')();
+Page({...observation,...schedule,data:{...observation.data,...schedule.data},onLoad(){observation.onLoad.call(this);this.scheduleLoad();},onShow(){observation.onShow.call(this);this.scheduleShow();},onHide(){observation.onHide.call(this);this.scheduleHide();},onUnload(){this.onHide();}});

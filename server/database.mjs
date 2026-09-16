@@ -41,6 +41,8 @@ export function openDatabase(config, migrations = new URL('./migrations/', impor
         db.prepare('INSERT INTO deployment VALUES (1, ?, ?, ?, ?)').run(config.environment, config.gymId, config.keyFingerprint, Date.now());
       }
     });
+    const published=db.prepare("SELECT time_zone FROM schedule_head WHERE state='published'").get();
+    if(published&&published.time_zone!==config.timeZone)throw new Error('PUBLISHED_TIMEZONE_MISMATCH');
     return db;
   } catch (error) { db.close(); throw error; }
 }

@@ -1,0 +1,25 @@
+✔ M01/M02/R02: leading zero, encrypted code, same-key display, one use and exact 600s expiry (33.643667ms)
+✔ R02: five collisions rollback replacement and generation counter; no weak random fallback (13.285083ms)
+✔ R01: three creations and five operator/requester errors persist, new window recovers; cleanup race cannot recreate personal error bucket (18.649541ms)
+✔ M03: revoked precedence, same binding explicit restoration and occupied slots; unbind cannot reset revoked registry (19.457042ms)
+✔ M03: explicit pending/fixed/no-expiry and server time boundary; dates reject invalid/overflow and handle leap/cross-year (14.731708ms)
+✔ I01/M04: path target is in idempotency digest and audit failure rolls back bind (21.200959ms)
+✔ M05/X01/C02: fresh auth boundaries, lost-response receipt, failed bounded deletion resumes and new login inherits nothing (33.06125ms)
+✔ M03 timezone conversion: configured non+8 zones, DST changes, skipped and repeated midnight (1.544125ms)
+✔ C01 bounded deletion/retention cursor: at most 100 rows, exact cutoffs and permanent revoked registry (119.891583ms)
+OBSERVATION_DATA_INVALID
+OBSERVATION_DATA_INVALID
+✔ B01/O01/O02: public empty -> two consistent reads, 899/900 boundary, unrelated activity cannot renew TTL (33.391208ms)
+✔ O03: control states and bad timestamps never resurrect prior observations (10.909625ms)
+✔ O04/I01: CAS, single audit/idempotence, exact 60s intent, role recheck, and atomic failure (9.234208ms)
+✔ D01/M04: readonly public, no numeric/simulation injection, unauthorized cannot write, idle only extends on new successful publication (9.207208ms)
+✔ C01/D01: bounded cleanup rollback/resume after DB restart preserves current head/TTL and exact 30-day boundary (112.660459ms)
+✔ C01: completion-based scheduler does not skip next hour when batches take time (84.279292ms)
+ℹ tests 15
+ℹ suites 0
+ℹ pass 15
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 833.186583

@@ -1,0 +1,12 @@
+✔ Z01 actual competing processes: draft CAS and dual publication CAS admit exactly one writer (226.182916ms)
+✔ M04 actual role write lock before schedule publish blocks former operator (121.797667ms)
+✔ S01/S04/D01 two public HTTP clients: private draft, atomic publish, lost write result, process restart and withdrawal (393.916292ms)
+✔ Z01 real draft-write lock before publication rejects previously confirmed draft revision (146.895ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 950.560958

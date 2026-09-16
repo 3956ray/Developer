@@ -1,6 +1,7 @@
 import { ApiError, fail, parseStrict } from './protocol.mjs';
 import { createIdentityService, NOTICE_VERSION } from './identity.mjs';
 import { createObservationService } from './observations.mjs';
+import { createScheduleService } from './schedules.mjs';
 import { createMembershipService } from './membership.mjs';
 
 async function body(req) {
@@ -24,6 +25,7 @@ export function createHandler(db, c, options = {}) {
   const identity = createIdentityService(db, c, options);
   const observations = createObservationService(db, c, identity);
   const members = createMembershipService(db, c, identity);
+  const schedules = createScheduleService(db,c,identity);
   return async (req, res) => {
     res.setHeader('Content-Type', 'application/json; charset=utf-8');
     res.setHeader('Cache-Control', 'no-store');
@@ -34,11 +36,19 @@ export function createHandler(db, c, options = {}) {
         query(url, []);
         const row = db.prepare('SELECT environment,gym_id FROM deployment WHERE singleton=1').get();
         if (!row || row.environment !== c.environment || row.gym_id !== c.gymId) fail(503, 'STORAGE_UNAVAILABLE');
-        data = { status: 'ready', checkpoint: 'CP3', environment: c.environment, gymId: c.gymId,
+        data = { status: 'ready', checkpoint: 'CP4', environment: c.environment, gymId: c.gymId,
           simulation: c.simulation, identityMode: c.identity.mode, migrations: db.prepare('SELECT count(*) AS count FROM schema_migrations').get().count };
       } else if (req.method === 'GET' && ['/v1/venue', '/v1/observations/current'].includes(url.pathname)) {
         query(url, []); const snapshot = url.pathname === '/v1/venue' ? observations.venue() : observations.current();
         data = snapshot.data; serverNow = snapshot.serverNow;
+      } else if(req.method==='GET'&&url.pathname==='/v1/schedule'){
+        query(url,['from','to','view']);const result=schedules.read(url.searchParams.get('from'),url.searchParams.get('to'),url.searchParams.get('view'));data=result.data;serverNow=result.serverNow;
+      } else if(req.method==='GET'&&url.pathname==='/v1/operator/schedule/draft'){
+        query(url,[]);data=schedules.getDraft(bearer(req));
+      } else if(req.method==='POST'&&url.pathname==='/v1/operator/schedule/time-preview'){
+        query(url,[]);data=schedules.preview(bearer(req),await body(req));
+      } else if((req.method==='PUT'&&url.pathname==='/v1/operator/schedule/draft')||(req.method==='POST'&&['/v1/operator/schedule/publish','/v1/operator/schedule/withdraw'].includes(url.pathname))){
+        query(url,[]);const token=bearer(req),input=await body(req),action=url.pathname.endsWith('/draft')?'save':url.pathname.split('/').at(-1);operation=schedules[action](token,input);data=operation.data;
       } else if (req.method === 'POST' && ['/v1/operator/observations', '/v1/operator/observations/control'].includes(url.pathname)) {
         query(url, []); const token = bearer(req); const input = await body(req);
         operation = url.pathname.endsWith('/control') ? observations.control(token, input) : observations.publish(token, input);

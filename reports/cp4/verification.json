@@ -1,0 +1,20 @@
+{
+  "tests": {
+    "command": "npm test",
+    "exitCode": 0,
+    "passed": 84,
+    "failed": 0,
+    "log": "final-tests.log"
+  },
+  "check": {
+    "command": "npm run check",
+    "exitCode": 0,
+    "log": "final-check.log"
+  },
+  "diffCheckExitCode": 0,
+  "sourceHashFilesVerified": 97,
+  "sourceUnchangedSinceFinalTestStart": true,
+  "priorEvidenceAndBaselineUnmodified": true,
+  "weChatToolDeviceVenue": "NOT_RUN",
+  "permissionNote": "First final test dispatch approval timed out before execution; the one permitted identical retry was approved and completed."
+}

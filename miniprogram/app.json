@@ -4,7 +4,8 @@
     "pages/me/index",
     "pages/maintenance/index",
     "pages/membership/index",
-    "pages/member-operator/index"
+    "pages/member-operator/index",
+    "pages/schedule-operator/index"
   ],
   "window": {
     "navigationBarTitleText": "健身房",

@@ -26,3 +26,5 @@
     <button wx:if="{{canReplace}}" bindtap="replacePending" disabled="{{busy}}">重新观察并确认</button>
   </view>
 </view>
+
+<button wx:if="{{authorized}}" bindtap="openSchedule">课表草稿与发布</button>

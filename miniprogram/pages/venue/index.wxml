@@ -11,3 +11,10 @@
   <button bindtap="refreshNow" loading="{{refreshing}}" disabled="{{busy}}">刷新现场信息</button>
   <view class="note venue-note">{{venueNote}}</view>
 </view>
+<view class="page">
+ <view class="title">今日 / 本周课表</view>
+ <button data-view="today" bindtap="scheduleChoose">今日</button><button data-view="week" bindtap="scheduleChoose">本周</button>
+ <view class="note">{{scheduleTitle}}</view><view>{{scheduleCurrent}}</view><view class="note">门店时区：{{scheduleZone}}。无排课不代表场地无人或允许进入。</view>
+ <view wx:for="{{scheduleDays}}" wx:key="date"><view>{{item.date}} · {{item.label}}</view><view wx:for="{{item.courses}}" wx:for-item="course" wx:key="courseId"><view>{{course.name}} · {{course.statusText}}</view><view class="note">{{course.timeText}}</view></view></view>
+ <button bindtap="scheduleRefresh" loading="{{scheduleRefreshing}}">刷新课表</button>
+</view>

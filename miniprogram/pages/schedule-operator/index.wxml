@@ -1,0 +1,19 @@
+<view class="page">
+ <view class="title">课表草稿与发布</view><view wx:if="{{testing}}" class="note">模拟数据 · 测试环境</view><view class="note">{{message}}</view>
+ <view wx:if="{{authorized}}"><view>门店时区：{{timeZone}}</view><view>当前公开覆盖：{{publishedCoverage}}</view><view class="note">单一瑜伽室；草稿不会自动发布。日期覆盖最多14天，结束日期不含。</view>
+ <input value="{{startDate}}" placeholder="覆盖开始日期 YYYY-MM-DD" data-field="startDate" bindinput="input" disabled="{{busy || pending}}" />
+ <input value="{{endDate}}" placeholder="覆盖结束日期 YYYY-MM-DD（不含）" data-field="endDate" bindinput="input" disabled="{{busy || pending}}" />
+ <view wx:for="{{courses}}" wx:key="courseId" class="course"><view>{{item.status === 'cancelled' ? '已取消' : '待排课'}} · 修订 {{item.revision}}</view>
+ <input value="{{item.name}}" placeholder="课程名称" data-index="{{index}}" data-field="name" bindinput="courseInput" disabled="{{busy || pending}}" />
+ <input value="{{item.startLocal}}" placeholder="开始 YYYY-MM-DDTHH:mm" data-index="{{index}}" data-field="startLocal" bindinput="courseInput" disabled="{{busy || pending}}" />
+ <input value="{{item.startOffset}}" placeholder="确认UTC偏移，例如 +08:00" data-index="{{index}}" data-field="startOffset" bindinput="courseInput" disabled="{{busy || pending}}" />
+ <input value="{{item.endLocal}}" placeholder="结束 YYYY-MM-DDTHH:mm" data-index="{{index}}" data-field="endLocal" bindinput="courseInput" disabled="{{busy || pending}}" />
+ <input value="{{item.endOffset}}" placeholder="结束UTC偏移（跨DST可能不同）" data-index="{{index}}" data-field="endOffset" bindinput="courseInput" disabled="{{busy || pending}}" />
+ <button data-index="{{index}}" bindtap="cancelCourse" disabled="{{busy || pending}}">取消课程（新建未保存则移除）</button>
+ <button data-index="{{index}}" bindtap="dropOutside" disabled="{{busy || pending}}">移出新覆盖范围</button>
+ </view>
+ <button bindtap="addCourse" disabled="{{busy || pending}}">新增课程</button><button data-action="save" bindtap="ask" disabled="{{busy || pending}}">保存完整草稿</button>
+ <button data-action="publish" bindtap="ask" disabled="{{busy || pending || dirty}}">确认并发布覆盖</button><button data-action="withdraw" bindtap="ask" disabled="{{busy || pending}}">撤回当前课表</button><button bindtap="reload" disabled="{{busy || pending}}">放弃编辑并重新读取</button>
+ </view>
+ <button bindtap="refresh" disabled="{{busy}}">刷新当前状态（保留编辑）</button><button wx:if="{{pending}}" bindtap="query" disabled="{{busy}}">查询原操作</button><button wx:if="{{pending && canRetry}}" bindtap="retry" disabled="{{busy}}">重试原请求</button><button wx:if="{{pending && canRetry}}" bindtap="restart" disabled="{{busy}}">明确重新核对并编辑</button>
+</view>

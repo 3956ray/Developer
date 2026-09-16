@@ -1,3 +1,4 @@
+import {createScheduleService} from './schedules.mjs';
 import { transaction } from './database.mjs';
 import { fail, validateWrite } from './protocol.mjs';
 export const TTL = 900000;
@@ -37,7 +38,7 @@ export function createObservationService(db, c, identity) {
   return {
     current() { return transaction(db, () => { const now = identity.now(); return { serverNow: new Date(now).toISOString(), data: snapshot(now) }; }); },
     venue() { return transaction(db, () => { const now = identity.now(); return { serverNow: new Date(now).toISOString(), data: {
-      gym: { name: null, timeZone: c.timeZone, openingHours: null, contact: null }, observation: snapshot(now)
+      gym: { name: null, timeZone: c.timeZone, openingHours: null, contact: null }, observation: snapshot(now), scheduleSummary: createScheduleService(db,c,identity).summary(now)
     } }; }); },
     publish: (token, body) => write(token, body, false),
     control: (token, body) => write(token, body, true)

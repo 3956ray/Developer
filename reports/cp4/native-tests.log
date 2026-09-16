@@ -1,0 +1,14 @@
+✔ S04 native public: no-login today/week, exact current-course end, empty/unpublished/withdrawn and offline history (9.708917ms)
+✔ S04 native public: one in-flight resource, hide clears polling, old response cannot replace new view (1.412916ms)
+✔ native operator: refusal and confirmation version/form changes never publish silently changed draft (1.974334ms)
+✔ native operator: stable IDs in save/cancel, awaited preview hidden response cannot write; dirty conflicts retain edits (0.901833ms)
+✔ I01 native operator unknown publication: persisted original key, query current state, same-key retry and committed refresh (0.805ms)
+✔ S02 native exact coverage end, selected outside/partially covered week and show immediately demotes old current course (0.8295ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 79.056084
