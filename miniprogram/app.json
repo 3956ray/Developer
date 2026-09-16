@@ -1,7 +1,8 @@
 {
   "pages": [
     "pages/venue/index",
-    "pages/me/index"
+    "pages/me/index",
+    "pages/maintenance/index"
   ],
   "window": {
     "navigationBarTitleText": "健身房",

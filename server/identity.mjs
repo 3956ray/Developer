@@ -45,14 +45,14 @@ export function createIdentityService(db, c, options = {}) {
       sessionRevision: s.revision, accountRevision: s.account_revision,
       environment: c.environment, simulation: c.simulation, identityMode: c.identity.mode };
   }
-  function operation(actor, type, body, time, apply) {
+  function operation(actor, type, body, time, apply, maximumAge = 300000) {
     const hash = hmac(c.keys.intentHmac, canonical([c.environment, c.gymId, actor, type, body]));
     const old = db.prepare('SELECT * FROM operations WHERE actor_id=? AND operation_type=? AND operation_key=?').get(actor, type, body.operationId);
     if (old && time < old.created_at + DAY) {
       if (old.body_hmac !== hash) fail(409, 'IDEMPOTENCY_CONFLICT');
       return { data: JSON.parse(old.result_json), operation: { operationId: body.operationId, type, committedAt: new Date(old.created_at).toISOString(), appliedRevision: old.applied_revision, replayed: true }, current: { refreshRequired: true } };
     }
-    validateIntent(body, time);
+    validateIntent(body, time, maximumAge);
     const result = apply();
     if (old) db.prepare('DELETE FROM operations WHERE actor_id=? AND operation_type=? AND operation_key=?').run(actor, type, body.operationId);
     db.prepare('INSERT INTO operations VALUES (?,?,?,?,?,?,?)').run(actor, type, body.operationId, hash, JSON.stringify(result.data), result.revision, time);
@@ -126,6 +126,17 @@ export function createIdentityService(db, c, options = {}) {
     withOperator(token, action) {
       return transaction(db, () => { const time = now(); const s = authenticate(token, time, true); return action({ userId: s.user_id, time, audit }); });
     },
+    operatorOperation(token, type, body, apply) {
+      if (!['observation.publish', 'observation.control'].includes(type)) fail(422, 'INVALID_OPERATION');
+      return transaction(db, () => {
+        const time = now(), session = authenticate(token, time, true);
+        return operation(session.user_id, type, body, time, () => {
+          const result = apply({ userId: session.user_id, time, audit });
+          db.prepare('UPDATE sessions SET last_interactive_at=? WHERE session_id=?').run(time, session.session_id);
+          return result;
+        }, type === 'observation.publish' ? 60000 : 300000);
+      });
+    },
     audits(token, limit = 100) {
       if (!Number.isInteger(limit) || limit < 1 || limit > 100) fail(422, 'INVALID_LIMIT');
       return this.withOperator(token, ({ time }) => db.prepare('SELECT actor_id,subject_id,action,result,revision,time,reason_category FROM audit WHERE time>? ORDER BY time DESC,id DESC LIMIT ?').all(time - 90 * DAY, limit));
@@ -160,9 +171,9 @@ export function createIdentityService(db, c, options = {}) {
       });
     },
     operationResult(token, id, type) {
-      if (!uuidPattern.test(id) || type !== 'session.logout') fail(422, 'INVALID_OPERATION');
+      if (!uuidPattern.test(id) || !['session.logout', 'observation.publish', 'observation.control'].includes(type)) fail(422, 'INVALID_OPERATION');
       return transaction(db, () => {
-        const time = now(), s = authenticate(token, time);
+        const time = now(), s = authenticate(token, time, type.startsWith('observation.'));
         const row = db.prepare('SELECT * FROM operations WHERE actor_id=? AND operation_type=? AND operation_key=?').get(s.user_id, type, id);
         if (!row || time >= row.created_at + DAY) return { state: 'unknown' };
         return { state: 'committed', appliedRevision: row.applied_revision, committedAt: new Date(row.created_at).toISOString(), result: JSON.parse(row.result_json), refreshRequired: true };

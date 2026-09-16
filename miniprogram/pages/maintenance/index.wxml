@@ -1,0 +1,27 @@
+<view class="page">
+  <view wx:if="{{simulation}}" class="testing">模拟数据 · 测试环境</view>
+  <view class="title">{{gymName}}</view>
+  <view class="observation {{live ? 'live' : ''}}">
+    <view class="state">{{title}}</view>
+    <view class="note">{{detail}}</view>
+    <view wx:if="{{observedText}}" class="time">记录时间：{{observedText}}</view>
+    <view wx:if="{{validity}}" class="time">{{validity}}</view>
+    <view wx:if="{{history}}" class="history">{{history}}</view>
+  </view>
+  <button bindtap="refreshNow" loading="{{refreshing}}" disabled="{{busy}}">刷新现场信息</button>
+  <view class="note message">{{message}}</view>
+  <view wx:if="{{authorized && !pending}}">
+    <view class="note">刚刚现场观察后提交；未巡视或无法判断请选择“暂无法判断”。</view>
+    <button data-state="quiet" bindtap="choose" disabled="{{busy || refreshing}}">较空 · 基本无等待</button>
+    <button data-state="moderate" bindtap="choose" disabled="{{busy || refreshing}}">适中 · 部分需轮换</button>
+    <button data-state="busy" bindtap="choose" disabled="{{busy || refreshing}}">较忙 · 多处持续等待</button>
+    <button data-state="unknown" bindtap="choose" disabled="{{busy || refreshing}}">暂无法判断</button>
+    <button data-state="paused" bindtap="choose" disabled="{{busy || refreshing}}">暂停更新</button>
+    <button data-state="withdrawn" bindtap="choose" disabled="{{busy || refreshing}}">撤回当前记录</button>
+  </view>
+  <view wx:if="{{pending}}">
+    <button bindtap="queryPending" disabled="{{busy}}">查询原操作结果</button>
+    <button wx:if="{{canReplace && authorized}}" bindtap="retryPending" disabled="{{busy}}">重试原请求</button>
+    <button wx:if="{{canReplace}}" bindtap="replacePending" disabled="{{busy}}">重新观察并确认</button>
+  </view>
+</view>

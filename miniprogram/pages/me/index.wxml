@@ -7,6 +7,7 @@
   <button wx:if="{{!authenticated}}" bindtap="login" disabled="{{busy || !configured}}" loading="{{busy}}">主动登录</button>
   <button bindtap="refreshNow" disabled="{{busy}}">刷新登录状态</button>
   <button wx:if="{{authenticated}}" bindtap="logout" disabled="{{busy}}" loading="{{busy}}">退出登录</button>
+  <button wx:if="{{authenticated}}" bindtap="openMaintenance" disabled="{{busy}}">馆方维护</button>
   <button bindtap="showPrivacy">查看用途与隐私说明</button>
   <view wx:if="{{showPrivacy}}" class="note privacy">{{privacy}}</view>
 </view>

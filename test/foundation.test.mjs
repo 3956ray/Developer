@@ -45,7 +45,7 @@ test('durable probe survives full process restart and abrupt termination', async
   const first = s.p.pid;
   const h = await fetch(`http://127.0.0.1:${s.port}/health`);
   assert.equal(h.status, 200); const health = await h.json(); assert.equal(health.data.environment, 'test');
-  assert.equal(health.data.migrations, 2); t.diagnostic(`health: ${JSON.stringify(health)}`);
+  assert.equal(health.data.migrations, 3); t.diagnostic(`health: ${JSON.stringify(health)}`);
   assert.equal((await fetch(`http://127.0.0.1:${s.port}/v1/session`)).status, 401);
   assert.equal(cli('write', path, 'probe-restart').status, 0);
   await stop(s.p);
@@ -74,10 +74,10 @@ test('failed new migration rolls back DDL and ledger atomically', t => {
   const folder = resolve(c.stateDir, 'migrations'); mkdirSync(folder);
   for (const name of readdirSync(resolve(root, 'server/migrations'))) copyFileSync(resolve(root, 'server/migrations', name), resolve(folder, name));
   copyFileSync(resolve(root, 'server/migrations/001-foundation.sql'), resolve(folder, '001-foundation.sql'));
-  writeFileSync(resolve(folder, '003-broken.sql'), 'CREATE TABLE rollback_marker (id INTEGER); INSERT INTO missing_table VALUES (1);');
+  writeFileSync(resolve(folder, '004-broken.sql'), 'CREATE TABLE rollback_marker (id INTEGER); INSERT INTO missing_table VALUES (1);');
   assert.throws(() => openDatabase(c, pathToFileURL(folder + '/')));
   db = openDatabase(c); assert.equal(db.prepare("SELECT name FROM sqlite_master WHERE name='rollback_marker'").get(), undefined);
-  assert.equal(db.prepare('SELECT count(*) n FROM schema_migrations').get().n, 2); db.close();
+  assert.equal(db.prepare('SELECT count(*) n FROM schema_migrations').get().n, 3); db.close();
 });
 
 test('write rollback preserves original value and no partial row', t => {

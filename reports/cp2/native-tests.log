@@ -1,0 +1,15 @@
+✔ O02/O03/O05 native model: exact TTL, controls, future/invalid times and monotonic failure (41.405541ms)
+✔ O05 native venue: offline restart preserves historical timestamp only; hides/queued late response cannot regain freshness (3.266375ms)
+✔ O01/O03 native maintenance: publish and all controls are confirmable, role denial hides write actions (2.738709ms)
+✔ O04 native unknown result: preserve key, query before retry, old intent cannot be reissued (1.280459ms)
+✔ O04 native committed history always refreshes current state; failed intent persistence prevents submission (1.563333ms)
+✔ O04 native confirmation freezes visible revision even when polling changes current state (0.856542ms)
+✔ O02/O05 native page expiry and network failure retain original timestamp without freshness (0.766458ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 7
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 112.607625

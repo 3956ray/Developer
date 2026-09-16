@@ -58,6 +58,14 @@ Page({
       }
     });
   },
+  async openMaintenance() {
+    if (!this._token || this.data.busy) return;
+    try {
+      const response = await api.request('/operator/role', 'GET', undefined, this._token);
+      if (response.data.isOperator) wx.navigateTo({ url: '/pages/maintenance/index' });
+      else this.setData({ detail: '当前账号没有馆方维护权限。' });
+    } catch (e) { this.showError(e); }
+  },
   async logout() {
     if (!this._token || this.data.busy || this._refreshing) return;
     this.setData({ busy: true }); const generation = ++this._generation;

@@ -65,8 +65,8 @@ export function validateWrite(body, extra = []) {
   if (!uuidPattern.test(body.operationId) || !(body.expectedRevision === 'absent' || (Number.isSafeInteger(body.expectedRevision) && body.expectedRevision > 0))) fail(422, 'INVALID_REQUEST');
   if (typeof body.requestCreatedAt !== 'string' || !/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z$/.test(body.requestCreatedAt) || !Number.isFinite(Date.parse(body.requestCreatedAt)) || new Date(body.requestCreatedAt).toISOString() !== body.requestCreatedAt) fail(422, 'INVALID_REQUEST');
 }
-export function validateIntent(body, now) {
+export function validateIntent(body, now, maximumAge = 300000) {
   const age = now - Date.parse(body.requestCreatedAt);
-  if (age > 300000) fail(422, 'INTENT_EXPIRED');
+  if (age > maximumAge) fail(422, 'INTENT_EXPIRED');
   if (age < -30000) fail(422, 'INTENT_FUTURE');
 }

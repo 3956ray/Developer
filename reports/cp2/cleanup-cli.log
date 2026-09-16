@@ -1,0 +1,7 @@
+node scripts/observation-cleanup.mjs run <synthetic-config>
+exit=0
+{"ok":true,"data":{"singleton":1,"state":"idle","cursor_revision":0,"cutoff_at":null,"next_run_at":1789525497993,"last_success_at":1789521897993,"deleted_total":0,"error_count":0,"last_error_category":null}}
+
+node scripts/observation-cleanup.mjs status <synthetic-config>
+exit=0
+{"ok":true,"data":{"singleton":1,"state":"idle","cursor_revision":0,"cutoff_at":null,"next_run_at":1789525497993,"last_success_at":1789521897993,"deleted_total":0,"error_count":0,"last_error_category":null}}

@@ -1,0 +1,7 @@
+.observation { margin: 36rpx 0; padding: 32rpx; border-radius: 24rpx; background: #eeeeea; }
+.observation.live { background: #e0ede7; }
+.state { font-size: 62rpx; line-height: 1.3; font-weight: 600; margin-bottom: 24rpx; }
+.time, .history { margin-top: 16rpx; font-size: 26rpx; color: #5b6661; }
+.testing { padding: 18rpx; background: #fff0c4; color: #514313; font-size: 26rpx; }
+button { margin-top: 22rpx; font-size: 28rpx; }
+.message, .venue-note { margin-top: 28rpx; }
