@@ -1,3 +1,4 @@
+import {fixtureLifetime} from './process-support.mjs';
 import { readFileSync, writeFileSync, rmSync } from 'node:fs';
 import { dirname } from 'node:path';
 import { randomBytes, randomUUID } from 'node:crypto';
@@ -11,13 +12,13 @@ export function setupIdentity(t, options = {}) {
   const config = JSON.parse(readFileSync(path)); config.identity = { mode: 'test', appId: 'test-app' }; config.simulation = true;
   writeFileSync(path, JSON.stringify(config)); const c = loadConfig(path); const db = openDatabase(c);
   const service = createIdentityService(db, c, options);
-  t.after(() => { try { db.close(); } catch {} rmSync(dirname(path), { recursive: true, force: true }); });
+  const lifetime=fixtureLifetime(t,path,()=>{if(db.isOpen)db.close();});
   function fixture(subject = 'synthetic-one', outcome = 'success') {
     const code = randomBytes(24).toString('base64url');
     db.prepare('INSERT INTO test_login_fixtures VALUES (?,?,?)').run(codeDigest(c, code), subject, outcome);
     return { code, privacyNoticeVersion: NOTICE_VERSION, consent: true };
   }
-  return { path, c, db, service, fixture };
+  return { path, c, db, service, fixture, beforeRemove:lifetime.beforeRemove };
 }
 export function intent(time, revision = 1) { return { operationId: randomUUID(), requestCreatedAt: new Date(time).toISOString(), expectedRevision: revision }; }
 export function roleWrite(c, userId, time, revision = 'absent', action = 'grant') {

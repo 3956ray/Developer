@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { spawn } from 'node:child_process';
+import {spawn,fork,bounded} from './process-support.mjs';
 import { writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { setupIdentity } from './identity-support.mjs';
@@ -28,7 +28,6 @@ test('R01/F01: four real processes share 120-count bucket, one identity, five-se
 });
 
 test('M04: concurrent management write waits for revoke commit; reverse order preserves committed write', { timeout: 15000 }, async t => {
-  const { fork } = await import('node:child_process');
   const { once } = await import('node:events');
   const { roleWrite } = await import('./identity-support.mjs');
   const x = setupIdentity(t); const a = await x.service.login(x.fixture());
@@ -38,8 +37,7 @@ test('M04: concurrent management write waits for revoke commit; reverse order pr
     const p = fork('test/role-worker.mjs', [x.path, file], { cwd: root, stdio: ['ignore', 'ignore', 'ignore', 'ipc'] });
     const ended = once(p, 'exit'); const queue = [], waiting = [];
     p.on('message', message => waiting.length ? waiting.shift()(message) : queue.push(message));
-    const next = () => queue.length ? Promise.resolve(queue.shift()) : new Promise(res => waiting.push(res));
-    t.after(() => { if (p.exitCode === null && p.signalCode === null) p.kill(); });
+    const next = () => queue.length ? Promise.resolve(queue.shift()) : bounded(new Promise(res => waiting.push(res)));
     assert.equal(await next(), 'ready'); return { p, next, ended };
   }
   const w = await worker({ action: 'write', token: a.token });

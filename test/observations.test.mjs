@@ -85,7 +85,7 @@ test('C01/D01: bounded cleanup rollback/resume after DB restart preserves curren
   assert.equal(cleanup.batch(true).removed, 100);
   assert.equal(cleanup.batch().failed, true); assert.equal(cleanup.status().cursor_revision, 100); assert.equal(cleanup.status().error_count, 1);
   assert.equal(x.db.prepare('SELECT count(*) n FROM observation_events').get().n, 151);
-  x.db.close(); const db = openDatabase(x.c); t.after(() => db.close());
+  x.db.close(); const db = openDatabase(x.c); x.beforeRemove(() => db.close());
   const resumed = createObservationCleanup(db, x.c, { now: () => now + HOUR }); await resumed.run(true);
   assert.equal(resumed.status().deleted_total, 250); // Resumes frozen cutoff; the +1ms newer row waits for next run.
   assert.deepEqual(db.prepare('SELECT * FROM observation_head').get(), head);

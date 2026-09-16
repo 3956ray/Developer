@@ -2,7 +2,7 @@
 
 RESULT: COMPLETE
 
-当前CP实现和本地证据交付完成，等待指挥者ACCEPTED；未进入CP5。
+当前CP及清理返工已完成，等待指挥者ACCEPTED；未进入CP5。首次提交582488d未获接受：Leader最终测试9/10、ENOTEMPTY及runner挂起。失败原文、根因与修复验证见revision/teardown-report.md，不能以原84项本地通过覆盖该失败。
 
 ## 基线与精确源码
 
@@ -51,7 +51,7 @@ RESULT: COMPLETE
 
 | 命令 | 退出/结果 | 日志 |
 |---|---|---|
-| `npm test` | exit0，84/84（原68+CP4新增16） | final-tests.log |
+| `npm test` | exit0，87/87（原84+清理故障验证3项） | final-tests.log |
 | `npm run check` | exit0，JS/JSON/原生引用/冻结基线hash | final-check.log |
 | `git diff --check` | exit0 | verification.json |
 | tested-source逐文件重验 | 全部一致 | verification.json |
@@ -72,3 +72,7 @@ RESULT: COMPLETE
 ## 停止与限制
 
 微信开发工具编译/预览/上传、真机、真实门店时区/课程核定均NOT_RUN。没有部署/远端/真实平台凭证/支付预约教练系统/CP5工程验收。课表本地发布测试只写隔离合成DB，不是对外发布。等待指挥者对最终提交验收。
+
+## CP4 清理返工补交
+
+合同GYM-CP4-TEARDOWN-REVISE-001，基线582488dcbc37369b88312b36210e9a352d136d61。仅测试harness和报告变更，产品源码不变。当前final日志、tested-source和manifest对应返工后源码，首次交付版本已保存在revision/submitted-*。详见revision/teardown-report.md。

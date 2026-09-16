@@ -1,6 +1,7 @@
+import {startService as server,stop,spawn,fork,bounded,fixtureLifetime} from './process-support.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {spawn,spawnSync,fork} from 'node:child_process';
+import {spawnSync} from 'node:child_process';
 import {once} from 'node:events';
 import {writeFileSync} from 'node:fs';
 import {resolve} from 'node:path';
@@ -16,7 +17,7 @@ function bindRequest(x,user=x.user,ref='SYNTHETIC-HTTP-REF'){
 let sequence=0;
 function inputFile(x,input){const file=resolve(x.c.stateDir,`member-worker-${++sequence}.json`);writeFileSync(file,JSON.stringify({time:x.time,...input}),{mode:0o600});return file;}
 function run(x,input){return new Promise((res,rej)=>{const p=spawn(process.execPath,['test/member-worker.mjs',x.path,inputFile(x,input)],{cwd:root,stdio:['ignore','pipe','ignore']});let out='';p.stdout.on('data',c=>{out+=c;});p.on('exit',code=>code===0?res(JSON.parse(out)):rej(new Error('worker failed')));});}
-async function controlled(t,x,input){const p=fork('test/member-worker.mjs',[x.path,inputFile(x,input)],{cwd:root,stdio:['ignore','ignore','ignore','ipc']});const end=once(p,'exit'),queue=[],waiting=[];p.on('message',m=>waiting.length?waiting.shift()(m):queue.push(m));const next=()=>queue.length?Promise.resolve(queue.shift()):new Promise(r=>waiting.push(r));t.after(()=>{if(p.exitCode===null)p.kill();});assert.equal(await next(),'ready');return{p,next,end};}
+async function controlled(t,x,input){const p=fork('test/member-worker.mjs',[x.path,inputFile(x,input)],{cwd:root,stdio:['ignore','ignore','ignore','ipc']});const end=once(p,'exit'),queue=[],waiting=[];p.on('message',m=>waiting.length?waiting.shift()(m):queue.push(m));const next=()=>queue.length?Promise.resolve(queue.shift()):bounded(new Promise(r=>waiting.push(r)));assert.equal(await next(),'ready');return{p,next,end};}
 
 test('M02 actual processes: same member and same requester races preserve both unique constraints',async t=>{
  const x=await setup(t),other=await x.service.login(x.fixture('synthetic-other'));
@@ -40,12 +41,11 @@ test('X01 real write locks: delete before bind rejects old work; bind before del
  }
 });
 
-async function server(path){const p=spawn(process.execPath,['server/main.mjs',path],{cwd:root,stdio:['ignore','pipe','pipe']});let output='';const port=await new Promise((res,rej)=>{const timer=setTimeout(()=>{p.kill();rej(new Error('start timeout'));},5000);p.once('exit',()=>{clearTimeout(timer);rej(new Error('start failed'));});p.stdout.on('data',c=>{output+=c;if(output.includes('\n')){clearTimeout(timer);res(JSON.parse(output.split('\n')[0]).port);}});});return{p,port};}
-async function stop(p){if(p.exitCode!==null)return;const end=once(p,'exit');p.kill();await end;}
+
 test('D01/C02 real HTTP clients and process restart: lost receipt recovery, failing cleanup, new identity without inheritance',async t=>{
  const x=await setup(t),request=bindRequest(x);const bound=x.m.bind(x.op.token,request).data;
  x.m.update(x.op.token,bound.bindingId,{...intent(x.time),expectedRevision:{binding:1,registry:1},reasonCategory:'qualification-withdrawn'},true);
- let s=await server(x.path);t.after(()=>stop(s.p));
+ let s=await server(x.path);
  const client=()=>async(path,body,token,scheme='Bearer')=>{const response=await fetch(`http://127.0.0.1:${s.port}/v1${path}`,{method:body?'POST':'GET',headers:{'content-type':'application/json',...(token?{authorization:scheme+' '+token}:{})},body:body?JSON.stringify(body):undefined});return{status:response.status,body:await response.json()};};
  const one=client(),two=client();assert.deepEqual((await one('/me/membership',null,x.user.token)).body.data,(await two('/me/membership',null,x.user.token)).body.data);
  const receipt=randomBytes(32).toString('hex');await one('/me/account/delete',{...intent(Date.now()),confirmed:true,receiptDigest:digest(receipt)},x.user.token);

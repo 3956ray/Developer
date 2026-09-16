@@ -1,6 +1,7 @@
+import {startService as start,stop,spawn,fork,bounded,fixtureLifetime} from './process-support.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { spawn, spawnSync } from 'node:child_process';
+import { spawnSync } from 'node:child_process';
 import { once } from 'node:events';
 import { readFileSync, writeFileSync, rmSync, copyFileSync, mkdirSync, chmodSync, readdirSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
@@ -12,36 +13,18 @@ import { openDatabase, transaction } from '../server/database.mjs';
 
 function setup(t, environment = 'test') {
   const path = initialize(environment, `cp0-${randomUUID()}`, 0);
-  t.after(() => rmSync(dirname(path), { recursive: true, force: true }));
+  fixtureLifetime(t,path);
   return path;
 }
 function cli(...args) {
   return spawnSync(process.execPath, ['scripts/db.mjs', ...args], { cwd: root, encoding: 'utf8' });
-}
-async function start(path) {
-  const p = spawn(process.execPath, ['server/main.mjs', path], { cwd: root, stdio: ['ignore', 'pipe', 'pipe'] });
-  let output = ''; let errors = '';
-  p.stderr.on('data', chunk => { errors += chunk; });
-  const ready = await new Promise((resolveReady, reject) => {
-    const timeout = setTimeout(() => { p.kill('SIGKILL'); reject(new Error('Readiness timeout')); }, 5000);
-    p.once('exit', code => { clearTimeout(timeout); reject(new Error(`Server exited ${code}: ${errors}`)); });
-    p.stdout.on('data', chunk => {
-      output += chunk;
-      if (output.includes('\n')) { clearTimeout(timeout); resolveReady(JSON.parse(output.split('\n')[0])); }
-    });
-  });
-  return { p, port: ready.port };
-}
-async function stop(p, signal = 'SIGTERM') {
-  if (p.exitCode !== null || p.signalCode !== null) return;
-  const ended = once(p, 'exit'); p.kill(signal); await ended;
 }
 
 test('durable probe survives full process restart and abrupt termination', async t => {
   const path = setup(t);
   const migration = cli('migrate', path);
   assert.equal(migration.status, 0); t.diagnostic(`migration: ${migration.stdout.trim()}`);
-  let s = await start(path); t.after(() => stop(s.p));
+  let s = await start(path);
   const first = s.p.pid;
   const h = await fetch(`http://127.0.0.1:${s.port}/health`);
   assert.equal(h.status, 200); const health = await h.json(); assert.equal(health.data.environment, 'test');

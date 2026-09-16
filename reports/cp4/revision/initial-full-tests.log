@@ -1,0 +1,132 @@
+
+> gym-miniapp@0.0.0 test
+> node --test test/*.test.mjs
+
+✔ R01/F01: four real processes share 120-count bucket, one identity, five-session cap; restart stays limited (1180.781458ms)
+✔ M04: concurrent management write waits for revoke commit; reverse order preserves committed write (439.046334ms)
+✔ durable probe survives full process restart and abrupt termination (1159.857292ms)
+ℹ migration: {"migrations":[{"name":"001-foundation.sql","sha256":"f3efa02831adad9a5e73cee958cb48b3e3911cb325327cc0828af94c4ab2ee5d"},{"name":"002-identity.sql","sha256":"7aaff7aa4bf881049a1680125d204a4dbf6699ff5ec776752eea5f142fdddde4"},{"name":"003-observations.sql","sha256":"873031ae2edf137a52589054a4006b4132edd213d0288fa79ad3636049b6017d"},{"name":"004-membership.sql","sha256":"df4d369eb5cda04e2f1169b9e67d5fda5b96f1117adbf70db9cf6a6863f613c7"},{"name":"005-schedule.sql","sha256":"3203c8c86a7d36e217c6ae30debd682f743e42432cb5ef6b18157320dfe981bb"}],"integrity":{"integrity_check":"ok"}}
+ℹ health: {"ok":true,"serverNow":"2026-09-16T02:57:39.642Z","data":{"status":"ready","checkpoint":"CP4","environment":"test","gymId":"cp0-a6766af1-2f42-4d69-8c2a-81d0326d1466","simulation":false,"identityMode":"disabled","migrations":5}}
+ℹ full restart: pid changed; persisted {"probe_id":"probe-restart","value":"synthetic-non-member","created_at":1789527459755}
+ℹ abrupt SIGKILL restart: same committed probe retained
+✔ migration replay is stable; changed migration rejected without modifying ledger (68.390333ms)
+✔ failed new migration rolls back DDL and ledger atomically (20.714917ms)
+✔ write rollback preserves original value and no partial row (13.154583ms)
+✔ environment/store namespaces, keys and persistent files are isolated (607.702958ms)
+✔ configuration, simulation, keys and accidental initialization fail closed (127.119125ms)
+✔ cross-process writer lock prevents partial competing write (2268.894ms)
+✔ HTTP: strict body, status/Retry-After, authorization, response loss/restart, no secret diagnostics (668.016542ms)
+✔ F01: exact idle/absolute boundaries, interactive extension and poll non-extension (82.886709ms)
+✔ F01/L01: concurrent first exchange has one identity, five active sessions, oldest eviction (47.566125ms)
+✔ L01/F01: invalid/replayed/platform code never creates identity; logout current only; deleting lock reserved (65.767625ms)
+✔ R01: 120 including platform failures; fixed minute recovery and restart (677.246959ms)
+✔ R01: time sampled after BEGIN IMMEDIATE, crossing old full window uses new window (21.432792ms)
+✔ M04/I01: role inspect, grant/revoke, cached historical result, CAS and audit atomicity (36.096167ms)
+✔ L01/R01: DB failure does not authenticate or bypass count; account creation rolls back with audit (46.649583ms)
+✔ adapter isolation: store refuses fixture mode, namespace cannot silently switch (20.96875ms)
+✔ official adapter transport contract: strict platform errors, missing fields, redirect and secret suppression (56.28925ms)
+✔ strict input: escaped/nested duplicate keys, prototype keys, malformed numbers and extra fields (26.736125ms)
+✔ real role CLI: inspect/apply/result is local, versioned and audited (523.780917ms)
+✔ M04/I01: foreign-store token denied, logout audit failure rolls back, intent window boundaries enforced (55.754291ms)
+✔ M02 actual processes: same member and same requester races preserve both unique constraints (343.161417ms)
+✔ X01 real write locks: delete before bind rejects old work; bind before delete closes its effect (647.556625ms)
+✔ D01/C02 real HTTP clients and process restart: lost receipt recovery, failing cleanup, new identity without inheritance (950.702584ms)
+ℹ two HTTP clients, failed deletion cleanup and whole-process restart recovered; new user has no role or binding
+✔ R01 independent processes/session switching: persistent generation/errors; lock-time next window and storage failure (968.283125ms)
+✔ M01/M02/R02: leading zero, encrypted code, same-key display, one use and exact 600s expiry (87.529792ms)
+✔ R02: five collisions rollback replacement and generation counter; no weak random fallback (70.002708ms)
+✔ R01: three creations and five operator/requester errors persist, new window recovers; cleanup race cannot recreate personal error bucket (200.481416ms)
+✔ M03: revoked precedence, same binding explicit restoration and occupied slots; unbind cannot reset revoked registry (105.971041ms)
+✔ M03: explicit pending/fixed/no-expiry and server time boundary; dates reject invalid/overflow and handle leap/cross-year (39.973125ms)
+✔ I01/M04: path target is in idempotency digest and audit failure rolls back bind (64.254125ms)
+✔ M05/X01/C02: fresh auth boundaries, lost-response receipt, failed bounded deletion resumes and new login inherits nothing (162.859375ms)
+✔ M03 timezone conversion: configured non+8 zones, DST changes, skipped and repeated midnight (3.052875ms)
+✔ C01 bounded deletion/retention cursor: at most 100 rows, exact cutoffs and permanent revoked registry (566.183625ms)
+✔ receipt SHA256 ASCII implementation matches standard vectors; secure receipt is generated before use (16.133167ms)
+✔ P01/M05 native refusal sends no mutation and stale auth requires active reauthentication (14.460875ms)
+✔ C02 native lost delete response preserves receipt, erases personal caches; old completed receipt never logs out newly created account (3.057167ms)
+✔ P01 native session clear covers all personal-operation keys but leaves deletion receipt (1.735667ms)
+✔ native operator date conversion delegates to configured-zone backend; raw references never go to durable operation cache (1.408334ms)
+✔ native member confirmation freezes membership revisions rather than silently unbinding refreshed target (2.117916ms)
+✔ native operator ignores delayed inspection after reference edit (1.533792ms)
+✔ native operator confirmation and awaited expiry reject changed input; actual lost submit cache excludes raw credentials (3.130333ms)
+✔ native member states: empty/revoked/expiry boundary/offline hide codes; cancel/unbind submit frozen revisions (1.265792ms)
+✔ native member unknown request keeps original operation; query then retry uses same key; conflict requires reconfirmation (2.226792ms)
+✔ O02/O03/O05 native model: exact TTL, controls, future/invalid times and monotonic failure (30.281167ms)
+✔ O05 native venue: offline restart preserves historical timestamp only; hides/queued late response cannot regain freshness (5.748541ms)
+✔ O01/O03 native maintenance: publish and all controls are confirmable, role denial hides write actions (8.265334ms)
+✔ O04 native unknown result: preserve key, query before retry, old intent cannot be reissued (6.425375ms)
+✔ O04 native committed history always refreshes current state; failed intent persistence prevents submission (12.868625ms)
+✔ O04 native confirmation freezes visible revision even when polling changes current state (5.122416ms)
+✔ O02/O05 native page expiry and network failure retain original timestamp without freshness (102.534708ms)
+✔ S04 native public: no-login today/week, exact current-course end, empty/unpublished/withdrawn and offline history (12.75125ms)
+✔ S04 native public: one in-flight resource, hide clears polling, old response cannot replace new view (5.17975ms)
+✔ native operator: refusal and confirmation version/form changes never publish silently changed draft (6.541209ms)
+✔ native operator: stable IDs in save/cancel, awaited preview hidden response cannot write; dirty conflicts retain edits (4.681125ms)
+✔ I01 native operator unknown publication: persisted original key, query current state, same-key retry and committed refresh (2.780042ms)
+✔ S02 native exact coverage end, selected outside/partially covered week and show immediately demotes old current course (3.846458ms)
+✔ P01: public/refusal path never calls wx.login or exchanges identity (5.189208ms)
+✔ P01/L01: only explicit consent logs in; simulation label and token outside view data (1.823375ms)
+✔ F01/P01: foreground polls never relogin; failures/401 are honest; hidden timer sends nothing (10.763625ms)
+✔ F01: logged in -> hidden past expiry -> foreground pending/failure/401 never shows stale authenticated state (5.36125ms)
+✔ F01: response from before hiding cannot restore authenticated state or an expiry timer (2.639292ms)
+✔ F01: hide/show and late A response serialize queued B/manual refresh with one in-flight session read (4.112125ms)
+✔ native request boundary: non-2xx/business failure rejected, cross-environment cached token ignored (6.097958ms)
+✔ I01: unconfirmed logout retains original operation key until explicit retry resolves (8.063167ms)
+✔ O01/D01/C01 HTTP: two independent unsigned clients see same published snapshot through process restart and startup cleanup (689.69075ms)
+ℹ two unsigned HTTP clients: same revision/source/observedAt/validUntil, no actor or counts
+ℹ full process restart retained current head; startup cleanup removed 31-day history only
+✔ O04/M04: real competing processes commit only one CAS writer and one idempotent event; revoke barrier rejects pending write (488.1475ms)
+OBSERVATION_DATA_INVALID
+OBSERVATION_DATA_INVALID
+✔ B01/O01/O02: public empty -> two consistent reads, 899/900 boundary, unrelated activity cannot renew TTL (74.512292ms)
+✔ O03: control states and bad timestamps never resurrect prior observations (38.948334ms)
+✔ O04/I01: CAS, single audit/idempotence, exact 60s intent, role recheck, and atomic failure (61.056917ms)
+✔ D01/M04: readonly public, no numeric/simulation injection, unauthorized cannot write, idle only extends on new successful publication (44.530208ms)
+✔ C01/D01: bounded cleanup rollback/resume after DB restart preserves current head/TTL and exact 30-day boundary (506.668209ms)
+✔ C01: completion-based scheduler does not skip next hour when batches take time (351.029875ms)
+✔ Z01 actual competing processes: draft CAS and dual publication CAS admit exactly one writer (617.3545ms)
+✔ M04 actual role write lock before schedule publish blocks former operator (234.102917ms)
+✔ S01/S04/D01 two public HTTP clients: private draft, atomic publish, lost write result, process restart and withdrawal (409.087667ms)
+✔ Z01 real draft-write lock before publication rejects previously confirmed draft revision (129.834958ms)
+✔ S01/S02/B01 draft private, explicit empty, coverage replacement/withdrawal never revive history (73.403792ms)
+✔ S03/Z01 stable ID reschedule/cancel, item CAS, full set omission rejection, overlap only blocks publication (31.314333ms)
+✔ Z01 local/UTC exact boundaries, cross-midnight/week, DST missing/repeated and date coverage validation (34.665709ms)
+✔ I01/M04 dual CAS, same-key replay/conflict, audit rollback, current role denial and observation TTL unchanged (21.462125ms)
+✔ C01/D01 bounded cleanup rollback/restart preserves current snapshot/draft/withdrawn; published timezone frozen (266.749709ms)
+✔ X01 account deletion scrubs schedule audit/operations without deleting shared publication (38.809291ms)
+✔ fixture teardown waits for every owned service and worker close before DB/directory cleanup (380.678708ms)
+✔ startup timeout, malformed readiness and early exit stop owned children before returning failure (301.57625ms)
+✖ assertion failure subprocess exits nonzero without hanging; later hook verifies stopped child and removed fixture (44.054667ms)
+ℹ tests 87
+ℹ suites 0
+ℹ pass 86
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 4358.625791
+
+✖ failing tests:
+
+test at test/teardown.test.mjs:18:1
+✖ assertion failure subprocess exits nonzero without hanging; later hook verifies stopped child and removed fixture (44.054667ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  0 !== 1
+  
+      at TestContext.<anonymous> (file:///Users/orderly_ray/Projects/gym-miniapp/test/teardown.test.mjs:19:166)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1325:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:911:18)
+      at Test.postRun (node:internal/test_runner/test:1465:19)
+      at Test.run (node:internal/test_runner/test:1390:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:911:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: 1,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

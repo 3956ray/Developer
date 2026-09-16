@@ -1,0 +1,45 @@
+✔ Z01 actual competing processes: draft CAS and dual publication CAS admit exactly one writer (304.548333ms)
+✔ M04 actual role write lock before schedule publish blocks former operator (122.704708ms)
+✔ S01/S04/D01 two public HTTP clients: private draft, atomic publish, lost write result, process restart and withdrawal (326.871875ms)
+✔ Z01 real draft-write lock before publication rejects previously confirmed draft revision (222.504791ms)
+✔ S01/S02/B01 draft private, explicit empty, coverage replacement/withdrawal never revive history (64.538042ms)
+✔ S03/Z01 stable ID reschedule/cancel, item CAS, full set omission rejection, overlap only blocks publication (31.2385ms)
+✔ Z01 local/UTC exact boundaries, cross-midnight/week, DST missing/repeated and date coverage validation (13.780625ms)
+✔ I01/M04 dual CAS, same-key replay/conflict, audit rollback, current role denial and observation TTL unchanged (16.092875ms)
+✔ C01/D01 bounded cleanup rollback/restart preserves current snapshot/draft/withdrawn; published timezone frozen (106.573959ms)
+✔ X01 account deletion scrubs schedule audit/operations without deleting shared publication (25.014834ms)
+✔ fixture teardown waits for every owned service and worker close before DB/directory cleanup (247.055917ms)
+✔ startup timeout, malformed readiness and early exit stop owned children before returning failure (267.588375ms)
+✖ assertion failure subprocess exits nonzero without hanging; later hook verifies stopped child and removed fixture (36.569917ms)
+ℹ tests 13
+ℹ suites 0
+ℹ pass 12
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1051.595
+
+✖ failing tests:
+
+test at test/teardown.test.mjs:18:1
+✖ assertion failure subprocess exits nonzero without hanging; later hook verifies stopped child and removed fixture (36.569917ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  0 !== 1
+  
+      at TestContext.<anonymous> (file:///Users/orderly_ray/Projects/gym-miniapp/test/teardown.test.mjs:19:166)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1325:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:911:18)
+      at Test.postRun (node:internal/test_runner/test:1465:19)
+      at Test.run (node:internal/test_runner/test:1390:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:911:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: 1,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

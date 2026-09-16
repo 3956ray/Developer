@@ -1,23 +1,12 @@
+import {startService as start,stop,spawn,fork,bounded,fixtureLifetime} from './process-support.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { spawn } from 'node:child_process';
 import { once } from 'node:events';
 import { setupIdentity, intent, roleWrite } from './identity-support.mjs';
 import { root } from '../server/config.mjs';
-async function start(path) {
-  const p = spawn(process.execPath, ['server/main.mjs', path], { cwd: root, stdio: ['ignore', 'pipe', 'pipe'] });
-  let logs = '';
-  p.stderr.on('data', c => { logs += c; });
-  const port = await new Promise((res, rej) => {
-    const timer = setTimeout(() => { p.kill(); rej(new Error('start timeout')); }, 5000);
-    p.once('exit', () => { clearTimeout(timer); rej(new Error('start failed')); });
-    p.stdout.on('data', c => { logs += c; if (logs.includes('\n')) { clearTimeout(timer); res(JSON.parse(logs.split('\n')[0]).port); } });
-  });
-  return { p, port, logs: () => logs };
-}
-async function stop(p) { if (p.exitCode !== null) return; const end = once(p, 'exit'); p.kill(); await end; }
+
 test('HTTP: strict body, status/Retry-After, authorization, response loss/restart, no secret diagnostics', async t => {
-  const x = setupIdentity(t); let server = await start(x.path); t.after(() => stop(server.p));
+  const x = setupIdentity(t); let server = await start(x.path);
   const request = async (path, { token, body, raw, method = body || raw ? 'POST' : 'GET' } = {}) => {
     const response = await fetch(`http://127.0.0.1:${server.port}${path}`, { method, headers: { 'content-type': 'application/json', ...(token ? { authorization: 'Bearer ' + token } : {}) }, body: raw ?? (body ? JSON.stringify(body) : undefined) });
     return { status: response.status, headers: response.headers, body: await response.json() };

@@ -1,0 +1,43 @@
+{
+  "task_id": "GYM-CP4-TEARDOWN-REVISE-001",
+  "owner": "developer",
+  "checkpoint": "CP4",
+  "assigned_thread_id": "01a0a64b-85f8-7790-88d9-fd1188ece566",
+  "status": "dispatched",
+  "goal": "Fix deterministic integration-test teardown so all owned service processes stop before fixture database removal; preserve and reverify CP4 evidence.",
+  "dispatch_precondition": "CP3 accepted at exact baseline_commit; clean ownership verified before dispatch.",
+  "scope": [
+    "Only test harness/cleanup and required CP4 report updates in /Users/orderly_ray/Projects/gym-miniapp; diagnose identity-support after-hook ordering and all shared affected tests. No product behavior changes unless directly necessary and evidenced.",
+    "Stop and await owned test services before fixture DB close/removal on success, assertion failure and startup failure; add bounded failure handling so a test cannot leave the runner hanging. Preserve all substantive assertions. Local scoped follow-up commit authorized."
+  ],
+  "out_of_scope": [
+    "No CP5 or new features; no weakened assertions, ignored teardown errors, retry-until-green or killing unrelated processes."
+  ],
+  "acceptance": [
+    "Previously failing schedule integration passes with deterministic teardown, no residual owned processes; failure cleanup is structurally verified.",
+    "Full regression and static check pass on exact final source; reports/cp4 retains failed evidence and records fix, final hashes/commit and unverified layers."
+  ],
+  "evidence_required": [
+    "RESULT and final scoped commit, changed files, exact targeted/full test logs, manifest, clean tree and root-cause explanation."
+  ],
+  "stop_conditions": [
+    "Stop after current CP4 repair and await commander acceptance; do not begin CP5."
+  ],
+  "baseline_commit": "582488dcbc37369b88312b36210e9a352d136d61",
+  "input_documents": [
+    {
+      "path": "/Users/orderly_ray/Documents/Products Manager/product-knowledge-base/ideas/gym-occupancy/prd-mvp-v1.0-2026-09-16.md",
+      "sha256": "7d9948f302f13119120c03043902fba7455437764eb57d4923efebda4254e1bd"
+    },
+    {
+      "path": "/Users/orderly_ray/Documents/Products Manager/product-knowledge-base/ideas/gym-occupancy/acceptance-mvp-v1.0-2026-09-16.md",
+      "sha256": "89cded4a468deaa20e6090d19b35dc31c77b6a01e3e45081d3d996484188ae71"
+    },
+    {
+      "path": "/Users/orderly_ray/Documents/Products Manager/product-knowledge-base/ideas/gym-occupancy/checkpoints-mvp-v1.0-2026-09-16.md",
+      "sha256": "13060548afb17731e033364817f0e7ee6b0569c334bbfc4138e308ee64678882"
+    }
+  ],
+  "submitted_commit": "582488dcbc37369b88312b36210e9a352d136d61",
+  "review_report": "reviews/cp4-review-notes.md"
+}

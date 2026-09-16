@@ -1,0 +1,39 @@
+✔ Z01 actual competing processes: draft CAS and dual publication CAS admit exactly one writer (434.60075ms)
+✔ M04 actual role write lock before schedule publish blocks former operator (177.813042ms)
+✖ S01/S04/D01 two public HTTP clients: private draft, atomic publish, lost write result, process restart and withdrawal (341.09575ms)
+✔ Z01 real draft-write lock before publication rejects previously confirmed draft revision (125.376875ms)
+✔ S01/S02/B01 draft private, explicit empty, coverage replacement/withdrawal never revive history (89.6105ms)
+✔ S03/Z01 stable ID reschedule/cancel, item CAS, full set omission rejection, overlap only blocks publication (24.020834ms)
+✔ Z01 local/UTC exact boundaries, cross-midnight/week, DST missing/repeated and date coverage validation (23.069583ms)
+✔ I01/M04 dual CAS, same-key replay/conflict, audit rollback, current role denial and observation TTL unchanged (23.715541ms)
+✔ C01/D01 bounded cleanup rollback/restart preserves current snapshot/draft/withdrawn; published timezone frozen (157.039834ms)
+✔ X01 account deletion scrubs schedule audit/operations without deleting shared publication (31.111ms)
+ℹ tests 10
+ℹ suites 0
+ℹ pass 9
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 77917.71325
+
+✖ failing tests:
+
+test at test/schedule-integration.test.mjs:21:1
+✖ S01/S04/D01 two public HTTP clients: private draft, atomic publish, lost write result, process restart and withdrawal (341.09575ms)
+  Error: ENOTEMPTY, Directory not empty: /Users/orderly_ray/Projects/gym-miniapp/.runtime/test/cp1-6dc12a90-2b9a-4ab0-a65a-69d9b616b641 '/Users/orderly_ray/Projects/gym-miniapp/.runtime/test/cp1-6dc12a90-2b9a-4ab0-a65a-69d9b616b641'
+      at rmSync (node:fs:1222:18)
+      at TestContext.<anonymous> (file:///Users/orderly_ray/Projects/gym-miniapp/test/identity-support.mjs:14:48)
+      at TestHook.runInAsyncScope (node:async_hooks:227:14)
+      at TestHook.run (node:internal/test_runner/test:1325:25)
+      at TestHook.run (node:internal/test_runner/test:1669:18)
+      at TestHook.run (node:internal/util:581:20)
+      at Test.runHook (node:internal/test_runner/test:1212:20)
+      at after (node:internal/test_runner/test:1265:20)
+      at Test.run (node:internal/test_runner/test:1351:13)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5) {
+    errno: 66,
+    code: 'ENOTEMPTY',
+    path: '/Users/orderly_ray/Projects/gym-miniapp/.runtime/test/cp1-6dc12a90-2b9a-4ab0-a65a-69d9b616b641',
+    syscall: 'rm'
+  }

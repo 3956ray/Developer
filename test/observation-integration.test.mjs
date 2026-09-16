@@ -1,6 +1,6 @@
+import {startService as server,stop,spawn,fork,bounded,fixtureLifetime} from './process-support.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { spawn, fork } from 'node:child_process';
 import { once } from 'node:events';
 import { writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
@@ -8,20 +8,10 @@ import { setupIdentity, intent, roleWrite } from './identity-support.mjs';
 import { createObservationService } from '../server/observations.mjs';
 import { root } from '../server/config.mjs';
 const body = (time, revision = 'absent') => ({ ...intent(time, revision), level: 'moderate', observedJustNow: true });
-async function server(path) {
-  const p = spawn(process.execPath, ['server/main.mjs', path], { cwd: root, stdio: ['ignore', 'pipe', 'pipe'] });
-  const started = new Promise((res, rej) => {
-    const timeout = setTimeout(() => { p.kill(); rej(new Error('timeout')); }, 5000); let output = '';
-    p.once('exit', () => { clearTimeout(timeout); rej(new Error('start failed')); });
-    p.stdout.on('data', chunk => { output += chunk; if (output.includes('\n')) { clearTimeout(timeout); res(JSON.parse(output.split('\n')[0]).port); } });
-  });
-  return { p, port: await started };
-}
-async function stop(p) { if (p.exitCode !== null) return; const end = once(p, 'exit'); p.kill(); await end; }
 
 test('O01/D01/C01 HTTP: two independent unsigned clients see same published snapshot through process restart and startup cleanup', async t => {
   const x = setupIdentity(t); const a = await x.service.login(x.fixture()); x.service.changeRole(roleWrite(x.c, a.userId, Date.now()));
-  let s = await server(x.path); t.after(() => stop(s.p));
+  let s = await server(x.path);
   const client = () => async (path, payload, token) => {
     const response = await fetch(`http://127.0.0.1:${s.port}/v1${path}`, { method: payload ? 'POST' : 'GET', headers: { ...(token ? { authorization: 'Bearer ' + token } : {}), 'content-type': 'application/json' }, body: payload ? JSON.stringify(payload) : undefined });
     return { status: response.status, body: await response.json() };
@@ -66,10 +56,9 @@ test('O04/M04: real competing processes commit only one CAS writer and one idemp
   assert.ok(replayed.every(r => r.status === 'committed' && r.revision === 2));
   assert.equal(x.db.prepare('SELECT count(*) n FROM observation_events').get().n, 2);
   const p = fork('test/observation-worker.mjs', [x.path, file(body(time, 2))], { cwd: root, stdio: ['ignore', 'ignore', 'ignore', 'ipc'] });
-  t.after(() => { if (p.exitCode === null) p.kill(); });
   const end = once(p, 'exit'), queue = [], waiting = [];
   p.on('message', m => waiting.length ? waiting.shift()(m) : queue.push(m));
-  const next = () => queue.length ? Promise.resolve(queue.shift()) : new Promise(res => waiting.push(res));
+  const next = () => queue.length ? Promise.resolve(queue.shift()) : bounded(new Promise(res => waiting.push(res)));
   assert.equal(await next(), 'ready'); x.db.exec('BEGIN IMMEDIATE');
   try {
     p.send('write'); assert.equal(await next(), 'attempting');

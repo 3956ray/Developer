@@ -1,20 +1,24 @@
 {
+  "revisionTask": "GYM-CP4-TEARDOWN-REVISE-001",
+  "baselineCommit": "582488dcbc37369b88312b36210e9a352d136d61",
   "tests": {
-    "command": "npm test",
     "exitCode": 0,
-    "passed": 84,
+    "passed": 87,
     "failed": 0,
     "log": "final-tests.log"
   },
-  "check": {
-    "command": "npm run check",
+  "targeted": {
     "exitCode": 0,
-    "log": "final-check.log"
+    "passed": 13,
+    "failed": 0,
+    "log": "revision/targeted-tests.log"
   },
+  "staticCheckExitCode": 0,
   "diffCheckExitCode": 0,
-  "sourceHashFilesVerified": 97,
-  "sourceUnchangedSinceFinalTestStart": true,
-  "priorEvidenceAndBaselineUnmodified": true,
-  "weChatToolDeviceVenue": "NOT_RUN",
-  "permissionNote": "First final test dispatch approval timed out before execution; the one permitted identical retry was approved and completed."
+  "sourceHashesVerified": 101,
+  "scopeOnlyTestsAndCP4Reports": true,
+  "ownedProcessCloseBeforeFixtureRemoval": "structural assertions passed in normal/assertion-failure/startup-failure tests",
+  "postTestProcessInventory": "read-only PID filter returned zero matching Node service/worker/teardown processes",
+  "priorFailureEvidence": "revision/leader-failure.log",
+  "unverified": "WeChat tools/device/real venue NOT_RUN"
 }

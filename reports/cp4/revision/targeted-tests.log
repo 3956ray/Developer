@@ -1,0 +1,21 @@
+✔ Z01 actual competing processes: draft CAS and dual publication CAS admit exactly one writer (385.13175ms)
+✔ M04 actual role write lock before schedule publish blocks former operator (142.604209ms)
+✔ S01/S04/D01 two public HTTP clients: private draft, atomic publish, lost write result, process restart and withdrawal (589.584125ms)
+✔ Z01 real draft-write lock before publication rejects previously confirmed draft revision (147.372166ms)
+✔ S01/S02/B01 draft private, explicit empty, coverage replacement/withdrawal never revive history (82.891875ms)
+✔ S03/Z01 stable ID reschedule/cancel, item CAS, full set omission rejection, overlap only blocks publication (43.853666ms)
+✔ Z01 local/UTC exact boundaries, cross-midnight/week, DST missing/repeated and date coverage validation (17.32825ms)
+✔ I01/M04 dual CAS, same-key replay/conflict, audit rollback, current role denial and observation TTL unchanged (17.400625ms)
+✔ C01/D01 bounded cleanup rollback/restart preserves current snapshot/draft/withdrawn; published timezone frozen (136.214833ms)
+✔ X01 account deletion scrubs schedule audit/operations without deleting shared publication (50.867459ms)
+✔ fixture teardown waits for every owned service and worker close before DB/directory cleanup (294.819083ms)
+✔ startup timeout, malformed readiness and early exit stop owned children before returning failure (276.81575ms)
+✔ assertion failure subprocess exits nonzero without hanging; later hook verifies stopped child and removed fixture (209.615542ms)
+ℹ tests 13
+ℹ suites 0
+ℹ pass 13
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1335.231541
