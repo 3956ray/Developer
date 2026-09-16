@@ -1,11 +1,11 @@
 {
-  "baselineCommit": "5be44aad0a22f5f5bf0f0ae319800aba0bfea1e0",
-  "scope": "Current source/config/docs outside reports; product code unchanged from engineering-tested baseline; current static check and native GUI compilation recorded separately",
+  "baselineCommit": "e8c004e194b8a332c05c206927d3f196c67a33d9",
+  "scope": "All source/config/docs outside reports; recorded before final verification; runtime/git excluded",
   "files": {
     ".gitignore": "085228e808061fafdd6dfaffd49fe8f7595b75a1a35bfd9c496acc79fc6fddc8",
     ".nvmrc": "55075b5ec4e8b31936cbbc282b8829116d1fd48f2f2f1856dee592a6650700ce",
     "AGENTS.md": "e7914e74eddfe58f870865cffeb330b87d4dc2919be0617c5d6100be43bc7bac",
-    "README.md": "ef733b90e123e3ab1d5791dbb549dfb9c8879018d1cb0b56834a9e70e1ef2789",
+    "README.md": "f0727bfe1d4b3a043ca64771d8dcc36629f2ed08dd8766779fdf5f07692438d6",
     "doc/baseline/acceptance-mvp-v1.0-2026-09-16.md": "89cded4a468deaa20e6090d19b35dc31c77b6a01e3e45081d3d996484188ae71",
     "doc/baseline/checkpoints-mvp-v1.0-2026-09-16.md": "13060548afb17731e033364817f0e7ee6b0569c334bbfc4138e308ee64678882",
     "doc/baseline/prd-mvp-v1.0-2026-09-16.md": "7d9948f302f13119120c03043902fba7455437764eb57d4923efebda4254e1bd",
@@ -51,7 +51,7 @@
     "miniprogram/pages/venue/index.wxss": "ff7cdabbecdf8fe9e839fb8d3427b7f110eadd55d498adfc4709a3f521e5b14c",
     "miniprogram/sitemap.json": "549f3524af2e86ba0ec6e11a5b979d327a5930c970ab3ba35da52fc9a5d692df",
     "package.json": "800a2ebd08c7b7add14d042fdafdd87b4a6917694ed1a256d27656e0fe88e1ce",
-    "project.config.json": "2616d8a022675f9f5566b9c5b3c6702b4da427c36475b635b367541f08f9336b",
+    "project.config.json": "630ccc8ab16cb916fad9a3b6bc066cb9c70356508c264343aa33abb2bc190525",
     "scripts/check.mjs": "a1b2a4aca87132072c67584f1ca8af511deb48e5b86cca0436a3fa5b6697ffc5",
     "scripts/db.mjs": "8b17b8d69692671cdaeeb869abc463dc68a742d4a7c8f82b824b7adb71c3c973",
     "scripts/init-local.mjs": "95e7bcf615ead7c964c56085c507ee164e69e63fbe38b9c9a9d41e09dfba69b7",

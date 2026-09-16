@@ -1,0 +1,30 @@
+{
+  "result": "BLOCKED",
+  "engineering": "PASS",
+  "tool": "BLOCKED",
+  "device": "NOT_RUN",
+  "venue": "NOT_RUN",
+  "finalTests": {
+    "exitCode": 0,
+    "passed": 94,
+    "failed": 0,
+    "log": "final-tests.log"
+  },
+  "staticCheck": {
+    "exitCode": 0,
+    "log": "final-check.log"
+  },
+  "sourceFilesVerified": 103,
+  "acRows": 30,
+  "matrixMatchesFrozenIds": true,
+  "priorEvidenceBaselineMigrationsUnchanged": true,
+  "diffCheckExitCode": 0,
+  "toolCommands": {
+    "help": 0,
+    "sandboxOpen": 255,
+    "hostOpen": 246,
+    "hostEngineBuild": 246
+  },
+  "blockedPrerequisite": "Official IDE service port disabled; target GUI import not completed; no actual target compilation/base-library/simulator screenshots",
+  "noPreviewUploadDeployment": true
+}

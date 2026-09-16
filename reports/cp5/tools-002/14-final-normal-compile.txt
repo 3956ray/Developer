@@ -1,0 +1,233 @@
+Window: "WeChat Web Devtools", App: 微信开发者工具.
+0 标准窗口 WeChat Web Devtools, Secondary Actions: Raise
+		2 container
+			3 文本 微信开发者工具 Stable 2.02.2608070
+			4 container
+				5 text 小程序模式
+			6 文本 预览
+			7 文本 真机调试
+			8 文本 上传
+			9 未加标签的图片 要获取缺失的图片说明，请打开上下文菜单。
+			10 container
+				11 container
+					12 container
+						13 text 预览 编辑
+					14 container
+						15 text 普通编译
+					16 container
+						17 container
+							18 text 11 : 55
+						19 container
+							20 标题 健身房, Value: 3
+								21 文本 健身房
+							22 链接
+							23 链接
+						24 HTML 内容 Webview: pages/venue/index, URL: 127.0.0.1:27778/__pageframe__/pages/venue/index
+							25 文本 场馆
+							26 文本 暂无法提供忙闲信息
+							27 文本 连接失败或服务未配置，请重试。
+							28 按钮 刷新现场信息
+							29 文本 场馆营业与联系资料待确认。
+							30 文本 今日 / 本周课表
+							31 按钮 今日
+							32 按钮 本周
+							33 文本 未能确认最新变更，请刷新重试
+							34 文本 当前排课待确认
+							35 文本 门店时区：。无排课不代表场地无人或允许进入。
+							36 按钮 刷新课表
+						37 HTML 内容 小程序逻辑层, URL: 127.0.0.1:27778/appservice/s1/_sessionId/simulator-app-session-s1/mainframe?load
+							38 container
+								39 HTML 内容 小程序逻辑层, URL: 127.0.0.1:27778/appservice/instanceframe?s=1789530926465&autoload#id_1
+								40 HTML 内容 127.0.0.1:27778/appservice/appContext?contextName=app&id=ifr-1_2#id_1
+								41 HTML 内容 127.0.0.1:27778/appservice/app_xrframe_renderContext?contextName=app_xrframe_render&id=ifr-1_3&empty=true#id_1
+								42 HTML 内容 127.0.0.1:27778/appservice/app_sub_debugContext?contextName=app_sub_debug&id=ifr-1_4&empty=true#id_1
+								43 HTML 内容 小程序逻辑层, URL: 127.0.0.1:27778/appservice/instanceframe?s=1789530926465#id_2
+						44 container
+							45 链接 场馆
+								46 未加标签的图片 /png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=
+								47 文本 场馆
+							48 链接 我的
+								49 未加标签的图片 /png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=
+								50 文本 我的
+						51 container
+							52 链接
+							53 链接
+					54 container
+						55 文本 iPhone 12/13 (Pro) 53% 16
+					56 container
+						57 文本 页面路径
+					58 文本 pages/venue/index
+					59 链接 复制
+				60 container
+					61 container
+						62 container
+							63 文本 gym-miniapp
+							64 工具栏
+								65 按钮 Toggle Primary Side Bar (⌘K ⌘B)
+									66 文本 
+								67 按钮 切换面板 (⌘J)
+									68 文本 
+								69 按钮 Toggle Secondary Side Bar (⌥⌘B)
+									70 文本 
+						71 container
+							72 container
+								73 标签组 活动视图切换器
+									74 标签 (selected) Description: 资源管理器 (⌘K ⇧⌘E), Value: 1
+										75 container 资源管理器 (⌘K ⇧⌘E)
+											76 文本 
+									77 标签 (settable, integer) Search (⇧⌘F), Value: 0
+										78 container Search (⇧⌘F)
+											79 文本 
+									80 标签 (settable, integer) Description: 源代码管理 (⌃⇧G) - 26 个挂起的更改, Value: 0
+										81 文本 
+									82 标签 (settable, integer) 扩展 (⇧⌘X), Value: 0
+										83 container 扩展 (⇧⌘X)
+											84 文本 
+									85 弹出式按钮 其他视图
+										86 文本 
+								87 container
+									88 标题 资源管理器, Help: 资源管理器 (⌘K ⇧⌘E), Value: 2
+										89 文本 资源管理器
+									90 内容列表 资源管理器操作
+										91 弹出式按钮 Views and More Actions...
+									92 container
+										93 container
+											94 按钮 打开的编辑器 Section
+												95 文本 
+												96 标题 打开的编辑器, Value: 3
+													97 文本 打开的编辑器
+											98 内容列表 打开的编辑器
+										99 container
+											100 按钮 文件资源管理器部分
+												101 文本 
+												102 标题 Description: 文件资源管理器部分, Help: gym-miniapp, Value: 3
+													103 文本 GYM-MINIAPP
+											104 外框 树
+												105 container
+													106 row .runtime
+														107 container
+															108 文本 
+															109 文本 .runtime
+													110 row doc
+														111 container
+															112 文本 
+															113 文本 doc
+													114 row miniprogram
+														115 container
+															116 文本 
+															117 文本 miniprogram
+													118 row reports
+														119 container
+															120 文本 
+															121 container ~/Projects/gym-miniapp/reports • 包含强调项
+																122 文本 reports
+																123 文本 
+													124 row scripts
+														125 container
+															126 文本 
+															127 文本 scripts
+													128 row server
+														129 container
+															130 文本 
+															131 文本 server
+													132 row test
+														133 container
+															134 文本 
+															135 文本 test
+													136 row .gitignore
+														137 container
+															138 文本 .gitignore
+													139 row .nvmrc
+														140 container
+															141 文本 .nvmrc
+													142 row AGENTS.md
+														143 container
+															144 文本 AGENTS.md
+													145 row package.json
+														146 container
+															147 文本 package.json
+													148 row project.config.json
+														149 container
+															150 container ~/Projects/gym-miniapp/project.config.json • Modified
+																151 文本 project.config.json
+																152 文本 M
+													153 row project.private.config.json
+														154 container
+															155 文本 project.private.config.json
+													156 row README.md
+														157 container
+															158 文本 README.md
+										159 按钮 大纲 Section
+											160 文本 
+											161 标题 大纲, Value: 3
+												162 文本 大纲
+										163 按钮 时间线 Section
+											164 文本 
+											165 标题 时间线, Value: 3
+												166 文本 时间线
+							167 container
+								168 container
+									169 标签组 活动视图切换器
+										170 标签 (selected) Description: 构建 - Logs: 100, Value: 1
+											171 container 构建 - Logs: 100
+												172 文本 构建
+											173 container 构建 - Logs: 100
+												174 文本 100
+										175 标签 (settable, integer) Description: 调试器 - Errors: 0, Warnings: 2, Value: 0
+											176 文本 调试器
+											177 文本 2
+										178 标签 (settable, integer) Description: 问题 (⌘K ⇧⌘M) - 总计 0 个问题, Value: 0
+											179 文本 问题
+										180 标签 (settable, integer) Description: 输出, Value: 0
+											181 文本 输出
+										182 标签 (settable, integer) Description: 调试控制台 (⇧⌘Y), Value: 0
+											183 文本 调试控制台
+										184 标签 (settable, integer) Description: 终端, Value: 0
+											185 文本 终端
+										186 标签 (settable, integer) 代码质量, Value: 0
+											187 container 代码质量
+												188 文本 代码质量
+									189 工具栏 构建操作
+									190 工具栏
+										191 按钮 恢复面板大小
+											192 文本 
+										193 按钮 关闭面板
+											194 文本 
+									195 container
+										196 container
+											197 图像
+											198 文本栏 (settable) Terminal input
+											199 图像
+											200 图像
+											201 图像
+											202 图像
+						203 container
+							204 container gym-miniapp (Git) - codex/cp0-foundation*, Checkout Branch/Tag...
+								205 按钮 gym-miniapp (Git) - codex/cp0-foundation*, Checkout Branch/Tag...
+									206 文本 
+									207 文本  codex/cp0-foundation*
+							208 container 没有问题
+								209 按钮 没有问题
+									210 文本 
+									211 文本  0
+									212 文本 
+									213 文本  0
+							214 container 进度和简要通知
+							215 container 已为屏幕阅读器优化
+								216 按钮 已为屏幕阅读器优化
+							217 container undefined
+	218 关闭按钮
+	219 全屏幕按钮 Help: 此按钮也可以执行缩放窗口的操作, Secondary Actions: 缩放窗口
+	220 最小化按钮
+221 menu bar
+	222 微信开发者工具
+	223 项目
+	224 文件
+	225 编辑
+	226 工具
+	227 跳转
+	228 选择
+	229 界面
+	230 设置
+	231 插件
+	232 帮助

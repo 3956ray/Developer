@@ -8,7 +8,7 @@ RESULT: BLOCKED。工程 PASS（沿用基线94/94）；目标导入、实际本�
 
 通过“工具 → 编译”及普通编译完成实际本地构建：app.json、六个页面JSON、代码分析成功及 idle-compile all done（10、14）。六个原生页面已实际打开；这是官方模拟器证据，不是真机。
 
-|证据（tools-002/）|实际操作与观察|
+|证据（本目录）|实际操作与观察|
 |---|---|
 |01-venue-unconfigured.png|公开场馆入口，服务未配置/连接失败，不要求登录|
 |02-my-unconfigured.png、03-purpose.png|我的未登录，查看用途及隐私说明|

@@ -1,6 +1,6 @@
 # CP5：30 AC 分层矩阵
 
-共同条件：源码为tested-source.json精确哈希；单店隔离test配置、Node实际SQLite/进程/HTTP及原生JS VM，均合成数据。工程PASS仅指本地可复现层；官方微信交换、隐私声明、基础库和设备行为不在替身PASS内。工程测试沿用5be44aa的final-tests.log（94/94）；本轮产品源码未变。工具阻塞原因及真实命令见tool-status.md。
+共同条件：源码为tested-source.json精确哈希；单店隔离test配置、Node实际SQLite/进程/HTTP及原生JS VM，均合成数据。工程PASS仅指本地可复现层；官方微信交换、隐私声明、基础库和设备行为不在替身PASS内。所有工程测试在final-tests.log同一源码一次完整运行。工具阻塞原因及真实命令见tool-status.md。
 
 | AC | 场景/输入与工程结果 | 精确证据（test目录文件/测试标题关键词） | 工程 | 工具 | 真机 | 门店 |
 |---|---|---|---|---|---|---|
@@ -37,18 +37,6 @@
 
 ## 结算
 
-27项适用工程层PASS；W01/T01/T02留既定CP6/CP7，NOT_RUN。工具已取得目标导入、本地编译、基础库3.17.2及六个页面的局部原生证据，包括未配置/请求失败、用途说明、拒绝登录和未登录守卫。完整业务工具验收仍BLOCKED；顶层RESULT BLOCKED，未进入CP6。
+27项适用工程层PASS；W01/T01/T02留既定CP6/CP7，NOT_RUN。工具层未取得目标项目编译/交互证据，BLOCKED；不能把27项工程PASS写成30项产品验收通过。顶层RESULT BLOCKED，未进入CP6。
 
-正常业务数据、已覆盖空日、过期视图、成功官方登录与已登录读写仍缺真实工具证据；VM逻辑测试不能填补这些缺口。无权页面仅证明原生守卫/失败状态，并未证明服务端角色撤销后的403。L01/P01实际平台交换及隐私配置未验证；门店实体核验不能由合成bind事务证明。旧“没有编译/截图”结论仅保留在prior历史快照。
-
-## TOOLS-002 局部原生证据
-
-完整工具AC状态仍BLOCKED；导入/本地编译与基础库确认已通过。以下局部证据不替代端到端验收：
-
-- AC-B01：01/14: native public entry and unconfigured failure only
-- AC-L01：07–09: purpose/refusal/failed login attempt; no successful official exchange
-- AC-M04：11–13: native guard/failure pages; no authenticated writes
-- AC-M05：04: membership unauthenticated guard
-- AC-P01：03/07/08: purpose and refusal; platform privacy declaration unverified
-- AC-S04：06/13: request domain error and guarded schedule failure
-- AC-E01：10/14: import/local compile PASS; 06: WeChatLib 3.17.2; full flows blocked
+所有涉及原生页面的空/正常/过期/失败图像均缺真实目标工具截图；已通过的VM逻辑测试不填补该缺口。L01/P01实际平台配置未验证，门店实体核验不是合成bind事务可以证明的事实。

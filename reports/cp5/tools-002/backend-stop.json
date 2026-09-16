@@ -1,0 +1,6 @@
+{
+  "ownedProcessesStopped": 1,
+  "signal": "SIGTERM",
+  "exitVerified": true,
+  "clientConfigRestored": true
+}

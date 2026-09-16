@@ -1,0 +1,39 @@
+The following is a diff from the previous accessibility tree for Window: "WeChat Web Devtools" with ~ and + representing changed and added elements, respectively. Removed elements are summarized by ID range.
+Removed element IDs: 20-65, 96, 140
+~							19 text 11 : 45
++						241 container
++							242 标题 健身房, Value: 3
++								243 文本 健身房
++							244 链接
++							245 链接
++						246 HTML 内容 Webview: pages/venue/index, URL: 127.0.0.1:27778/__pageframe__/pages/venue/index
++							247 文本 场馆
++							248 文本 暂无法提供忙闲信息
++							249 文本 连接失败或服务未配置，请重试。
++							250 按钮 刷新现场信息
++							251 文本 场馆营业与联系资料待确认。
++							252 文本 今日 / 本周课表
++							253 按钮 今日
++							254 按钮 本周
++							255 文本 未能确认最新变更，请刷新重试
++							256 文本 当前排课待确认
++							257 文本 门店时区：。无排课不代表场地无人或允许进入。
++							258 按钮 刷新课表
++						259 HTML 内容 小程序逻辑层, URL: 127.0.0.1:27778/appservice/s1/_sessionId/simulator-app-session-s1/mainframe?load
++							260 container
++								261 HTML 内容 小程序逻辑层, URL: 127.0.0.1:27778/appservice/instanceframe?s=1789530308269&autoload#id_1
++								262 HTML 内容 127.0.0.1:27778/appservice/appContext?contextName=app&id=ifr-1_2#id_1
++								263 HTML 内容 127.0.0.1:27778/appservice/app_xrframe_renderContext?contextName=app_xrframe_render&id=ifr-1_3&empty=true#id_1
++								264 HTML 内容 127.0.0.1:27778/appservice/app_sub_debugContext?contextName=app_sub_debug&id=ifr-1_4&empty=true#id_1
++								265 HTML 内容 小程序逻辑层, URL: 127.0.0.1:27778/appservice/instanceframe?s=1789530308269#id_2
++						266 container
++							267 链接 场馆
++								268 未加标签的图片 /png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=
++								269 文本 场馆
++							270 链接 我的
++								271 未加标签的图片 /png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=
++								272 文本 我的
+~					73 文本 pages/venue/index
+~									95 标签 (settable, integer) Description: 源代码管理 (⌃⇧G) - 10 个挂起的更改, Value: 0
++										273 文本 
++																274 文本 

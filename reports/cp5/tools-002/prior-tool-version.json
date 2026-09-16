@@ -1,0 +1,14 @@
+{
+  "installedApplication": "/Applications/wechatwebdevtools.app",
+  "observedProductVersion": "Stable 2.02.2608070",
+  "versionEvidence": "Native app AX text during this session",
+  "electronBundleVersion": "36.6.0",
+  "targetBaseLibrary": "UNKNOWN",
+  "targetAppIdConfiguration": "touristappid placeholder",
+  "cliServicePort": "disabled (actual exit 246)",
+  "targetImport": "BLOCKED",
+  "targetCompile": "BLOCKED",
+  "targetSimulatorInteractions": "NOT_RUN",
+  "screenshots": [],
+  "previewUploadDeployment": "NOT_RUN / not authorized"
+}

@@ -1,0 +1,6 @@
++							251 标题 馆方观察维护, Value: 3
++								252 文本 馆方观察维护
++						255 HTML 内容 Webview: pages/maintenance/index, URL: 127.0.0.1:27778/__pageframe__/pages/maintenance/index
++							259 按钮 刷新现场信息
++							260 文本 请先在“我的”主动登录。
+~					70 文本 pages/maintenance/index

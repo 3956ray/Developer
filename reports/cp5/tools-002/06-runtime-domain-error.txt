@@ -1,0 +1,21 @@
+																				224 text [system] WeChatLib: 3.17.2 (2026.9.8 20:10:23)
+																			229 文本 Wed Sep 16 2026 11:45:09 GMT+0800 (台北标准时间) request 合法域名校验出错
+																				233 链接 http://127.0.0.1:51580
+																					234 文本 http://127.0.0.1:51580
+																				235 文本  不在以下 request 合法域名列表中，请参考文档：
+																			241 文本 Wed Sep 16 2026 11:45:09 GMT+0800 (台北标准时间) request 合法域名校验出错
+																				245 链接 http://127.0.0.1:51580
+																					246 文本 http://127.0.0.1:51580
+																				247 文本  不在以下 request 合法域名列表中，请参考文档：
+																			280 文本 Wed Sep 16 2026 11:46:09 GMT+0800 (台北标准时间) request 合法域名校验出错
+																			287 row Error WAServiceMainContext…t=wechat&v=3.17.2:1 http://127.0.0.1:51580 不在以下 request 合法域名列表中，请参考文档：https://developers.weixin.qq.com/miniprogram/dev/framework/ability/network.html
+																					294 链接 http://127.0.0.1:51580
+																						295 文本 http://127.0.0.1:51580
+																					296 文本  不在以下 request 合法域名列表中，请参考文档：
+																							310 text " https://tcb-api.tencentcloudapi.com "
+																			314 文本 Wed Sep 16 2026 11:46:09 GMT+0800 (台北标准时间) request 合法域名校验出错
+																			321 row Error WAServiceMainContext…t=wechat&v=3.17.2:1 http://127.0.0.1:51580 不在以下 request 合法域名列表中，请参考文档：https://developers.weixin.qq.com/miniprogram/dev/framework/ability/network.html
+																					328 链接 http://127.0.0.1:51580
+																						329 文本 http://127.0.0.1:51580
+																					330 文本  不在以下 request 合法域名列表中，请参考文档：
+																							344 text " https://tcb-api.tencentcloudapi.com "

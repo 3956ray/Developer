@@ -6,8 +6,7 @@
     "engineering": "PASS",
     "tool": "BLOCKED",
     "device": "NOT_RUN",
-    "venue": "NOT_RUN",
-    "toolPartialEvidence": "tools-002/: 01/14: native public entry and unconfigured failure only"
+    "venue": "NOT_RUN"
   },
   {
     "ac": "AC-O01",
@@ -61,8 +60,7 @@
     "engineering": "PASS",
     "tool": "BLOCKED",
     "device": "NOT_RUN",
-    "venue": "NOT_RUN",
-    "toolPartialEvidence": "tools-002/: 07–09: purpose/refusal/failed login attempt; no successful official exchange"
+    "venue": "NOT_RUN"
   },
   {
     "ac": "AC-M01",
@@ -98,8 +96,7 @@
     "engineering": "PASS",
     "tool": "BLOCKED",
     "device": "NOT_RUN",
-    "venue": "NOT_RUN",
-    "toolPartialEvidence": "tools-002/: 11–13: native guard/failure pages; no authenticated writes"
+    "venue": "NOT_RUN"
   },
   {
     "ac": "AC-M05",
@@ -108,8 +105,7 @@
     "engineering": "PASS",
     "tool": "BLOCKED",
     "device": "NOT_RUN",
-    "venue": "NOT_RUN",
-    "toolPartialEvidence": "tools-002/: 04: membership unauthenticated guard"
+    "venue": "NOT_RUN"
   },
   {
     "ac": "AC-P01",
@@ -118,8 +114,7 @@
     "engineering": "PASS",
     "tool": "BLOCKED",
     "device": "NOT_RUN",
-    "venue": "NOT_RUN",
-    "toolPartialEvidence": "tools-002/: 03/07/08: purpose and refusal; platform privacy declaration unverified"
+    "venue": "NOT_RUN"
   },
   {
     "ac": "AC-S01",
@@ -155,8 +150,7 @@
     "engineering": "PASS",
     "tool": "BLOCKED",
     "device": "NOT_RUN",
-    "venue": "NOT_RUN",
-    "toolPartialEvidence": "tools-002/: 06/13: request domain error and guarded schedule failure"
+    "venue": "NOT_RUN"
   },
   {
     "ac": "AC-D01",
@@ -273,7 +267,6 @@
     "engineering": "PASS",
     "tool": "BLOCKED",
     "device": "NOT_RUN",
-    "venue": "NOT_RUN",
-    "toolPartialEvidence": "tools-002/: 10/14: import/local compile PASS; 06: WeChatLib 3.17.2; full flows blocked"
+    "venue": "NOT_RUN"
   }
 ]

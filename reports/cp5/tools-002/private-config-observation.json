@@ -1,0 +1,32 @@
+{
+  "libVersion": "3.17.2",
+  "urlCheck": true,
+  "localCompileConditions": {
+    "miniprogram": {
+      "list": [
+        {
+          "name": "CP5-schedule-guard",
+          "pathName": "pages/schedule-operator/index",
+          "query": "",
+          "scene": null,
+          "launchMode": "default"
+        },
+        {
+          "name": "CP5-member-guard",
+          "pathName": "pages/member-operator/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "CP5-maintenance-guard",
+          "pathName": "pages/maintenance/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        }
+      ]
+    }
+  },
+  "sha256": "4c3874d9c03bbc5eee50d652e6e550e974b75a2e14d16d65f404462f6be1fb99"
+}
