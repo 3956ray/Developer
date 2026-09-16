@@ -1,0 +1,114 @@
+{
+  "scanner": {
+    "name": "scan-untrusted-code",
+    "version": "1.1.2"
+  },
+  "target": {
+    "path": "/private/tmp/thinkv2-voice-review/jna-sources.zip",
+    "sha256": "0b9224e215b3c6a464959e3f994ddd64c14d46fb4014facd6afa1cc18e469466"
+  },
+  "verdict": "sandbox_only",
+  "risk_score": 60,
+  "verdict_basis": "high-severity capability requires isolated review before execution",
+  "block_signals": [],
+  "score_breakdown": [
+    {
+      "rule_id": "DYNAMIC-CODE-EXEC",
+      "path": "com/sun/jna/CallbackReference.java",
+      "severity": "high",
+      "source_kind": "source_code",
+      "points": 20
+    },
+    {
+      "rule_id": "DYNAMIC-CODE-EXEC",
+      "path": "com/sun/jna/Function.java",
+      "severity": "high",
+      "source_kind": "source_code",
+      "points": 20
+    },
+    {
+      "rule_id": "DYNAMIC-CODE-EXEC",
+      "path": "com/sun/jna/NativeLibrary.java",
+      "severity": "high",
+      "source_kind": "source_code",
+      "points": 20
+    }
+  ],
+  "context_summary": {
+    "source_code": 4
+  },
+  "highest_severity": "high",
+  "summary": {
+    "high": 4
+  },
+  "stats": {
+    "candidates": 70,
+    "text_files": 70,
+    "binary_files": 0,
+    "skipped_large": 0,
+    "skipped_limit": 0,
+    "unreadable": 0,
+    "archives": 1
+  },
+  "findings": [
+    {
+      "rule_id": "DYNAMIC-CODE-EXEC",
+      "severity": "high",
+      "confidence": "Confirmed",
+      "category": "execution",
+      "path": "com/sun/jna/CallbackReference.java",
+      "line": 716,
+      "evidence": "this.function = new Function(address, callingConvention, (String) options.get(Library.OPTION_STRING_ENCODING));",
+      "rationale": "Uses dynamic evaluation or child-process execution.",
+      "source_kind": "source_code",
+      "reachable": false,
+      "base_severity": "high"
+    },
+    {
+      "rule_id": "DYNAMIC-CODE-EXEC",
+      "severity": "high",
+      "confidence": "Confirmed",
+      "category": "execution",
+      "path": "com/sun/jna/Function.java",
+      "line": 204,
+      "evidence": "return new Function(p, callFlags, encoding);",
+      "rationale": "Uses dynamic evaluation or child-process execution.",
+      "source_kind": "source_code",
+      "reachable": false,
+      "base_severity": "high"
+    },
+    {
+      "rule_id": "DYNAMIC-CODE-EXEC",
+      "severity": "high",
+      "confidence": "Confirmed",
+      "category": "execution",
+      "path": "com/sun/jna/NativeLibrary.java",
+      "line": 150,
+      "evidence": "Function f = new Function(this, \"GetLastError\", Function.ALT_CONVENTION, encoding) {",
+      "rationale": "Uses dynamic evaluation or child-process execution.",
+      "source_kind": "source_code",
+      "reachable": false,
+      "base_severity": "high"
+    },
+    {
+      "rule_id": "DYNAMIC-CODE-EXEC",
+      "severity": "high",
+      "confidence": "Confirmed",
+      "category": "execution",
+      "path": "com/sun/jna/NativeLibrary.java",
+      "line": 618,
+      "evidence": "function = new Function(this, functionName, callFlags, encoding);",
+      "rationale": "Uses dynamic evaluation or child-process execution.",
+      "source_kind": "source_code",
+      "reachable": false,
+      "base_severity": "high"
+    }
+  ],
+  "limitations": [
+    "Static inspection cannot prove that an artifact is safe.",
+    "Runtime-fetched, encrypted, obfuscated, oversized, or generated payloads may not be visible.",
+    "A network/upload capability does not prove successful data transfer.",
+    "Repository reputation and dependency vulnerability lookups are outside the offline V1.1 scan.",
+    "Binary metadata, code-signing, and package provenance checks are reserved for a later macOS/Python extension."
+  ]
+}

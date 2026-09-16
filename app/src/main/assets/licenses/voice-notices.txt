@@ -1,0 +1,5 @@
+Vosk Android 0.3.75 — Alpha Cephei Inc — https://github.com/alphacep/vosk-api — Apache License 2.0
+Vosk model small-cn-0.22 — https://alphacephei.com/vosk/models — Apache License 2.0 (official model catalog).
+JNA 5.18.1 — https://github.com/java-native-access/jna — Apache License 2.0 selected from dual license.
+JNA Native.java: Copyright (c) 2007-2015 Timothy Wall, All Rights Reserved.
+Full Apache License 2.0 accompanies this file. Exact artifact/source review identities are retained in the project documentation.

@@ -17,12 +17,14 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.thinkv2.notes.*
 import com.example.thinkv2.reminders.*
 import com.example.thinkv2.backup.*
+import com.example.thinkv2.voice.*
 import com.example.thinkv2.ui.theme.ThinkV2Theme
 
 class MainActivity : ComponentActivity() {
     private lateinit var notes: NotesModel
     private lateinit var reminders: ReminderModel
     private lateinit var backups: BackupModel
+    private lateinit var voice: VoiceModel
     private val createBackup=registerForActivityResult(ActivityResultContracts.CreateDocument("application/json")) { backups.exportPicked(it) }
     private val openBackup=registerForActivityResult(ActivityResultContracts.OpenDocument()) { backups.importPicked(it) }
     private lateinit var runtime: ReminderRuntime
@@ -40,11 +42,12 @@ class MainActivity : ComponentActivity() {
                     NotesModel::class.java -> NotesModel({ NoteRepository(AndroidSql(app)) },worker=runtime.dispatcher,closeWorkerOnShutdown=false,onTrashed=runtime::cancelForNote)
                     ReminderModel::class.java -> ReminderModel(runtime)
                     BackupModel::class.java -> BackupModel(app,runtime)
+                    VoiceModel::class.java -> VoiceModel(app)
                     else -> error("unknown_model")
                 } as T
             }
         })
-        notes=provider[NotesModel::class.java];reminders=provider[ReminderModel::class.java];backups=provider[BackupModel::class.java]
+        notes=provider[NotesModel::class.java];reminders=provider[ReminderModel::class.java];backups=provider[BackupModel::class.java];voice=provider[VoiceModel::class.java]
         runtime.activityStart()
         handleLink(intent,false)
         setContent { ThinkV2Theme {
@@ -55,10 +58,11 @@ class MainActivity : ComponentActivity() {
                 else if(notes.state.page==NotesPage.BACKUP) BackupScreen(backups,modifier,{ notes.navigate(NotesPage.HOME) },
                     { backups.prepareExport { createBackup.launch(it) } },{ backups.beginImport { openBackup.launch(arrayOf("*/*")) } },
                     { notes.refresh() },{ notes.openIncoming(it,true) })
-                else NotesScreen(notes,modifier,onReminders={ id -> reminders.open(id);notes.showReminders() },onBackup={ notes.navigate(NotesPage.BACKUP) })
+                else NotesScreen(notes,modifier,voice=voice,onReminders={ id -> reminders.open(id);notes.showReminders() },onBackup={ notes.navigate(NotesPage.BACKUP) })
             }
         } }
     }
+    override fun onStop() { if(::voice.isInitialized) voice.cancel("应用进入后台，本次语音已丢弃。 ");super.onStop() }
     override fun onNewIntent(intent: Intent) { super.onNewIntent(intent);setIntent(intent);handleLink(intent,true) }
     private fun handleLink(intent: Intent,newIntent: Boolean) {
         val uri=intent.data ?: return

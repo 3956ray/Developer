@@ -1,0 +1,1025 @@
+[
+  {
+    "identity": {
+      "id": "CN01",
+      "text": "明天上午九点，我和李明到北京公园散步，记得带上水杯。",
+      "properNames": [
+        "李明",
+        "北京"
+      ],
+      "meaningAnchors": [
+        "明天",
+        "九点",
+        "公园",
+        "水杯"
+      ],
+      "mode": "throughput",
+      "generator": {
+        "voice": "com.apple.voice.compact.zh-CN.Tingting",
+        "rate": 0.45,
+        "host": "26.6.2",
+        "generatorSha256": "438588e42e3742cb2986556ff15736213d24b83dbc3e5cf33c04f9aa482ad04c",
+        "seconds": 12.890875
+      }
+    },
+    "samples": 206254,
+    "sampleRate": 16000,
+    "pcmSha256": "8ecd2d831ebb9821ed3d7ec0a7e4343d2729ed63972f23156a82ce9f342a12bb",
+    "raw": "明天 上午 九点 我 和 李明 到 北京 公园 散步 记得 带 上 水杯",
+    "corrected": null,
+    "engineLoadMs": 439,
+    "totalMs": 1307,
+    "lastReadToResultMs": 15,
+    "hostTransferAndResultMs": 1314.374,
+    "hostLastSendToResultMs": 1314.221
+  },
+  {
+    "identity": {
+      "id": "CN02",
+      "text": "星期六下午，王芳准备去上海看展览，晚上坐火车回家。",
+      "properNames": [
+        "王芳",
+        "上海"
+      ],
+      "meaningAnchors": [
+        "星期六",
+        "下午",
+        "展览",
+        "火车"
+      ],
+      "mode": "throughput",
+      "generator": {
+        "voice": "com.apple.voice.compact.zh-CN.Tingting",
+        "rate": 0.45,
+        "host": "26.6.2",
+        "generatorSha256": "438588e42e3742cb2986556ff15736213d24b83dbc3e5cf33c04f9aa482ad04c",
+        "seconds": 13.305875
+      }
+    },
+    "samples": 212894,
+    "sampleRate": 16000,
+    "pcmSha256": "55a5b1b8cd73fe5f46599c1abdb88158f677ffc19626788d395c6842a0fb2d61",
+    "raw": "星期六 下午 王芳 准备 去 上海 看 展览 外伤 坐 火车 回家",
+    "corrected": null,
+    "engineLoadMs": 439,
+    "totalMs": 1272,
+    "lastReadToResultMs": 19,
+    "hostTransferAndResultMs": 1275.273,
+    "hostLastSendToResultMs": 1275.169
+  },
+  {
+    "identity": {
+      "id": "CN03",
+      "text": "张伟今天在南京开会，会议结束以后给家里打一个电话。",
+      "properNames": [
+        "张伟",
+        "南京"
+      ],
+      "meaningAnchors": [
+        "今天",
+        "开会",
+        "结束",
+        "电话"
+      ],
+      "mode": "throughput",
+      "generator": {
+        "voice": "com.apple.voice.compact.zh-CN.Tingting",
+        "rate": 0.45,
+        "host": "26.6.2",
+        "generatorSha256": "438588e42e3742cb2986556ff15736213d24b83dbc3e5cf33c04f9aa482ad04c",
+        "seconds": 12.0425
+      }
+    },
+    "samples": 192680,
+    "sampleRate": 16000,
+    "pcmSha256": "1f79d8cf08806825863c023874033d488af544728879ce7e9b0285fbdc478bee",
+    "raw": "张伟 今天 在 南京 开会 会议 结束 以后 给 家里 打 一个 电话",
+    "corrected": null,
+    "engineLoadMs": 439,
+    "totalMs": 1376,
+    "lastReadToResultMs": 33,
+    "hostTransferAndResultMs": 1378.541,
+    "hostLastSendToResultMs": 1378.247
+  },
+  {
+    "identity": {
+      "id": "CN04",
+      "text": "请记录，陈晨下周去杭州，计划参观西湖附近的博物馆。",
+      "properNames": [
+        "陈晨",
+        "杭州",
+        "西湖"
+      ],
+      "meaningAnchors": [
+        "下周",
+        "计划",
+        "参观",
+        "博物馆"
+      ],
+      "mode": "throughput",
+      "generator": {
+        "voice": "com.apple.voice.compact.zh-CN.Tingting",
+        "rate": 0.45,
+        "host": "26.6.2",
+        "generatorSha256": "438588e42e3742cb2986556ff15736213d24b83dbc3e5cf33c04f9aa482ad04c",
+        "seconds": 12.5915
+      }
+    },
+    "samples": 201464,
+    "sampleRate": 16000,
+    "pcmSha256": "9ed723c6213e0e2b4911c624706d5bf8ccea4197b0ec388d7cf2e9e1eb321d28",
+    "raw": "请 记录 沉沉 下周 去 杭州 计划 参观 西湖 附近 的 博物馆",
+    "corrected": null,
+    "engineLoadMs": 439,
+    "totalMs": 1241,
+    "lastReadToResultMs": 16,
+    "hostTransferAndResultMs": 1243.529,
+    "hostLastSendToResultMs": 1243.415
+  },
+  {
+    "identity": {
+      "id": "CN05",
+      "text": "刘洋星期天在成都买菜，需要西红柿、土豆和两盒鸡蛋。",
+      "properNames": [
+        "刘洋",
+        "成都"
+      ],
+      "meaningAnchors": [
+        "星期天",
+        "买菜",
+        "土豆",
+        "鸡蛋"
+      ],
+      "mode": "throughput",
+      "generator": {
+        "voice": "com.apple.voice.compact.zh-CN.Tingting",
+        "rate": 0.45,
+        "host": "26.6.2",
+        "generatorSha256": "438588e42e3742cb2986556ff15736213d24b83dbc3e5cf33c04f9aa482ad04c",
+        "seconds": 12.798125
+      }
+    },
+    "samples": 204770,
+    "sampleRate": 16000,
+    "pcmSha256": "0a88a5b8a07076980288f62fca1e1cea51800536e469af69c3bdc76ddb12922a",
+    "raw": "牛羊 星期天 在 成都 买 菜 需要 西红柿 土豆 和 俩 和 鸡蛋",
+    "corrected": null,
+    "engineLoadMs": 439,
+    "totalMs": 1264,
+    "lastReadToResultMs": 24,
+    "hostTransferAndResultMs": 1266.994,
+    "hostLastSendToResultMs": 1266.888
+  },
+  {
+    "identity": {
+      "id": "CN06",
+      "text": "林静打算从武汉出发，先买车票，再确认酒店的地址。",
+      "properNames": [
+        "林静",
+        "武汉"
+      ],
+      "meaningAnchors": [
+        "出发",
+        "车票",
+        "酒店",
+        "地址"
+      ],
+      "mode": "throughput",
+      "generator": {
+        "voice": "com.apple.voice.compact.zh-CN.Tingting",
+        "rate": 0.45,
+        "host": "26.6.2",
+        "generatorSha256": "438588e42e3742cb2986556ff15736213d24b83dbc3e5cf33c04f9aa482ad04c",
+        "seconds": 12.380125
+      }
+    },
+    "samples": 198082,
+    "sampleRate": 16000,
+    "pcmSha256": "d7fdd4b6d7afde6ddf2ceb489a273853eb87a1762f575fa28059e701a6808e75",
+    "raw": "临近 打算 从 武汉 出发 先买 车票 在 确认 酒店 的 地址",
+    "corrected": null,
+    "engineLoadMs": 439,
+    "totalMs": 1181,
+    "lastReadToResultMs": 20,
+    "hostTransferAndResultMs": 1182.527,
+    "hostLastSendToResultMs": 1182.414
+  },
+  {
+    "identity": {
+      "id": "CN07",
+      "text": "赵敏提醒我，去西安以前检查身份证和手机充电器。",
+      "properNames": [
+        "赵敏",
+        "西安"
+      ],
+      "meaningAnchors": [
+        "提醒",
+        "以前",
+        "身份证",
+        "充电器"
+      ],
+      "mode": "throughput",
+      "generator": {
+        "voice": "com.apple.voice.compact.zh-CN.Tingting",
+        "rate": 0.45,
+        "host": "26.6.2",
+        "generatorSha256": "438588e42e3742cb2986556ff15736213d24b83dbc3e5cf33c04f9aa482ad04c",
+        "seconds": 11.787
+      }
+    },
+    "samples": 188592,
+    "sampleRate": 16000,
+    "pcmSha256": "4196e4b75af2b9abf74e85a006f1dbe90317e6d6ece30b249523ebb77e4cd440",
+    "raw": "赵敏 提醒 我 去 西安 以前 检查 身份证 和 手机 充电器",
+    "corrected": null,
+    "engineLoadMs": 439,
+    "totalMs": 1241,
+    "lastReadToResultMs": 48,
+    "hostTransferAndResultMs": 1242.936,
+    "hostLastSendToResultMs": 1242.793
+  },
+  {
+    "identity": {
+      "id": "CN08",
+      "text": "周杰在苏州找到一家书店，里面有关于中国历史的书。",
+      "properNames": [
+        "周杰",
+        "苏州",
+        "中国"
+      ],
+      "meaningAnchors": [
+        "书店",
+        "里面",
+        "历史"
+      ],
+      "mode": "throughput",
+      "generator": {
+        "voice": "com.apple.voice.compact.zh-CN.Tingting",
+        "rate": 0.45,
+        "host": "26.6.2",
+        "generatorSha256": "438588e42e3742cb2986556ff15736213d24b83dbc3e5cf33c04f9aa482ad04c",
+        "seconds": 11.252125
+      }
+    },
+    "samples": 180034,
+    "sampleRate": 16000,
+    "pcmSha256": "3059e9020138a7be1ee642d23a31d0a06bfaa101cca865f9c874afda98a30049",
+    "raw": "周杰 在 苏州 找到 一家 书店 里面 有 关于 中国 历史 的 书",
+    "corrected": null,
+    "engineLoadMs": 439,
+    "totalMs": 1351,
+    "lastReadToResultMs": 36,
+    "hostTransferAndResultMs": 1352.907,
+    "hostLastSendToResultMs": 1352.805
+  },
+  {
+    "identity": {
+      "id": "CN09",
+      "text": "孙梅下个月到天津探望朋友，我们约好下午三点见面。",
+      "properNames": [
+        "孙梅",
+        "天津"
+      ],
+      "meaningAnchors": [
+        "下个月",
+        "朋友",
+        "三点",
+        "见面"
+      ],
+      "mode": "throughput",
+      "generator": {
+        "voice": "com.apple.voice.compact.zh-CN.Tingting",
+        "rate": 0.45,
+        "host": "26.6.2",
+        "generatorSha256": "438588e42e3742cb2986556ff15736213d24b83dbc3e5cf33c04f9aa482ad04c",
+        "seconds": 11.888875
+      }
+    },
+    "samples": 190222,
+    "sampleRate": 16000,
+    "pcmSha256": "0986f1c0d34c2839996ab2234b0110fea6bbb052071fc8fb810ef2a77be5c13a",
+    "raw": "没 下 个 月 到 天津 探望 朋友 我们 约 好 下午 三点 见面",
+    "corrected": null,
+    "engineLoadMs": 439,
+    "totalMs": 1277,
+    "lastReadToResultMs": 28,
+    "hostTransferAndResultMs": 1278.835,
+    "hostLastSendToResultMs": 1278.676
+  },
+  {
+    "identity": {
+      "id": "CN10",
+      "text": "黄磊今天去了重庆，发消息说那里的天气比较凉快。",
+      "properNames": [
+        "黄磊",
+        "重庆"
+      ],
+      "meaningAnchors": [
+        "今天",
+        "消息",
+        "天气",
+        "凉快"
+      ],
+      "mode": "throughput",
+      "generator": {
+        "voice": "com.apple.voice.compact.zh-CN.Tingting",
+        "rate": 0.45,
+        "host": "26.6.2",
+        "generatorSha256": "438588e42e3742cb2986556ff15736213d24b83dbc3e5cf33c04f9aa482ad04c",
+        "seconds": 11.716125
+      }
+    },
+    "samples": 187458,
+    "sampleRate": 16000,
+    "pcmSha256": "42065b01850f485db54f79cab372eaa585ac003957138e361110cc190b00bc03",
+    "raw": "黄磊 今天 去 了 重庆 发 消息 说 那里 的 天气 比较 凉 会",
+    "corrected": null,
+    "engineLoadMs": 439,
+    "totalMs": 1544,
+    "lastReadToResultMs": 23,
+    "hostTransferAndResultMs": 1548.158,
+    "hostLastSendToResultMs": 1548.043
+  },
+  {
+    "identity": {
+      "id": "CN11",
+      "text": "郑强周五去深圳办事，完成以后要核对这次的费用。",
+      "properNames": [
+        "郑强",
+        "深圳"
+      ],
+      "meaningAnchors": [
+        "周五",
+        "办事",
+        "完成",
+        "费用"
+      ],
+      "mode": "throughput",
+      "generator": {
+        "voice": "com.apple.voice.compact.zh-CN.Tingting",
+        "rate": 0.45,
+        "host": "26.6.2",
+        "generatorSha256": "438588e42e3742cb2986556ff15736213d24b83dbc3e5cf33c04f9aa482ad04c",
+        "seconds": 11.02075
+      }
+    },
+    "samples": 176332,
+    "sampleRate": 16000,
+    "pcmSha256": "d25909a1ecad627fcc4d58776b3d502dc96247f223a9ddd0cb97f04bc361d8ef",
+    "raw": "更 强 周五 去 深圳 办事 完成 以后 要 核对 这次 的 费用",
+    "corrected": null,
+    "engineLoadMs": 439,
+    "totalMs": 1109,
+    "lastReadToResultMs": 50,
+    "hostTransferAndResultMs": 1113.072,
+    "hostLastSendToResultMs": 1112.964
+  },
+  {
+    "identity": {
+      "id": "CN12",
+      "text": "何丽准备到广州参加培训，记得提前一天整理学习材料。",
+      "properNames": [
+        "何丽",
+        "广州"
+      ],
+      "meaningAnchors": [
+        "培训",
+        "提前",
+        "整理",
+        "材料"
+      ],
+      "mode": "throughput",
+      "generator": {
+        "voice": "com.apple.voice.compact.zh-CN.Tingting",
+        "rate": 0.45,
+        "host": "26.6.2",
+        "generatorSha256": "438588e42e3742cb2986556ff15736213d24b83dbc3e5cf33c04f9aa482ad04c",
+        "seconds": 12.71
+      }
+    },
+    "samples": 203360,
+    "sampleRate": 16000,
+    "pcmSha256": "91d663dd7db108bdb1d12b0889b4bff0f138391f562e2ee9cf2ceb0a1f8ca9e9",
+    "raw": "合理 准备 到 广州 参加 培训 记得 提前 一天 整理 学习 材料",
+    "corrected": null,
+    "engineLoadMs": 439,
+    "totalMs": 1199,
+    "lastReadToResultMs": 15,
+    "hostTransferAndResultMs": 1201.483,
+    "hostLastSendToResultMs": 1201.369
+  },
+  {
+    "identity": {
+      "id": "CN13",
+      "text": "今天和吴刚讨论家庭旅行，最后决定先去青岛住两天。",
+      "properNames": [
+        "吴刚",
+        "青岛"
+      ],
+      "meaningAnchors": [
+        "今天",
+        "家庭",
+        "旅行",
+        "两天"
+      ],
+      "mode": "throughput",
+      "generator": {
+        "voice": "com.apple.voice.compact.zh-CN.Tingting",
+        "rate": 0.45,
+        "host": "26.6.2",
+        "generatorSha256": "438588e42e3742cb2986556ff15736213d24b83dbc3e5cf33c04f9aa482ad04c",
+        "seconds": 12.661125
+      }
+    },
+    "samples": 202578,
+    "sampleRate": 16000,
+    "pcmSha256": "7f66559a22d9087914299ceee2ecc08b4d962d26ccba580ed86c6eba62e4091e",
+    "raw": "今天 和 吴刚 讨论 家庭 旅行 最后 决定 先 去 青岛 住 两天",
+    "corrected": null,
+    "engineLoadMs": 439,
+    "totalMs": 1400,
+    "lastReadToResultMs": 21,
+    "hostTransferAndResultMs": 1401.886,
+    "hostLastSendToResultMs": 1401.767
+  },
+  {
+    "identity": {
+      "id": "CN14",
+      "text": "许宁从长沙回来了，他建议下次坐早一点的高铁。",
+      "properNames": [
+        "许宁",
+        "长沙"
+      ],
+      "meaningAnchors": [
+        "回来",
+        "建议",
+        "下次",
+        "高铁"
+      ],
+      "mode": "throughput",
+      "generator": {
+        "voice": "com.apple.voice.compact.zh-CN.Tingting",
+        "rate": 0.45,
+        "host": "26.6.2",
+        "generatorSha256": "438588e42e3742cb2986556ff15736213d24b83dbc3e5cf33c04f9aa482ad04c",
+        "seconds": 10.38575
+      }
+    },
+    "samples": 166172,
+    "sampleRate": 16000,
+    "pcmSha256": "823f57262cc708ec301055ef88f0de5f0a8c08b7a080866ee3d9c6ee42ba4ba5",
+    "raw": "去 您 从 长沙 回来 了 他 建议 下次 做 早 一点 的 高铁",
+    "corrected": null,
+    "engineLoadMs": 439,
+    "totalMs": 1248,
+    "lastReadToResultMs": 16,
+    "hostTransferAndResultMs": 1250.812,
+    "hostLastSendToResultMs": 1250.719
+  },
+  {
+    "identity": {
+      "id": "CN15",
+      "text": "罗兰在昆明拍了很多照片，今晚把喜欢的照片挑出来。",
+      "properNames": [
+        "罗兰",
+        "昆明"
+      ],
+      "meaningAnchors": [
+        "照片",
+        "今晚",
+        "喜欢",
+        "出来"
+      ],
+      "mode": "throughput",
+      "generator": {
+        "voice": "com.apple.voice.compact.zh-CN.Tingting",
+        "rate": 0.45,
+        "host": "26.6.2",
+        "generatorSha256": "438588e42e3742cb2986556ff15736213d24b83dbc3e5cf33c04f9aa482ad04c",
+        "seconds": 12.376625
+      }
+    },
+    "samples": 198026,
+    "sampleRate": 16000,
+    "pcmSha256": "d7af371ceabcc01e7a7aaf67b8e167edc173cce8a1f032da934795342a2adf69",
+    "raw": "罗兰 在 昆明 拍 了 很多 照片 今晚 把 喜欢 的 照片 挑 出来",
+    "corrected": null,
+    "engineLoadMs": 439,
+    "totalMs": 1077,
+    "lastReadToResultMs": 18,
+    "hostTransferAndResultMs": 1079.241,
+    "hostLastSendToResultMs": 1079.13
+  },
+  {
+    "identity": {
+      "id": "CN16",
+      "text": "明天下午两点，李明和王芳在北京图书馆门口见面。",
+      "properNames": [
+        "李明",
+        "王芳",
+        "北京"
+      ],
+      "meaningAnchors": [
+        "明天",
+        "两点",
+        "图书馆",
+        "门口"
+      ],
+      "mode": "throughput",
+      "generator": {
+        "voice": "com.apple.voice.compact.zh-CN.Tingting",
+        "rate": 0.45,
+        "host": "26.6.2",
+        "generatorSha256": "438588e42e3742cb2986556ff15736213d24b83dbc3e5cf33c04f9aa482ad04c",
+        "seconds": 11.637
+      }
+    },
+    "samples": 186192,
+    "sampleRate": 16000,
+    "pcmSha256": "27498fd70d9f7035b9e8323b6baa3c51d59888a53f5126e03174bf5807569b0f",
+    "raw": "明天下午 两点 匿名 和 王芳 在 北京 图书馆 门口 见面",
+    "corrected": null,
+    "engineLoadMs": 439,
+    "totalMs": 1147,
+    "lastReadToResultMs": 42,
+    "hostTransferAndResultMs": 1148.769,
+    "hostLastSendToResultMs": 1148.674
+  },
+  {
+    "identity": {
+      "id": "CN17",
+      "text": "张伟想去上海听音乐会，先看看这个周末还有没有票。",
+      "properNames": [
+        "张伟",
+        "上海"
+      ],
+      "meaningAnchors": [
+        "音乐会",
+        "周末",
+        "票"
+      ],
+      "mode": "throughput",
+      "generator": {
+        "voice": "com.apple.voice.compact.zh-CN.Tingting",
+        "rate": 0.45,
+        "host": "26.6.2",
+        "generatorSha256": "438588e42e3742cb2986556ff15736213d24b83dbc3e5cf33c04f9aa482ad04c",
+        "seconds": 11.972875
+      }
+    },
+    "samples": 191566,
+    "sampleRate": 16000,
+    "pcmSha256": "77611dae0570b4b474413eefd6f4309525f675d493f68771e088a08ebc5b1093",
+    "raw": "将 为 想 去 上海 听 音乐会 先 看看 这个 周末 还 有没有 票",
+    "corrected": null,
+    "engineLoadMs": 439,
+    "totalMs": 1278,
+    "lastReadToResultMs": 41,
+    "hostTransferAndResultMs": 1280.397,
+    "hostLastSendToResultMs": 1280.279
+  },
+  {
+    "identity": {
+      "id": "CN18",
+      "text": "陈晨说杭州最近有雨，出门以前记得看一下天气预报。",
+      "properNames": [
+        "陈晨",
+        "杭州"
+      ],
+      "meaningAnchors": [
+        "有雨",
+        "出门",
+        "记得",
+        "天气预报"
+      ],
+      "mode": "throughput",
+      "generator": {
+        "voice": "com.apple.voice.compact.zh-CN.Tingting",
+        "rate": 0.45,
+        "host": "26.6.2",
+        "generatorSha256": "438588e42e3742cb2986556ff15736213d24b83dbc3e5cf33c04f9aa482ad04c",
+        "seconds": 11.507
+      }
+    },
+    "samples": 184112,
+    "sampleRate": 16000,
+    "pcmSha256": "a5ca26902047c98dab50206b7d3663a7e27d619ba58e725891a70d41bdde4a47",
+    "raw": "沉沉 说 杭州 最近 由于 出门 以前 记得 看一下 天气预报",
+    "corrected": null,
+    "engineLoadMs": 439,
+    "totalMs": 1128,
+    "lastReadToResultMs": 13,
+    "hostTransferAndResultMs": 1130.429,
+    "hostLastSendToResultMs": 1130.311
+  },
+  {
+    "identity": {
+      "id": "CN19",
+      "text": "刘洋和林静下周到南京，我们准备一起吃晚饭聊聊天。",
+      "properNames": [
+        "刘洋",
+        "林静",
+        "南京"
+      ],
+      "meaningAnchors": [
+        "下周",
+        "一起",
+        "晚饭",
+        "聊天"
+      ],
+      "mode": "throughput",
+      "generator": {
+        "voice": "com.apple.voice.compact.zh-CN.Tingting",
+        "rate": 0.45,
+        "host": "26.6.2",
+        "generatorSha256": "438588e42e3742cb2986556ff15736213d24b83dbc3e5cf33c04f9aa482ad04c",
+        "seconds": 11.869375
+      }
+    },
+    "samples": 189910,
+    "sampleRate": 16000,
+    "pcmSha256": "78fc01a13a6435a3c76684b1604788792c72b7e737ab60b823716e48c12a146d",
+    "raw": "浏阳河 临近 下周 到 南京 我们 准备 一起 吃 晚饭 聊聊天",
+    "corrected": null,
+    "engineLoadMs": 439,
+    "totalMs": 1215,
+    "lastReadToResultMs": 23,
+    "hostTransferAndResultMs": 1216.73,
+    "hostLastSendToResultMs": 1216.615
+  },
+  {
+    "identity": {
+      "id": "CN20",
+      "text": "赵敏在成都买了一本新书，她说周末可以借给我看。",
+      "properNames": [
+        "赵敏",
+        "成都"
+      ],
+      "meaningAnchors": [
+        "新书",
+        "周末",
+        "借给"
+      ],
+      "mode": "throughput",
+      "generator": {
+        "voice": "com.apple.voice.compact.zh-CN.Tingting",
+        "rate": 0.45,
+        "host": "26.6.2",
+        "generatorSha256": "438588e42e3742cb2986556ff15736213d24b83dbc3e5cf33c04f9aa482ad04c",
+        "seconds": 10.974375
+      }
+    },
+    "samples": 175590,
+    "sampleRate": 16000,
+    "pcmSha256": "03c8da0e5b39bfdb0ceab4640a50b19f8cf242441ad9527a3d167a6c92cdc9b5",
+    "raw": "照明 在 成都 买 了 一本 新书 他 说 周末 可以 借给 我 看",
+    "corrected": null,
+    "engineLoadMs": 439,
+    "totalMs": 1139,
+    "lastReadToResultMs": 20,
+    "hostTransferAndResultMs": 1143.273,
+    "hostLastSendToResultMs": 1143.149
+  },
+  {
+    "identity": {
+      "id": "CN21",
+      "text": "周杰计划在武汉停留一天，上午办事，下午去看朋友。",
+      "properNames": [
+        "周杰",
+        "武汉"
+      ],
+      "meaningAnchors": [
+        "一天",
+        "上午",
+        "办事",
+        "朋友"
+      ],
+      "mode": "throughput",
+      "generator": {
+        "voice": "com.apple.voice.compact.zh-CN.Tingting",
+        "rate": 0.45,
+        "host": "26.6.2",
+        "generatorSha256": "438588e42e3742cb2986556ff15736213d24b83dbc3e5cf33c04f9aa482ad04c",
+        "seconds": 12.715
+      }
+    },
+    "samples": 203440,
+    "sampleRate": 16000,
+    "pcmSha256": "96f55c9ed4a32d53ea13ed4683fc2243246cfb8f99d2f727785d59f7737aba42",
+    "raw": "周杰 计划 在 武汉 停留 一天 上午 办事 下午 去 看 朋友",
+    "corrected": null,
+    "engineLoadMs": 439,
+    "totalMs": 1403,
+    "lastReadToResultMs": 24,
+    "hostTransferAndResultMs": 1407.515,
+    "hostLastSendToResultMs": 1407.285
+  },
+  {
+    "identity": {
+      "id": "CN22",
+      "text": "孙梅想了解西安的历史，出发前先找几本相关的书。",
+      "properNames": [
+        "孙梅",
+        "西安"
+      ],
+      "meaningAnchors": [
+        "历史",
+        "出发",
+        "相关",
+        "书"
+      ],
+      "mode": "throughput",
+      "generator": {
+        "voice": "com.apple.voice.compact.zh-CN.Tingting",
+        "rate": 0.45,
+        "host": "26.6.2",
+        "generatorSha256": "438588e42e3742cb2986556ff15736213d24b83dbc3e5cf33c04f9aa482ad04c",
+        "seconds": 11.44775
+      }
+    },
+    "samples": 183164,
+    "sampleRate": 16000,
+    "pcmSha256": "40dc875671de4d4cba6380cc3b6e5c56906fd7a74d3217bf2b9b6aa8461dc32d",
+    "raw": "真 没 想 了解 西安 的 历史 出发 前 先 着急 本相 关 的 书",
+    "corrected": null,
+    "engineLoadMs": 439,
+    "totalMs": 1315,
+    "lastReadToResultMs": 26,
+    "hostTransferAndResultMs": 1317.899,
+    "hostLastSendToResultMs": 1317.725
+  },
+  {
+    "identity": {
+      "id": "CN23",
+      "text": "黄磊和郑强约在苏州见面，地点是车站旁边的咖啡馆。",
+      "properNames": [
+        "黄磊",
+        "郑强",
+        "苏州"
+      ],
+      "meaningAnchors": [
+        "见面",
+        "地点",
+        "车站",
+        "咖啡馆"
+      ],
+      "mode": "throughput",
+      "generator": {
+        "voice": "com.apple.voice.compact.zh-CN.Tingting",
+        "rate": 0.45,
+        "host": "26.6.2",
+        "generatorSha256": "438588e42e3742cb2986556ff15736213d24b83dbc3e5cf33c04f9aa482ad04c",
+        "seconds": 12.087625
+      }
+    },
+    "samples": 193402,
+    "sampleRate": 16000,
+    "pcmSha256": "f72a2df80332f3f5ad76d152d8f7d14021ff2ba64d07f341702f17d8c21ff8db",
+    "raw": "黄磊 和 正 强 约 在 苏州 见面 地点 是 车站 旁边 的 咖啡馆",
+    "corrected": null,
+    "engineLoadMs": 439,
+    "totalMs": 1147,
+    "lastReadToResultMs": 51,
+    "hostTransferAndResultMs": 1149.972,
+    "hostLastSendToResultMs": 1149.753
+  },
+  {
+    "identity": {
+      "id": "CN24",
+      "text": "何丽准备给天津的亲戚寄东西，明天先确认收件地址。",
+      "properNames": [
+        "何丽",
+        "天津"
+      ],
+      "meaningAnchors": [
+        "亲戚",
+        "明天",
+        "确认",
+        "地址"
+      ],
+      "mode": "throughput",
+      "generator": {
+        "voice": "com.apple.voice.compact.zh-CN.Tingting",
+        "rate": 0.45,
+        "host": "26.6.2",
+        "generatorSha256": "438588e42e3742cb2986556ff15736213d24b83dbc3e5cf33c04f9aa482ad04c",
+        "seconds": 11.9205
+      }
+    },
+    "samples": 190728,
+    "sampleRate": 16000,
+    "pcmSha256": "858bd6099a4899212bc8b7200751f4800f9b92ee1521b61730c1baf1a6f91951",
+    "raw": "合理 准备 给 天津 的 清洗剂 东西 明天 先 确认 收件 地址",
+    "corrected": null,
+    "engineLoadMs": 439,
+    "totalMs": 1243,
+    "lastReadToResultMs": 24,
+    "hostTransferAndResultMs": 1246.004,
+    "hostLastSendToResultMs": 1245.901
+  },
+  {
+    "identity": {
+      "id": "CN25",
+      "text": "吴刚从重庆打来电话，说这次工作已经顺利完成。",
+      "properNames": [
+        "吴刚",
+        "重庆"
+      ],
+      "meaningAnchors": [
+        "电话",
+        "工作",
+        "顺利",
+        "完成"
+      ],
+      "mode": "throughput",
+      "generator": {
+        "voice": "com.apple.voice.compact.zh-CN.Tingting",
+        "rate": 0.45,
+        "host": "26.6.2",
+        "generatorSha256": "438588e42e3742cb2986556ff15736213d24b83dbc3e5cf33c04f9aa482ad04c",
+        "seconds": 10.939875
+      }
+    },
+    "samples": 175038,
+    "sampleRate": 16000,
+    "pcmSha256": "f12ea760c633a62351e835e9d1100d1e0b690fedb8113e76fa94d10c4142ae85",
+    "raw": "我 刚 从 重庆 打来 电话 说 这次 工作 已经 顺利 完成",
+    "corrected": null,
+    "engineLoadMs": 439,
+    "totalMs": 1095,
+    "lastReadToResultMs": 24,
+    "hostTransferAndResultMs": 1098.985,
+    "hostLastSendToResultMs": 1098.889
+  },
+  {
+    "identity": {
+      "id": "CN26",
+      "text": "许宁下周回深圳，今天晚上先把行李和证件整理好。",
+      "properNames": [
+        "许宁",
+        "深圳"
+      ],
+      "meaningAnchors": [
+        "下周",
+        "晚上",
+        "行李",
+        "证件"
+      ],
+      "mode": "throughput",
+      "generator": {
+        "voice": "com.apple.voice.compact.zh-CN.Tingting",
+        "rate": 0.45,
+        "host": "26.6.2",
+        "generatorSha256": "438588e42e3742cb2986556ff15736213d24b83dbc3e5cf33c04f9aa482ad04c",
+        "seconds": 11.755625
+      }
+    },
+    "samples": 188090,
+    "sampleRate": 16000,
+    "pcmSha256": "98ee9f67498450f3313ee83ba5e9161af32c6f9bef3db07dee67a8cce40440a7",
+    "raw": "去 临夏州 回 深圳 今天晚上 先 把 行李 和 证件 整理 好",
+    "corrected": null,
+    "engineLoadMs": 439,
+    "totalMs": 1147,
+    "lastReadToResultMs": 25,
+    "hostTransferAndResultMs": 1149.239,
+    "hostLastSendToResultMs": 1149.037
+  },
+  {
+    "identity": {
+      "id": "CN27",
+      "text": "罗兰请我推荐广州的公园，她希望找一个安静的地方。",
+      "properNames": [
+        "罗兰",
+        "广州"
+      ],
+      "meaningAnchors": [
+        "推荐",
+        "公园",
+        "安静",
+        "地方"
+      ],
+      "mode": "throughput",
+      "generator": {
+        "voice": "com.apple.voice.compact.zh-CN.Tingting",
+        "rate": 0.45,
+        "host": "26.6.2",
+        "generatorSha256": "438588e42e3742cb2986556ff15736213d24b83dbc3e5cf33c04f9aa482ad04c",
+        "seconds": 10.983375
+      }
+    },
+    "samples": 175734,
+    "sampleRate": 16000,
+    "pcmSha256": "99e4950b5f96e0302ab1820768d2596dd368084bcd225201d64a788ed839d753",
+    "raw": "罗兰 请 我 推荐 广州 的 公园 他 希望 找 一个 安静 的 地方",
+    "corrected": null,
+    "engineLoadMs": 439,
+    "totalMs": 1161,
+    "lastReadToResultMs": 36,
+    "hostTransferAndResultMs": 1163.655,
+    "hostLastSendToResultMs": 1163.549
+  },
+  {
+    "identity": {
+      "id": "CN28",
+      "text": "李明说青岛的海边很漂亮，我们可以早上出去走一走。",
+      "properNames": [
+        "李明",
+        "青岛"
+      ],
+      "meaningAnchors": [
+        "海边",
+        "漂亮",
+        "早上",
+        "出去"
+      ],
+      "mode": "throughput",
+      "generator": {
+        "voice": "com.apple.voice.compact.zh-CN.Tingting",
+        "rate": 0.45,
+        "host": "26.6.2",
+        "generatorSha256": "438588e42e3742cb2986556ff15736213d24b83dbc3e5cf33c04f9aa482ad04c",
+        "seconds": 11.404875
+      }
+    },
+    "samples": 182478,
+    "sampleRate": 16000,
+    "pcmSha256": "76a03efe2511a642fa3492c991032e9a67873fc88843cfb13b548aa64b432cd5",
+    "raw": "李明 说 青岛 的 海边 很漂亮 我们 可以 早上 出去 走一走",
+    "corrected": null,
+    "engineLoadMs": 439,
+    "totalMs": 1334,
+    "lastReadToResultMs": 38,
+    "hostTransferAndResultMs": 1337.365,
+    "hostLastSendToResultMs": 1337.259
+  },
+  {
+    "identity": {
+      "id": "CN29",
+      "text": "王芳在长沙上学，放假以后准备回家陪父母住几天。",
+      "properNames": [
+        "王芳",
+        "长沙"
+      ],
+      "meaningAnchors": [
+        "上学",
+        "放假",
+        "回家",
+        "父母"
+      ],
+      "mode": "throughput",
+      "generator": {
+        "voice": "com.apple.voice.compact.zh-CN.Tingting",
+        "rate": 0.45,
+        "host": "26.6.2",
+        "generatorSha256": "438588e42e3742cb2986556ff15736213d24b83dbc3e5cf33c04f9aa482ad04c",
+        "seconds": 12.031
+      }
+    },
+    "samples": 192496,
+    "sampleRate": 16000,
+    "pcmSha256": "998bf8348d687e143976616b2cf2853c35f2dddbd216021d51eeefe758f639c5",
+    "raw": "王芳 在 长沙 上学 放假 以后 准备 回家 陪 父母 住 几天",
+    "corrected": null,
+    "engineLoadMs": 439,
+    "totalMs": 1183,
+    "lastReadToResultMs": 21,
+    "hostTransferAndResultMs": 1186.723,
+    "hostLastSendToResultMs": 1186.599
+  },
+  {
+    "identity": {
+      "id": "CN30",
+      "text": "张伟和陈晨想去昆明旅行，先写下预算，再安排路线。",
+      "properNames": [
+        "张伟",
+        "陈晨",
+        "昆明"
+      ],
+      "meaningAnchors": [
+        "旅行",
+        "预算",
+        "安排",
+        "路线"
+      ],
+      "mode": "throughput",
+      "generator": {
+        "voice": "com.apple.voice.compact.zh-CN.Tingting",
+        "rate": 0.45,
+        "host": "26.6.2",
+        "generatorSha256": "438588e42e3742cb2986556ff15736213d24b83dbc3e5cf33c04f9aa482ad04c",
+        "seconds": 13.087375
+      }
+    },
+    "samples": 209398,
+    "sampleRate": 16000,
+    "pcmSha256": "447226c6f9d5e0f739928364bd4a9a9aa7e9cf006fd312e5d2fe9199bdd074e3",
+    "raw": "张伟 和 纯纯 想 去 昆明 旅行 鲜血 下 预算 在 安排 路线",
+    "corrected": null,
+    "engineLoadMs": 439,
+    "totalMs": 1340,
+    "lastReadToResultMs": 25,
+    "hostTransferAndResultMs": 1342.852,
+    "hostLastSendToResultMs": 1342.737
+  }
+]

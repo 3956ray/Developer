@@ -1,0 +1,19 @@
+{
+  "purpose": "UI integration only; excluded from accuracy score",
+  "clips": [
+    {
+      "id": "CN01",
+      "text": "明天上午九点，我和李明到北京公园散步，记得带上水杯。",
+      "samples": 206254,
+      "pcmSha256": "8ecd2d831ebb9821ed3d7ec0a7e4343d2729ed63972f23156a82ce9f342a12bb",
+      "voiceMetadata": "voice=com.apple.voice.compact.zh-CN.Tingting language=zh-CN\n"
+    },
+    {
+      "id": "CN28",
+      "text": "李明说青岛的海边很漂亮，我们可以早上出去走一走。",
+      "samples": 182478,
+      "pcmSha256": "76a03efe2511a642fa3492c991032e9a67873fc88843cfb13b548aa64b432cd5",
+      "voiceMetadata": "voice=com.apple.voice.compact.zh-CN.Tingting language=zh-CN\n"
+    }
+  ]
+}

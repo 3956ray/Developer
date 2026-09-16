@@ -19,9 +19,12 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import java.text.DateFormat
 import java.util.Date
+import androidx.compose.ui.text.input.TextFieldValue
+import androidx.compose.ui.text.TextRange
+import com.example.thinkv2.voice.*
 
 @Composable
-fun NotesScreen(model: NotesModel,modifier: Modifier = Modifier,onReminders: (String?)->Unit = {},onBackup: ()->Unit = {}) {
+fun NotesScreen(model: NotesModel,modifier: Modifier = Modifier,onReminders: (String?)->Unit = {},onBackup: ()->Unit = {},voice: VoiceModel?=null) {
     val s=model.state
     val editor=s.editor
     var confirmation by rememberSaveable { mutableStateOf("") }
@@ -51,7 +54,7 @@ fun NotesScreen(model: NotesModel,modifier: Modifier = Modifier,onReminders: (St
                     label={ Text(category.name,maxLines=2,overflow=TextOverflow.Ellipsis) },modifier=Modifier.heightIn(min=56.dp)) }
             }
             LazyColumn(Modifier.weight(1f),verticalArrangement=Arrangement.spacedBy(12.dp),contentPadding=PaddingValues(bottom=24.dp)) {
-                item { VoiceUnavailable() }
+                item { Text("打开或新建笔记后可使用离线语音输入。",fontSize=18.sp) }
                 if(s.loading || s.busy) item { Text("正在读取…",fontSize=18.sp) }
                 else if(s.error!=null) item {
                     Text(s.error,color=MaterialTheme.colorScheme.error,fontSize=18.sp)
@@ -69,6 +72,8 @@ fun NotesScreen(model: NotesModel,modifier: Modifier = Modifier,onReminders: (St
             }
         }
     } else {
+        var bodyValue by remember(editor.note.id) { mutableStateOf(TextFieldValue(editor.note.body,TextRange(editor.note.body.length))) }
+        if(bodyValue.text!=editor.note.body) bodyValue=TextFieldValue(editor.note.body,TextRange((s.externalCursor ?: bodyValue.selection.end).coerceIn(0,editor.note.body.length)))
         Column(modifier.imePadding().padding(horizontal=16.dp)) {
             Row(Modifier.fillMaxWidth(),horizontalArrangement=Arrangement.SpaceBetween) {
                 TextButton(onClick=model::back,enabled=!s.busy,modifier=Modifier.weight(1f).heightIn(min=56.dp)) { Text("返回 · 保留草稿",fontSize=18.sp) }
@@ -89,12 +94,12 @@ fun NotesScreen(model: NotesModel,modifier: Modifier = Modifier,onReminders: (St
                 OutlinedTextField(value=editor.note.title,onValueChange=model::title,label={ Text(if(editor.note.manualTitle) "手动标题" else "自动标题") },
                     enabled=!s.busy,modifier=Modifier.fillMaxWidth(),textStyle=LocalTextStyle.current.copy(fontSize=20.sp))
                 if(editor.note.manualTitle) TextButton(onClick={ model.title("") },enabled=!s.busy,modifier=Modifier.heightIn(min=56.dp)) { Text("恢复自动标题",fontSize=18.sp) }
-                OutlinedTextField(value=editor.note.body,onValueChange=model::body,label={ Text("正文") },placeholder={ Text("写下想法…") },
+                OutlinedTextField(value=bodyValue,onValueChange={ value -> val changed=value.text!=bodyValue.text;bodyValue=value;if(changed) model.body(value.text) },label={ Text("正文") },placeholder={ Text("写下想法…") },
                     enabled=!s.busy,modifier=Modifier.fillMaxWidth().heightIn(min=240.dp),textStyle=LocalTextStyle.current.copy(fontSize=18.sp))
                 if(editor.baseRevision>=0) OutlinedButton(onClick={ onReminders(editor.note.id) },enabled=!s.busy,modifier=Modifier.fillMaxWidth().heightIn(min=56.dp)) { Text("设置笔记提醒",fontSize=18.sp) }
                 else Text("正式保存笔记后可设置提醒。",fontSize=18.sp)
                 CategorySelector(model)
-                VoiceUnavailable()
+                if(voice!=null) VoiceControls(voice,model,bodyValue.selection.end)
                 OutlinedButton(onClick={ confirmation="discard" },enabled=!s.busy,modifier=Modifier.fillMaxWidth().heightIn(min=56.dp)) { Text("放弃这次编辑",fontSize=18.sp) }
                 if(editor.baseRevision>=0) OutlinedButton(onClick={ confirmation="trash" },enabled=!s.busy,modifier=Modifier.fillMaxWidth().heightIn(min=56.dp)) { Text("移入回收站",fontSize=18.sp) }
 
@@ -116,13 +121,5 @@ private fun NoteCard(note: Note,label: String,query: String,open: ()->Unit) {
             Text(matchingExcerpt(note.body,query),fontSize=18.sp,maxLines=if(query.isBlank()) 3 else Int.MAX_VALUE,overflow=TextOverflow.Ellipsis)
             Text("$label · ${DateFormat.getDateInstance().format(Date(note.updated))}",maxLines=2,overflow=TextOverflow.Ellipsis,color=MaterialTheme.colorScheme.onSurfaceVariant)
         }
-    }
-}
-
-@Composable
-private fun VoiceUnavailable() {
-    OutlinedButton(onClick={},enabled=false,modifier=Modifier.fillMaxWidth().heightIn(min=56.dp),
-        colors=ButtonDefaults.outlinedButtonColors(disabledContentColor=MaterialTheme.colorScheme.onSurfaceVariant)) {
-        Text("语音输入暂不可用",fontSize=18.sp)
     }
 }

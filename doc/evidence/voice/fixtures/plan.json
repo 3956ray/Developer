@@ -1,0 +1,445 @@
+{
+  "frozenBeforeRecognition": true,
+  "voice": "com.apple.voice.compact.zh-CN.Tingting",
+  "rate": 0.45,
+  "sampleRate": 16000,
+  "audioPersistence": false,
+  "cases": [
+    {
+      "id": "CN01",
+      "text": "明天上午九点，我和李明到北京公园散步，记得带上水杯。",
+      "properNames": [
+        "李明",
+        "北京"
+      ],
+      "meaningAnchors": [
+        "明天",
+        "九点",
+        "公园",
+        "水杯"
+      ]
+    },
+    {
+      "id": "CN02",
+      "text": "星期六下午，王芳准备去上海看展览，晚上坐火车回家。",
+      "properNames": [
+        "王芳",
+        "上海"
+      ],
+      "meaningAnchors": [
+        "星期六",
+        "下午",
+        "展览",
+        "火车"
+      ]
+    },
+    {
+      "id": "CN03",
+      "text": "张伟今天在南京开会，会议结束以后给家里打一个电话。",
+      "properNames": [
+        "张伟",
+        "南京"
+      ],
+      "meaningAnchors": [
+        "今天",
+        "开会",
+        "结束",
+        "电话"
+      ]
+    },
+    {
+      "id": "CN04",
+      "text": "请记录，陈晨下周去杭州，计划参观西湖附近的博物馆。",
+      "properNames": [
+        "陈晨",
+        "杭州",
+        "西湖"
+      ],
+      "meaningAnchors": [
+        "下周",
+        "计划",
+        "参观",
+        "博物馆"
+      ]
+    },
+    {
+      "id": "CN05",
+      "text": "刘洋星期天在成都买菜，需要西红柿、土豆和两盒鸡蛋。",
+      "properNames": [
+        "刘洋",
+        "成都"
+      ],
+      "meaningAnchors": [
+        "星期天",
+        "买菜",
+        "土豆",
+        "鸡蛋"
+      ]
+    },
+    {
+      "id": "CN06",
+      "text": "林静打算从武汉出发，先买车票，再确认酒店的地址。",
+      "properNames": [
+        "林静",
+        "武汉"
+      ],
+      "meaningAnchors": [
+        "出发",
+        "车票",
+        "酒店",
+        "地址"
+      ]
+    },
+    {
+      "id": "CN07",
+      "text": "赵敏提醒我，去西安以前检查身份证和手机充电器。",
+      "properNames": [
+        "赵敏",
+        "西安"
+      ],
+      "meaningAnchors": [
+        "提醒",
+        "以前",
+        "身份证",
+        "充电器"
+      ]
+    },
+    {
+      "id": "CN08",
+      "text": "周杰在苏州找到一家书店，里面有关于中国历史的书。",
+      "properNames": [
+        "周杰",
+        "苏州",
+        "中国"
+      ],
+      "meaningAnchors": [
+        "书店",
+        "里面",
+        "历史"
+      ]
+    },
+    {
+      "id": "CN09",
+      "text": "孙梅下个月到天津探望朋友，我们约好下午三点见面。",
+      "properNames": [
+        "孙梅",
+        "天津"
+      ],
+      "meaningAnchors": [
+        "下个月",
+        "朋友",
+        "三点",
+        "见面"
+      ]
+    },
+    {
+      "id": "CN10",
+      "text": "黄磊今天去了重庆，发消息说那里的天气比较凉快。",
+      "properNames": [
+        "黄磊",
+        "重庆"
+      ],
+      "meaningAnchors": [
+        "今天",
+        "消息",
+        "天气",
+        "凉快"
+      ]
+    },
+    {
+      "id": "CN11",
+      "text": "郑强周五去深圳办事，完成以后要核对这次的费用。",
+      "properNames": [
+        "郑强",
+        "深圳"
+      ],
+      "meaningAnchors": [
+        "周五",
+        "办事",
+        "完成",
+        "费用"
+      ]
+    },
+    {
+      "id": "CN12",
+      "text": "何丽准备到广州参加培训，记得提前一天整理学习材料。",
+      "properNames": [
+        "何丽",
+        "广州"
+      ],
+      "meaningAnchors": [
+        "培训",
+        "提前",
+        "整理",
+        "材料"
+      ]
+    },
+    {
+      "id": "CN13",
+      "text": "今天和吴刚讨论家庭旅行，最后决定先去青岛住两天。",
+      "properNames": [
+        "吴刚",
+        "青岛"
+      ],
+      "meaningAnchors": [
+        "今天",
+        "家庭",
+        "旅行",
+        "两天"
+      ]
+    },
+    {
+      "id": "CN14",
+      "text": "许宁从长沙回来了，他建议下次坐早一点的高铁。",
+      "properNames": [
+        "许宁",
+        "长沙"
+      ],
+      "meaningAnchors": [
+        "回来",
+        "建议",
+        "下次",
+        "高铁"
+      ]
+    },
+    {
+      "id": "CN15",
+      "text": "罗兰在昆明拍了很多照片，今晚把喜欢的照片挑出来。",
+      "properNames": [
+        "罗兰",
+        "昆明"
+      ],
+      "meaningAnchors": [
+        "照片",
+        "今晚",
+        "喜欢",
+        "出来"
+      ]
+    },
+    {
+      "id": "CN16",
+      "text": "明天下午两点，李明和王芳在北京图书馆门口见面。",
+      "properNames": [
+        "李明",
+        "王芳",
+        "北京"
+      ],
+      "meaningAnchors": [
+        "明天",
+        "两点",
+        "图书馆",
+        "门口"
+      ]
+    },
+    {
+      "id": "CN17",
+      "text": "张伟想去上海听音乐会，先看看这个周末还有没有票。",
+      "properNames": [
+        "张伟",
+        "上海"
+      ],
+      "meaningAnchors": [
+        "音乐会",
+        "周末",
+        "票"
+      ]
+    },
+    {
+      "id": "CN18",
+      "text": "陈晨说杭州最近有雨，出门以前记得看一下天气预报。",
+      "properNames": [
+        "陈晨",
+        "杭州"
+      ],
+      "meaningAnchors": [
+        "有雨",
+        "出门",
+        "记得",
+        "天气预报"
+      ]
+    },
+    {
+      "id": "CN19",
+      "text": "刘洋和林静下周到南京，我们准备一起吃晚饭聊聊天。",
+      "properNames": [
+        "刘洋",
+        "林静",
+        "南京"
+      ],
+      "meaningAnchors": [
+        "下周",
+        "一起",
+        "晚饭",
+        "聊天"
+      ]
+    },
+    {
+      "id": "CN20",
+      "text": "赵敏在成都买了一本新书，她说周末可以借给我看。",
+      "properNames": [
+        "赵敏",
+        "成都"
+      ],
+      "meaningAnchors": [
+        "新书",
+        "周末",
+        "借给"
+      ]
+    },
+    {
+      "id": "CN21",
+      "text": "周杰计划在武汉停留一天，上午办事，下午去看朋友。",
+      "properNames": [
+        "周杰",
+        "武汉"
+      ],
+      "meaningAnchors": [
+        "一天",
+        "上午",
+        "办事",
+        "朋友"
+      ]
+    },
+    {
+      "id": "CN22",
+      "text": "孙梅想了解西安的历史，出发前先找几本相关的书。",
+      "properNames": [
+        "孙梅",
+        "西安"
+      ],
+      "meaningAnchors": [
+        "历史",
+        "出发",
+        "相关",
+        "书"
+      ]
+    },
+    {
+      "id": "CN23",
+      "text": "黄磊和郑强约在苏州见面，地点是车站旁边的咖啡馆。",
+      "properNames": [
+        "黄磊",
+        "郑强",
+        "苏州"
+      ],
+      "meaningAnchors": [
+        "见面",
+        "地点",
+        "车站",
+        "咖啡馆"
+      ]
+    },
+    {
+      "id": "CN24",
+      "text": "何丽准备给天津的亲戚寄东西，明天先确认收件地址。",
+      "properNames": [
+        "何丽",
+        "天津"
+      ],
+      "meaningAnchors": [
+        "亲戚",
+        "明天",
+        "确认",
+        "地址"
+      ]
+    },
+    {
+      "id": "CN25",
+      "text": "吴刚从重庆打来电话，说这次工作已经顺利完成。",
+      "properNames": [
+        "吴刚",
+        "重庆"
+      ],
+      "meaningAnchors": [
+        "电话",
+        "工作",
+        "顺利",
+        "完成"
+      ]
+    },
+    {
+      "id": "CN26",
+      "text": "许宁下周回深圳，今天晚上先把行李和证件整理好。",
+      "properNames": [
+        "许宁",
+        "深圳"
+      ],
+      "meaningAnchors": [
+        "下周",
+        "晚上",
+        "行李",
+        "证件"
+      ]
+    },
+    {
+      "id": "CN27",
+      "text": "罗兰请我推荐广州的公园，她希望找一个安静的地方。",
+      "properNames": [
+        "罗兰",
+        "广州"
+      ],
+      "meaningAnchors": [
+        "推荐",
+        "公园",
+        "安静",
+        "地方"
+      ]
+    },
+    {
+      "id": "CN28",
+      "text": "李明说青岛的海边很漂亮，我们可以早上出去走一走。",
+      "properNames": [
+        "李明",
+        "青岛"
+      ],
+      "meaningAnchors": [
+        "海边",
+        "漂亮",
+        "早上",
+        "出去"
+      ]
+    },
+    {
+      "id": "CN29",
+      "text": "王芳在长沙上学，放假以后准备回家陪父母住几天。",
+      "properNames": [
+        "王芳",
+        "长沙"
+      ],
+      "meaningAnchors": [
+        "上学",
+        "放假",
+        "回家",
+        "父母"
+      ]
+    },
+    {
+      "id": "CN30",
+      "text": "张伟和陈晨想去昆明旅行，先写下预算，再安排路线。",
+      "properNames": [
+        "张伟",
+        "陈晨",
+        "昆明"
+      ],
+      "meaningAnchors": [
+        "旅行",
+        "预算",
+        "安排",
+        "路线"
+      ]
+    }
+  ],
+  "scoring": "Raw whitespace/punctuation normalized only for matching. Proper-name denominator is every listed occurrence. No-rerecord engineering proxy: nonempty raw output and at least 75% of predeclared meaning anchors retained; review failures individually without changing frozen samples. Not father acceptance.",
+  "performance": {
+    "clip": "CN01–CN10 concatenated in order, first 30 seconds of PCM",
+    "runs": 10,
+    "mode": "real 100ms pacing through product VoiceCapture",
+    "p95": "nearest rank ceil(0.95*n), complete result minus last captured block release timestamp"
+  },
+  "stability": {
+    "clip": "CN01–CN10 concatenated/repeated in order to exactly 90 seconds",
+    "runs": 20,
+    "mode": "real 100ms pacing through product VoiceCapture"
+  },
+  "identityNote": "Explicit fixed identifier before any ASR output; first-name lookup calibration yielded different compactness and is excluded."
+}

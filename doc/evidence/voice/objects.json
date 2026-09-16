@@ -1,0 +1,27 @@
+[
+  {
+    "file": "vosk-android-0.3.75.aar",
+    "bytes": 13472638,
+    "sha256": "ab2f8b91ac8051561aa325546b35fed9a68b36b8121bac5c6fb927525c4adfad"
+  },
+  {
+    "file": "jna-5.18.1.aar",
+    "bytes": 522677,
+    "sha256": "7f053e3ec99e14dd71259c82c1c8a02738d64a13c31226b2acc170f3060951e0"
+  },
+  {
+    "file": "vosk-model-small-cn-0.22.zip",
+    "bytes": 43898754,
+    "sha256": "3af8b0e7e0f835ae9d414ce5df580237a3cfb08d586c9fbbb0f7ff29ad5b14ba"
+  },
+  {
+    "file": "vosk-sources.zip",
+    "bytes": 12679,
+    "sha256": "e4c65b8b5bc6eda351c5fb29cfa4249f29bc9e8b5e346d168185815f59954446"
+  },
+  {
+    "file": "jna-sources.zip",
+    "bytes": 166214,
+    "sha256": "0b9224e215b3c6a464959e3f994ddd64c14d46fb4014facd6afa1cc18e469466"
+  }
+]

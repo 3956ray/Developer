@@ -34,6 +34,40 @@ class NotesModelTest {
         runBlocking(ui) { model.newNote();model.body("合成原始文字");model.category("生活");model.save() }
         return await(ui,model) { !it.loading && !it.busy && it.editor==null }.notes.single().id
     }
+    @Test fun voiceCursorAndTwoConsecutiveInsertionsPreserveFields() = scenario { model,ui,_ ->
+        runBlocking(ui) {
+            model.newNote();model.body("前后");model.title("手动标题");model.category("保留分类")
+            val ticket=model.voiceAnchor(1)!!
+            val next=model.insertVoice(ticket,"第一段")!!
+            assertEquals("前第一段后",model.state.editor!!.note.body)
+            assertEquals(4,model.state.externalCursor)
+            assertEquals(1,next.cursor)
+            model.insertVoice(model.voiceAnchor(model.state.externalCursor)!!,"第二段")!!
+            assertEquals("前第一段第二段后",model.state.editor!!.note.body)
+            assertEquals("手动标题",model.state.editor!!.note.title)
+            assertEquals("保留分类",model.state.editor!!.note.category)
+            assertEquals(-1L,model.state.editor!!.baseRevision)
+        }
+    }
+    @Test fun voiceLateResultAndCorrectionCannotOverwriteNewEdits() = scenario { model,ui,_ ->
+        runBlocking(ui) {
+            model.newNote();model.body("原文")
+            val ticket=model.voiceAnchor()!!;model.body("更新原文")
+            assertNull(model.insertVoice(ticket,"迟到"));assertEquals("更新原文",model.state.editor!!.note.body)
+            val correction=model.insertVoice(model.voiceAnchor()!!,"立明")!!
+            val corrected=model.correctVoice(correction,"立明","李明同学")!!
+            assertEquals("更新原文李明同学",model.state.editor!!.note.body)
+            assertEquals(8,model.state.externalCursor)
+            model.body("继续编辑");assertNull(model.correctVoice(corrected,"李明同学","李明"))
+            assertEquals("继续编辑",model.state.editor!!.note.body)
+        }
+    }
+    @Test fun voicePreviousEditorSessionAndBlankCannotCreateNote() = scenario { model,ui,_ ->
+        val ticket=runBlocking(ui) { model.newNote();model.voiceAnchor()!! }
+        runBlocking(ui) { assertNull(model.insertVoice(ticket,"  "));model.back() }
+        await(ui,model) { it.editor==null && !it.loading }
+        runBlocking(ui) { model.newNote();assertNull(model.insertVoice(ticket,"另一会话"));assertTrue(model.state.editor!!.note.body.isEmpty()) }
+    }
     @Test fun realViewModelReopenUnchangedSaveAndReturn() = scenario { model,ui,_ ->
         val id=saved(model,ui)
         repeat(2) { round ->

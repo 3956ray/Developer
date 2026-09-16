@@ -1,0 +1,248 @@
+[
+  {
+    "sha": "625e44c62607a3b48fec6d72a30118448909e83f",
+    "node_id": "C_kwDODElrGdoAKDYyNWU0NGM2MjYwN2EzYjQ4ZmVjNmQ3MmEzMDExODQ0ODkwOWU4M2Y",
+    "commit": {
+      "author": {
+        "name": "Nickolay Shmyrev",
+        "email": "nshmyrev@gmail.com",
+        "date": "2025-12-08T20:47:46Z"
+      },
+      "committer": {
+        "name": "Nickolay Shmyrev",
+        "email": "nshmyrev@gmail.com",
+        "date": "2025-12-08T20:47:46Z"
+      },
+      "message": "Bump JNA requirements to 5.18.1 and update version",
+      "tree": {
+        "sha": "1332271f340657210deaec41da4079fd5e5c1b0a",
+        "url": "https://api.github.com/repos/alphacep/vosk-api/git/trees/1332271f340657210deaec41da4079fd5e5c1b0a"
+      },
+      "url": "https://api.github.com/repos/alphacep/vosk-api/git/commits/625e44c62607a3b48fec6d72a30118448909e83f",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/alphacep/vosk-api/commits/625e44c62607a3b48fec6d72a30118448909e83f",
+    "html_url": "https://github.com/alphacep/vosk-api/commit/625e44c62607a3b48fec6d72a30118448909e83f",
+    "comments_url": "https://api.github.com/repos/alphacep/vosk-api/commits/625e44c62607a3b48fec6d72a30118448909e83f/comments",
+    "author": {
+      "login": "nshmyrev",
+      "id": 2886672,
+      "node_id": "MDQ6VXNlcjI4ODY2NzI=",
+      "avatar_url": "https://avatars.githubusercontent.com/u/2886672?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nshmyrev",
+      "html_url": "https://github.com/nshmyrev",
+      "followers_url": "https://api.github.com/users/nshmyrev/followers",
+      "following_url": "https://api.github.com/users/nshmyrev/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nshmyrev/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nshmyrev/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nshmyrev/subscriptions",
+      "organizations_url": "https://api.github.com/users/nshmyrev/orgs",
+      "repos_url": "https://api.github.com/users/nshmyrev/repos",
+      "events_url": "https://api.github.com/users/nshmyrev/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nshmyrev/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "nshmyrev",
+      "id": 2886672,
+      "node_id": "MDQ6VXNlcjI4ODY2NzI=",
+      "avatar_url": "https://avatars.githubusercontent.com/u/2886672?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nshmyrev",
+      "html_url": "https://github.com/nshmyrev",
+      "followers_url": "https://api.github.com/users/nshmyrev/followers",
+      "following_url": "https://api.github.com/users/nshmyrev/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nshmyrev/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nshmyrev/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nshmyrev/subscriptions",
+      "organizations_url": "https://api.github.com/users/nshmyrev/orgs",
+      "repos_url": "https://api.github.com/users/nshmyrev/repos",
+      "events_url": "https://api.github.com/users/nshmyrev/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nshmyrev/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "488fc44d711840b85bdce25668c3ba7290aa51a2",
+        "url": "https://api.github.com/repos/alphacep/vosk-api/commits/488fc44d711840b85bdce25668c3ba7290aa51a2",
+        "html_url": "https://github.com/alphacep/vosk-api/commit/488fc44d711840b85bdce25668c3ba7290aa51a2"
+      }
+    ]
+  },
+  {
+    "sha": "056a2ad548657a702cd23d6fb4f92a6af0e8ad29",
+    "node_id": "C_kwDODElrGdoAKDA1NmEyYWQ1NDg2NTdhNzAyY2QyM2Q2ZmI0ZjkyYTZhZjBlOGFkMjk",
+    "commit": {
+      "author": {
+        "name": "Nickolay Shmyrev",
+        "email": "nshmyrev@gmail.com",
+        "date": "2025-09-03T07:46:07Z"
+      },
+      "committer": {
+        "name": "Nickolay Shmyrev",
+        "email": "nshmyrev@gmail.com",
+        "date": "2025-09-03T07:46:07Z"
+      },
+      "message": "Updates for recent android",
+      "tree": {
+        "sha": "2f089c205c5ee7e3479421ab5c09101cd97f3333",
+        "url": "https://api.github.com/repos/alphacep/vosk-api/git/trees/2f089c205c5ee7e3479421ab5c09101cd97f3333"
+      },
+      "url": "https://api.github.com/repos/alphacep/vosk-api/git/commits/056a2ad548657a702cd23d6fb4f92a6af0e8ad29",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/alphacep/vosk-api/commits/056a2ad548657a702cd23d6fb4f92a6af0e8ad29",
+    "html_url": "https://github.com/alphacep/vosk-api/commit/056a2ad548657a702cd23d6fb4f92a6af0e8ad29",
+    "comments_url": "https://api.github.com/repos/alphacep/vosk-api/commits/056a2ad548657a702cd23d6fb4f92a6af0e8ad29/comments",
+    "author": {
+      "login": "nshmyrev",
+      "id": 2886672,
+      "node_id": "MDQ6VXNlcjI4ODY2NzI=",
+      "avatar_url": "https://avatars.githubusercontent.com/u/2886672?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nshmyrev",
+      "html_url": "https://github.com/nshmyrev",
+      "followers_url": "https://api.github.com/users/nshmyrev/followers",
+      "following_url": "https://api.github.com/users/nshmyrev/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nshmyrev/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nshmyrev/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nshmyrev/subscriptions",
+      "organizations_url": "https://api.github.com/users/nshmyrev/orgs",
+      "repos_url": "https://api.github.com/users/nshmyrev/repos",
+      "events_url": "https://api.github.com/users/nshmyrev/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nshmyrev/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "nshmyrev",
+      "id": 2886672,
+      "node_id": "MDQ6VXNlcjI4ODY2NzI=",
+      "avatar_url": "https://avatars.githubusercontent.com/u/2886672?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nshmyrev",
+      "html_url": "https://github.com/nshmyrev",
+      "followers_url": "https://api.github.com/users/nshmyrev/followers",
+      "following_url": "https://api.github.com/users/nshmyrev/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nshmyrev/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nshmyrev/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nshmyrev/subscriptions",
+      "organizations_url": "https://api.github.com/users/nshmyrev/orgs",
+      "repos_url": "https://api.github.com/users/nshmyrev/repos",
+      "events_url": "https://api.github.com/users/nshmyrev/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nshmyrev/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "07a0ddb46732cb4dbd6cf60922f4f03fcc96f8f1",
+        "url": "https://api.github.com/repos/alphacep/vosk-api/commits/07a0ddb46732cb4dbd6cf60922f4f03fcc96f8f1",
+        "html_url": "https://github.com/alphacep/vosk-api/commit/07a0ddb46732cb4dbd6cf60922f4f03fcc96f8f1"
+      }
+    ]
+  },
+  {
+    "sha": "9cee2899bb183d42570d0ebd5753e31eb5a36c61",
+    "node_id": "C_kwDODElrGdoAKDljZWUyODk5YmIxODNkNDI1NzBkMGViZDU3NTNlMzFlYjVhMzZjNjE",
+    "commit": {
+      "author": {
+        "name": "Nickolay Shmyrev",
+        "email": "nshmyrev@gmail.com",
+        "date": "2023-03-15T21:50:42Z"
+      },
+      "committer": {
+        "name": "Nickolay Shmyrev",
+        "email": "nshmyrev@gmail.com",
+        "date": "2023-03-15T21:50:42Z"
+      },
+      "message": "Update publishing plugin and simplify gradle build",
+      "tree": {
+        "sha": "c8af6f20f82b791f94546d2005c1b809fd93f414",
+        "url": "https://api.github.com/repos/alphacep/vosk-api/git/trees/c8af6f20f82b791f94546d2005c1b809fd93f414"
+      },
+      "url": "https://api.github.com/repos/alphacep/vosk-api/git/commits/9cee2899bb183d42570d0ebd5753e31eb5a36c61",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/alphacep/vosk-api/commits/9cee2899bb183d42570d0ebd5753e31eb5a36c61",
+    "html_url": "https://github.com/alphacep/vosk-api/commit/9cee2899bb183d42570d0ebd5753e31eb5a36c61",
+    "comments_url": "https://api.github.com/repos/alphacep/vosk-api/commits/9cee2899bb183d42570d0ebd5753e31eb5a36c61/comments",
+    "author": {
+      "login": "nshmyrev",
+      "id": 2886672,
+      "node_id": "MDQ6VXNlcjI4ODY2NzI=",
+      "avatar_url": "https://avatars.githubusercontent.com/u/2886672?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nshmyrev",
+      "html_url": "https://github.com/nshmyrev",
+      "followers_url": "https://api.github.com/users/nshmyrev/followers",
+      "following_url": "https://api.github.com/users/nshmyrev/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nshmyrev/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nshmyrev/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nshmyrev/subscriptions",
+      "organizations_url": "https://api.github.com/users/nshmyrev/orgs",
+      "repos_url": "https://api.github.com/users/nshmyrev/repos",
+      "events_url": "https://api.github.com/users/nshmyrev/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nshmyrev/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "nshmyrev",
+      "id": 2886672,
+      "node_id": "MDQ6VXNlcjI4ODY2NzI=",
+      "avatar_url": "https://avatars.githubusercontent.com/u/2886672?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nshmyrev",
+      "html_url": "https://github.com/nshmyrev",
+      "followers_url": "https://api.github.com/users/nshmyrev/followers",
+      "following_url": "https://api.github.com/users/nshmyrev/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nshmyrev/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nshmyrev/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nshmyrev/subscriptions",
+      "organizations_url": "https://api.github.com/users/nshmyrev/orgs",
+      "repos_url": "https://api.github.com/users/nshmyrev/repos",
+      "events_url": "https://api.github.com/users/nshmyrev/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nshmyrev/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "a40742bbaf8abbf61159157e498d8a188eabdd38",
+        "url": "https://api.github.com/repos/alphacep/vosk-api/commits/a40742bbaf8abbf61159157e498d8a188eabdd38",
+        "html_url": "https://github.com/alphacep/vosk-api/commit/a40742bbaf8abbf61159157e498d8a188eabdd38"
+      }
+    ]
+  }
+]

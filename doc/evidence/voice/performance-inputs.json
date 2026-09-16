@@ -1,0 +1,6 @@
+{
+  "app/src/main/java/com/example/thinkv2/voice/VoiceCapture.kt": "2eb7998a0cf73c5a4ac1c86f908094f34afb9f41ae4b99b4fa77cb584e3b4fdc",
+  "app/src/main/java/com/example/thinkv2/voice/OfflineEngine.kt": "6f3756be308098a8d22f33b9b4e9d437058ab4f3bd0b4bfde96fd857dc1e5cda",
+  "app/src/main/java/com/example/thinkv2/voice/VoiceText.kt": "1e338554bc4dc92a2647b8b464240cd48e81425461cfa41a7f2eee0ef32a8455",
+  "app/src/androidTest/java/com/example/thinkv2/voice/RealtimeFixture.kt": "bc65d995686190c7a592247e4254db409cb95f3169eaa6de2fdbbe7175eb7379"
+}

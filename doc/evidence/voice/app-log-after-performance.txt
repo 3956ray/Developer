@@ -1,0 +1,38 @@
+--------- beginning of main
+09-16 09:30:11.047  3725  3725 I libprocessgroup: Created cgroup /sys/fs/cgroup/apps/uid_10229/pid_3725
+09-16 09:30:11.058  3725  3725 I Zygote  : Process 3725 created for com.example.thinkv2
+09-16 09:30:11.058  3725  3725 I example.thinkv2: Late-enabling -Xcheck:jni
+09-16 09:30:11.065  3725  3725 I example.thinkv2: Using generational CollectorTypeCMC GC.
+09-16 09:30:11.070  3725  3725 D nativeloader: Load libframework-connectivity-tiramisu-jni.so using APEX ns com_android_tethering for caller /apex/com.android.tethering/javalib/framework-connectivity-t.jar: ok
+09-16 09:30:11.086  3725  3725 D CompatChangeReporter: Compat change id reported: 333566037; UID 10229; state: ENABLED
+--------- beginning of system
+09-16 09:30:11.087  3725  3725 W ActivityThread: Package uses different ABI(s) than its instrumentation: package[com.example.thinkv2]: arm64-v8a, null instrumentation[com.example.thinkv2.test]: null, null
+09-16 09:30:11.089  3725  3725 D ApplicationLoaders: Returning zygote-cached class loader: /system_ext/framework/androidx.window.extensions.jar
+09-16 09:30:11.089  3725  3725 D ApplicationLoaders: Returning zygote-cached class loader: /system_ext/framework/androidx.window.sidecar.jar
+09-16 09:30:11.308  3725  3725 D nativeloader: Configuring clns-9 for other apk /data/app/~~EX0L8DcC_JfhDLT8yYXAnA==/com.example.thinkv2.test-mB4t8_hH-UzXXOKV79-fdA==/base.apk:/data/app/~~iH0QWZepiBNo38nytduOUA==/com.example.thinkv2-9o5O2fOxGwigoiA0F6HSqw==/base.apk. target_sdk_version=37, uses_libraries=, library_path=/data/app/~~EX0L8DcC_JfhDLT8yYXAnA==/com.example.thinkv2.test-mB4t8_hH-UzXXOKV79-fdA==/lib/arm64:/data/app/~~iH0QWZepiBNo38nytduOUA==/com.example.thinkv2-9o5O2fOxGwigoiA0F6HSqw==/lib/arm64:/data/app/~~EX0L8DcC_JfhDLT8yYXAnA==/com.example.thinkv2.test-mB4t8_hH-UzXXOKV79-fdA==/base.apk!/lib/arm64-v8a:/data/app/~~iH0QWZepiBNo38nytduOUA==/com.example.thinkv2-9o5O2fOxGwigoiA0F6HSqw==/base.apk!/lib/arm64-v8a, permitted_path=/data:/mnt/expand:/data/user/0/com.example.thinkv2
+09-16 09:30:11.313  3725  3725 D ActivityThread: Set OS env TMPDIR to /data/user/0/com.example.thinkv2/cache
+09-16 09:30:11.313  3725  3725 V GraphicsEnvironment: Currently set values for:
+09-16 09:30:11.313  3725  3725 V GraphicsEnvironment:   angle_gl_driver_selection_pkgs=[]
+09-16 09:30:11.313  3725  3725 V GraphicsEnvironment:   angle_gl_driver_selection_values=[]
+09-16 09:30:11.313  3725  3725 V GraphicsEnvironment: com.example.thinkv2 is not listed in per-application setting
+09-16 09:30:11.313  3725  3725 V GraphicsEnvironment: No special selections for ANGLE, returning default driver choice
+09-16 09:30:11.314  3725  3725 V GraphicsEnvironment: Neither updatable production driver nor prerelease driver is supported.
+09-16 09:30:11.482  3725  3725 D CompatChangeReporter: Compat change id reported: 407952621; UID 10229; state: ENABLED
+09-16 09:30:11.482  3725  3725 D CompatChangeReporter: Compat change id reported: 419020719; UID 10229; state: ENABLED
+09-16 09:30:11.483  3725  3725 I AndroidJUnitRunner: newApplication android.app.Application
+09-16 09:30:11.495  3725  3725 I AndroidJUnitRunner: onCreate Bundle[mParcelledData.dataSize=172]
+09-16 09:30:11.496  3725  3725 D AndroidJUnitRunner: Use the raw file system for managing file I/O.
+09-16 09:30:11.502  3725  3725 V TestEventClient: No service name argument was given (testDiscoveryService, testRunEventService or orchestratorService)
+09-16 09:30:11.502  3725  3740 D AndroidJUnitRunner: onStart is called.
+09-16 09:30:11.504  3725  3741 D CompatChangeReporter: Compat change id reported: 458413887; UID 10229; state: ENABLED
+09-16 09:30:11.504  3725  3740 I InstrConnection: Could not send broadcast or register receiver (isolatedProcess?)
+09-16 09:30:11.514  3725  3740 I TestRunner: run started: 1 tests
+09-16 09:30:11.515  3725  3740 I TestRunner: started: syntheticMemoryFixtureServer(com.example.thinkv2.voice.AndroidVoiceTest)
+09-16 09:30:11.519  3725  3740 D nativeloader: Load /data/app/~~iH0QWZepiBNo38nytduOUA==/com.example.thinkv2-9o5O2fOxGwigoiA0F6HSqw==/base.apk!/lib/arm64-v8a/libjnidispatch.so using class loader ns clns-9 (caller=/data/app/~~iH0QWZepiBNo38nytduOUA==/com.example.thinkv2-9o5O2fOxGwigoiA0F6HSqw==/base.apk!classes6.dex): ok
+09-16 09:30:11.523  3725  3740 D nativeloader: Load /data/app/~~iH0QWZepiBNo38nytduOUA==/com.example.thinkv2-9o5O2fOxGwigoiA0F6HSqw==/base.apk!/lib/arm64-v8a/libvosk.so using class loader ns clns-9 (caller=/data/app/~~iH0QWZepiBNo38nytduOUA==/com.example.thinkv2-9o5O2fOxGwigoiA0F6HSqw==/base.apk!classes6.dex): ok
+09-16 09:30:17.195  3725  3725 D CompatChangeReporter: Compat change id reported: 418924588; UID 10229; state: ENABLED
+09-16 09:30:17.201  3725  4275 D ProfileInstaller: Installing profile for com.example.thinkv2
+09-16 09:34:45.141  3725  3737 I example.thinkv2: Explicit concurrent mark compact GC freed 784KB AllocSpace bytes, 0(0B) LOS objects, 24% free, 3476KB/4635KB, paused 49us,580us total 9.558ms
+09-16 09:56:05.491  3725  3737 I example.thinkv2: Explicit concurrent mark compact GC freed 800KB AllocSpace bytes, 0(0B) LOS objects, 24% free, 5380KB/7174KB, paused 160us,908us total 9.234ms
+09-16 10:05:26.678  3725  3740 I TestRunner: finished: syntheticMemoryFixtureServer(com.example.thinkv2.voice.AndroidVoiceTest)
+09-16 10:05:26.731  3725  3740 I TestRunner: run finished: 1 tests, 0 failed, 0 ignored

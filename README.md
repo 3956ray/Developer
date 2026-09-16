@@ -1,6 +1,6 @@
 # 思 · thinkV2
 
-从独立空白 Android 模板开发的本地笔记应用。当前任务为 `V2-BACKUP-RESTORE-001`；文字核心、分类、回收站与提醒已验收。
+从独立空白 Android 模板开发的本地笔记应用。当前任务为 `V2-OFFLINE-VOICE-001`；文字核心、分类、回收站、提醒与备份已验收。离线语音已接入，识别质量验收尚未通过。
 
 当前范围见 [分类与回收站合同](doc/lifecycle-requirements.md)，上一单文字范围见 [需求基线](doc/requirements.md)。实现位于 `app/src/main/java/com/example/thinkv2/notes`。
 
@@ -15,10 +15,14 @@
 
 首页「备份与恢复」可通过系统文件选择器导出明文备份、预览并合并恢复；冲突默认保留本机并另存副本，导入提醒保持关闭。请将备份保存到安全位置，选择云盘可能上传文件。
 
-语音暂不可用。日历迁移和关系图谱尚未实现。本版本不代表家庭试用已通过。
+编辑器可按住说话、松手处理，将离线中文转写插入当前草稿；可取消，单次最长90秒。原始音频只在内存处理。识别效果仍待改进，专名尤其需要核对；纠错词表仅在转写后提供确认建议，不改变原始识别。当前备份不包含该词表。
 
-构建和验证的实际命令与结果见 [备份验证报告](doc/backup-verification.md)。真机/家庭试用尚未验证。
+冻结合成30段测试的原始专名正确率为47/66（71.21%），严格工程可用性10/30，均未达要求，因此语音不能宣称完整验收。具体证据与剩余条件见[语音验证记录](doc/voice-verification.md)。
+
+语音命令、日历迁移和关系图谱尚未实现。本版本不代表小米15或家庭试用已通过。
+
+构建和验证的实际命令与结果见 [语音验证记录](doc/voice-verification.md)。真机/家庭试用尚未验证。
 
 正式完整产品范围：[2026-09-16独立产品基线](doc/product-baseline-decision-2026-09-16.md)。当前可在编辑器把笔记移入回收站，并在首页回收站恢复原记录；没有永久删除。分类管理支持创建、改名和确认删除分类，笔记内容保留。
 
-本单结果见 [备份验证报告](doc/backup-verification.md)，格式见 [备份格式](doc/backup-format.md)。[提醒验证报告](doc/reminders-verification.md)、[分类与回收站验证报告](doc/lifecycle-verification.md)及文字核心报告保留为历史证据。
+本单结果见 [语音验证记录](doc/voice-verification.md)，运行对象审查见 [运行库与模型审查](doc/voice-runtime-review.md)。[备份验证报告](doc/backup-verification.md)、[备份格式](doc/backup-format.md)、[提醒验证报告](doc/reminders-verification.md)及早期报告保留为历史证据。

@@ -1,0 +1,14 @@
+{
+  "rawNames": "47/66",
+  "rawNameAccuracy": 0.7121212121212122,
+  "nameGatePass": false,
+  "developerUsability": "10/30",
+  "usabilityGatePass": false,
+  "p30Runs": 10,
+  "p95Ms": 235,
+  "performanceGatePass": true,
+  "s90Runs": 20,
+  "stabilityGatePass": true,
+  "finalQualityGatePass": false,
+  "scope": "Synthetic fixed voice on isolated emulator. Not Xiaomi microphone/father acceptance."
+}

@@ -1,0 +1,457 @@
+{
+  "properNameOccurrences": 66,
+  "properNameCorrect": 47,
+  "rawProperNameAccuracy": 0.7121212121212122,
+  "requiredAccuracy": 0.9,
+  "proxyPass": 30,
+  "developerUsabilityPass": 10,
+  "requiredNoRerecord": 27,
+  "fatherAccepted": false,
+  "result": "FAIL thresholds; developer conservative text usability assessment, not father acceptance",
+  "cases": [
+    {
+      "id": "CN01",
+      "reference": "明天上午九点，我和李明到北京公园散步，记得带上水杯。",
+      "raw": "明天 上午 九点 我 和 李明 到 北京 公园 散步 记得 带 上 水杯",
+      "properNameCorrect": [
+        "李明",
+        "北京"
+      ],
+      "properNameMissing": [],
+      "proxyPass": true,
+      "developerUsabilityPass": true,
+      "reason": "主体李明、明天上午九点、北京公园散步与携水杯均保留。",
+      "negationQuantityReview": "逐段理由已检查；原文没有否定的段落未额外虚构否定测试。"
+    },
+    {
+      "id": "CN02",
+      "reference": "星期六下午，王芳准备去上海看展览，晚上坐火车回家。",
+      "raw": "星期六 下午 王芳 准备 去 上海 看 展览 外伤 坐 火车 回家",
+      "properNameCorrect": [
+        "王芳",
+        "上海"
+      ],
+      "properNameMissing": [],
+      "proxyPass": true,
+      "developerUsabilityPass": false,
+      "reason": "晚上误成外伤，返程时间语义丢失；其他活动与主体地点保留。",
+      "negationQuantityReview": "逐段理由已检查；原文没有否定的段落未额外虚构否定测试。"
+    },
+    {
+      "id": "CN03",
+      "reference": "张伟今天在南京开会，会议结束以后给家里打一个电话。",
+      "raw": "张伟 今天 在 南京 开会 会议 结束 以后 给 家里 打 一个 电话",
+      "properNameCorrect": [
+        "张伟",
+        "南京"
+      ],
+      "properNameMissing": [],
+      "proxyPass": true,
+      "developerUsabilityPass": true,
+      "reason": "张伟、今天南京开会、会后给家里电话全部保留。",
+      "negationQuantityReview": "逐段理由已检查；原文没有否定的段落未额外虚构否定测试。"
+    },
+    {
+      "id": "CN04",
+      "reference": "请记录，陈晨下周去杭州，计划参观西湖附近的博物馆。",
+      "raw": "请 记录 沉沉 下周 去 杭州 计划 参观 西湖 附近 的 博物馆",
+      "properNameCorrect": [
+        "杭州",
+        "西湖"
+      ],
+      "properNameMissing": [
+        "陈晨"
+      ],
+      "proxyPass": true,
+      "developerUsabilityPass": false,
+      "reason": "陈晨误成沉沉，关键主体识别失败；下周杭州西湖博物馆保留。",
+      "negationQuantityReview": "逐段理由已检查；原文没有否定的段落未额外虚构否定测试。"
+    },
+    {
+      "id": "CN05",
+      "reference": "刘洋星期天在成都买菜，需要西红柿、土豆和两盒鸡蛋。",
+      "raw": "牛羊 星期天 在 成都 买 菜 需要 西红柿 土豆 和 俩 和 鸡蛋",
+      "properNameCorrect": [
+        "成都"
+      ],
+      "properNameMissing": [
+        "刘洋"
+      ],
+      "proxyPass": true,
+      "developerUsabilityPass": false,
+      "reason": "刘洋误成牛羊；两盒鸡蛋误成俩和鸡蛋，主体和数量单位不可靠。",
+      "negationQuantityReview": "逐段理由已检查；原文没有否定的段落未额外虚构否定测试。"
+    },
+    {
+      "id": "CN06",
+      "reference": "林静打算从武汉出发，先买车票，再确认酒店的地址。",
+      "raw": "临近 打算 从 武汉 出发 先买 车票 在 确认 酒店 的 地址",
+      "properNameCorrect": [
+        "武汉"
+      ],
+      "properNameMissing": [
+        "林静"
+      ],
+      "proxyPass": true,
+      "developerUsabilityPass": false,
+      "reason": "林静误成临近，主体改变；购票后确认酒店地址动作顺序基本保留。",
+      "negationQuantityReview": "逐段理由已检查；原文没有否定的段落未额外虚构否定测试。"
+    },
+    {
+      "id": "CN07",
+      "reference": "赵敏提醒我，去西安以前检查身份证和手机充电器。",
+      "raw": "赵敏 提醒 我 去 西安 以前 检查 身份证 和 手机 充电器",
+      "properNameCorrect": [
+        "赵敏",
+        "西安"
+      ],
+      "properNameMissing": [],
+      "proxyPass": true,
+      "developerUsabilityPass": true,
+      "reason": "赵敏、西安、行前检查身份证和充电器均保留。",
+      "negationQuantityReview": "逐段理由已检查；原文没有否定的段落未额外虚构否定测试。"
+    },
+    {
+      "id": "CN08",
+      "reference": "周杰在苏州找到一家书店，里面有关于中国历史的书。",
+      "raw": "周杰 在 苏州 找到 一家 书店 里面 有 关于 中国 历史 的 书",
+      "properNameCorrect": [
+        "周杰",
+        "苏州",
+        "中国"
+      ],
+      "properNameMissing": [],
+      "proxyPass": true,
+      "developerUsabilityPass": true,
+      "reason": "周杰、苏州书店、中国历史书均保留。",
+      "negationQuantityReview": "逐段理由已检查；原文没有否定的段落未额外虚构否定测试。"
+    },
+    {
+      "id": "CN09",
+      "reference": "孙梅下个月到天津探望朋友，我们约好下午三点见面。",
+      "raw": "没 下 个 月 到 天津 探望 朋友 我们 约 好 下午 三点 见面",
+      "properNameCorrect": [
+        "天津"
+      ],
+      "properNameMissing": [
+        "孙梅"
+      ],
+      "proxyPass": true,
+      "developerUsabilityPass": false,
+      "reason": "孙梅姓名丢失，只剩没；下个月和下午三点保留，但主体不完整。",
+      "negationQuantityReview": "逐段理由已检查；原文没有否定的段落未额外虚构否定测试。"
+    },
+    {
+      "id": "CN10",
+      "reference": "黄磊今天去了重庆，发消息说那里的天气比较凉快。",
+      "raw": "黄磊 今天 去 了 重庆 发 消息 说 那里 的 天气 比较 凉 会",
+      "properNameCorrect": [
+        "黄磊",
+        "重庆"
+      ],
+      "properNameMissing": [],
+      "proxyPass": true,
+      "developerUsabilityPass": false,
+      "reason": "凉快误成凉会，天气结论用词不成立；严格可用性判为失败。",
+      "negationQuantityReview": "逐段理由已检查；原文没有否定的段落未额外虚构否定测试。"
+    },
+    {
+      "id": "CN11",
+      "reference": "郑强周五去深圳办事，完成以后要核对这次的费用。",
+      "raw": "更 强 周五 去 深圳 办事 完成 以后 要 核对 这次 的 费用",
+      "properNameCorrect": [
+        "深圳"
+      ],
+      "properNameMissing": [
+        "郑强"
+      ],
+      "proxyPass": true,
+      "developerUsabilityPass": false,
+      "reason": "郑强误成更强，主体失败；周五深圳办事及核对费用保留。",
+      "negationQuantityReview": "逐段理由已检查；原文没有否定的段落未额外虚构否定测试。"
+    },
+    {
+      "id": "CN12",
+      "reference": "何丽准备到广州参加培训，记得提前一天整理学习材料。",
+      "raw": "合理 准备 到 广州 参加 培训 记得 提前 一天 整理 学习 材料",
+      "properNameCorrect": [
+        "广州"
+      ],
+      "properNameMissing": [
+        "何丽"
+      ],
+      "proxyPass": true,
+      "developerUsabilityPass": false,
+      "reason": "何丽误成合理，主体失败；提前一天和培训材料保留。",
+      "negationQuantityReview": "逐段理由已检查；原文没有否定的段落未额外虚构否定测试。"
+    },
+    {
+      "id": "CN13",
+      "reference": "今天和吴刚讨论家庭旅行，最后决定先去青岛住两天。",
+      "raw": "今天 和 吴刚 讨论 家庭 旅行 最后 决定 先 去 青岛 住 两天",
+      "properNameCorrect": [
+        "吴刚",
+        "青岛"
+      ],
+      "properNameMissing": [],
+      "proxyPass": true,
+      "developerUsabilityPass": true,
+      "reason": "吴刚、今天讨论家庭旅行、青岛住两天均保留。",
+      "negationQuantityReview": "逐段理由已检查；原文没有否定的段落未额外虚构否定测试。"
+    },
+    {
+      "id": "CN14",
+      "reference": "许宁从长沙回来了，他建议下次坐早一点的高铁。",
+      "raw": "去 您 从 长沙 回来 了 他 建议 下次 做 早 一点 的 高铁",
+      "properNameCorrect": [
+        "长沙"
+      ],
+      "properNameMissing": [
+        "许宁"
+      ],
+      "proxyPass": true,
+      "developerUsabilityPass": false,
+      "reason": "许宁误成去您，主体失败；回来及下次早一点高铁保留。",
+      "negationQuantityReview": "逐段理由已检查；原文没有否定的段落未额外虚构否定测试。"
+    },
+    {
+      "id": "CN15",
+      "reference": "罗兰在昆明拍了很多照片，今晚把喜欢的照片挑出来。",
+      "raw": "罗兰 在 昆明 拍 了 很多 照片 今晚 把 喜欢 的 照片 挑 出来",
+      "properNameCorrect": [
+        "罗兰",
+        "昆明"
+      ],
+      "properNameMissing": [],
+      "proxyPass": true,
+      "developerUsabilityPass": true,
+      "reason": "罗兰、昆明照片、今晚挑选喜欢照片均保留。",
+      "negationQuantityReview": "逐段理由已检查；原文没有否定的段落未额外虚构否定测试。"
+    },
+    {
+      "id": "CN16",
+      "reference": "明天下午两点，李明和王芳在北京图书馆门口见面。",
+      "raw": "明天下午 两点 匿名 和 王芳 在 北京 图书馆 门口 见面",
+      "properNameCorrect": [
+        "王芳",
+        "北京"
+      ],
+      "properNameMissing": [
+        "李明"
+      ],
+      "proxyPass": true,
+      "developerUsabilityPass": false,
+      "reason": "李明误成匿名，见面参与人改变；明天下午两点及图书馆门口保留。",
+      "negationQuantityReview": "逐段理由已检查；原文没有否定的段落未额外虚构否定测试。"
+    },
+    {
+      "id": "CN17",
+      "reference": "张伟想去上海听音乐会，先看看这个周末还有没有票。",
+      "raw": "将 为 想 去 上海 听 音乐会 先 看看 这个 周末 还 有没有 票",
+      "properNameCorrect": [
+        "上海"
+      ],
+      "properNameMissing": [
+        "张伟"
+      ],
+      "proxyPass": true,
+      "developerUsabilityPass": false,
+      "reason": "张伟误成将为，主体失败；本周末音乐会还有没有票的疑问/否定结构保留。",
+      "negationQuantityReview": "逐段理由已检查；原文没有否定的段落未额外虚构否定测试。"
+    },
+    {
+      "id": "CN18",
+      "reference": "陈晨说杭州最近有雨，出门以前记得看一下天气预报。",
+      "raw": "沉沉 说 杭州 最近 由于 出门 以前 记得 看一下 天气预报",
+      "properNameCorrect": [
+        "杭州"
+      ],
+      "properNameMissing": [
+        "陈晨"
+      ],
+      "proxyPass": true,
+      "developerUsabilityPass": false,
+      "reason": "陈晨误成沉沉，有雨误成由于，主体及天气事实丢失。",
+      "negationQuantityReview": "逐段理由已检查；原文没有否定的段落未额外虚构否定测试。"
+    },
+    {
+      "id": "CN19",
+      "reference": "刘洋和林静下周到南京，我们准备一起吃晚饭聊聊天。",
+      "raw": "浏阳河 临近 下周 到 南京 我们 准备 一起 吃 晚饭 聊聊天",
+      "properNameCorrect": [
+        "南京"
+      ],
+      "properNameMissing": [
+        "刘洋",
+        "林静"
+      ],
+      "proxyPass": true,
+      "developerUsabilityPass": false,
+      "reason": "刘洋和林静误成浏阳河临近，双方主体关系丢失；下周南京聚餐保留。",
+      "negationQuantityReview": "逐段理由已检查；原文没有否定的段落未额外虚构否定测试。"
+    },
+    {
+      "id": "CN20",
+      "reference": "赵敏在成都买了一本新书，她说周末可以借给我看。",
+      "raw": "照明 在 成都 买 了 一本 新书 他 说 周末 可以 借给 我 看",
+      "properNameCorrect": [
+        "成都"
+      ],
+      "properNameMissing": [
+        "赵敏"
+      ],
+      "proxyPass": true,
+      "developerUsabilityPass": false,
+      "reason": "赵敏误成照明，主体失败；一本新书和周末借阅保留。",
+      "negationQuantityReview": "逐段理由已检查；原文没有否定的段落未额外虚构否定测试。"
+    },
+    {
+      "id": "CN21",
+      "reference": "周杰计划在武汉停留一天，上午办事，下午去看朋友。",
+      "raw": "周杰 计划 在 武汉 停留 一天 上午 办事 下午 去 看 朋友",
+      "properNameCorrect": [
+        "周杰",
+        "武汉"
+      ],
+      "properNameMissing": [],
+      "proxyPass": true,
+      "developerUsabilityPass": true,
+      "reason": "周杰、武汉停留一天、上午办事下午访友顺序和数量均保留。",
+      "negationQuantityReview": "逐段理由已检查；原文没有否定的段落未额外虚构否定测试。"
+    },
+    {
+      "id": "CN22",
+      "reference": "孙梅想了解西安的历史，出发前先找几本相关的书。",
+      "raw": "真 没 想 了解 西安 的 历史 出发 前 先 着急 本相 关 的 书",
+      "properNameCorrect": [
+        "西安"
+      ],
+      "properNameMissing": [
+        "孙梅"
+      ],
+      "proxyPass": true,
+      "developerUsabilityPass": false,
+      "reason": "孙梅误成真没，先找几本误成先着急本，主体/动作/数量同时受损。",
+      "negationQuantityReview": "逐段理由已检查；原文没有否定的段落未额外虚构否定测试。"
+    },
+    {
+      "id": "CN23",
+      "reference": "黄磊和郑强约在苏州见面，地点是车站旁边的咖啡馆。",
+      "raw": "黄磊 和 正 强 约 在 苏州 见面 地点 是 车站 旁边 的 咖啡馆",
+      "properNameCorrect": [
+        "黄磊",
+        "苏州"
+      ],
+      "properNameMissing": [
+        "郑强"
+      ],
+      "proxyPass": true,
+      "developerUsabilityPass": false,
+      "reason": "郑强误成正强，专名主体不准确；黄磊、苏州、车站旁咖啡馆保留。",
+      "negationQuantityReview": "逐段理由已检查；原文没有否定的段落未额外虚构否定测试。"
+    },
+    {
+      "id": "CN24",
+      "reference": "何丽准备给天津的亲戚寄东西，明天先确认收件地址。",
+      "raw": "合理 准备 给 天津 的 清洗剂 东西 明天 先 确认 收件 地址",
+      "properNameCorrect": [
+        "天津"
+      ],
+      "properNameMissing": [
+        "何丽"
+      ],
+      "proxyPass": true,
+      "developerUsabilityPass": false,
+      "reason": "何丽误成合理，亲戚寄东西误成清洗剂东西，主体/对象/动作受损。",
+      "negationQuantityReview": "逐段理由已检查；原文没有否定的段落未额外虚构否定测试。"
+    },
+    {
+      "id": "CN25",
+      "reference": "吴刚从重庆打来电话，说这次工作已经顺利完成。",
+      "raw": "我 刚 从 重庆 打来 电话 说 这次 工作 已经 顺利 完成",
+      "properNameCorrect": [
+        "重庆"
+      ],
+      "properNameMissing": [
+        "吴刚"
+      ],
+      "proxyPass": true,
+      "developerUsabilityPass": false,
+      "reason": "吴刚误成我刚，第三人主体变为第一人；工作完成的事实保留。",
+      "negationQuantityReview": "逐段理由已检查；原文没有否定的段落未额外虚构否定测试。"
+    },
+    {
+      "id": "CN26",
+      "reference": "许宁下周回深圳，今天晚上先把行李和证件整理好。",
+      "raw": "去 临夏州 回 深圳 今天晚上 先 把 行李 和 证件 整理 好",
+      "properNameCorrect": [
+        "深圳"
+      ],
+      "properNameMissing": [
+        "许宁"
+      ],
+      "proxyPass": true,
+      "developerUsabilityPass": false,
+      "reason": "许宁下周误成去临夏州，主体及下周时间丢失；深圳与整理行李证件保留。",
+      "negationQuantityReview": "逐段理由已检查；原文没有否定的段落未额外虚构否定测试。"
+    },
+    {
+      "id": "CN27",
+      "reference": "罗兰请我推荐广州的公园，她希望找一个安静的地方。",
+      "raw": "罗兰 请 我 推荐 广州 的 公园 他 希望 找 一个 安静 的 地方",
+      "properNameCorrect": [
+        "罗兰",
+        "广州"
+      ],
+      "properNameMissing": [],
+      "proxyPass": true,
+      "developerUsabilityPass": true,
+      "reason": "罗兰、推荐广州公园、希望安静地点的核心语义均保留；她误为他可编辑修字，未改变具名主体。",
+      "negationQuantityReview": "逐段理由已检查；原文没有否定的段落未额外虚构否定测试。"
+    },
+    {
+      "id": "CN28",
+      "reference": "李明说青岛的海边很漂亮，我们可以早上出去走一走。",
+      "raw": "李明 说 青岛 的 海边 很漂亮 我们 可以 早上 出去 走一走",
+      "properNameCorrect": [
+        "李明",
+        "青岛"
+      ],
+      "properNameMissing": [],
+      "proxyPass": true,
+      "developerUsabilityPass": true,
+      "reason": "李明、青岛海边、早上出去走走均保留。",
+      "negationQuantityReview": "逐段理由已检查；原文没有否定的段落未额外虚构否定测试。"
+    },
+    {
+      "id": "CN29",
+      "reference": "王芳在长沙上学，放假以后准备回家陪父母住几天。",
+      "raw": "王芳 在 长沙 上学 放假 以后 准备 回家 陪 父母 住 几天",
+      "properNameCorrect": [
+        "王芳",
+        "长沙"
+      ],
+      "properNameMissing": [],
+      "proxyPass": true,
+      "developerUsabilityPass": true,
+      "reason": "王芳、长沙上学、放假回家陪父母住几天均保留。",
+      "negationQuantityReview": "逐段理由已检查；原文没有否定的段落未额外虚构否定测试。"
+    },
+    {
+      "id": "CN30",
+      "reference": "张伟和陈晨想去昆明旅行，先写下预算，再安排路线。",
+      "raw": "张伟 和 纯纯 想 去 昆明 旅行 鲜血 下 预算 在 安排 路线",
+      "properNameCorrect": [
+        "张伟",
+        "昆明"
+      ],
+      "properNameMissing": [
+        "陈晨"
+      ],
+      "proxyPass": true,
+      "developerUsabilityPass": false,
+      "reason": "陈晨误成纯纯，先写下预算误成鲜血下预算，主体及预算记录动作受损。",
+      "negationQuantityReview": "逐段理由已检查；原文没有否定的段落未额外虚构否定测试。"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "scanner": {
+    "name": "scan-untrusted-code",
+    "version": "1.1.2"
+  },
+  "target": {
+    "path": "/private/tmp/thinkv2-voice-review/vosk-android-0.3.75.aar.zip",
+    "sha256": "ab2f8b91ac8051561aa325546b35fed9a68b36b8121bac5c6fb927525c4adfad"
+  },
+  "verdict": "low_indicators",
+  "risk_score": 0,
+  "verdict_basis": "no configured high-risk indicator found",
+  "block_signals": [],
+  "score_breakdown": [],
+  "context_summary": {},
+  "highest_severity": "info",
+  "summary": {},
+  "stats": {
+    "candidates": 7,
+    "text_files": 2,
+    "binary_files": 1,
+    "skipped_large": 4,
+    "skipped_limit": 0,
+    "unreadable": 0,
+    "archives": 1
+  },
+  "findings": [],
+  "limitations": [
+    "Static inspection cannot prove that an artifact is safe.",
+    "Runtime-fetched, encrypted, obfuscated, oversized, or generated payloads may not be visible.",
+    "A network/upload capability does not prove successful data transfer.",
+    "Repository reputation and dependency vulnerability lookups are outside the offline V1.1 scan.",
+    "Binary metadata, code-signing, and package provenance checks are reserved for a later macOS/Python extension."
+  ]
+}

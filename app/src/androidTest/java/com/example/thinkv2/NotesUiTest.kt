@@ -13,7 +13,7 @@ class NotesUiTest {
     @get:Rule val ui=createAndroidComposeRule<MainActivity>()
     @Test fun textDraftSearchAndRecreation() {
         ui.waitUntil(10000) { ui.onAllNodesWithText("还没有笔记，写下第一个想法吧。").fetchSemanticsNodes().isNotEmpty() }
-        ui.onNodeWithText("语音输入暂不可用").assertIsNotEnabled()
+        ui.onNodeWithText("打开或新建笔记后可使用离线语音输入。").assertExists()
         ui.onNodeWithText("新增文字").performClick()
         ui.onNodeWithText("正文").performTextInput("合成验收记录。测试搜索与恢复。")
         createCategory("未分类","合成分类")

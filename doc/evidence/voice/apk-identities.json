@@ -1,0 +1,18 @@
+{
+  "final-app-debug.apk": {
+    "sha256": "895cbbf163aad3f825de8689752b95a82c645a5b771461b2887acf634c90ddd3",
+    "bytes": 67365889
+  },
+  "final-test.apk": {
+    "sha256": "db5dabb33f94fb818230c9e34047428712197b557fb00e87a758543a0f0c12be",
+    "bytes": 1101675
+  },
+  "performance-verified-app-debug.apk": {
+    "sha256": "bb2b5af5574927068f3b83d86449627f169e7a8c40c8ec793935c944ea6bbf76",
+    "bytes": 67432695
+  },
+  "performance-verified-test.apk": {
+    "sha256": "88c2cfb6728fd38ae27eb1022fcf6d9d1f5f91c02d5a6fb1c024a9a3ebabc2d1",
+    "bytes": 1084334
+  }
+}

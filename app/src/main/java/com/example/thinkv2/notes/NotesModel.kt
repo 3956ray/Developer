@@ -6,6 +6,8 @@ import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import kotlinx.coroutines.*
 import java.util.concurrent.Executors
+import com.example.thinkv2.voice.VoiceAnchor
+import com.example.thinkv2.voice.VoiceText
 
 enum class NotesPage { HOME, CATEGORIES, TRASH, REMINDERS, BACKUP }
 
@@ -14,7 +16,7 @@ data class NotesState(
     val notes: List<Note> = emptyList(), val drafts: List<Note> = emptyList(),
     val categories: List<Category> = emptyList(), val query: String = "", val category: String? = null,
     val total: Int = 0, val loading: Boolean = true, val busy: Boolean = false,
-    val editor: Editing? = null, val draftState: DraftState = DraftState.UNSAVED,
+    val editor: Editing? = null, val externalCursor: Int? = null, val draftState: DraftState = DraftState.UNSAVED,
     val error: String? = null, val notice: String? = null,
     val backupCopies: Set<String> = emptySet(),
     val page: NotesPage = NotesPage.HOME, val trash: List<TrashItem> = emptyList(),
@@ -87,6 +89,29 @@ class NotesModel(
             }) }
         }
     }
+    fun voiceAnchor(cursor: Int?=null): VoiceAnchor? {
+        val n=state.editor?.note ?: return null
+        if(state.busy || state.page!=NotesPage.HOME) return null
+        return VoiceAnchor(editorToken,n.id,n.revision,VoiceText.cursor(n.body,cursor ?: n.body.length))
+    }
+    fun matchesVoice(anchor: VoiceAnchor): Boolean {
+        val n=state.editor?.note ?: return false
+        return !state.busy && state.page==NotesPage.HOME && editorToken==anchor.editorToken && n.id==anchor.noteId && n.revision==anchor.revision
+    }
+    fun insertVoice(anchor: VoiceAnchor,text: String): VoiceAnchor? {
+        if(!matchesVoice(anchor) || text.isBlank()) return null
+        body(VoiceText.insert(state.editor!!.note.body,anchor.cursor,text))
+        state=state.copy(externalCursor=anchor.cursor+text.length)
+        return voiceAnchor(anchor.cursor)
+    }
+    fun correctVoice(anchor: VoiceAnchor,original: String,replacement: String): VoiceAnchor? {
+        if(!matchesVoice(anchor)) return null
+        val body=state.editor!!.note.body;val end=anchor.cursor+original.length
+        if(end>body.length || body.substring(anchor.cursor,end)!=original) return null
+        this.body(body.substring(0,anchor.cursor)+replacement+body.substring(end))
+        state=state.copy(externalCursor=anchor.cursor+replacement.length)
+        return voiceAnchor(anchor.cursor)
+    }
     fun body(text: String) = edit { it.bodyChanged(text) }
     fun title(text: String) = edit { it.titleChanged(text) }
     fun category(text: String) = edit { it.categoryChanged(text) }
@@ -94,7 +119,7 @@ class NotesModel(
     private fun edit(change: (Note)->Note) {
         val old=state.editor ?: return
         if(state.busy) return
-        state=state.copy(editor=old.copy(note=change(old.note)),draftState=DraftState.UNSAVED,error=null)
+        state=state.copy(editor=old.copy(note=change(old.note)),externalCursor=null,draftState=DraftState.UNSAVED,error=null)
         timer?.cancel()
         timer=scope.launch { delay(500); persist() }
     }

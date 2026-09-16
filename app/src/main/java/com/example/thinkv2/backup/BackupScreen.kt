@@ -26,6 +26,7 @@ fun BackupScreen(model: BackupModel,modifier: Modifier=Modifier,back: ()->Unit,e
         LazyColumn(Modifier.weight(1f),verticalArrangement=Arrangement.spacedBy(12.dp),contentPadding=PaddingValues(bottom=24.dp)) {
             item {
                 Text("备份含私人文字，属于明文。base64不是加密，校验仅检测损坏、不认证来源。",fontSize=18.sp)
+                Text("当前备份包含笔记、草稿、分类、回收站和提醒配置，暂不包含语音纠错词表。",fontSize=16.sp)
                 Text("请选本机安全目录。系统文件选择器也可能提供云盘；选择云盘可能上传文件。本应用不会自动上传或同步。",fontSize=18.sp)
             }
             if(preview==null) {
