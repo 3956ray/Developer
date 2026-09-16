@@ -95,3 +95,5 @@ Android只定向本单AVD：`adb -P 5050 -s 127.0.0.1:5589 shell am instrument -
 本单归档：`/private/tmp/thinkv2-V2-OFFLINE-VOICE-001-a20f0582/`。含完整logs、91项JUnit XML、lint报告、performance-verified-app-debug.apk、performance-verified-test.apk、final-app-debug.apk、final-test.apk、apk-identities.json、performance-inputs.json、manual-ui-helper.py和result.json。VoiceBudget定义在VoiceText.kt，已包含核心摘要。最终安装包的SHA256与归档最终包相同，见installed-apk-identities.json。证据树另含固定夹具plan及原始文字输出，未保存音频。
 
 已关闭本单ThinkV2Voice模拟器（进程退出0）及专用ADB5050；未使用实体设备。交付Git提交、工作区状态与全证据摘要以归档result.json/evidence-manifest.json为准。此后停止等待指挥官下一单。
+
+全基线差异的whitespace检查另发现5份原始导入对象带上游/工具输出空白：model ivector/global_cmvn.stats、两份meminfo、model.cc与recognizer.cc。保留原始字节以保持来源摘要，不为格式改写模型或证据；告警归档diff-check-raw.txt。第一方生产/测试代码、构建配置与报告的定向diff --check通过。
