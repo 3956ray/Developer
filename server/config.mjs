@@ -15,6 +15,8 @@ export function loadConfig(path) {
     if (c.environment !== 'test' || c.simulation !== true || identity.appId !== 'test-app') throw new Error('TEST_IDENTITY_FORBIDDEN');
   } else if (c.simulation !== false) throw new Error('SIMULATION_NOT_SUPPORTED');
   if (identity.mode === 'wechat' && !/^wx[0-9a-f]{16}$/.test(identity.appId)) throw new Error('APPID_INVALID');
+  if (c.demo !== undefined && (!c.demo || typeof c.demo !== 'object' || Array.isArray(c.demo) || Object.keys(c.demo).some(k => k !== 'enabled') || typeof c.demo.enabled !== 'boolean')) throw new Error('DEMO_CONFIG_INVALID');
+  if (c.demo?.enabled && (c.environment !== 'test' || c.simulation !== true || identity.mode !== 'test' || identity.appId !== 'test-app' || !c.gymId.startsWith('demo-'))) throw new Error('DEMO_FORBIDDEN');
   if (c.host !== '127.0.0.1' || !Number.isInteger(c.port) || c.port < 0 || c.port > 65535) throw new Error('CONFIG_LISTENER_INVALID');
   if (typeof c.timeZone !== 'string' || !c.timeZone) throw new Error('TIMEZONE_INVALID');
   try { new Intl.DateTimeFormat('en',{timeZone:c.timeZone}).format(0); } catch { throw new Error('TIMEZONE_INVALID'); }

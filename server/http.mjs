@@ -29,6 +29,7 @@ export function createHandler(db, c, options = {}) {
   return async (req, res) => {
     res.setHeader('Content-Type', 'application/json; charset=utf-8');
     res.setHeader('Cache-Control', 'no-store');
+    const namespace = { environment: c.environment, gymId: c.gymId, simulation: c.simulation, identityMode: c.identity.mode, demoEnabled: c.demo?.enabled === true };
     let status = 200, data, operation, serverNow;
     try {
       const url = new URL(req.url, 'http://localhost');
@@ -36,8 +37,8 @@ export function createHandler(db, c, options = {}) {
         query(url, []);
         const row = db.prepare('SELECT environment,gym_id FROM deployment WHERE singleton=1').get();
         if (!row || row.environment !== c.environment || row.gym_id !== c.gymId) fail(503, 'STORAGE_UNAVAILABLE');
-        data = { status: 'ready', checkpoint: 'CP4', environment: c.environment, gymId: c.gymId,
-          simulation: c.simulation, identityMode: c.identity.mode, migrations: db.prepare('SELECT count(*) AS count FROM schema_migrations').get().count };
+        data = { status: 'ready', checkpoint: 'CP5-D1', environment: c.environment, gymId: c.gymId,
+          simulation: c.simulation, identityMode: c.identity.mode, demoEnabled: c.demo?.enabled === true, migrations: db.prepare('SELECT count(*) AS count FROM schema_migrations').get().count };
       } else if (req.method === 'GET' && ['/v1/venue', '/v1/observations/current'].includes(url.pathname)) {
         query(url, []); const snapshot = url.pathname === '/v1/venue' ? observations.venue() : observations.current();
         data = snapshot.data; serverNow = snapshot.serverNow;
@@ -86,12 +87,12 @@ export function createHandler(db, c, options = {}) {
       } else if (req.method === 'GET' && /^\/v1\/operations\/[^/]+$/.test(url.pathname)) {
         query(url, ['type']); data = identity.operationResult(bearer(req), url.pathname.split('/').at(-1), url.searchParams.get('type'));
       } else fail(404, 'NOT_FOUND');
-      res.writeHead(status); res.end(JSON.stringify({ ok: true, serverNow: serverNow ?? new Date(identity.now()).toISOString(), data, ...(operation ? { operation: operation.operation, current: operation.current } : {}) }));
+      res.writeHead(status); res.end(JSON.stringify({ ok: true, namespace, serverNow: serverNow ?? new Date(identity.now()).toISOString(), data, ...(operation ? { operation: operation.operation, current: operation.current } : {}) }));
     } catch (error) {
       const safe = error instanceof ApiError ? error : new ApiError(503, 'STORAGE_UNAVAILABLE');
       if (safe.retryAfterSeconds !== undefined) res.setHeader('Retry-After', String(safe.retryAfterSeconds));
       req.resume();
-      res.writeHead(safe.status); res.end(JSON.stringify({ ok: false, serverNow: new Date(identity.now()).toISOString(), error: { code: safe.code, message: safe.code, ...(safe.retryAfterSeconds === undefined ? {} : { retryAfterSeconds: safe.retryAfterSeconds }) } }));
+      res.writeHead(safe.status); res.end(JSON.stringify({ ok: false, namespace, serverNow: new Date(identity.now()).toISOString(), error: { code: safe.code, message: safe.code, ...(safe.retryAfterSeconds === undefined ? {} : { retryAfterSeconds: safe.retryAfterSeconds }) } }));
     }
   };
 }

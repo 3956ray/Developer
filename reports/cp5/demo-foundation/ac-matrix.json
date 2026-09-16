@@ -1,0 +1,134 @@
+[
+  {
+    "ac": "AC-DM01",
+    "D1Engineering": "PASS",
+    "overallDemo": "PARTIAL",
+    "nativeBusinessTool": "NOT_RUN",
+    "officialIdentity": "NOT_RUN",
+    "device": "NOT_RUN",
+    "venue": "NOT_RUN",
+    "actual": "新目录/重复保护、store/配置/namespace拒绝；真实disabled公共浏览兼容",
+    "evidence": "demo-foundation.test.mjs; demo-http.test.mjs; native-demo.test.mjs"
+  },
+  {
+    "ac": "AC-DM02",
+    "D1Engineering": "PASS",
+    "overallDemo": "PARTIAL",
+    "nativeBusinessTool": "NOT_RUN",
+    "officialIdentity": "NOT_RUN",
+    "device": "NOT_RUN",
+    "venue": "NOT_RUN",
+    "actual": "300秒/重放/并发/尝试消费/同意及前置限流/失败不可重用/小时清理/新鲜认证；VM无wx.login和拒绝不请求",
+    "evidence": "demo-foundation.test.mjs; demo-http.test.mjs; native-demo.test.mjs"
+  },
+  {
+    "ac": "AC-DM03",
+    "D1Engineering": "PASS",
+    "overallDemo": "PARTIAL",
+    "nativeBusinessTool": "NOT_RUN",
+    "officialIdentity": "NOT_RUN",
+    "device": "NOT_RUN",
+    "venue": "NOT_RUN",
+    "actual": "角色基础：首次无权、CLI grant、revoke后重发票及重启仍403；删除中拒绝，完成后新ID无角色/关联；完整动态场景留D2",
+    "evidence": "demo-http.test.mjs; demo-foundation.test.mjs; existing membership/deletion regression"
+  },
+  {
+    "ac": "AC-DM04",
+    "D1Engineering": "PASS",
+    "overallDemo": "PARTIAL",
+    "nativeBusinessTool": "NOT_RUN",
+    "officialIdentity": "NOT_RUN",
+    "device": "NOT_RUN",
+    "venue": "NOT_RUN",
+    "actual": "两个真实HTTP客户端同一观察，实际进程重启不续TTL，同key重放/异body409/普通403/停服失败",
+    "evidence": "demo-http.test.mjs"
+  },
+  {
+    "ac": "AC-DM05",
+    "D1Engineering": "NOT_RUN",
+    "overallDemo": "NOT_RUN",
+    "nativeBusinessTool": "NOT_RUN",
+    "officialIdentity": "NOT_RUN",
+    "device": "NOT_RUN",
+    "venue": "NOT_RUN",
+    "actual": "本阶段范围外，D2或D3另派",
+    "evidence": "none"
+  },
+  {
+    "ac": "AC-DM06",
+    "D1Engineering": "NOT_RUN",
+    "overallDemo": "NOT_RUN",
+    "nativeBusinessTool": "NOT_RUN",
+    "officialIdentity": "NOT_RUN",
+    "device": "NOT_RUN",
+    "venue": "NOT_RUN",
+    "actual": "本阶段范围外，D2或D3另派",
+    "evidence": "none"
+  },
+  {
+    "ac": "AC-DM07",
+    "D1Engineering": "NOT_RUN",
+    "overallDemo": "NOT_RUN",
+    "nativeBusinessTool": "NOT_RUN",
+    "officialIdentity": "NOT_RUN",
+    "device": "NOT_RUN",
+    "venue": "NOT_RUN",
+    "actual": "本阶段范围外，D2或D3另派",
+    "evidence": "none"
+  },
+  {
+    "ac": "AC-DM08",
+    "D1Engineering": "NOT_RUN",
+    "overallDemo": "NOT_RUN",
+    "nativeBusinessTool": "NOT_RUN",
+    "officialIdentity": "NOT_RUN",
+    "device": "NOT_RUN",
+    "venue": "NOT_RUN",
+    "actual": "本阶段范围外，D2或D3另派",
+    "evidence": "none"
+  },
+  {
+    "ac": "AC-DM09",
+    "D1Engineering": "NOT_RUN",
+    "overallDemo": "NOT_RUN",
+    "nativeBusinessTool": "NOT_RUN",
+    "officialIdentity": "NOT_RUN",
+    "device": "NOT_RUN",
+    "venue": "NOT_RUN",
+    "actual": "本阶段范围外，D2或D3另派",
+    "evidence": "none"
+  },
+  {
+    "ac": "AC-DM10",
+    "D1Engineering": "NOT_RUN",
+    "overallDemo": "NOT_RUN",
+    "nativeBusinessTool": "NOT_RUN",
+    "officialIdentity": "NOT_RUN",
+    "device": "NOT_RUN",
+    "venue": "NOT_RUN",
+    "actual": "本阶段范围外，D2或D3另派",
+    "evidence": "none"
+  },
+  {
+    "ac": "AC-DM11",
+    "D1Engineering": "NOT_RUN",
+    "overallDemo": "NOT_RUN",
+    "nativeBusinessTool": "NOT_RUN",
+    "officialIdentity": "NOT_RUN",
+    "device": "NOT_RUN",
+    "venue": "NOT_RUN",
+    "actual": "本阶段范围外，D2或D3另派",
+    "evidence": "none"
+  },
+  {
+    "ac": "AC-DM12",
+    "D1Engineering": "PASS",
+    "overallDemo": "PARTIAL",
+    "nativeBusinessTool": "NOT_RUN",
+    "officialIdentity": "NOT_RUN",
+    "device": "NOT_RUN",
+    "venue": "NOT_RUN",
+    "actual": "本阶段新迁移+五迁移旧库升级、冻结hash、110回归、操作说明及最终manifest；完整演示留D2/D3",
+    "evidence": "demo-foundation.test.mjs; final-tests.log; check.log; verification.json"
+  }
+]

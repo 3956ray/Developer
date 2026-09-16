@@ -7,9 +7,9 @@ function loadView() { const context = { module: { exports: {} }, Intl, Date }; v
 function sample(state = 'moderate') { return { revision: 1, state, level: ['quiet', 'moderate', 'busy'].includes(state) ? state : null, observedAt: new Date(START).toISOString(), publishedAt: new Date(START).toISOString(), validUntil: new Date(START + 900000).toISOString(), environment: 'test', simulation: true }; }
 function harness({ operator = false, allowed = true, hook, cached, storageFails = false, modalHook } = {}) {
   let mono = 0, saved = new Map(), page, state = sample(), calls = [], ids = 0;
-  if (cached) saved.set('gym.observation-cache.v1', { scope: 'test:http://127.0.0.1:8787', snapshot: { observation: cached, gym: { timeZone: 'Asia/Taipei' } } });
+  if (cached) saved.set('gym.observation-cache.v1', { scope: 'test:http://127.0.0.1:8787::wechat:official', snapshot: { observation: cached, gym: { timeZone: 'Asia/Taipei' } } });
   const timers = [];
-  const api = { config: { environment: 'test', baseUrl: 'http://127.0.0.1:8787' }, load: () => 'synthetic-token', operationId: async () => '00000000-0000-4000-8000-' + String(++ids).padStart(12, '0'),
+  const api = { scope: () => 'test:http://127.0.0.1:8787::wechat:official', config: { environment: 'test', baseUrl: 'http://127.0.0.1:8787' }, load: () => 'synthetic-token', operationId: async () => '00000000-0000-4000-8000-' + String(++ids).padStart(12, '0'),
     request: async (path, method, body) => {
       calls.push({ path, method, body });
       const response = { serverNow: new Date(START + Math.max(0, mono)).toISOString(), data: path === '/operator/role' ? { isOperator: allowed } : path.startsWith('/session?') ? { userId: 'synthetic-user' } : { gym: { name: null, timeZone: 'Asia/Taipei' }, observation: state } };

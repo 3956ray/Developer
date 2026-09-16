@@ -1,0 +1,19 @@
+✔ DM01/03/04 actual CLI tickets and role CLI; two HTTP clients retain one observation and revoked role across real process restart (1446.381667ms)
+ℹ {"twoIndependentClients":true,"realRestart":true,"observation":{"revision":1,"source":"manual","state":"quiet","level":"quiet","historicalLevel":null,"observedAt":"2026-09-16T04:52:26.130Z","publishedAt":"2026-09-16T04:52:26.130Z","validUntil":"2026-09-16T05:07:26.130Z","environment":"test","simulation":true},"exactlyOneEvent":true,"duplicateReplay":true,"differentBody409":true,"ordinary403":true,"reissuedRoleStillRevoked":true}
+✔ DM02 two actual server processes exchange same CLI credential at most once; restart retains global rate limit (325.266208ms)
+ℹ two actual processes: one credential, one committed session; persisted login limit unchanged by restart/ticket issuance
+✔ DM01 regression: native request layer reads real non-demo identity-disabled venue and schedule without locking public browsing (81.591125ms)
+ℹ real disabled identity namespace permits unauthenticated public venue/schedule reads; authenticated mode mismatch still clears token
+✔ DM01/02 native explicit demo consent checks health then exchanges; no wx.login or credential storage; fresh auth requires new input (3.848541ms)
+✔ DM02 native refusal and hidden health response send no exchange or wx.login, discard entered credential (2.299666ms)
+✔ DM01 native wrong gym/environment/identity/simulation/demo metadata clears cache and closes demo actions before ticket exchange (4.186209ms)
+✔ DM01 native cache includes gym and identity mode; store cannot configure demo; official failure never falls back (1.464042ms)
+✔ DM02 native uncertain exchange discards old credential, requests new one, and never auto logs in on refresh (0.845541ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 8
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2165.513834

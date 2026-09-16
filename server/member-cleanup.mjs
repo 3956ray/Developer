@@ -38,7 +38,8 @@ export function createMemberCleanup(db,c,options={}) {
    ()=>remove('audit','time+?<=?',[90*DAY,time]),
    ()=>remove('rate_buckets','window_end+?<=?',[HOUR,time]),
    ()=>remove('login_codes','attempted_at+?<=?',[DAY,time]),
-   ()=>remove('deletion_jobs',"state='completed' AND completed_at+?<=?",[7*DAY,time])
+   ()=>remove('deletion_jobs',"state='completed' AND completed_at+?<=?",[7*DAY,time]),
+   ()=>remove('demo_login_tickets','expires_at<=?',[time])
   ];
   return phase<actions.length?{changed:actions[phase](),last:false}:{changed:0,last:true};
  }

@@ -1,0 +1,48 @@
+{
+  "actualHttpTest": [
+    {
+      "configSha256": "be617283d9c091f09a43799108ca1ab18ab9e729f88c38c826c2eb07d4ca6e5d",
+      "configuration": {
+        "environment": "test",
+        "gymId": "demo-7697bd50-8ee1-48eb-a0be-76487bb51589",
+        "simulation": true,
+        "identity": {
+          "mode": "test",
+          "appId": "test-app"
+        },
+        "demo": {
+          "enabled": true
+        },
+        "host": "127.0.0.1",
+        "configuredPort": 0
+      }
+    },
+    {
+      "twoIndependentClients": true,
+      "realRestart": true,
+      "observation": {
+        "revision": 1,
+        "source": "manual",
+        "state": "quiet",
+        "level": "quiet",
+        "historicalLevel": null,
+        "observedAt": "2026-09-16T04:54:16.126Z",
+        "publishedAt": "2026-09-16T04:54:16.126Z",
+        "validUntil": "2026-09-16T05:09:16.126Z",
+        "environment": "test",
+        "simulation": true
+      },
+      "exactlyOneEvent": true,
+      "duplicateReplay": true,
+      "differentBody409": true,
+      "ordinary403": true,
+      "reissuedRoleStillRevoked": true
+    }
+  ],
+  "defaultClientSha256": "cb0861c3fa3b7bee2948e5d04c4ba9b63660ec32d0fa4bcb179e7c4b49a8386b",
+  "trackedProjectSha256": "2616d8a022675f9f5566b9c5b3c6702b4da427c36475b635b367541f08f9336b",
+  "trackedUrlCheck": true,
+  "privateUrlCheck": true,
+  "defaultClientUnconfigured": true,
+  "fixtureRemoved": true
+}

@@ -1,6 +1,6 @@
 const api = require('./session');
 const presentation = require('./observation-view');
-const scope = () => api.config.environment + ':' + api.config.baseUrl;
+const scope = () => api.scope();
 const CACHE = 'gym.observation-cache.v1', PENDING = 'gym.observation-write.v1';
 function monotonic() {
   try { const value = wx.getPerformance().now(); return Number.isFinite(value) ? value : null; } catch (_) { return null; }

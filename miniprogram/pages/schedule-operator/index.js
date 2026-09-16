@@ -1,5 +1,5 @@
 const api=require('../../lib/session');
-const KEY='gym.schedule-operation.v1',scope=()=>api.config.environment+':'+api.config.baseUrl,clone=x=>JSON.parse(JSON.stringify(x));
+const KEY='gym.schedule-operation.v1',scope=()=>api.scope(),clone=x=>JSON.parse(JSON.stringify(x));
 Page({
  data:{authorized:false,busy:false,dirty:false,pending:false,canRetry:false,message:'',startDate:'',endDate:'',courses:[],timeZone:'',publishedCoverage:'尚未发布',testing:api.config.environment==='test'},
  onLoad(){this._generation=0;this._form=0;},

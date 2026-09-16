@@ -1,4 +1,5 @@
 import { randomBytes, randomUUID } from 'node:crypto';
+import { claimDemoTicket } from './demo.mjs';
 import { transaction } from './database.mjs';
 import { createAdapter, codeDigest } from './wechat.mjs';
 import { fail, fields, digest, hmac, canonical, validateWrite, validateIntent, uuidPattern } from './protocol.mjs';
@@ -43,7 +44,7 @@ export function createIdentityService(db, c, options = {}) {
     return { userId: s.user_id, sessionId: s.session_id, authAt: new Date(s.auth_at).toISOString(),
       expiresAt: new Date(s.expires_at).toISOString(), idleExpiresAt: new Date(s.last_interactive_at + DAY).toISOString(),
       sessionRevision: s.revision, accountRevision: s.account_revision,
-      environment: c.environment, simulation: c.simulation, identityMode: c.identity.mode };
+      environment: c.environment, gymId: c.gymId, simulation: c.simulation, identityMode: c.identity.mode, demoEnabled: c.demo?.enabled === true };
   }
   function operation(actor, type, body, time, apply, maximumAge = 300000, resource = null) {
     const hash = hmac(c.keys.intentHmac, canonical([c.environment, c.gymId, actor, type, body, ...(resource === null ? [] : [resource])]));
@@ -66,12 +67,13 @@ export function createIdentityService(db, c, options = {}) {
       if (typeof body.code !== 'string' || !/^[A-Za-z0-9_-]{1,256}$/.test(body.code)) fail(400, 'LOGIN_CODE_INVALID');
       if (c.identity.mode === 'disabled') fail(503, 'IDENTITY_NOT_CONFIGURED');
       attemptLogin(); // Committed even if code/platform/audit/session creation later fails.
-      transaction(db, () => {
+      const ticket = transaction(db, () => {
         const hash = codeDigest(c, body.code);
         if (db.prepare('SELECT 1 FROM login_codes WHERE code_hmac=?').get(hash)) fail(400, 'LOGIN_CODE_INVALID');
         db.prepare('INSERT INTO login_codes VALUES (?,?)').run(hash, now());
+        return c.demo?.enabled ? claimDemoTicket(db, c, body.code, now()) : null;
       });
-      const identity = await adapter(body.code);
+      const identity = await adapter(body.code, ticket);
       return transaction(db, () => {
         const time = now();
         let account = db.prepare(`SELECT a.* FROM wechat_identities w JOIN accounts a ON a.user_id=w.user_id

@@ -1,0 +1,13 @@
+✔ DM01/02 native explicit demo consent checks health then exchanges; no wx.login or credential storage; fresh auth requires new input (3.810583ms)
+✔ DM02 native refusal and hidden health response send no exchange or wx.login, discard entered credential (2.044583ms)
+✔ DM01 native wrong gym/environment/identity/simulation/demo metadata clears cache and closes demo actions before ticket exchange (4.521459ms)
+✔ DM01 native cache includes gym and identity mode; store cannot configure demo; official failure never falls back (1.743792ms)
+✔ DM02 native uncertain exchange discards old credential, requests new one, and never auto logs in on refresh (0.784417ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 376.345375

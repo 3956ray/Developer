@@ -1,0 +1,12 @@
+✔ DM01/03/04 actual CLI tickets and role CLI; two HTTP clients retain one observation and revoked role across real process restart (471.501834ms)
+ℹ {"twoIndependentClients":true,"realRestart":true,"observation":{"revision":1,"source":"manual","state":"quiet","level":"quiet","historicalLevel":null,"observedAt":"2026-09-16T04:46:00.814Z","publishedAt":"2026-09-16T04:46:00.814Z","validUntil":"2026-09-16T05:01:00.814Z","environment":"test","simulation":true},"exactlyOneEvent":true,"duplicateReplay":true,"differentBody409":true,"ordinary403":true,"reissuedRoleStillRevoked":true}
+✔ DM02 two actual server processes exchange same CLI credential at most once; restart retains global rate limit (281.311ms)
+ℹ two actual processes: one credential, one committed session; persisted login limit unchanged by restart/ticket issuance
+ℹ tests 2
+ℹ suites 0
+ℹ pass 2
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 813.042791

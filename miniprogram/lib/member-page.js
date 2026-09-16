@@ -1,5 +1,5 @@
 const api=require('./session'),receipt=require('./receipt'),timing=require('./observation-view');
-const scope=()=>api.config.environment+':'+api.config.baseUrl;
+const scope=()=>api.scope();
 const labels={unbound:'未绑定',unlinked:'已解绑',pending:'待馆方核验',valid:'已核验 · 有效',expired:'会员资格已过期',revoked:'会员资格已撤销',pending_confirmation:'已核验 · 有效期待确认'};
 const PENDING='gym.member-intent.v1',RECEIPT='gym.deletion-receipt.v1';
 function mono(){try{return wx.getPerformance().now();}catch(_){return null;}}

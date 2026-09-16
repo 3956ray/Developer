@@ -1,11 +1,13 @@
 <view class="page">
   <view wx:if="{{testing}}" class="testing">测试环境 · 模拟身份不代表真实微信验证</view>
+  <view wx:if="{{demo}}" class="testing">演示数据／演示身份 · 不代表真实会员资格</view>
   <view class="title">我的</view>
   <view class="status">{{status}}</view>
   <view class="note">{{detail}}</view>
   <view wx:if="{{!configured}}" class="note">个人服务尚未配置。</view>
-  <button wx:if="{{!authenticated}}" bindtap="login" disabled="{{busy || !configured}}" loading="{{busy}}">主动登录</button>
-  <button wx:if="{{authenticated}}" bindtap="login" disabled="{{busy}}">重新确认微信身份</button>
+  <input wx:if="{{demo && configured}}" password maxlength="43" value="{{ticketInput}}" bindinput="demoCodeInput" placeholder="输入维护者发行的一次性演示凭证" disabled="{{busy}}" />
+  <button wx:if="{{!authenticated}}" bindtap="login" disabled="{{busy || !configured}}" loading="{{busy}}">{{demo ? '演示登录' : '主动登录'}}</button>
+  <button wx:if="{{authenticated}}" bindtap="login" disabled="{{busy}}">{{demo ? '使用新凭证重新认证' : '重新确认微信身份'}}</button>
   <button bindtap="refreshNow" disabled="{{busy}}">刷新登录状态</button>
   <button wx:if="{{authenticated}}" bindtap="logout" disabled="{{busy}}" loading="{{busy}}">退出登录</button>
   <button wx:if="{{authenticated}}" bindtap="openMaintenance" disabled="{{busy}}">馆方维护</button>

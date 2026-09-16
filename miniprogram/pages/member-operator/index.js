@@ -1,5 +1,5 @@
 const api=require('../../lib/session');
-const STORE='gym.operator-member-operation.v1',scope=()=>api.config.environment+':'+api.config.baseUrl;
+const STORE='gym.operator-member-operation.v1',scope=()=>api.scope();
 Page({
  data:{authorized:false,busy:false,code:'',memberRef:'',endDate:'',validUntilOverride:'',mode:'pending_confirmation',modes:['有效期待确认','固定结束日期','明确无固定期限'],modeIndex:0,confirmation:false,message:'',inspection:'',pending:false,canRetry:false,testing:api.config.environment==='test'},
  onLoad(){this._generation=0;this._formRevision=0;try{const p=wx.getStorageSync(STORE);if(p&&p.scope===scope()){this._pending=p;this.setData({pending:true});}}catch(_){}},

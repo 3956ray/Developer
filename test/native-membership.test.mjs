@@ -8,7 +8,7 @@ function moduleFrom(path,context={}){const sandbox={module:{exports:{}},...conte
 function harness({confirm=true,deleteLost=false}={}){
  let token='old-session',identity='old-user',state='valid',receiptState='unknown',mono=0,cleared=0;
  const stores=new Map(),calls=[];stores.set('gym.operator-member-operation.v1',{userId:'old-user'});
- const api={config:{environment:'test',baseUrl:'http://127.0.0.1:8787'},load:()=>token,clear:()=>{token=null;cleared++;['gym.member-intent.v1','gym.observation-write.v1','gym.operator-member-operation.v1'].forEach(k=>stores.delete(k));},operationId:async()=> '00000000-0000-4000-8000-000000000001',
+ const api={scope:()=> 'test:http://127.0.0.1:8787::wechat:official',config:{environment:'test',baseUrl:'http://127.0.0.1:8787'},load:()=>token,clear:()=>{token=null;cleared++;['gym.member-intent.v1','gym.observation-write.v1','gym.operator-member-operation.v1'].forEach(k=>stores.delete(k));},operationId:async()=> '00000000-0000-4000-8000-000000000001',
   request:async(path,method,body,auth,scheme)=>{
    calls.push({path,method,body,auth,scheme});let data;
    if(path==='/deletions/status')data={state:receiptState};
@@ -52,7 +52,7 @@ test('P01 native session clear covers all personal-operation keys but leaves del
 
 test('native operator date conversion delegates to configured-zone backend; raw references never go to durable operation cache',async()=>{
  let page;const calls=[],store=new Map();
- const api={load:()=> 'synthetic-token',config:{environment:'test',baseUrl:'http://127.0.0.1:8787'},request:async(path,method,body)=>{calls.push({path,body});return{data:{mode:'fixed_until',localEndDate:'2026-03-08',validUntil:'2026-03-09T04:00:00.000Z',timeZone:'America/New_York'}};}};
+ const api={scope:()=> 'test:http://127.0.0.1:8787::wechat:official',load:()=> 'synthetic-token',config:{environment:'test',baseUrl:'http://127.0.0.1:8787'},request:async(path,method,body)=>{calls.push({path,body});return{data:{mode:'fixed_until',localEndDate:'2026-03-08',validUntil:'2026-03-09T04:00:00.000Z',timeZone:'America/New_York'}};}};
  vm.runInNewContext(readFileSync('miniprogram/pages/member-operator/index.js','utf8'),{require:()=>api,Page:p=>{page=p;},wx:{getStorageSync:k=>store.get(k),setStorageSync:(k,v)=>store.set(k,v)}});
  page.setData=data=>Object.assign(page.data,data);page.onLoad();page.data.mode='fixed_until';page.data.endDate='2026-03-08';const converted=await page.expiry();
  assert.equal(converted.validUntil,'2026-03-09T04:00:00.000Z');assert.equal(calls[0].path,'/operator/members/expiry-preview');
@@ -62,7 +62,7 @@ test('native operator date conversion delegates to configured-zone backend; raw 
 function operatorHarness(){
  let page,modal,holdPath,release;const calls=[],store=new Map();
  const inspect={registry:{state:'verified',revision:1},currentBinding:{state:'none',revision:'absent'},requesterBinding:{revision:'absent'}};
- const api={load:()=> 'synthetic-token',operationId:async()=> '00000000-0000-4000-8000-000000000001',config:{environment:'test',baseUrl:'http://127.0.0.1:8787'},request:async(path,method,body)=>{
+ const api={scope:()=> 'test:http://127.0.0.1:8787::wechat:official',load:()=> 'synthetic-token',operationId:async()=> '00000000-0000-4000-8000-000000000001',config:{environment:'test',baseUrl:'http://127.0.0.1:8787'},request:async(path,method,body)=>{
   calls.push({path,body});if(path===holdPath)await new Promise(r=>{release=r;});
   if(path==='/operator/members/bind')throw{code:'NETWORK_UNCONFIRMED'};
   return{serverNow:new Date(START).toISOString(),data:path.includes('/session?')?{userId:'operator'}:path.endsWith('/lookup')?{pairingId:'pair',revision:1,requesterLabel:'synthetic'}:path.endsWith('/expiry-preview')?{localEndDate:'2026-03-08',validUntil:'2026-03-09T04:00:00.000Z'}:inspect};

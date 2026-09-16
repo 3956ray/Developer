@@ -1,6 +1,10 @@
-# 健身房小程序 · CP5
+# 健身房小程序 · CP5-D1
 
 独立原生微信小程序与本地服务基础。当前实现主动登录/登出、可撤销会话、馆方权限CLI与持久化登录限流；CP0健康检查、隔离配置和合成探针保留。已加入人工忙闲观察发布、公共展示、过期/撤销及观察历史清理；已实现会员配对、前台核验、资格恢复/撤销、解绑及持久删除；已加入单一草稿/当前公开快照、今日/本周与当前课程摘要。服务不可对外部署。
+
+## 当前演示增量
+
+用户已确认没有馆方后端，v1.1增量采用现有Node/SQLite自有动态演示。D1已加入独立demo初始化、一次性短期凭证、显式原生演示登录与命名空间缓存校验；角色和领域写入沿用原规则。完整命令、数据落点及双HTTP客户端重启烟测见 [演示基础说明](doc/demo-foundation.md)。D2场景/JSON导入、D3原生联网尚未执行；缺馆方后端或AppSecret不阻塞D1。
 
 ## 运行
 
@@ -57,13 +61,13 @@ npm run check
 
 ## 范围与提交
 
-当前合同GYM-CP5-TOOLS-002；交付后等指挥者验收。不得提前实现CP6–CP7。源码归本项目所有，尚未指定对外开源许可；Node及内置组件许可见依赖报告。只允许本地提交，无远端、部署或上传操作。
+当前合同GYM-DEMO-FOUNDATION-001 / CP5-D1；交付后等指挥者验收。不得提前实现CP6–CP7。源码归本项目所有，尚未指定对外开源许可；Node及内置组件许可见依赖报告。只允许本地提交，无远端、部署或上传操作。
 
 ## CP1 身份配置与安全边界
 
 默认配置无identity或`identity.mode=disabled`，登录返回503，未接入也不假登录。
 
-- **测试替身**：仅在本地test的私有config.json显式设置`"identity":{"mode":"test","appId":"test-app"},"simulation":true`。只有测试预置的一次性code摘要能交换合成身份，任意wx.login code不自动成功。测试fixture由`test/identity-support.mjs`写入独立临时DB，不提供公共种子接口或客户端测试登录按钮；原生页面使用真实wx.login API，测试由VM替身驱动，未声称微信工具端到端通过。
+- **测试替身**：仅在本地test的私有config.json显式设置`"identity":{"mode":"test","appId":"test-app"},"simulation":true`。未启用demo时只有测试预置的一次性code摘要能交换合成身份，任意wx.login code不自动成功。测试fixture由`test/identity-support.mjs`写入独立临时DB，不提供公共种子接口；v1.1显式demo模式现提供受CLI短期票据约束的演示入口，其他分支使用wx.login API，测试由VM替身驱动，未声称微信工具端到端通过。
 - **官方适配器**：配置`identity.mode=wechat`及真实AppID；AppSecret只放同私有stateDir的`wechat-secret.txt`，0600权限、与四个业务密钥分开。本次仅保留用户/工具创建的测试AppID，未配置AppSecret或完成官方身份交换，勿把示例当授权。适配器仅访问固定微信HTTPS地址，不跟随重定向、不记录URL/正文/秘密。
 - 身份空间首次启用后绑定adapter mode与AppID；不能把已含合成身份的DB切到官方模式。禁用身份后会话接口不可认证。
 - 原生`miniprogram/config.js`默认未配置。未来本地联调可显式设置baseUrl和environment；test只允许127.0.0.1 HTTP，store必须HTTPS。修改后需相应工具验证，域名校验仍保持开启。token缓存按环境和baseUrl隔离。
@@ -139,8 +143,10 @@ node scripts/schedule-cleanup.mjs run <config-path>
 
 详见 `doc/cp4-implementation.md` 和 `reports/cp4/developer-report.md`。CP4当时只完成本地源码/合成测试；CP5已补工具编译与守卫页面证据，认证课表操作/真机/门店仍未验证。
 
-## CP5 工程与工具结果分层
+## 历史 CP5 工程与工具结果分层（TOOLS-002）
 
 工程集成增加三个清理任务共用的启动/小时调度入口，验证实际持久事务、跨域TTL/撤销资格不变、失败后下一小时恢复、旧幂等结果清理后旧意图拒绝。原生端修正删除迟到响应不得清除新会话，以及页面隐藏后旧登录确认/角色查询不得继续登录或跳转。
 
 本机官方工具已完成目标导入和本地编译，基础库3.17.2；六个原生页面、登录用途/拒绝/失败已留截图。保持urlCheck=true；实际loopback HTTP请求被合法域名校验拒绝，尚缺合法服务与官方身份交换配置。CP5整体BLOCKED，工程94/94不能替代工具业务验收；详见reports/cp5/developer-report.md与30AC分层矩阵。
+
+上述历史BLOCKED保留当时证据；v1.1当前D1不以官方身份/后端作为前置，当前分层结果见 `reports/cp5/demo-foundation/developer-report.md`。D3原生演示仍须独立验收。

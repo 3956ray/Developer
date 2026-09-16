@@ -1,0 +1,34 @@
+{
+  "task": "GYM-DEMO-FOUNDATION-001",
+  "baselineCommit": "f22664d5f5b2320966df53c874eaaf120297be6b",
+  "result": "COMPLETE",
+  "engineering": "PASS",
+  "nativeLogicVM": "PASS",
+  "nativeBusinessTool": "NOT_RUN",
+  "officialIdentity": "NOT_RUN",
+  "device": "NOT_RUN",
+  "venue": "NOT_RUN",
+  "tests": {
+    "command": "npm test",
+    "exitCode": 0,
+    "passed": 110,
+    "failed": 0,
+    "log": "final-tests.log"
+  },
+  "static": {
+    "command": "npm run check",
+    "exitCode": 0,
+    "log": "check.log"
+  },
+  "protectedFilesComparedToBaseline": 141,
+  "allProtectedUnchanged": true,
+  "inputDocumentsVerified": 7,
+  "sourceFiles": 115,
+  "diffCheckExitCode": 0,
+  "credentialArtifactPatternScan": "PASS; no credential-shaped JSON values in current evidence; raw tickets/tokens stayed in private fixture memory; fixture teardown passed",
+  "configurationEvidence": "configuration-evidence.json",
+  "defaultClientAndProjectConfigUnchanged": true,
+  "noNewDependencies": true,
+  "scope": "D1 only; no scenario runner/import/network toggle/deploy/upload",
+  "commitAndClean": "Reported in post-commit handoff; manifest excludes itself"
+}

@@ -30,6 +30,10 @@ export function createWechatAdapter(c, transport = fetch) {
 export function createAdapter(db, c, transport) {
   if (c.identity.mode === 'test') {
     if (c.environment !== 'test' || c.simulation !== true) fail(503, 'TEST_IDENTITY_FORBIDDEN');
+    if (c.demo?.enabled) return async (_code, ticket) => {
+      if (!ticket) fail(400, 'LOGIN_CODE_INVALID');
+      return ticket;
+    };
     return async code => {
       const row = db.prepare('SELECT * FROM test_login_fixtures WHERE code_hmac=?').get(codeDigest(c, code));
       if (!row || row.outcome === 'invalid') fail(400, 'LOGIN_CODE_INVALID');

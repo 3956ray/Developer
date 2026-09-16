@@ -10,5 +10,21 @@
   {
     "path": "/Users/orderly_ray/Documents/Products Manager/product-knowledge-base/ideas/gym-occupancy/checkpoints-mvp-v1.0-2026-09-16.md",
     "sha256": "13060548afb17731e033364817f0e7ee6b0569c334bbfc4138e308ee64678882"
+  },
+  {
+    "path": "/Users/orderly_ray/Documents/Products Manager/product-knowledge-base/ideas/gym-occupancy/decision-mock-backend-v1.1-2026-09-16.md",
+    "sha256": "91bc4731b36c3448be4926537091bc98d759e9e9e9eee312beeaa0fab10ef07c"
+  },
+  {
+    "path": "/Users/orderly_ray/Documents/Products Manager/product-knowledge-base/ideas/gym-occupancy/prd-mock-backend-v1.1-2026-09-16.md",
+    "sha256": "1e6589aa1074cfb0c91ff999016d7dcf8fbe562493dacf7724384790f03a1ab5"
+  },
+  {
+    "path": "/Users/orderly_ray/Documents/Products Manager/product-knowledge-base/ideas/gym-occupancy/acceptance-mock-backend-v1.1-2026-09-16.md",
+    "sha256": "1d1aa65ceb25883a785231f9fbb73920de43489ff1dc78ba04ce266c4914af26"
+  },
+  {
+    "path": "/Users/orderly_ray/Documents/Products Manager/product-knowledge-base/ideas/gym-occupancy/checkpoints-mock-backend-v1.1-2026-09-16.md",
+    "sha256": "a041b64972f187b0655996d80dc5d9272c535437d001e7445a55b3ad22d6c6c7"
   }
 ]

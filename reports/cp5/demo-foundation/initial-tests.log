@@ -1,0 +1,26 @@
+✔ DM01/12 explicit new demo init, duplicate protection, configuration/store/namespace rejection and no automatic role (24.526417ms)
+✔ DM02 consent/notice/fields/format and prelimit do not consume; stored credentials are HMAC only (7.181084ms)
+✔ DM02 299999/300000 boundary, replay after login ledger removal, unknown code and fixture isolation (14.773083ms)
+✔ DM02 concurrent same ticket once, distinct tickets one identity, response loss/new ticket and five session limit (16.233542ms)
+✔ DM02 committed attempt consumes ticket even when session creation fails; failed ledger commit preserves ticket (9.718042ms)
+✔ DM02 hourly cleanup removes expired tickets without resurrection and retries failed retention (22.094875ms)
+✔ DM02/03 new ticket provides fresh auth; deleting blocks reconstruction; completed deletion restores neither role nor membership (20.788417ms)
+✔ DM12 migration of existing five-migration database preserves data and checksums (9.189458ms)
+✔ P01: public/refusal path never calls wx.login or exchanges identity (4.184542ms)
+✔ P01/L01: only explicit consent logs in; simulation label and token outside view data (0.672ms)
+✔ F01/P01: foreground polls never relogin; failures/401 are honest; hidden timer sends nothing (3.159709ms)
+✔ F01: logged in -> hidden past expiry -> foreground pending/failure/401 never shows stale authenticated state (1.324875ms)
+✔ F01: response from before hiding cannot restore authenticated state or an expiry timer (0.805667ms)
+✔ F01: hide/show and late A response serialize queued B/manual refresh with one in-flight session read (0.607084ms)
+✔ native request boundary: non-2xx/business failure rejected, cross-environment cached token ignored (4.7285ms)
+✔ I01: unconfirmed logout retains original operation key until explicit retry resolves (0.849959ms)
+✔ CP5 hidden role response cannot navigate to maintenance (0.999916ms)
+✔ CP5 login confirmation received after hiding does not start platform login (0.426834ms)
+ℹ tests 18
+ℹ suites 0
+ℹ pass 18
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 571.93725

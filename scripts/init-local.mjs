@@ -8,7 +8,8 @@ export function initialize(environment, gymId, port = 8787) {
   if (!['test', 'store'].includes(environment) || !/^[a-z][a-z0-9-]{0,47}$/.test(gymId)) throw new Error('Explicit test/store and gym-id required');
   const dir = resolve(root, '.runtime', environment, gymId);
   if (existsSync(dir)) throw new Error('Existing state is never overwritten');
-  mkdirSync(dir, { recursive: true, mode: 0o700 });
+  mkdirSync(resolve(root, '.runtime', environment), { recursive: true, mode: 0o700 });
+  mkdirSync(dir, { mode: 0o700 }); // Exclusive leaf: concurrent init must not overwrite another creator.
   const keys = { environment, gymId, ...Object.fromEntries(keyNames.map(n => [n, randomBytes(32).toString('hex')])) };
   writeFileSync(resolve(dir, 'keys.json'), JSON.stringify(keys), { flag: 'wx', mode: 0o600 });
   const c = { environment, gymId, stateDir: dir, simulation: false, timeZone: 'Asia/Taipei', host: '127.0.0.1', port };

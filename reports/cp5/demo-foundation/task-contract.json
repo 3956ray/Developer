@@ -1,0 +1,61 @@
+{
+  "task_id": "GYM-DEMO-FOUNDATION-001",
+  "owner": "developer",
+  "checkpoint": "CP5-D1",
+  "assigned_thread_id": "01a0a64b-85f8-7790-88d9-fd1188ece566",
+  "status": "dispatched",
+  "baseline_commit": "f22664d5f5b2320966df53c874eaaf120297be6b",
+  "input_documents": [
+    {
+      "path": "/Users/orderly_ray/Documents/Products Manager/product-knowledge-base/ideas/gym-occupancy/prd-mvp-v1.0-2026-09-16.md",
+      "sha256": "7d9948f302f13119120c03043902fba7455437764eb57d4923efebda4254e1bd"
+    },
+    {
+      "path": "/Users/orderly_ray/Documents/Products Manager/product-knowledge-base/ideas/gym-occupancy/acceptance-mvp-v1.0-2026-09-16.md",
+      "sha256": "89cded4a468deaa20e6090d19b35dc31c77b6a01e3e45081d3d996484188ae71"
+    },
+    {
+      "path": "/Users/orderly_ray/Documents/Products Manager/product-knowledge-base/ideas/gym-occupancy/checkpoints-mvp-v1.0-2026-09-16.md",
+      "sha256": "13060548afb17731e033364817f0e7ee6b0569c334bbfc4138e308ee64678882"
+    },
+    {
+      "path": "/Users/orderly_ray/Documents/Products Manager/product-knowledge-base/ideas/gym-occupancy/decision-mock-backend-v1.1-2026-09-16.md",
+      "sha256": "91bc4731b36c3448be4926537091bc98d759e9e9e9eee312beeaa0fab10ef07c"
+    },
+    {
+      "path": "/Users/orderly_ray/Documents/Products Manager/product-knowledge-base/ideas/gym-occupancy/prd-mock-backend-v1.1-2026-09-16.md",
+      "sha256": "1e6589aa1074cfb0c91ff999016d7dcf8fbe562493dacf7724384790f03a1ab5"
+    },
+    {
+      "path": "/Users/orderly_ray/Documents/Products Manager/product-knowledge-base/ideas/gym-occupancy/acceptance-mock-backend-v1.1-2026-09-16.md",
+      "sha256": "1d1aa65ceb25883a785231f9fbb73920de43489ff1dc78ba04ce266c4914af26"
+    },
+    {
+      "path": "/Users/orderly_ray/Documents/Products Manager/product-knowledge-base/ideas/gym-occupancy/checkpoints-mock-backend-v1.1-2026-09-16.md",
+      "sha256": "a041b64972f187b0655996d80dc5d9272c535437d001e7445a55b3ad22d6c6c7"
+    }
+  ],
+  "goal": "Deliver isolated persistent demo initialization, explicit short-lived demo login and role-controlled one-observation HTTP/restart loop.",
+  "scope": [
+    "Implement exactly v1.1 checkpoints C2/CP5-D1, PRD P2 and applicable P4/P6; preserve existing domain behavior and frozen v1.0 docs/migrations. Copy exact accepted v1.1 documents into repo baseline and update source index/agent guidance.",
+    "Add explicit test/simulation/test-identity/demo configuration, protected new-directory init, CLI32-byte random300s credentials, persistent HMAC/attempt semantics and hourly cleanup. Reuse sessions/exchange and actual role checks; no automatic operator grant or restoration.",
+    "Add native explicit demo login/refusal/reauthentication and namespace metadata validation; official branch remains isolated. VM logic verification now; native network demonstration later.",
+    "Two real HTTP clients, current operator granted through existing CLI, one observation publish/read/restart persistence and negative cases. Document storage, CLI/HTTP commands and boundaries. Scoped local commit authorized."
+  ],
+  "out_of_scope": [
+    "No full scenario runner or JSON adapter (D2); no network safety toggle or native network acceptance (D3).",
+    "No new external DB access, real records, cloud purchases/deployment, preview/upload, or automatic official-to-demo fallback."
+  ],
+  "acceptance": [
+    "AC-DM01/02/04 engineering, DM03 role foundations, DM12 current phase: modes/scope/consent/limit/attempt/300s/replay/concurrency/cleanup/store denial all evidenced.",
+    "One observation same revision/timestamps after independent client read and process restart; idem409 and ordinary-user403; reissue/restart cannot restore revoked role.",
+    "Affected identity/session/role/delete tests and static checks pass; original migrations and frozen hashes remain; manifest matches final scoped clean commit."
+  ],
+  "evidence_required": [
+    "RESULT, exact files and purposes, reports/cp5/demo-foundation logs and per-AC matrix, source/config hashes, input doc hashes, local commit and clean status; no live credentials in artifacts."
+  ],
+  "stop_conditions": [
+    "Stop after D1 submission and wait for commander acceptance; do not startD2.",
+    "Resolve regressions/mode leaks/false success within D1; escalate genuine product ambiguities instead of altering approved behavior. Missing gym backend or network exception is not a D1 blocker."
+  ]
+}
