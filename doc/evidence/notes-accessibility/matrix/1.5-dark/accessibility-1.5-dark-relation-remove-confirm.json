@@ -1,0 +1,224 @@
+{
+  "screen": "relation-remove-confirm",
+  "fontScale": 1.5,
+  "widthDp": 320,
+  "heightDp": 610,
+  "dark": true,
+  "nodes": [
+    {
+      "depth": 0,
+      "class": "android.widget.FrameLayout",
+      "bounds": "[0,368][840,1294]",
+      "visible": true,
+      "clickable": false,
+      "focusable": false,
+      "focused": false,
+      "accessibilityFocused": false,
+      "actions": [
+        4,
+        8,
+        64,
+        16908342
+      ]
+    },
+    {
+      "depth": 1,
+      "class": "android.widget.FrameLayout",
+      "bounds": "[0,368][840,1294]",
+      "visible": true,
+      "clickable": false,
+      "focusable": false,
+      "focused": false,
+      "accessibilityFocused": false,
+      "actions": [
+        4,
+        8,
+        64,
+        16908342
+      ]
+    },
+    {
+      "depth": 2,
+      "class": "android.widget.FrameLayout",
+      "bounds": "[0,368][840,1294]",
+      "visible": true,
+      "clickable": false,
+      "focusable": false,
+      "focused": false,
+      "accessibilityFocused": false,
+      "actions": [
+        4,
+        8,
+        64,
+        16908342
+      ]
+    },
+    {
+      "depth": 3,
+      "class": "android.view.ViewGroup",
+      "bounds": "[0,368][840,1294]",
+      "visible": true,
+      "clickable": false,
+      "focusable": false,
+      "focused": false,
+      "accessibilityFocused": false,
+      "actions": [
+        4,
+        8,
+        64,
+        16908342
+      ]
+    },
+    {
+      "depth": 4,
+      "class": "android.view.View",
+      "bounds": "[0,368][840,1294]",
+      "visible": true,
+      "clickable": false,
+      "focusable": false,
+      "focused": false,
+      "accessibilityFocused": false,
+      "actions": [
+        64
+      ]
+    },
+    {
+      "depth": 5,
+      "class": "android.view.View",
+      "bounds": "[0,368][840,1294]",
+      "visible": true,
+      "clickable": false,
+      "focusable": false,
+      "focused": false,
+      "accessibilityFocused": false,
+      "actions": [
+        64
+      ]
+    },
+    {
+      "depth": 6,
+      "class": "android.view.View",
+      "bounds": "[0,368][840,1294]",
+      "visible": true,
+      "clickable": false,
+      "focusable": false,
+      "focused": false,
+      "accessibilityFocused": false,
+      "actions": [
+        64
+      ]
+    },
+    {
+      "depth": 7,
+      "class": "android.view.View",
+      "bounds": "[0,368][840,1294]",
+      "visible": true,
+      "clickable": false,
+      "focusable": false,
+      "focused": false,
+      "accessibilityFocused": false,
+      "actions": [
+        64
+      ]
+    },
+    {
+      "depth": 8,
+      "text": "移除这条关系？",
+      "class": "android.widget.TextView",
+      "bounds": "[63,431][574,537]",
+      "visible": true,
+      "clickable": false,
+      "focusable": false,
+      "focused": false,
+      "accessibilityFocused": false,
+      "actions": [
+        64,
+        131072,
+        256,
+        512
+      ]
+    },
+    {
+      "depth": 8,
+      "text": "手动标题保留，已改名的家庭分类，甲：经过键盘、旋转与后台仍保留的草稿正文。\n只移除关系，不删除任何笔记。",
+      "class": "android.widget.ScrollView",
+      "bounds": "[63,579][777,1021]",
+      "visible": true,
+      "clickable": false,
+      "focusable": false,
+      "focused": false,
+      "accessibilityFocused": false,
+      "actions": [
+        64,
+        131072,
+        256,
+        512
+      ]
+    },
+    {
+      "depth": 8,
+      "class": "android.view.View",
+      "bounds": "[167,1084][347,1231]",
+      "visible": true,
+      "clickable": true,
+      "focusable": true,
+      "focused": true,
+      "accessibilityFocused": false,
+      "actions": [
+        64,
+        2,
+        16
+      ]
+    },
+    {
+      "depth": 9,
+      "text": "取消",
+      "class": "android.widget.TextView",
+      "bounds": "[199,1116][315,1199]",
+      "visible": true,
+      "clickable": false,
+      "focusable": false,
+      "focused": false,
+      "accessibilityFocused": false,
+      "actions": [
+        64,
+        131072,
+        256,
+        512
+      ]
+    },
+    {
+      "depth": 9,
+      "class": "android.widget.Button",
+      "bounds": "[167,1084][347,1231]",
+      "visible": true,
+      "clickable": false,
+      "focusable": false,
+      "focused": false,
+      "accessibilityFocused": false,
+      "actions": [
+        64
+      ]
+    },
+    {
+      "depth": 8,
+      "text": "确认移除关系",
+      "class": "android.widget.Button",
+      "bounds": "[368,1084][777,1231]",
+      "visible": true,
+      "clickable": true,
+      "focusable": true,
+      "focused": false,
+      "accessibilityFocused": false,
+      "actions": [
+        64,
+        1,
+        16,
+        131072,
+        256,
+        512
+      ]
+    }
+  ],
+  "talkbackClaim": false
+}

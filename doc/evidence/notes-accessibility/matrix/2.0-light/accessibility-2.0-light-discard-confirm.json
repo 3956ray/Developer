@@ -1,0 +1,198 @@
+{
+  "screen": "discard-confirm",
+  "fontScale": 2,
+  "widthDp": 320,
+  "heightDp": 610,
+  "dark": false,
+  "nodes": [
+    {
+      "depth": 0,
+      "class": "android.widget.FrameLayout",
+      "bounds": "[0,430][840,1232]",
+      "visible": true,
+      "clickable": false,
+      "focusable": false,
+      "focused": false,
+      "accessibilityFocused": false,
+      "actions": [
+        4,
+        8,
+        64,
+        16908342
+      ]
+    },
+    {
+      "depth": 1,
+      "class": "android.widget.FrameLayout",
+      "bounds": "[0,430][840,1232]",
+      "visible": true,
+      "clickable": false,
+      "focusable": false,
+      "focused": false,
+      "accessibilityFocused": false,
+      "actions": [
+        4,
+        8,
+        64,
+        16908342
+      ]
+    },
+    {
+      "depth": 2,
+      "class": "android.widget.FrameLayout",
+      "bounds": "[0,430][840,1232]",
+      "visible": true,
+      "clickable": false,
+      "focusable": false,
+      "focused": false,
+      "accessibilityFocused": false,
+      "actions": [
+        4,
+        8,
+        64,
+        16908342
+      ]
+    },
+    {
+      "depth": 3,
+      "class": "android.view.ViewGroup",
+      "bounds": "[0,430][840,1232]",
+      "visible": true,
+      "clickable": false,
+      "focusable": false,
+      "focused": false,
+      "accessibilityFocused": false,
+      "actions": [
+        4,
+        8,
+        64,
+        16908342
+      ]
+    },
+    {
+      "depth": 4,
+      "class": "android.view.View",
+      "bounds": "[0,430][840,1232]",
+      "visible": true,
+      "clickable": false,
+      "focusable": false,
+      "focused": false,
+      "accessibilityFocused": false,
+      "actions": [
+        64
+      ]
+    },
+    {
+      "depth": 5,
+      "class": "android.view.View",
+      "bounds": "[0,430][840,1232]",
+      "visible": true,
+      "clickable": false,
+      "focusable": false,
+      "focused": false,
+      "accessibilityFocused": false,
+      "actions": [
+        64
+      ]
+    },
+    {
+      "depth": 6,
+      "class": "android.view.View",
+      "bounds": "[0,430][840,1232]",
+      "visible": true,
+      "clickable": false,
+      "focusable": false,
+      "focused": false,
+      "accessibilityFocused": false,
+      "actions": [
+        64
+      ]
+    },
+    {
+      "depth": 7,
+      "class": "android.view.View",
+      "bounds": "[0,430][840,1232]",
+      "visible": true,
+      "clickable": false,
+      "focusable": false,
+      "focused": false,
+      "accessibilityFocused": false,
+      "actions": [
+        64
+      ]
+    },
+    {
+      "depth": 8,
+      "text": "放弃这次编辑？",
+      "class": "android.widget.TextView",
+      "bounds": "[63,493][721,629]",
+      "visible": true,
+      "clickable": false,
+      "focusable": false,
+      "focused": false,
+      "accessibilityFocused": false,
+      "actions": [
+        64,
+        131072,
+        256,
+        512
+      ]
+    },
+    {
+      "depth": 8,
+      "text": "清除本次草稿，保留上次正式保存的笔记。",
+      "class": "android.widget.ScrollView",
+      "bounds": "[63,671][777,959]",
+      "visible": true,
+      "clickable": false,
+      "focusable": false,
+      "focused": false,
+      "accessibilityFocused": false,
+      "actions": [
+        64,
+        131072,
+        256,
+        512
+      ]
+    },
+    {
+      "depth": 8,
+      "text": "取消",
+      "class": "android.widget.Button",
+      "bounds": "[352,1022][554,1169]",
+      "visible": true,
+      "clickable": true,
+      "focusable": true,
+      "focused": true,
+      "accessibilityFocused": false,
+      "actions": [
+        64,
+        2,
+        16,
+        131072,
+        256,
+        512
+      ]
+    },
+    {
+      "depth": 8,
+      "text": "确认",
+      "class": "android.widget.Button",
+      "bounds": "[575,1022][777,1169]",
+      "visible": true,
+      "clickable": true,
+      "focusable": true,
+      "focused": false,
+      "accessibilityFocused": false,
+      "actions": [
+        64,
+        1,
+        16,
+        131072,
+        256,
+        512
+      ]
+    }
+  ],
+  "talkbackClaim": false
+}

@@ -1,0 +1,41 @@
+
+com.example.thinkv2.NotesFocusTest:
+Error in keyboardFocusAndDialogReturn(com.example.thinkv2.NotesFocusTest):
+java.lang.AssertionError: Failed to assert the following: (Focused = 'true')
+Semantics of the node:
+Node #19 at (l=42.0, t=196.0, r=1038.0, b=343.0)px
+Focused = 'false'
+Role = 'Button'
+Text = '[新增文字]'
+Actions = [OnClick, RequestFocus]
+ClearAndSetSemantics = 'true'
+Has 12 siblings
+Selector used: (Text + InputText + EditableText contains '新增文字' (ignoreCase: false))
+
+	at androidx.compose.ui.test.AssertionsKt.assert(Assertions.kt:264)
+	at androidx.compose.ui.test.AssertionsKt.assert$default(Assertions.kt:254)
+	at androidx.compose.ui.test.AssertionsKt.assertIsFocused(Assertions.kt:117)
+	at com.example.thinkv2.NotesFocusTest.keyboardFocusAndDialogReturn(NotesFocusTest.kt:25)
+
+
+Time: 1.064
+There was 1 failure:
+1) keyboardFocusAndDialogReturn(com.example.thinkv2.NotesFocusTest)
+java.lang.AssertionError: Failed to assert the following: (Focused = 'true')
+Semantics of the node:
+Node #19 at (l=42.0, t=196.0, r=1038.0, b=343.0)px
+Focused = 'false'
+Role = 'Button'
+Text = '[新增文字]'
+Actions = [OnClick, RequestFocus]
+ClearAndSetSemantics = 'true'
+Has 12 siblings
+Selector used: (Text + InputText + EditableText contains '新增文字' (ignoreCase: false))
+
+	at androidx.compose.ui.test.AssertionsKt.assert(Assertions.kt:264)
+	at androidx.compose.ui.test.AssertionsKt.assert$default(Assertions.kt:254)
+	at androidx.compose.ui.test.AssertionsKt.assertIsFocused(Assertions.kt:117)
+	at com.example.thinkv2.NotesFocusTest.keyboardFocusAndDialogReturn(NotesFocusTest.kt:25)
+
+FAILURES!!!
+Tests run: 1,  Failures: 1

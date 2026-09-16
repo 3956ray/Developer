@@ -1,0 +1,21 @@
+
+com.example.thinkv2.NotesFocusTest:
+Error in keyboardFocusAndDialogReturn(com.example.thinkv2.NotesFocusTest):
+java.lang.AssertionError
+	at org.junit.Assert.fail(Assert.java:87)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at org.junit.Assert.assertTrue(Assert.java:53)
+	at com.example.thinkv2.NotesFocusTest.keyboardFocusAndDialogReturn(NotesFocusTest.kt:56)
+
+
+Time: 3.345
+There was 1 failure:
+1) keyboardFocusAndDialogReturn(com.example.thinkv2.NotesFocusTest)
+java.lang.AssertionError
+	at org.junit.Assert.fail(Assert.java:87)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at org.junit.Assert.assertTrue(Assert.java:53)
+	at com.example.thinkv2.NotesFocusTest.keyboardFocusAndDialogReturn(NotesFocusTest.kt:56)
+
+FAILURES!!!
+Tests run: 1,  Failures: 1

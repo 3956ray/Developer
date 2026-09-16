@@ -1,0 +1,484 @@
+{
+  "screen": "search-ime",
+  "fontScale": 2,
+  "widthDp": 320,
+  "heightDp": 610,
+  "dark": false,
+  "nodes": [
+    {
+      "depth": 0,
+      "class": "android.widget.FrameLayout",
+      "bounds": "[0,0][840,1600]",
+      "visible": true,
+      "clickable": false,
+      "focusable": false,
+      "focused": false,
+      "accessibilityFocused": false,
+      "actions": [
+        4,
+        8,
+        64,
+        16908342
+      ]
+    },
+    {
+      "depth": 1,
+      "class": "android.widget.LinearLayout",
+      "bounds": "[0,0][840,1600]",
+      "visible": true,
+      "clickable": false,
+      "focusable": false,
+      "focused": false,
+      "accessibilityFocused": false,
+      "actions": [
+        4,
+        8,
+        64,
+        16908342
+      ]
+    },
+    {
+      "depth": 2,
+      "class": "android.widget.FrameLayout",
+      "bounds": "[0,0][840,1600]",
+      "visible": true,
+      "clickable": false,
+      "focusable": false,
+      "focused": false,
+      "accessibilityFocused": false,
+      "actions": [
+        4,
+        8,
+        64,
+        16908342
+      ]
+    },
+    {
+      "depth": 3,
+      "class": "androidx.compose.ui.platform.ComposeView",
+      "bounds": "[0,0][840,1600]",
+      "visible": true,
+      "clickable": false,
+      "focusable": false,
+      "focused": false,
+      "accessibilityFocused": false,
+      "actions": [
+        4,
+        8,
+        64,
+        16908342
+      ]
+    },
+    {
+      "depth": 4,
+      "class": "android.view.View",
+      "bounds": "[0,0][840,1600]",
+      "visible": true,
+      "clickable": false,
+      "focusable": false,
+      "focused": false,
+      "accessibilityFocused": false,
+      "actions": [
+        64
+      ]
+    },
+    {
+      "depth": 5,
+      "class": "android.view.View",
+      "bounds": "[0,0][840,1600]",
+      "visible": true,
+      "clickable": false,
+      "focusable": false,
+      "focused": false,
+      "accessibilityFocused": false,
+      "actions": [
+        64
+      ]
+    },
+    {
+      "depth": 6,
+      "class": "android.view.View",
+      "bounds": "[42,63][798,983]",
+      "visible": true,
+      "clickable": false,
+      "focusable": false,
+      "focused": false,
+      "accessibilityFocused": false,
+      "actions": [
+        64,
+        4096,
+        16908346
+      ]
+    },
+    {
+      "depth": 7,
+      "text": "思 · 笔记",
+      "class": "android.widget.TextView",
+      "bounds": "[42,84][413,221]",
+      "visible": true,
+      "clickable": false,
+      "focusable": false,
+      "focused": false,
+      "accessibilityFocused": false,
+      "actions": [
+        64,
+        131072,
+        256,
+        512
+      ]
+    },
+    {
+      "depth": 7,
+      "text": "新增文字",
+      "class": "android.widget.Button",
+      "bounds": "[42,242][798,396]",
+      "visible": true,
+      "clickable": true,
+      "focusable": true,
+      "focused": false,
+      "accessibilityFocused": false,
+      "actions": [
+        64,
+        1,
+        16,
+        131072,
+        256,
+        512
+      ]
+    },
+    {
+      "depth": 7,
+      "text": "阅读计划",
+      "class": "android.widget.EditText",
+      "bounds": "[42,428][798,666]",
+      "visible": true,
+      "clickable": true,
+      "focusable": true,
+      "focused": true,
+      "accessibilityFocused": false,
+      "actions": [
+        64,
+        2,
+        16,
+        32,
+        2097152,
+        16908372,
+        131072,
+        256,
+        512
+      ]
+    },
+    {
+      "depth": 8,
+      "class": "android.view.View",
+      "bounds": "[42,465][798,666]",
+      "visible": true,
+      "clickable": false,
+      "focusable": false,
+      "focused": false,
+      "accessibilityFocused": false,
+      "actions": [
+        64
+      ]
+    },
+    {
+      "depth": 8,
+      "text": "搜索标题或正文",
+      "class": "android.widget.TextView",
+      "bounds": "[84,419][539,511]",
+      "visible": true,
+      "clickable": false,
+      "focusable": false,
+      "focused": false,
+      "accessibilityFocused": false,
+      "actions": [
+        64,
+        131072,
+        256,
+        512
+      ]
+    },
+    {
+      "depth": 8,
+      "class": "android.view.View",
+      "bounds": "[84,511][585,624]",
+      "visible": true,
+      "clickable": false,
+      "focusable": false,
+      "focused": false,
+      "accessibilityFocused": false,
+      "actions": [
+        64
+      ]
+    },
+    {
+      "depth": 8,
+      "class": "android.view.View",
+      "bounds": "[596,492][798,639]",
+      "visible": true,
+      "clickable": true,
+      "focusable": true,
+      "focused": false,
+      "accessibilityFocused": false,
+      "actions": [
+        64,
+        1,
+        16
+      ]
+    },
+    {
+      "depth": 9,
+      "text": "清空",
+      "class": "android.widget.TextView",
+      "bounds": "[628,516][766,615]",
+      "visible": true,
+      "clickable": false,
+      "focusable": false,
+      "focused": false,
+      "accessibilityFocused": false,
+      "actions": [
+        64,
+        131072,
+        256,
+        512
+      ]
+    },
+    {
+      "depth": 9,
+      "class": "android.widget.Button",
+      "bounds": "[596,492][798,639]",
+      "visible": true,
+      "clickable": false,
+      "focusable": false,
+      "focused": false,
+      "accessibilityFocused": false,
+      "actions": [
+        64
+      ]
+    },
+    {
+      "depth": 7,
+      "class": "android.view.View",
+      "bounds": "[42,666][798,813]",
+      "visible": true,
+      "clickable": false,
+      "focusable": false,
+      "focused": false,
+      "accessibilityFocused": false,
+      "actions": [
+        64,
+        4096,
+        16908347
+      ]
+    },
+    {
+      "depth": 8,
+      "class": "android.view.View",
+      "bounds": "[42,666][264,813]",
+      "visible": true,
+      "clickable": true,
+      "focusable": true,
+      "focused": false,
+      "accessibilityFocused": false,
+      "actions": [
+        64,
+        1,
+        16
+      ]
+    },
+    {
+      "depth": 9,
+      "text": "全部",
+      "class": "android.widget.TextView",
+      "bounds": "[84,690][222,789]",
+      "visible": true,
+      "clickable": false,
+      "focusable": false,
+      "focused": false,
+      "accessibilityFocused": false,
+      "actions": [
+        64,
+        131072,
+        256,
+        512
+      ]
+    },
+    {
+      "depth": 9,
+      "class": "android.widget.CheckBox",
+      "bounds": "[42,666][264,813]",
+      "visible": true,
+      "clickable": false,
+      "focusable": false,
+      "focused": false,
+      "accessibilityFocused": false,
+      "actions": [
+        64
+      ]
+    },
+    {
+      "depth": 8,
+      "class": "android.view.View",
+      "bounds": "[285,666][576,813]",
+      "visible": true,
+      "clickable": true,
+      "focusable": true,
+      "focused": false,
+      "accessibilityFocused": false,
+      "actions": [
+        64,
+        1,
+        16
+      ]
+    },
+    {
+      "depth": 9,
+      "text": "未分类",
+      "class": "android.widget.TextView",
+      "bounds": "[327,690][534,789]",
+      "visible": true,
+      "clickable": false,
+      "focusable": false,
+      "focused": false,
+      "accessibilityFocused": false,
+      "actions": [
+        64,
+        131072,
+        256,
+        512
+      ]
+    },
+    {
+      "depth": 9,
+      "class": "android.widget.CheckBox",
+      "bounds": "[285,666][576,813]",
+      "visible": true,
+      "clickable": false,
+      "focusable": false,
+      "focused": false,
+      "accessibilityFocused": false,
+      "actions": [
+        64
+      ]
+    },
+    {
+      "depth": 8,
+      "class": "android.view.View",
+      "bounds": "[597,666][840,813]",
+      "visible": true,
+      "clickable": true,
+      "focusable": true,
+      "focused": false,
+      "accessibilityFocused": false,
+      "actions": [
+        64,
+        1,
+        16
+      ]
+    },
+    {
+      "depth": 9,
+      "text": "家庭计划与生活事项",
+      "class": "android.widget.TextView",
+      "bounds": "[639,690][798,789]",
+      "visible": true,
+      "clickable": false,
+      "focusable": false,
+      "focused": false,
+      "accessibilityFocused": false,
+      "actions": [
+        64,
+        131072,
+        256,
+        512
+      ]
+    },
+    {
+      "depth": 9,
+      "class": "android.widget.CheckBox",
+      "bounds": "[597,666][798,813]",
+      "visible": true,
+      "clickable": false,
+      "focusable": false,
+      "focused": false,
+      "accessibilityFocused": false,
+      "actions": [
+        64
+      ]
+    },
+    {
+      "depth": 7,
+      "class": "android.view.View",
+      "bounds": "[42,813][421,967]",
+      "visible": true,
+      "clickable": true,
+      "focusable": true,
+      "focused": false,
+      "accessibilityFocused": false,
+      "actions": [
+        64,
+        1,
+        16
+      ]
+    },
+    {
+      "depth": 8,
+      "text": "管理分类",
+      "class": "android.widget.TextView",
+      "bounds": "[74,834][389,946]",
+      "visible": true,
+      "clickable": false,
+      "focusable": false,
+      "focused": false,
+      "accessibilityFocused": false,
+      "actions": [
+        64,
+        131072,
+        256,
+        512
+      ]
+    },
+    {
+      "depth": 8,
+      "class": "android.widget.Button",
+      "bounds": "[42,813][421,967]",
+      "visible": true,
+      "clickable": false,
+      "focusable": false,
+      "focused": false,
+      "accessibilityFocused": false,
+      "actions": [
+        64
+      ]
+    },
+    {
+      "depth": 7,
+      "class": "android.view.View",
+      "bounds": "[42,967][544,1046]",
+      "visible": true,
+      "clickable": true,
+      "focusable": true,
+      "focused": false,
+      "accessibilityFocused": false,
+      "actions": [
+        64,
+        1,
+        16
+      ]
+    },
+    {
+      "depth": 8,
+      "class": "android.widget.Button",
+      "bounds": "[42,967][544,983]",
+      "visible": true,
+      "clickable": false,
+      "focusable": false,
+      "focused": false,
+      "accessibilityFocused": false,
+      "actions": [
+        64
+      ]
+    }
+  ],
+  "talkbackClaim": false
+}

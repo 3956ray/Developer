@@ -1,0 +1,3 @@
+google/sdk_gphone16k_arm64/emu64a16k:17/CP31.260623.012/16064790:user/dev-keys
+Physical size: 1080x1920
+Physical density: 420

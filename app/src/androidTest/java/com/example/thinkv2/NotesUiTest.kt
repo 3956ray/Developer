@@ -12,77 +12,89 @@ import org.junit.runner.RunWith
 class NotesUiTest {
     @get:Rule val ui=createAndroidComposeRule<MainActivity>()
     @Test fun textDraftSearchAndRecreation() {
-        ui.waitUntil(10000) { ui.onAllNodesWithText("还没有笔记，写下第一个想法吧。").fetchSemanticsNodes().isNotEmpty() }
-        ui.onNodeWithText("打开或新建笔记后可使用离线语音输入。").assertExists()
-        ui.onNodeWithText("新增文字").performClick()
-        ui.onNodeWithText("正文").performTextInput("合成验收记录。测试搜索与恢复。")
+        awaitText("还没有笔记，写下第一个想法吧。")
+        node("打开或新建笔记后可使用离线语音输入。").assertExists()
+        node("新增文字").performClick()
+        node("正文").performTextInput("合成验收记录。测试搜索与恢复。")
         createCategory("未分类","合成分类")
-        ui.waitUntil(10000) { ui.onAllNodesWithText("草稿已保存在本机，尚未正式保存").fetchSemanticsNodes().isNotEmpty() }
+        awaitText("草稿已保存在本机，尚未正式保存")
         ui.activityRule.scenario.recreate()
-        ui.onNodeWithText("保存").performClick()
-        ui.waitUntil(10000) { ui.onAllNodesWithText("已保存 · 1 条").fetchSemanticsNodes().isNotEmpty() }
-        ui.onNodeWithText("搜索标题或正文").performTextInput("恢复")
+        node("保存").performClick()
+        awaitText("已保存 · 1 条")
+        node("搜索标题或正文").performTextInput("恢复")
         androidx.test.espresso.Espresso.closeSoftKeyboard()
-        ui.waitUntil(10000) { ui.onAllNodesWithText("合成验收记录").fetchSemanticsNodes().isNotEmpty() }
-        ui.onNodeWithText("合成验收记录").performClick()
-        ui.waitUntil(10000) { ui.onAllNodesWithText("正在查看已正式保存的版本").fetchSemanticsNodes().isNotEmpty() }
-        ui.onNodeWithText("保存").performClick()
-        ui.waitUntil(10000) { ui.onAllNodesWithText("已保存 · 1 条").fetchSemanticsNodes().isNotEmpty() }
-        ui.onNodeWithText("清空").performClick()
-        ui.onNodeWithText("合成验收记录").performClick()
-        ui.waitUntil(10000) { ui.onAllNodesWithText("正文").fetchSemanticsNodes().isNotEmpty() }
-        ui.onNodeWithText("正文").performTextReplacement("更新后的合成文字。")
+        awaitText("合成验收记录")
+        node("合成验收记录").performClick()
+        awaitText("正在查看已正式保存的版本")
+        node("保存").performClick()
+        awaitText("已保存 · 1 条")
+        node("清空").performClick()
+        node("合成验收记录").performClick()
+        awaitText("正文")
+        node("正文").performTextReplacement("更新后的合成文字。")
         createCategory("合成分类","已纠正分类")
-        ui.onNodeWithText("保存").performClick()
-        ui.waitUntil(10000) { ui.onAllNodesWithText("更新后的合成文字").fetchSemanticsNodes().isNotEmpty() }
-        ui.onNodeWithText("搜索标题或正文").performTextInput("恢复")
+        node("保存").performClick()
+        awaitText("更新后的合成文字")
+        node("搜索标题或正文").performTextInput("恢复")
         androidx.test.espresso.Espresso.closeSoftKeyboard()
-        ui.waitUntil(10000) { ui.onAllNodesWithText("已保存 · 0 条").fetchSemanticsNodes().isNotEmpty() }
-        ui.onNodeWithText("清空").performClick()
-        ui.waitUntil(10000) { ui.onAllNodesWithText("已保存 · 1 条").fetchSemanticsNodes().isNotEmpty() }
+        awaitText("已保存 · 0 条")
+        node("清空").performClick()
+        awaitText("已保存 · 1 条")
 
-        ui.onNodeWithText("管理分类").performClick()
+        node("管理分类").performClick()
         ui.waitUntil(10000) { ui.onAllNodesWithContentDescription("改名分类已纠正分类").fetchSemanticsNodes().isNotEmpty() }
         ui.onNodeWithContentDescription("改名分类已纠正分类").performClick()
-        ui.onNodeWithText("分类名称").performTextReplacement("改名后的分类")
-        ui.onNodeWithText("保存分类").performClick()
+        node("分类名称").performTextReplacement("改名后的分类")
+        node("保存分类").performClick()
         ui.waitUntil(10000) { ui.onAllNodesWithContentDescription("删除分类改名后的分类").fetchSemanticsNodes().isNotEmpty() }
-        ui.onNodeWithText("返回笔记").performClick()
-        ui.waitUntil(10000) { ui.onAllNodesWithText("更新后的合成文字").fetchSemanticsNodes().isNotEmpty() }
-        ui.onNodeWithText("更新后的合成文字").performClick()
-        ui.onNodeWithText("分类：改名后的分类").performScrollTo().assertExists()
-        ui.onNodeWithText("移入回收站").performScrollTo().performClick()
-        ui.onNodeWithText("取消").performClick()
-        ui.onNodeWithText("移入回收站").performClick()
-        ui.onNodeWithText("确认").performClick()
-        ui.waitUntil(10000) { ui.onAllNodesWithText("已保存 · 0 条").fetchSemanticsNodes().isNotEmpty() }
-        ui.onNodeWithText("管理分类").performClick()
+        node("返回笔记").performClick()
+        awaitText("更新后的合成文字")
+        node("更新后的合成文字").performClick()
+        node("分类：改名后的分类").performScrollTo().assertExists()
+        node("移入回收站").performScrollTo().performClick()
+        node("取消").performClick()
+        node("移入回收站").performClick()
+        node("确认").performClick()
+        awaitText("已保存 · 0 条")
+        node("管理分类").performClick()
         ui.waitUntil(10000) { ui.onAllNodesWithContentDescription("删除分类改名后的分类").fetchSemanticsNodes().isNotEmpty() }
         ui.onNodeWithContentDescription("删除分类改名后的分类").performClick()
-        ui.onNodeWithText("确认删除分类").performClick()
-        ui.waitUntil(10000) { ui.onAllNodesWithText("分类已删除，相关笔记和草稿已移到未分类；回收站内容仍保留。").fetchSemanticsNodes().isNotEmpty() }
-        ui.onNodeWithText("返回笔记").performClick()
-        ui.waitUntil(10000) { ui.onAllNodesWithText("回收站（1）").fetchSemanticsNodes().isNotEmpty() }
-        ui.onNodeWithText("回收站（1）").performClick()
-        ui.waitUntil(10000) { ui.onAllNodesWithText("原分类已不存在，恢复时将移至未分类。").fetchSemanticsNodes().isNotEmpty() }
-        ui.onNodeWithText("恢复笔记").performScrollTo().performClick()
-        ui.waitUntil(10000) { ui.onAllNodesWithText("笔记已恢复；原分类已不存在，相关内容已移至未分类。").fetchSemanticsNodes().isNotEmpty() }
-        ui.onNodeWithText("返回笔记").performClick()
-        ui.waitUntil(10000) { ui.onAllNodesWithText("已保存 · 1 条").fetchSemanticsNodes().isNotEmpty() }
-        ui.onNodeWithText("更新后的合成文字").performClick()
-        ui.onNodeWithText("分类：未分类").performScrollTo().assertExists()
-        ui.onNodeWithText("保存").performClick()
-        ui.waitUntil(10000) { ui.onAllNodesWithText("已保存 · 1 条").fetchSemanticsNodes().isNotEmpty() }
+        node("确认删除分类").performClick()
+        awaitText("分类已删除，相关笔记和草稿已移到未分类；回收站内容仍保留。")
+        node("返回笔记").performClick()
+        awaitText("回收站（1）")
+        node("回收站（1）").performClick()
+        awaitText("原分类已不存在，恢复时将移至未分类。")
+        node("恢复笔记").performScrollTo().performClick()
+        awaitText("笔记已恢复；原分类已不存在，相关内容已移至未分类。")
+        node("返回笔记").performClick()
+        awaitText("已保存 · 1 条")
+        node("更新后的合成文字").performClick()
+        node("分类：未分类").performScrollTo().assertExists()
+        node("保存").performClick()
+        awaitText("已保存 · 1 条")
+    }
+    private fun notes()=MainActivity::class.java.getDeclaredField("notes").apply { isAccessible=true }.get(ui.activity) as com.example.thinkv2.notes.NotesModel
+    private fun node(text: String): SemanticsNodeInteraction {
+        val node=ui.onNodeWithText(text)
+        if(runCatching { node.assertIsDisplayed() }.isSuccess)return node
+        val state=notes().state
+        if(state.editor==null) ui.onNodeWithTag(if(state.page==com.example.thinkv2.notes.NotesPage.HOME) "notes-list" else "lifecycle-list").performScrollToNode(hasText(text))
+        return node
+    }
+    private fun awaitText(text: String) {
+        ui.waitUntil(10000) { !notes().state.loading && !notes().state.busy }
+        node(text).assertExists()
     }
     private fun createCategory(oldName: String,name: String) {
         androidx.test.espresso.Espresso.closeSoftKeyboard()
-        ui.onNodeWithText("分类：$oldName").performScrollTo()
+        node("分类：$oldName").performScrollTo()
         ui.waitForIdle()
-        ui.onNodeWithText("分类：$oldName").performClick()
-        ui.waitUntil(10000) { ui.onAllNodesWithText("新建分类").fetchSemanticsNodes().isNotEmpty() }
-        ui.onNodeWithText("新建分类").performClick()
-        ui.onNodeWithText("分类名称").performTextInput(name)
-        ui.onNodeWithText("保存分类").performClick()
-        ui.waitUntil(10000) { ui.onAllNodesWithText("分类：$name").fetchSemanticsNodes().isNotEmpty() }
+        node("分类：$oldName").performClick()
+        awaitText("新建分类")
+        node("新建分类").performClick()
+        node("分类名称").performTextInput(name)
+        node("保存分类").performClick()
+        awaitText("分类：$name")
     }
 }

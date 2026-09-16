@@ -1,0 +1,231 @@
+{
+  "screen": "editor-ime",
+  "fontScale": 1.5,
+  "widthDp": 320,
+  "heightDp": 610,
+  "dark": false,
+  "nodes": [
+    {
+      "depth": 0,
+      "class": "android.widget.FrameLayout",
+      "bounds": "[0,0][840,1600]",
+      "visible": true,
+      "clickable": false,
+      "focusable": false,
+      "focused": false,
+      "accessibilityFocused": false,
+      "actions": [
+        4,
+        8,
+        64,
+        16908342
+      ]
+    },
+    {
+      "depth": 1,
+      "class": "android.widget.LinearLayout",
+      "bounds": "[0,0][840,1600]",
+      "visible": true,
+      "clickable": false,
+      "focusable": false,
+      "focused": false,
+      "accessibilityFocused": false,
+      "actions": [
+        4,
+        8,
+        64,
+        16908342
+      ]
+    },
+    {
+      "depth": 2,
+      "class": "android.widget.FrameLayout",
+      "bounds": "[0,0][840,1600]",
+      "visible": true,
+      "clickable": false,
+      "focusable": false,
+      "focused": false,
+      "accessibilityFocused": false,
+      "actions": [
+        4,
+        8,
+        64,
+        16908342
+      ]
+    },
+    {
+      "depth": 3,
+      "class": "androidx.compose.ui.platform.ComposeView",
+      "bounds": "[0,0][840,1600]",
+      "visible": true,
+      "clickable": false,
+      "focusable": false,
+      "focused": false,
+      "accessibilityFocused": false,
+      "actions": [
+        4,
+        8,
+        64,
+        16908342
+      ]
+    },
+    {
+      "depth": 4,
+      "class": "android.view.View",
+      "bounds": "[0,0][840,1600]",
+      "visible": true,
+      "clickable": false,
+      "focusable": false,
+      "focused": false,
+      "accessibilityFocused": false,
+      "actions": [
+        64
+      ]
+    },
+    {
+      "depth": 5,
+      "class": "android.view.View",
+      "bounds": "[0,0][840,1600]",
+      "visible": true,
+      "clickable": false,
+      "focusable": false,
+      "focused": false,
+      "accessibilityFocused": false,
+      "actions": [
+        64
+      ]
+    },
+    {
+      "depth": 6,
+      "class": "android.widget.ScrollView",
+      "bounds": "[42,210][798,755]",
+      "visible": true,
+      "clickable": false,
+      "focusable": false,
+      "focused": false,
+      "accessibilityFocused": false,
+      "actions": [
+        64,
+        4096,
+        16908346,
+        8192,
+        16908344
+      ]
+    },
+    {
+      "depth": 7,
+      "text": "甲：经过键盘、旋转与后台仍保留的草稿正文。",
+      "class": "android.widget.EditText",
+      "bounds": "[42,210][798,726]",
+      "visible": true,
+      "clickable": true,
+      "focusable": true,
+      "focused": true,
+      "accessibilityFocused": false,
+      "actions": [
+        64,
+        2,
+        16,
+        32,
+        2097152,
+        16908372,
+        131072,
+        256,
+        512
+      ]
+    },
+    {
+      "depth": 8,
+      "class": "android.view.View",
+      "bounds": "[42,210][798,726]",
+      "visible": true,
+      "clickable": false,
+      "focusable": false,
+      "focused": false,
+      "accessibilityFocused": false,
+      "actions": [
+        64
+      ]
+    },
+    {
+      "depth": 8,
+      "class": "android.view.View",
+      "bounds": "[84,210][756,428]",
+      "visible": true,
+      "clickable": false,
+      "focusable": false,
+      "focused": false,
+      "accessibilityFocused": false,
+      "actions": [
+        64
+      ]
+    },
+    {
+      "depth": 7,
+      "class": "android.view.View",
+      "bounds": "[42,758][798,818]",
+      "visible": true,
+      "clickable": true,
+      "focusable": true,
+      "focused": false,
+      "accessibilityFocused": false,
+      "actions": [
+        64,
+        1,
+        16
+      ]
+    },
+    {
+      "depth": 8,
+      "class": "android.widget.Button",
+      "bounds": "[0,0][0,0]",
+      "visible": true,
+      "clickable": false,
+      "focusable": false,
+      "focused": false,
+      "accessibilityFocused": false,
+      "actions": [
+        64
+      ]
+    },
+    {
+      "depth": 6,
+      "text": "返回 · 保留草稿",
+      "class": "android.widget.Button",
+      "bounds": "[42,63][420,210]",
+      "visible": true,
+      "clickable": true,
+      "focusable": true,
+      "focused": false,
+      "accessibilityFocused": false,
+      "actions": [
+        64,
+        1,
+        16,
+        131072,
+        256,
+        512
+      ]
+    },
+    {
+      "depth": 6,
+      "text": "保存",
+      "class": "android.widget.Button",
+      "bounds": "[420,63][798,210]",
+      "visible": true,
+      "clickable": true,
+      "focusable": true,
+      "focused": false,
+      "accessibilityFocused": false,
+      "actions": [
+        64,
+        1,
+        16,
+        131072,
+        256,
+        512
+      ]
+    }
+  ],
+  "talkbackClaim": false
+}

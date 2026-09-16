@@ -1,0 +1,24 @@
+{
+  "fontScale": 2,
+  "widthDp": 320,
+  "keyboardBannerFoundAndDismissed": false,
+  "beforeEditingVisibleEnd": {
+    "unclippedFieldBounds": "Rect.fromLTRB(42.0, -3434.0, 798.0, 899.0)",
+    "viewport": "Rect.fromLTRB(42.0, 217.0, 798.0, 983.0)",
+    "imeBounds": "[0,983][840,1600]",
+    "actualTap": "Offset(735.0, 878.0)",
+    "selectionEnd": 287,
+    "textLength": 287
+  },
+  "afterEditingVisibleEnd": {
+    "unclippedFieldBounds": "Rect.fromLTRB(42.0, -3644.0, 798.0, 899.0)",
+    "viewport": "Rect.fromLTRB(42.0, 217.0, 798.0, 983.0)",
+    "imeBounds": "[0,983][840,1600]",
+    "actualTap": "Offset(735.0, 878.0)",
+    "selectionEnd": 297,
+    "textLength": 297
+  },
+  "furtherEditingDurable": true,
+  "id": "a7a751c0-bf76-476b-84fb-f0e8393170c7",
+  "expectedBody": "第1段合成正文：今天整理花园，明天继续阅读和记录，长文字可以滚动查看。\n第2段合成正文：今天整理花园，明天继续阅读和记录，长文字可以滚动查看。\n第3段合成正文：今天整理花园，明天继续阅读和记录，长文字可以滚动查看。\n第4段合成正文：今天整理花园，明天继续阅读和记录，长文字可以滚动查看。\n第5段合成正文：今天整理花园，明天继续阅读和记录，长文字可以滚动查看。\n第6段合成正文：今天整理花园，明天继续阅读和记录，长文字可以滚动查看。\n第7段合成正文：今天整理花园，明天继续阅读和记录，长文字可以滚动查看。\n第8段合成正文：今天整理花园，明天继续阅读和记录，长文字可以滚动查看。\n末尾继续输入验证。"
+}

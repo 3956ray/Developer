@@ -1,0 +1,90 @@
+{
+  "allAssertionsPassed": true,
+  "sourceId": "26af95be-32b3-4c24-9cfa-cf814a781202",
+  "sameTitleOtherId": "036b3eff-0397-404b-9802-85fce29ce68b",
+  "platformChecks": [
+    {
+      "label": "新增文字",
+      "bounds": "[42,196][798,343]",
+      "heightDp": 56,
+      "widthDp": 288,
+      "platformFocusChecked": true
+    },
+    {
+      "label": "保存",
+      "bounds": "[420,63][798,210]",
+      "heightDp": 56,
+      "widthDp": 144,
+      "platformFocusChecked": false
+    },
+    {
+      "label": "保存分类",
+      "bounds": "[567,943][777,1090]",
+      "heightDp": 56,
+      "widthDp": 80,
+      "platformFocusChecked": false
+    },
+    {
+      "label": "确认删除分类",
+      "bounds": "[494,970][777,1117]",
+      "heightDp": 56,
+      "widthDp": 107.809525,
+      "platformFocusChecked": false
+    },
+    {
+      "label": "确认建立关系",
+      "bounds": "[494,970][777,1117]",
+      "heightDp": 56,
+      "widthDp": 107.809525,
+      "platformFocusChecked": false
+    },
+    {
+      "label": "打开相关笔记 相同标题，已改名的家庭分类，乙：下周阅读计划，只属于第二条记录。",
+      "bounds": "[74,1053][485,1200]",
+      "heightDp": 56,
+      "widthDp": 156.57143,
+      "platformFocusChecked": true
+    },
+    {
+      "label": "确认移除关系",
+      "bounds": "[494,970][777,1117]",
+      "heightDp": 56,
+      "widthDp": 107.809525,
+      "platformFocusChecked": false
+    },
+    {
+      "label": "打开相关笔记 手动标题保留，已改名的家庭分类，甲：经过键盘、旋转与后台仍保留的草稿正文。",
+      "bounds": "[74,1264][485,1411]",
+      "heightDp": 56,
+      "widthDp": 156.57143,
+      "platformFocusChecked": true
+    },
+    {
+      "label": "确认",
+      "bounds": "[625,944][777,1091]",
+      "heightDp": 56,
+      "widthDp": 57.904762,
+      "platformFocusChecked": false
+    },
+    {
+      "label": "取消",
+      "bounds": "[452,917][604,1064]",
+      "heightDp": 56,
+      "widthDp": 57.904762,
+      "platformFocusChecked": false
+    },
+    {
+      "label": "保存",
+      "bounds": "[420,63][798,210]",
+      "heightDp": 56,
+      "widthDp": 144,
+      "platformFocusChecked": false
+    }
+  ],
+  "installedServices": [
+    "com.android.systemui.accessibility.accessibilitymenu\/.AccessibilityMenuService",
+    "com.google.android.marvin.talkback\/com.google.android.accessibility.selecttospeak.SelectToSpeakService",
+    "com.google.android.marvin.talkback\/.TalkBackService"
+  ],
+  "talkbackSpeechTested": false
+}

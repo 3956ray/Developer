@@ -1,0 +1,23 @@
+
+com.example.thinkv2.voice.VoiceCommandLifecycleTest:.
+Error in deniedActualMicrophonePermissionCannotProduceCommandOrChangeText(com.example.thinkv2.voice.VoiceCommandLifecycleTest):
+java.lang.AssertionError: expected:<-1> but was:<0>
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.failNotEquals(Assert.java:835)
+	at org.junit.Assert.assertEquals(Assert.java:120)
+	at org.junit.Assert.assertEquals(Assert.java:146)
+	at com.example.thinkv2.voice.VoiceCommandLifecycleTest.deniedActualMicrophonePermissionCannotProduceCommandOrChangeText(VoiceCommandLifecycleTest.kt:40)
+
+
+Time: 3.758
+There was 1 failure:
+1) deniedActualMicrophonePermissionCannotProduceCommandOrChangeText(com.example.thinkv2.voice.VoiceCommandLifecycleTest)
+java.lang.AssertionError: expected:<-1> but was:<0>
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.failNotEquals(Assert.java:835)
+	at org.junit.Assert.assertEquals(Assert.java:120)
+	at org.junit.Assert.assertEquals(Assert.java:146)
+	at com.example.thinkv2.voice.VoiceCommandLifecycleTest.deniedActualMicrophonePermissionCannotProduceCommandOrChangeText(VoiceCommandLifecycleTest.kt:40)
+
+FAILURES!!!
+Tests run: 2,  Failures: 1

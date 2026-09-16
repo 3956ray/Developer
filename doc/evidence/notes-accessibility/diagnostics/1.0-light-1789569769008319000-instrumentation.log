@@ -1,0 +1,21 @@
+
+com.example.thinkv2.NotesAccessibilityTest:
+Error in realRoutesLargeFontsThemesDurableEditingAndPlatformActions(com.example.thinkv2.NotesAccessibilityTest):
+java.lang.IllegalStateException: missing platform button 保存
+	at com.example.thinkv2.NotesAccessibilityTest.platformButton(NotesAccessibilityTest.kt:72)
+	at com.example.thinkv2.NotesAccessibilityTest.checkButton(NotesAccessibilityTest.kt:75)
+	at com.example.thinkv2.NotesAccessibilityTest.checkButton$default(NotesAccessibilityTest.kt:74)
+	at com.example.thinkv2.NotesAccessibilityTest.realRoutesLargeFontsThemesDurableEditingAndPlatformActions(NotesAccessibilityTest.kt:143)
+
+
+Time: 29.468
+There was 1 failure:
+1) realRoutesLargeFontsThemesDurableEditingAndPlatformActions(com.example.thinkv2.NotesAccessibilityTest)
+java.lang.IllegalStateException: missing platform button 保存
+	at com.example.thinkv2.NotesAccessibilityTest.platformButton(NotesAccessibilityTest.kt:72)
+	at com.example.thinkv2.NotesAccessibilityTest.checkButton(NotesAccessibilityTest.kt:75)
+	at com.example.thinkv2.NotesAccessibilityTest.checkButton$default(NotesAccessibilityTest.kt:74)
+	at com.example.thinkv2.NotesAccessibilityTest.realRoutesLargeFontsThemesDurableEditingAndPlatformActions(NotesAccessibilityTest.kt:143)
+
+FAILURES!!!
+Tests run: 1,  Failures: 1

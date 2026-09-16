@@ -1,0 +1,88 @@
+{
+  "runtime": "admitted Vosk; no grammar\/correction",
+  "inputPath": "explicit synthetic PCM in RAM, wall-clock paced product VoiceCapture; not physical microphone",
+  "identities": [
+    {
+      "id": "CMD01",
+      "text": "新建笔记",
+      "intent": "NEW",
+      "voice": "com.apple.voice.compact.zh-CN.Tingting",
+      "rate": 0.45,
+      "samples": 35308,
+      "pcmSha256": "89be58dc76b235bfb65e9eb7299e0699826a64ea00c486871330bae24cc7aa6f",
+      "host": "26.6.2",
+      "generatorSha256": "a2535b51a24045803d31f0937d7eac79b023d33672557a0bd949faa069c7d32d"
+    },
+    {
+      "id": "CMD02",
+      "text": "保存当前草稿",
+      "intent": "SAVE",
+      "voice": "com.apple.voice.compact.zh-CN.Tingting",
+      "rate": 0.45,
+      "samples": 55972,
+      "pcmSha256": "ea02a0bf918bdaaa59a25847d497785ce06efaa293e2adae121665ac20ac87a5",
+      "host": "26.6.2",
+      "generatorSha256": "a2535b51a24045803d31f0937d7eac79b023d33672557a0bd949faa069c7d32d"
+    },
+    {
+      "id": "CMD03",
+      "text": "取消本次输入",
+      "intent": "CANCEL",
+      "voice": "com.apple.voice.compact.zh-CN.Tingting",
+      "rate": 0.45,
+      "samples": 50686,
+      "pcmSha256": "8256417d73ea888bae61a509177dd0c329ff333dcddd70ffa8c578346a6387ef",
+      "host": "26.6.2",
+      "generatorSha256": "a2535b51a24045803d31f0937d7eac79b023d33672557a0bd949faa069c7d32d"
+    },
+    {
+      "id": "NEG01",
+      "text": "今天的笔记里写着保存当前草稿",
+      "intent": null,
+      "voice": "com.apple.voice.compact.zh-CN.Tingting",
+      "rate": 0.45,
+      "samples": 114528,
+      "pcmSha256": "3698577a30c522bc6afee6b036d6429ed627eed8202596c070a319c844f20fd4",
+      "host": "26.6.2",
+      "generatorSha256": "a2535b51a24045803d31f0937d7eac79b023d33672557a0bd949faa069c7d32d"
+    }
+  ],
+  "results": [
+    {
+      "id": "CMD01",
+      "mode": "command",
+      "recognized": "新建 笔记",
+      "intent": "NEW"
+    },
+    {
+      "id": "CMD02",
+      "mode": "command",
+      "recognized": "保存 当前 草稿",
+      "intent": "SAVE"
+    },
+    {
+      "id": "CMD03",
+      "mode": "command",
+      "recognized": "取消 本次 输入",
+      "intent": "CANCEL"
+    },
+    {
+      "id": "NEG01",
+      "mode": "command",
+      "recognized": "未匹配完整口令：今天 的 笔记 里 写 着 保存 当前 草稿。没有执行操作。",
+      "intent": null
+    },
+    {
+      "id": "CMD02",
+      "mode": "dictation",
+      "recognized": "转写已插入草稿，可继续修改；尚未正式保存。",
+      "intent": null
+    },
+    {
+      "ordinaryInsertedText": "保存 当前 草稿"
+    }
+  ],
+  "threeConfirmedActions": true,
+  "unknownNoAction": true,
+  "ordinaryCommandLikeSpeechOnlyText": true
+}

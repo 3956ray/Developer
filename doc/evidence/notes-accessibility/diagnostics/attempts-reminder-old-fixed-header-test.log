@@ -1,0 +1,21 @@
+
+com.example.thinkv2.ReminderUiTest:
+Error in weeklyConfigurationValidationBlockedStatusAndDisable(com.example.thinkv2.ReminderUiTest):
+androidx.compose.ui.test.ComposeTimeoutException: Condition still not satisfied after 15000 ms
+	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$AndroidComposeUiTestImpl.waitUntil(ComposeUiTest.android.kt:809)
+	at androidx.compose.ui.test.junit4.AndroidComposeTestRule.waitUntil(AndroidComposeTestRule.android.kt:378)
+	at com.example.thinkv2.ReminderUiTest.shown(ReminderUiTest.kt:13)
+	at com.example.thinkv2.ReminderUiTest.weeklyConfigurationValidationBlockedStatusAndDisable(ReminderUiTest.kt:15)
+
+
+Time: 16.078
+There was 1 failure:
+1) weeklyConfigurationValidationBlockedStatusAndDisable(com.example.thinkv2.ReminderUiTest)
+androidx.compose.ui.test.ComposeTimeoutException: Condition still not satisfied after 15000 ms
+	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$AndroidComposeUiTestImpl.waitUntil(ComposeUiTest.android.kt:809)
+	at androidx.compose.ui.test.junit4.AndroidComposeTestRule.waitUntil(AndroidComposeTestRule.android.kt:378)
+	at com.example.thinkv2.ReminderUiTest.shown(ReminderUiTest.kt:13)
+	at com.example.thinkv2.ReminderUiTest.weeklyConfigurationValidationBlockedStatusAndDisable(ReminderUiTest.kt:15)
+
+FAILURES!!!
+Tests run: 1,  Failures: 1

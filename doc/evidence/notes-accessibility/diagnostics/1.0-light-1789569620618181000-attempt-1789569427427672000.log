@@ -1,0 +1,23 @@
+
+com.example.thinkv2.NotesAccessibilityTest:
+Error in realRoutesLargeFontsThemesDurableEditingAndPlatformActions(com.example.thinkv2.NotesAccessibilityTest):
+java.lang.AssertionError: Semantic Node has no parent layout with a Scroll SemanticsAction
+	at androidx.compose.ui.test.ActionsKt.scrollToNode(Actions.kt:97)
+	at androidx.compose.ui.test.ActionsKt.performScrollTo(Actions.kt:82)
+	at com.example.thinkv2.NotesAccessibilityTest.reveal(NotesAccessibilityTest.kt:34)
+	at com.example.thinkv2.NotesAccessibilityTest.click(NotesAccessibilityTest.kt:39)
+	at com.example.thinkv2.NotesAccessibilityTest.realRoutesLargeFontsThemesDurableEditingAndPlatformActions(NotesAccessibilityTest.kt:123)
+
+
+Time: 12.164
+There was 1 failure:
+1) realRoutesLargeFontsThemesDurableEditingAndPlatformActions(com.example.thinkv2.NotesAccessibilityTest)
+java.lang.AssertionError: Semantic Node has no parent layout with a Scroll SemanticsAction
+	at androidx.compose.ui.test.ActionsKt.scrollToNode(Actions.kt:97)
+	at androidx.compose.ui.test.ActionsKt.performScrollTo(Actions.kt:82)
+	at com.example.thinkv2.NotesAccessibilityTest.reveal(NotesAccessibilityTest.kt:34)
+	at com.example.thinkv2.NotesAccessibilityTest.click(NotesAccessibilityTest.kt:39)
+	at com.example.thinkv2.NotesAccessibilityTest.realRoutesLargeFontsThemesDurableEditingAndPlatformActions(NotesAccessibilityTest.kt:123)
+
+FAILURES!!!
+Tests run: 1,  Failures: 1

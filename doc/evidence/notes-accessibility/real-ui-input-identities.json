@@ -1,0 +1,46 @@
+[
+  {
+    "id": "CMD01",
+    "text": "新建笔记",
+    "intent": "NEW",
+    "voice": "com.apple.voice.compact.zh-CN.Tingting",
+    "rate": 0.45,
+    "samples": 35308,
+    "pcmSha256": "89be58dc76b235bfb65e9eb7299e0699826a64ea00c486871330bae24cc7aa6f",
+    "host": "26.6.2",
+    "generatorSha256": "a2535b51a24045803d31f0937d7eac79b023d33672557a0bd949faa069c7d32d"
+  },
+  {
+    "id": "CMD02",
+    "text": "保存当前草稿",
+    "intent": "SAVE",
+    "voice": "com.apple.voice.compact.zh-CN.Tingting",
+    "rate": 0.45,
+    "samples": 55972,
+    "pcmSha256": "ea02a0bf918bdaaa59a25847d497785ce06efaa293e2adae121665ac20ac87a5",
+    "host": "26.6.2",
+    "generatorSha256": "a2535b51a24045803d31f0937d7eac79b023d33672557a0bd949faa069c7d32d"
+  },
+  {
+    "id": "CMD03",
+    "text": "取消本次输入",
+    "intent": "CANCEL",
+    "voice": "com.apple.voice.compact.zh-CN.Tingting",
+    "rate": 0.45,
+    "samples": 50686,
+    "pcmSha256": "8256417d73ea888bae61a509177dd0c329ff333dcddd70ffa8c578346a6387ef",
+    "host": "26.6.2",
+    "generatorSha256": "a2535b51a24045803d31f0937d7eac79b023d33672557a0bd949faa069c7d32d"
+  },
+  {
+    "id": "NEG01",
+    "text": "今天的笔记里写着保存当前草稿",
+    "intent": null,
+    "voice": "com.apple.voice.compact.zh-CN.Tingting",
+    "rate": 0.45,
+    "samples": 114528,
+    "pcmSha256": "3698577a30c522bc6afee6b036d6429ed627eed8202596c070a319c844f20fd4",
+    "host": "26.6.2",
+    "generatorSha256": "a2535b51a24045803d31f0937d7eac79b023d33672557a0bd949faa069c7d32d"
+  }
+]

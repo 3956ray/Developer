@@ -11,7 +11,12 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Modifier
+import com.example.thinkv2.ui.accessibleButton
+import androidx.compose.ui.draw.clipToBounds
+import androidx.compose.ui.zIndex
 import androidx.compose.ui.platform.testTag
+import androidx.compose.ui.semantics.Role
+import androidx.compose.ui.semantics.role
 import androidx.compose.ui.semantics.heading
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.font.FontWeight
@@ -34,19 +39,13 @@ fun NotesScreen(model: NotesModel,modifier: Modifier = Modifier,onReminders: (St
     if(editor==null && s.page!=NotesPage.HOME) { LifecycleScreen(model,modifier);return }
     if(editor==null) {
         Column(modifier.padding(horizontal=16.dp).imePadding()) {
-            Row(Modifier.fillMaxWidth(),horizontalArrangement=Arrangement.SpaceBetween) {
-                Text("思 · 笔记",Modifier.weight(1f).padding(vertical=16.dp).semantics { heading() },fontSize=24.sp,fontWeight=FontWeight.Bold)
+            LazyColumn(Modifier.weight(1f).testTag("notes-list"),verticalArrangement=Arrangement.spacedBy(12.dp),contentPadding=PaddingValues(bottom=24.dp)) {
+            item { Column {
+                Text("思 · 笔记",Modifier.padding(vertical=8.dp).semantics { heading() },fontSize=24.sp,fontWeight=FontWeight.Bold)
                 Button(onClick=model::newNote,enabled=!s.loading && !s.busy && s.error==null,
-                    modifier=Modifier.heightIn(min=56.dp)) { Text("新增文字",fontSize=18.sp) }
-            }
-            Row(Modifier.fillMaxWidth(),horizontalArrangement=Arrangement.spacedBy(8.dp)) {
-                TextButton(onClick={ model.navigate(NotesPage.CATEGORIES) },enabled=!s.busy,modifier=Modifier.weight(1f).heightIn(min=56.dp)) { Text("管理分类",fontSize=18.sp) }
-                TextButton(onClick={ model.navigate(NotesPage.TRASH) },enabled=!s.busy,modifier=Modifier.weight(1f).heightIn(min=56.dp)) { Text("回收站（${s.trash.size}）",fontSize=18.sp) }
-            }
-            OutlinedButton(onClick={ onReminders(null) },enabled=!s.busy,modifier=Modifier.fillMaxWidth().heightIn(min=56.dp)) { Text("提醒计划与记录",fontSize=18.sp) }
-            OutlinedButton(onClick=onBackup,enabled=!s.busy,modifier=Modifier.fillMaxWidth().heightIn(min=56.dp)) { Text("备份与恢复",fontSize=18.sp) }
-            OutlinedButton(onClick=onCalendar,enabled=!s.busy,modifier=Modifier.fillMaxWidth().heightIn(min=56.dp)) { Text("从日历导入",fontSize=18.sp) }
-            s.notice?.let { Text(it,fontSize=18.sp) }
+                    modifier=Modifier.fillMaxWidth().heightIn(min=56.dp).accessibleButton("新增文字",!s.loading && !s.busy && s.error==null) { model.newNote() }) { Text("新增文字",fontSize=18.sp) }
+            } }
+            item { Column {
             OutlinedTextField(value=s.query,onValueChange=model::search,label={ Text("搜索标题或正文") },
                 singleLine=true,enabled=!s.busy,modifier=Modifier.fillMaxWidth(),textStyle=LocalTextStyle.current.copy(fontSize=18.sp),
                 trailingIcon={ if(s.query.isNotEmpty()) TextButton(onClick={ model.search("") },modifier=Modifier.heightIn(min=56.dp)) { Text("清空") } })
@@ -56,7 +55,15 @@ fun NotesScreen(model: NotesModel,modifier: Modifier = Modifier,onReminders: (St
                 items(s.categories,key={ it.id }) { category -> FilterChip(selected=s.category==category.id,onClick={ model.filter(category.id) },
                     label={ Text(category.name,maxLines=2,overflow=TextOverflow.Ellipsis) },modifier=Modifier.heightIn(min=56.dp)) }
             }
-            LazyColumn(Modifier.weight(1f).testTag("notes-list"),verticalArrangement=Arrangement.spacedBy(12.dp),contentPadding=PaddingValues(bottom=24.dp)) {
+            FlowRow(Modifier.fillMaxWidth(),horizontalArrangement=Arrangement.spacedBy(8.dp)) {
+                TextButton(onClick={ model.navigate(NotesPage.CATEGORIES) },enabled=!s.busy,modifier=Modifier.heightIn(min=56.dp)) { Text("管理分类",fontSize=18.sp) }
+                TextButton(onClick={ model.navigate(NotesPage.TRASH) },enabled=!s.busy,modifier=Modifier.heightIn(min=56.dp)) { Text("回收站（${s.trash.size}）",fontSize=18.sp) }
+            }
+            OutlinedButton(onClick={ onReminders(null) },enabled=!s.busy,modifier=Modifier.fillMaxWidth().heightIn(min=56.dp)) { Text("提醒计划与记录",fontSize=18.sp) }
+            OutlinedButton(onClick=onBackup,enabled=!s.busy,modifier=Modifier.fillMaxWidth().heightIn(min=56.dp)) { Text("备份与恢复",fontSize=18.sp) }
+            OutlinedButton(onClick=onCalendar,enabled=!s.busy,modifier=Modifier.fillMaxWidth().heightIn(min=56.dp)) { Text("从日历导入",fontSize=18.sp) }
+            s.notice?.let { Text(it,fontSize=18.sp) }
+            } }
                 if(ai!=null) item { OutlinedButton(onClick=ai::settings,enabled=ai.state.loaded && !s.busy,modifier=Modifier.fillMaxWidth().heightIn(min=56.dp)) { Text("AI建议设置") } }
                 item { Text("打开或新建笔记后可使用离线语音输入。",fontSize=18.sp) }
                 if(s.loading || s.busy) item { Text("正在读取…",fontSize=18.sp) }
@@ -79,10 +86,11 @@ fun NotesScreen(model: NotesModel,modifier: Modifier = Modifier,onReminders: (St
         var bodyValue by remember(editor.note.id) { mutableStateOf(TextFieldValue(editor.note.body,TextRange(editor.note.body.length))) }
         if(bodyValue.text!=editor.note.body) bodyValue=TextFieldValue(editor.note.body,TextRange((s.externalCursor ?: bodyValue.selection.end).coerceIn(0,editor.note.body.length)))
         Column(modifier.imePadding().padding(horizontal=16.dp)) {
-            Row(Modifier.fillMaxWidth(),horizontalArrangement=Arrangement.SpaceBetween) {
-                TextButton(onClick=model::back,enabled=!s.busy,modifier=Modifier.weight(1f).heightIn(min=56.dp)) { Text("返回 · 保留草稿",fontSize=18.sp) }
-                Button(onClick=model::save,enabled=!s.busy && editor.note.body.isNotBlank(),modifier=Modifier.weight(0.5f).heightIn(min=56.dp)) { Text("保存",fontSize=18.sp) }
+            Row(Modifier.fillMaxWidth().zIndex(1f),horizontalArrangement=Arrangement.SpaceBetween) {
+                TextButton(onClick=model::back,enabled=!s.busy,modifier=Modifier.weight(1f).heightIn(min=56.dp).accessibleButton("返回 · 保留草稿",!s.busy) { model.back() }) { Text("返回",fontSize=18.sp) }
+                Button(onClick=model::save,enabled=!s.busy && editor.note.body.isNotBlank(),modifier=Modifier.weight(1f).heightIn(min=56.dp).accessibleButton("保存",!s.busy && editor.note.body.isNotBlank()) { model.save() }) { Text("保存",fontSize=18.sp) }
             }
+            Column(Modifier.weight(1f).clipToBounds().verticalScroll(rememberScrollState()).padding(bottom=24.dp),verticalArrangement=Arrangement.spacedBy(12.dp)) {
             if(editor.note.id in s.backupCopies) Text("备份冲突副本 · 原本机版本保持不变",fontSize=18.sp)
             Text(if(s.busy) "正在处理…" else when(s.draftState) {
                 DraftState.UNSAVED -> "尚未保存"; DraftState.SAVING -> "正在保存草稿…"
@@ -94,7 +102,7 @@ fun NotesScreen(model: NotesModel,modifier: Modifier = Modifier,onReminders: (St
                 Text(s.error,color=MaterialTheme.colorScheme.error,fontSize=18.sp)
                 OutlinedButton(onClick=model::persist,enabled=!s.busy,modifier=Modifier.heightIn(min=56.dp)) { Text("重试保存草稿") }
             }
-            Column(Modifier.weight(1f).verticalScroll(rememberScrollState()).padding(bottom=24.dp),verticalArrangement=Arrangement.spacedBy(12.dp)) {
+
                 OutlinedTextField(value=editor.note.title,onValueChange=model::title,label={ Text(if(editor.note.manualTitle) "手动标题" else "自动标题") },
                     enabled=!s.busy,modifier=Modifier.fillMaxWidth(),textStyle=LocalTextStyle.current.copy(fontSize=20.sp))
                 if(editor.note.manualTitle) TextButton(onClick={ model.title("") },enabled=!s.busy,modifier=Modifier.heightIn(min=56.dp)) { Text("恢复自动标题",fontSize=18.sp) }
@@ -111,24 +119,24 @@ fun NotesScreen(model: NotesModel,modifier: Modifier = Modifier,onReminders: (St
                 }
                 CategorySelector(model)
                 if(voice!=null) VoiceControls(voice,model,bodyValue.selection.end)
-                OutlinedButton(onClick={ confirmation="discard" },enabled=!s.busy,modifier=Modifier.fillMaxWidth().heightIn(min=56.dp)) { Text("放弃这次编辑",fontSize=18.sp) }
-                if(editor.baseRevision>=0) OutlinedButton(onClick={ confirmation="trash" },enabled=!s.busy,modifier=Modifier.fillMaxWidth().heightIn(min=56.dp)) { Text("移入回收站",fontSize=18.sp) }
+                OutlinedButton(onClick={ confirmation="discard" },enabled=!s.busy,modifier=Modifier.fillMaxWidth().heightIn(min=56.dp).accessibleButton("放弃这次编辑",!s.busy) { confirmation="discard" }) { Text("放弃这次编辑",fontSize=18.sp) }
+                if(editor.baseRevision>=0) OutlinedButton(onClick={ confirmation="trash" },enabled=!s.busy,modifier=Modifier.fillMaxWidth().heightIn(min=56.dp).accessibleButton("移入回收站",!s.busy) { confirmation="trash" }) { Text("移入回收站",fontSize=18.sp) }
 
             }
         }
     }
     if(originalOpen && s.calendarOriginal!=null && editor!=null) AlertDialog(onDismissRequest={ originalOpen=false },title={ Text("日历原始快照（编辑笔记不会改变原文）") },
-        text={ Text(s.calendarOriginal,Modifier.verticalScroll(rememberScrollState())) },confirmButton={ TextButton(onClick={ originalOpen=false }) { Text("关闭") } })
+        text={ Text(s.calendarOriginal,Modifier.verticalScroll(rememberScrollState()),fontSize=18.sp) },confirmButton={ TextButton(onClick={ originalOpen=false },modifier=Modifier.heightIn(min=56.dp)) { Text("关闭") } })
     if(confirmation.isNotEmpty() && editor!=null) AlertDialog(onDismissRequest={ confirmation="" },
         title={ Text(if(confirmation=="trash") "移入回收站？" else "放弃这次编辑？") },
-        text={ Text(if(confirmation=="trash") "已保存的笔记和当前草稿都会保留，可在回收站恢复。提醒会关闭，恢复笔记不会自动重启提醒。" else "清除本次草稿，保留上次正式保存的笔记。") },
-        confirmButton={ TextButton(onClick={ val trash=confirmation=="trash";confirmation="";if(trash) model.moveToTrash() else model.discard() },modifier=Modifier.heightIn(min=56.dp)) { Text("确认") } },
-        dismissButton={ TextButton(onClick={ confirmation="" },modifier=Modifier.heightIn(min=56.dp)) { Text("取消") } })
+        text={ Text(if(confirmation=="trash") "已保存的笔记和当前草稿都会保留，可在回收站恢复。提醒会关闭，恢复笔记不会自动重启提醒。" else "清除本次草稿，保留上次正式保存的笔记。",modifier=Modifier.verticalScroll(rememberScrollState()),fontSize=18.sp) },
+        confirmButton={ TextButton(onClick={ val trash=confirmation=="trash";confirmation="";if(trash) model.moveToTrash() else model.discard() },modifier=Modifier.heightIn(min=56.dp).accessibleButton("确认") { val trash=confirmation=="trash";confirmation="";if(trash) model.moveToTrash() else model.discard() }) { Text("确认") } },
+        dismissButton={ TextButton(onClick={ confirmation="" },modifier=Modifier.heightIn(min=56.dp).accessibleButton("取消") { confirmation="" }) { Text("取消") } })
 }
 
 @Composable
 private fun NoteCard(note: Note,label: String,query: String,open: ()->Unit) {
-    OutlinedCard(onClick=open,modifier=Modifier.fillMaxWidth().heightIn(min=56.dp)) {
+    OutlinedCard(onClick=open,modifier=Modifier.fillMaxWidth().heightIn(min=56.dp).testTag("${if(label.startsWith("草稿")) "draft" else "note"}-${note.id}").semantics { role=Role.Button }) {
         Column(Modifier.padding(16.dp),verticalArrangement=Arrangement.spacedBy(8.dp)) {
             Text(note.title.ifBlank { "未命名草稿" },fontSize=20.sp,fontWeight=FontWeight.SemiBold,maxLines=2,overflow=TextOverflow.Ellipsis)
             Text(matchingExcerpt(note.body,query),fontSize=18.sp,maxLines=if(query.isBlank()) 3 else Int.MAX_VALUE,overflow=TextOverflow.Ellipsis)

@@ -1,0 +1,10 @@
+{
+  "service": "preinstalled TalkBack 17.0.0.889642762",
+  "serviceBoundAndTouchExploration": true,
+  "actualNavigationPassed": false,
+  "observed": "Service showed green focus on search/notification permission; injected touch and documented keyboard navigation did not reliably advance. Hardware-console bounded probes likewise did not establish application navigation. No product behavior inferred from failure.",
+  "limitation": "Actual TalkBack navigation and dialog focus restoration remain unverified; platform actions are separate.",
+  "priorSettingsRestored": true,
+  "speechCaptured": false,
+  "noInstall": true
+}

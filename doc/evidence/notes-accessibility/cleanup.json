@@ -1,0 +1,11 @@
+{
+  "ownedAvd": "ThinkV2Accessibility",
+  "emulatorPid": 30006,
+  "adbPort": 5056,
+  "forwardsBeforeCleanup": "",
+  "enabledAccessibilityServices": "null",
+  "accessibilityEnabled": "0",
+  "terminationRequested": true,
+  "emulatorExited": true,
+  "adbServerExited": true
+}

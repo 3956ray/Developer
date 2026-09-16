@@ -1,0 +1,90 @@
+{
+  "allAssertionsPassed": true,
+  "sourceId": "4145487a-0794-4421-9f79-d533a8795b15",
+  "sameTitleOtherId": "e4a3693a-5a75-4804-b25a-01eb2161ff1e",
+  "platformChecks": [
+    {
+      "label": "新增文字",
+      "bounds": "[42,242][798,396]",
+      "heightDp": 58.666668,
+      "widthDp": 288,
+      "platformFocusChecked": true
+    },
+    {
+      "label": "保存",
+      "bounds": "[420,63][798,217]",
+      "heightDp": 58.666668,
+      "widthDp": 144,
+      "platformFocusChecked": false
+    },
+    {
+      "label": "保存分类",
+      "bounds": "[438,1041][777,1188]",
+      "heightDp": 56,
+      "widthDp": 129.14285,
+      "platformFocusChecked": false
+    },
+    {
+      "label": "确认删除分类",
+      "bounds": "[301,1154][777,1301]",
+      "heightDp": 56,
+      "widthDp": 181.33333,
+      "platformFocusChecked": false
+    },
+    {
+      "label": "确认建立关系",
+      "bounds": "[301,1154][777,1301]",
+      "heightDp": 56,
+      "widthDp": 181.33333,
+      "platformFocusChecked": false
+    },
+    {
+      "label": "打开相关笔记 相同标题，已改名的家庭分类，乙：下周阅读计划，只属于第二条记录。",
+      "bounds": "[74,1032][672,1186]",
+      "heightDp": 58.666668,
+      "widthDp": 227.80952,
+      "platformFocusChecked": true
+    },
+    {
+      "label": "确认移除关系",
+      "bounds": "[301,1198][777,1345]",
+      "heightDp": 56,
+      "widthDp": 181.33333,
+      "platformFocusChecked": false
+    },
+    {
+      "label": "打开相关笔记 手动标题保留，已改名的家庭分类，甲：经过键盘、旋转与后台仍保留的草稿正文。",
+      "bounds": "[74,1250][672,1404]",
+      "heightDp": 58.666668,
+      "widthDp": 227.80952,
+      "platformFocusChecked": true
+    },
+    {
+      "label": "确认",
+      "bounds": "[575,1110][777,1257]",
+      "heightDp": 56,
+      "widthDp": 76.95238,
+      "platformFocusChecked": false
+    },
+    {
+      "label": "取消",
+      "bounds": "[352,1022][554,1169]",
+      "heightDp": 56,
+      "widthDp": 76.95238,
+      "platformFocusChecked": false
+    },
+    {
+      "label": "保存",
+      "bounds": "[420,63][798,217]",
+      "heightDp": 58.666668,
+      "widthDp": 144,
+      "platformFocusChecked": false
+    }
+  ],
+  "installedServices": [
+    "com.android.systemui.accessibility.accessibilitymenu\/.AccessibilityMenuService",
+    "com.google.android.marvin.talkback\/com.google.android.accessibility.selecttospeak.SelectToSpeakService",
+    "com.google.android.marvin.talkback\/.TalkBackService"
+  ],
+  "talkbackSpeechTested": false
+}

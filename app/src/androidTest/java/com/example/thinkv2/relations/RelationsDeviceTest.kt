@@ -39,10 +39,10 @@ class RelationsDeviceTest {
         ui.onNodeWithText("相关笔记").performScrollTo().performClick();waitReady();assertNull(model().state.error)
     }
     private fun scroll(text: String) { ui.onNodeWithTag("relations-list").performScrollToNode(hasText(text,substring=true)) }
-    private fun description(text: String) { ui.onNodeWithTag("relations-list").performScrollToNode(hasContentDescription(text));ui.onNodeWithContentDescription(text).performClick() }
+    private fun action(tag: String) { ui.onNodeWithTag("relations-list").performScrollToNode(hasTestTag(tag));ui.onNodeWithTag(tag).performClick() }
     private fun choose(id: String,title: String,confirm: Boolean=true) {
         scroll("选择另一笔记建立关系");ui.onNodeWithText("选择另一笔记建立关系").performClick();waitReady()
-        description("关联笔记 $title，记录 $id")
+        action("relation-add-$id")
         ui.onNodeWithText(if(confirm) "确认建立关系" else "取消").performClick();waitReady()
     }
     private fun save(name: String,value: JSONObject) { context.getFileStreamPath("relations-$name.json").writeText(value.toString(2)) }
@@ -58,7 +58,7 @@ class RelationsDeviceTest {
         store { _,r,db ->assertEquals(2,db.query("SELECT * FROM note_relations").size);assertEquals(bEdge,r.page(b.id).rows.single().edgeId)
             try { r.create(b.id,a.id);fail() } catch(_: IllegalStateException) {} }
         screenshot("same-titles")
-        description("打开相关笔记 ${b.title}，记录 ${b.id}")
+        action("relation-open-${b.id}")
         ui.waitUntil(10000) { notes().state.editor?.note?.id==b.id && !notes().state.busy };assertEquals("同名甲正文",notes().state.editor!!.note.body)
         ui.runOnIdle { notes().back() };ui.waitUntil(10000) { notes().state.editor==null && !notes().state.busy }
         store { n,_,_ ->val category=n.createCategory("关系原分类");n.persistDraft(n.open(b.id)!!.let { it.copy(note=it.note.titleChanged("修改后的关系标题").categorized(category)) });n.renameCategory(category,"关系改名分类") }
@@ -69,7 +69,7 @@ class RelationsDeviceTest {
         ui.runOnIdle { model().load() };waitReady();assertEquals(bEdge,model().state.page!!.rows.single { it.note.id==b.id }.edgeId)
         lateinit var before: List<List<List<String>>>
         store { _,_,db ->before=listOf("notes","drafts").map { db.query("SELECT * FROM $it ORDER BY id") } }
-        description("移除与 ${c.title} 的关系，记录 ${c.id}");ui.onNodeWithText("确认移除关系").performClick();waitReady()
+        action("relation-remove-${c.id}");ui.onNodeWithText("确认移除关系").performClick();waitReady()
         assertEquals(1,model().state.page!!.total)
         store { _,r,db ->assertEquals(before,listOf("notes","drafts").map { db.query("SELECT * FROM $it ORDER BY id") });assertEquals(0,r.page(c.id).total)
             save("ui-database",JSONObject().put("notes",JSONArray(db.query("SELECT id,title,body,category,deleted_at FROM notes ORDER BY id"))).put("drafts",JSONArray(db.query("SELECT id,title,body,category,active FROM drafts ORDER BY id"))).put("relations",JSONArray(db.query("SELECT * FROM note_relations ORDER BY id")))) }
@@ -88,10 +88,10 @@ class RelationsDeviceTest {
         try {
             ui.runOnIdle { ui.activity.setContent { RelationsScreen(m,back={},open={}) };m.open(a.id) };waitReady(m)
             ui.onNodeWithTag("relations-list").performScrollToNode(hasText("选择另一笔记建立关系"));ui.onNodeWithText("选择另一笔记建立关系").performClick();waitReady(m)
-            description("关联笔记 ${b.title}，记录 ${b.id}");ui.onNodeWithText("确认建立关系").performClick();waitReady(m)
+            action("relation-add-${b.id}");ui.onNodeWithText("确认建立关系").performClick();waitReady(m)
             assertTrue(m.state.error!!.contains("未完成"));assertNull(m.state.message);assertTrue(db.query("SELECT * FROM note_relations").isEmpty());assertEquals(2,db.query("SELECT * FROM notes").size)
             fail.set(false);ui.runOnIdle { m.load() };waitReady(m)
-            description("关联笔记 ${b.title}，记录 ${b.id}");ui.onNodeWithText("确认建立关系").performClick();waitReady(m)
+            action("relation-add-${b.id}");ui.onNodeWithText("确认建立关系").performClick();waitReady(m)
             assertNull(m.state.error);assertEquals(1,m.state.page!!.total);assertEquals(2,db.query("SELECT * FROM notes").size)
             save("rollback",JSONObject().put("writeThenExceptionRolledBack",true).put("errorInsteadOfSuccess",true).put("retryCommitted",true).put("noteCount",2))
         } finally { ui.runOnIdle { owner.clear() } }
@@ -150,7 +150,7 @@ class RelationsDeviceTest {
             info.flags=info.flags or AccessibilityServiceInfo.FLAG_REQUEST_TOUCH_EXPLORATION_MODE;automation.serviceInfo=info
             ui.waitUntil(10000) { context.getSystemService(AccessibilityManager::class.java).isTouchExplorationEnabled }
             shell("settings put system font_scale 1.5");ui.waitUntil(10000) { ui.activity.resources.configuration.fontScale>=1.49f }
-            val target=first.rows.first().note;val label="打开相关笔记 ${target.title}，记录 ${target.id}"
+            val target=first.rows.first().note;val label="打开相关笔记 ${target.contextLabel()}"
             ui.onNodeWithTag("relations-list").performScrollToNode(hasContentDescription(label));ui.waitForIdle();screenshot("large-font")
             val cached=accessibility(automation.rootInActiveWindow,label)
             automation.waitForIdle(250,3000);automation.clearCache()

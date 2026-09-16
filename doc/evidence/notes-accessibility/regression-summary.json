@@ -1,0 +1,62 @@
+[
+  {
+    "path": "regression/AndroidLifecycleTest.log",
+    "tests": 1
+  },
+  {
+    "path": "regression/AndroidPersistenceTest.log",
+    "tests": 1
+  },
+  {
+    "path": "regression/AndroidReminderTest.log",
+    "tests": 1
+  },
+  {
+    "path": "regression/ExampleInstrumentedTest.log",
+    "tests": 1
+  },
+  {
+    "path": "regression/NotesUiTest.log",
+    "tests": 1
+  },
+  {
+    "path": "regression/ReminderUiTest.log",
+    "tests": 1
+  },
+  {
+    "path": "regression/backup.AndroidBackupTest.log",
+    "tests": 2
+  },
+  {
+    "path": "regression/backup.BackupRestoreStateDeviceTest#actualRestoreButtonDisablesInMemoryAiAndReloadsVocabularyAndRejectsStalePreview.log",
+    "tests": 1
+  },
+  {
+    "path": "regression/calendar.CalendarImportDeviceTest#actualProviderUiFaithfulImportCancelIdempotenceAndSourceUnchanged.log",
+    "tests": 1
+  },
+  {
+    "path": "regression/relations.RelationsDeviceTest#realUiPairsSameTitlesExactNavigationRenameTrashRestoreAndRemove.log",
+    "tests": 1
+  },
+  {
+    "path": "regression/voice.VoiceCommandLifecycleTest#deniedActualMicrophonePermissionCannotProduceCommandOrChangeText.log",
+    "tests": 1
+  },
+  {
+    "path": "regression/voice.VoiceCommandLifecycleTest#realMicrophoneCommandCaptureBackgroundAndExplicitExitKeepDraft.log",
+    "tests": 1
+  },
+  {
+    "path": "regression/voice.VoiceCommandStateTest.log",
+    "tests": 5
+  },
+  {
+    "path": "regression/voice.VoiceLifecycleTest#actualMicrophoneBackgroundAndCancelKeepExistingDraft.log",
+    "tests": 1
+  },
+  {
+    "path": "regression/voice.VoiceLifecycleTest#deniedPlatformPermissionDoesNotChangeText.log",
+    "tests": 1
+  }
+]

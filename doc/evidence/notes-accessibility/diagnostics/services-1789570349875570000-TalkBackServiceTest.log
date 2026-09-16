@@ -1,0 +1,19 @@
+
+com.example.thinkv2.TalkBackServiceTest:
+Error in installedServiceGestureNavigation(com.example.thinkv2.TalkBackServiceTest):
+java.lang.AssertionError: TalkBack gesture should focus new-note button
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at com.example.thinkv2.TalkBackServiceTest.installedServiceGestureNavigation(TalkBackServiceTest.kt:61)
+
+
+Time: 13.995
+There was 1 failure:
+1) installedServiceGestureNavigation(com.example.thinkv2.TalkBackServiceTest)
+java.lang.AssertionError: TalkBack gesture should focus new-note button
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at com.example.thinkv2.TalkBackServiceTest.installedServiceGestureNavigation(TalkBackServiceTest.kt:61)
+
+FAILURES!!!
+Tests run: 1,  Failures: 1

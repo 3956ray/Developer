@@ -1,0 +1,19 @@
+
+com.example.thinkv2.NotesAccessibilityTest:
+Error in realRoutesLargeFontsThemesDurableEditingAndPlatformActions(com.example.thinkv2.NotesAccessibilityTest):
+org.junit.ComparisonFailure: coherent button role expected:<android.[widget.Button]> but was:<android.[view.View]>
+	at org.junit.Assert.assertEquals(Assert.java:117)
+	at com.example.thinkv2.NotesAccessibilityTest.checkButton(NotesAccessibilityTest.kt:82)
+	at com.example.thinkv2.NotesAccessibilityTest.realRoutesLargeFontsThemesDurableEditingAndPlatformActions(NotesAccessibilityTest.kt:104)
+
+
+Time: 3.326
+There was 1 failure:
+1) realRoutesLargeFontsThemesDurableEditingAndPlatformActions(com.example.thinkv2.NotesAccessibilityTest)
+org.junit.ComparisonFailure: coherent button role expected:<android.[widget.Button]> but was:<android.[view.View]>
+	at org.junit.Assert.assertEquals(Assert.java:117)
+	at com.example.thinkv2.NotesAccessibilityTest.checkButton(NotesAccessibilityTest.kt:82)
+	at com.example.thinkv2.NotesAccessibilityTest.realRoutesLargeFontsThemesDurableEditingAndPlatformActions(NotesAccessibilityTest.kt:104)
+
+FAILURES!!!
+Tests run: 1,  Failures: 1

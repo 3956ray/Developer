@@ -1,0 +1,23 @@
+
+com.example.thinkv2.NotesAccessibilityTest:
+Error in realRoutesLargeFontsThemesDurableEditingAndPlatformActions(com.example.thinkv2.NotesAccessibilityTest):
+java.lang.AssertionError: 保存 height 32.0
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at com.example.thinkv2.NotesAccessibilityTest.checkButton(NotesAccessibilityTest.kt:76)
+	at com.example.thinkv2.NotesAccessibilityTest.checkButton$default(NotesAccessibilityTest.kt:74)
+	at com.example.thinkv2.NotesAccessibilityTest.realRoutesLargeFontsThemesDurableEditingAndPlatformActions(NotesAccessibilityTest.kt:124)
+
+
+Time: 13.216
+There was 1 failure:
+1) realRoutesLargeFontsThemesDurableEditingAndPlatformActions(com.example.thinkv2.NotesAccessibilityTest)
+java.lang.AssertionError: 保存 height 32.0
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at com.example.thinkv2.NotesAccessibilityTest.checkButton(NotesAccessibilityTest.kt:76)
+	at com.example.thinkv2.NotesAccessibilityTest.checkButton$default(NotesAccessibilityTest.kt:74)
+	at com.example.thinkv2.NotesAccessibilityTest.realRoutesLargeFontsThemesDurableEditingAndPlatformActions(NotesAccessibilityTest.kt:124)
+
+FAILURES!!!
+Tests run: 1,  Failures: 1

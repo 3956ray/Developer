@@ -10,10 +10,17 @@ import org.junit.runner.RunWith
 @RunWith(AndroidJUnit4::class)
 class ReminderUiTest {
     @get:Rule val ui=createAndroidComposeRule<MainActivity>()
-    private fun shown(text: String) { ui.waitUntil(15000) { ui.onAllNodesWithText(text).fetchSemanticsNodes().isNotEmpty() } }
+    private fun shown(text: String) {
+        val notes=MainActivity::class.java.getDeclaredField("notes").apply { isAccessible=true }.get(ui.activity) as com.example.thinkv2.notes.NotesModel
+        if(notes.state.editor==null && notes.state.page==com.example.thinkv2.notes.NotesPage.HOME) {
+            ui.waitUntil(15000) { !notes.state.loading && !notes.state.busy }
+            ui.onNodeWithTag("notes-list").performScrollToNode(hasText(text))
+        }
+        ui.waitUntil(15000) { ui.onAllNodesWithText(text).fetchSemanticsNodes().isNotEmpty() }
+    }
     @Test fun weeklyConfigurationValidationBlockedStatusAndDisable() {
         shown("还没有笔记，写下第一个想法吧。")
-        ui.onNodeWithText("新增文字").performClick()
+        ui.onNodeWithTag("notes-list").performScrollToNode(hasText("新增文字"));ui.onNodeWithText("新增文字").performClick()
         ui.onNodeWithText("正文").performTextInput("提醒界面合成笔记。保留正文。")
         ui.onNodeWithText("保存").performClick();shown("提醒界面合成笔记")
         ui.onNodeWithText("提醒界面合成笔记").performClick();shown("正文")

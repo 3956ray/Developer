@@ -1,0 +1,17 @@
+{
+  "previousServices": "null",
+  "previousEnabled": "1",
+  "steps": [
+    {
+      "setupWindow": " Allow Android Accessibility Suite to send you notifications? Allow Don’t allow"
+    },
+    {
+      "setupWindow": " Allow Android Accessibility Suite to send you notifications? Allow Don’t allow"
+    },
+    {
+      "setupWindow": " Allow Android Accessibility Suite to send you notifications? Allow Don’t allow"
+    }
+  ],
+  "speechAudioRecorded": false,
+  "installedServices": "5 services found:\n  Service #0:\n    priority=0 preferredOrder=0 match=0x108000 specificIndex=-1 isDefault=false\n    com.android.systemui.accessibility.accessibilitymenu\/.AccessibilityMenuService\n  Service #1:\n    priority=0 preferredOrder=0 match=0x108000 specificIndex=-1 isDefault=false\n    com.google.android.accessibility.switchaccess\/com.android.switchaccess.SwitchAccessService\n  Service #2:\n    priority=0 preferredOrder=0 match=0x108000 specificIndex=-1 isDefault=false\n    com.google.android.apps.accessibility.voiceaccess\/.JustSpeakService\n  Service #3:\n    priority=0 preferredOrder=0 match=0x108000 specificIndex=-1 isDefault=false\n    com.google.android.marvin.talkback\/.TalkBackService\n  Service #4:\n    priority=0 preferredOrder=0 match=0x108000 specificIndex=-1 isDefault=false\n    com.google.android.marvin.talkback\/com.google.android.accessibility.selecttospeak.SelectToSpeakService"
+}
