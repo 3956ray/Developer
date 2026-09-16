@@ -1,0 +1,118 @@
+[
+  {
+    "identity": {
+      "id": "CMD01",
+      "text": "新建笔记",
+      "intent": "NEW",
+      "mode": "realtime",
+      "generator": {
+        "voice": "com.apple.voice.compact.zh-CN.Tingting",
+        "rate": 0.45,
+        "host": "26.6.2",
+        "generatorSha256": "a2535b51a24045803d31f0937d7eac79b023d33672557a0bd949faa069c7d32d",
+        "seconds": 2.20675
+      }
+    },
+    "mode": "realtime-product-capture",
+    "samples": 35308,
+    "capturedSamples": 35308,
+    "sampleRate": 16000,
+    "pcmSha256": "89be58dc76b235bfb65e9eb7299e0699826a64ea00c486871330bae24cc7aa6f",
+    "raw": "新建 笔记",
+    "corrected": null,
+    "engineLoadMs": 292,
+    "wallMs": 2335,
+    "releaseToResultMs": 127,
+    "failure": "",
+    "sourceClosed": true,
+    "hostTransferAndResultMs": 2388.88,
+    "hostLastSendToResultMs": 2388.864
+  },
+  {
+    "identity": {
+      "id": "CMD02",
+      "text": "保存当前草稿",
+      "intent": "SAVE",
+      "mode": "realtime",
+      "generator": {
+        "voice": "com.apple.voice.compact.zh-CN.Tingting",
+        "rate": 0.45,
+        "host": "26.6.2",
+        "generatorSha256": "a2535b51a24045803d31f0937d7eac79b023d33672557a0bd949faa069c7d32d",
+        "seconds": 3.49825
+      }
+    },
+    "mode": "realtime-product-capture",
+    "samples": 55972,
+    "capturedSamples": 55972,
+    "sampleRate": 16000,
+    "pcmSha256": "ea02a0bf918bdaaa59a25847d497785ce06efaa293e2adae121665ac20ac87a5",
+    "raw": "保存 当前 草稿",
+    "corrected": null,
+    "engineLoadMs": 292,
+    "wallMs": 3530,
+    "releaseToResultMs": 31,
+    "failure": "",
+    "sourceClosed": true,
+    "hostTransferAndResultMs": 3572.638,
+    "hostLastSendToResultMs": 3572.612
+  },
+  {
+    "identity": {
+      "id": "CMD03",
+      "text": "取消本次输入",
+      "intent": "CANCEL",
+      "mode": "realtime",
+      "generator": {
+        "voice": "com.apple.voice.compact.zh-CN.Tingting",
+        "rate": 0.45,
+        "host": "26.6.2",
+        "generatorSha256": "a2535b51a24045803d31f0937d7eac79b023d33672557a0bd949faa069c7d32d",
+        "seconds": 3.167875
+      }
+    },
+    "mode": "realtime-product-capture",
+    "samples": 50686,
+    "capturedSamples": 50686,
+    "sampleRate": 16000,
+    "pcmSha256": "8256417d73ea888bae61a509177dd0c329ff333dcddd70ffa8c578346a6387ef",
+    "raw": "取消 本次 输入",
+    "corrected": null,
+    "engineLoadMs": 292,
+    "wallMs": 3181,
+    "releaseToResultMs": 13,
+    "failure": "",
+    "sourceClosed": true,
+    "hostTransferAndResultMs": 3226.664,
+    "hostLastSendToResultMs": 3226.617
+  },
+  {
+    "identity": {
+      "id": "NEG01",
+      "text": "今天的笔记里写着保存当前草稿",
+      "intent": null,
+      "mode": "realtime",
+      "generator": {
+        "voice": "com.apple.voice.compact.zh-CN.Tingting",
+        "rate": 0.45,
+        "host": "26.6.2",
+        "generatorSha256": "a2535b51a24045803d31f0937d7eac79b023d33672557a0bd949faa069c7d32d",
+        "seconds": 7.158
+      }
+    },
+    "mode": "realtime-product-capture",
+    "samples": 114528,
+    "capturedSamples": 114528,
+    "sampleRate": 16000,
+    "pcmSha256": "3698577a30c522bc6afee6b036d6429ed627eed8202596c070a319c844f20fd4",
+    "raw": "今天 的 笔记 里 写 着 保存 当前 草稿",
+    "corrected": null,
+    "engineLoadMs": 292,
+    "wallMs": 7195,
+    "releaseToResultMs": 36,
+    "failure": "",
+    "sourceClosed": true,
+    "hostTransferAndResultMs": 7241.847,
+    "hostLastSendToResultMs": 7241.768
+  }
+]

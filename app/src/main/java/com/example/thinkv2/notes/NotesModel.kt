@@ -156,12 +156,20 @@ class NotesModel(
             }
         }
     }
+    fun confirmVoiceCommand(anchor: VoiceAnchor,command: com.example.thinkv2.voice.VoiceCommand,done: (Boolean)->Unit) {
+        if(!matchesVoice(anchor) || (command==com.example.thinkv2.voice.VoiceCommand.SAVE && state.editor!!.note.body.isBlank())) { done(false);return }
+        when(command) {
+            com.example.thinkv2.voice.VoiceCommand.NEW -> finish(Action.NEW,done=done)
+            com.example.thinkv2.voice.VoiceCommand.SAVE -> finish(Action.SAVE,successNotice="已按确认保存笔记。",done=done)
+            com.example.thinkv2.voice.VoiceCommand.CANCEL -> done(true) // Session-only; never discard or erase a draft.
+        }
+    }
     fun save() = finish(Action.SAVE)
     fun back() = finish(Action.KEEP)
     fun discard() = finish(Action.DISCARD)
     fun moveToTrash() = finish(Action.TRASH)
-    private enum class Action { SAVE, KEEP, DISCARD, TRASH }
-    private fun finish(action: Action,nextId: String?=null) {
+    private enum class Action { SAVE, KEEP, DISCARD, TRASH, NEW }
+    private fun finish(action: Action,nextId: String?=null,successNotice: String?=null,done: (Boolean)->Unit = {}) {
         val editing=state.editor ?: return
         if(state.busy || (action==Action.SAVE && editing.note.body.isBlank())) return
         timer?.cancel()
@@ -171,17 +179,19 @@ class NotesModel(
                 withContext(worker) {
                     when(action) {
                         Action.SAVE -> { store().persistDraft(editing); store().save(editing) }
-                        Action.KEEP -> store().persistDraft(editing)
+                        Action.KEEP,Action.NEW -> store().persistDraft(editing)
                         Action.DISCARD -> store().discard(editing)
                         Action.TRASH -> { store().softDelete(editing);runCatching { onTrashed(editing.note.id) } }
                     }
                 }
                 editorToken++
-                state=state.copy(editor=null,calendarOriginal=null,busy=false,notice=if(action==Action.TRASH) "已移入回收站，可随时恢复。" else null)
-                if(nextId!=null) open(nextId) else refresh()
+                state=state.copy(editor=null,calendarOriginal=null,busy=false,notice=successNotice ?: if(action==Action.TRASH) "已移入回收站，可随时恢复。" else null)
+                if(action==Action.NEW) newNote() else if(nextId!=null) open(nextId) else refresh()
+                done(true)
             } catch(_: Exception) {
                 state=state.copy(busy=false,draftState=DraftState.ERROR,
                     error="操作未完成，当前编辑仍保留。请重试。")
+                done(false)
             }
         }
     }

@@ -1,0 +1,31 @@
+{
+  "productSha256": "8f308ec5111f9037c44bb8208d81f1254bdf65ebf8a80011d5c532fa76f53f2c",
+  "testSha256": "b71626813069fa09663614d53dd117fdfa1289e6864f25f16352c0e5fe0d6456",
+  "baselineManifestNativeModelBytesUnchanged": true,
+  "checkedEntries": {
+    "lib/arm64-v8a/libandroidx.graphics.path.so": "41e9a793c43a0f4fddb19e33f346bace464f30f888ba7b9eaf96294ea115bfb6",
+    "lib/arm64-v8a/libjnidispatch.so": "abc26e994517bcaa3309acdb0a27373864086c7569c89d3087b8626fada9ef06",
+    "lib/arm64-v8a/libvosk.so": "06965ebb4e5eb3a9e4a815755e178d9553392e3fe8d3d368ac46952ad3694173",
+    "assets/voice-model-manifest.json": "fe47fad07858b4afcd4e1f11e6b99650a5b01f228b237f84193943d7f59c4269",
+    "assets/voice-model/README": "7362be411c609f2a1c9d2dfe22c2d72555c15eb90bfe47c41772f49ef94840ce",
+    "assets/voice-model/am/final.mdl": "91eda2c04c4f599361cb92b0e5298ccdf6b3c7a1fa52bfcefcd2c4e07aa1c131",
+    "assets/voice-model/conf/mfcc.conf": "6c326fea5741c2d78be12f76eb1b36ea2ace040da9e355e4cfe6bb80e5f7d5ab",
+    "assets/voice-model/conf/model.conf": "468a8125c07530f96adcc219a0a5f993e8e0721ccf18acbd3169b77fc685fb9b",
+    "assets/voice-model/graph/Gr.fst": "46d41a9b1723abccdcb354d731a5b58d87c060100d88ada1a3e31220f52b0434",
+    "assets/voice-model/graph/HCLr.fst": "798af0d9ba6f2d727747f58e1e7b2305f8618bc8ea7f6c51beecd8a2c965b965",
+    "assets/voice-model/graph/disambig_tid.int": "c9200318c2a265549ebfbea7e0176fa62e131e953abd140c9b0b39fe61e24015",
+    "assets/voice-model/graph/phones/word_boundary.int": "11ca784b99f03188b451fb54714c2de3dd694e662a5f88e82df435c2789b9aec",
+    "assets/voice-model/ivector/final.dubm": "e33276cbd548c0a03ae5812c98115940614997dff23a6d59968af6eaf7630ff8",
+    "assets/voice-model/ivector/final.ie": "c39d46fbff04efb7baa9660ae7a728b0e2f35a4a1250b56ed3a599e26956df86",
+    "assets/voice-model/ivector/final.mat": "42706d88818070ea0d0182b4d11367ba52a13b9a2be45630f60858a422109ada",
+    "assets/voice-model/ivector/global_cmvn.stats": "b267dc89c1556fdd5bc358f0a480929da1743eeccfa06a67daf8db629ca336bb",
+    "assets/voice-model/ivector/online_cmvn.conf": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "assets/voice-model/ivector/splice.conf": "9f0c5f7c82d18eaf25d8bce470efa9f7741f88411fe428774bc0a9bb69a24756",
+    "AndroidManifest.xml": "6da978dad3776adbc246043de3e06267af8756b85d041a7e8c6103cc39e2ff95"
+  },
+  "productionFixtureOrAudioFiles": [],
+  "priorTestSha256": "1831d2cf099d2a6ce6bfcea71ec088d92f35c001b78972d6a59c0bc93486452d",
+  "testArtifactBoundary": "Screenshot-wait-only test revision: final real-command UI and ordinary real-speech UI use final test APK; previous device/state/lifecycle/regression use prior APK, all on same delivered product.",
+  "unusedBuild6ProductSha256": "1cc6ca1cdc3b4404e23f8203daf618ce81aea457493769ac7d11d1a1b240ed90",
+  "unusedBuild6ProductNote": "Rebuild produced differing bytes in classes3.dex/classes5.dex/classes6.dex without product source edit; not installed or delivered. No claim of byte-reproducible build. Installed product hash checked against archive."
+}

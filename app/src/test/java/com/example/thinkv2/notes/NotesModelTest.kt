@@ -153,4 +153,32 @@ class NotesModelTest {
         val success=await(ui,model) { !it.busy && !it.loading && it.error==null }
         assertTrue(success.trash.isEmpty());assertEquals(id,success.notes.single().id)
     }
+
+    @Test fun confirmedVoiceNewPersistsPriorDraftAndSaveAndCancelAreSafe()=scenario { model,ui,sql ->
+        val ticket=runBlocking(ui) { model.newNote();model.body("原草稿不能丢");model.title("原手动标题");model.category("原分类");model.voiceAnchor()!! }
+        val done=CountDownLatch(1)
+        runBlocking(ui) { model.confirmVoiceCommand(ticket,com.example.thinkv2.voice.VoiceCommand.NEW) { assertTrue(it);done.countDown() } }
+        assertTrue(done.await(5,TimeUnit.SECONDS));val next=await(ui,model) { !it.busy && it.editor?.note?.id!=ticket.noteId }.editor!!
+        assertTrue(next.note.body.isBlank());assertEquals(listOf("原草稿不能丢","原手动标题"),sql.query("SELECT body,title FROM drafts WHERE id=?",listOf(ticket.noteId)).single())
+        runBlocking(ui) {
+            model.confirmVoiceCommand(model.voiceAnchor()!!,com.example.thinkv2.voice.VoiceCommand.SAVE) { assertFalse(it) }
+            model.body("确认保存正文");model.title("保存手动标题")
+            val anchor=model.voiceAnchor()!!;val before=model.state.editor
+            model.confirmVoiceCommand(anchor,com.example.thinkv2.voice.VoiceCommand.CANCEL) { assertTrue(it) };assertEquals(before,model.state.editor)
+            model.confirmVoiceCommand(anchor,com.example.thinkv2.voice.VoiceCommand.SAVE) { assertTrue(it) }
+        }
+        val saved=await(ui,model) { it.editor==null && !it.busy && !it.loading }.notes.single()
+        assertEquals("确认保存正文",saved.body);assertEquals("保存手动标题",saved.title)
+        runBlocking(ui) { model.confirmVoiceCommand(ticket,com.example.thinkv2.voice.VoiceCommand.NEW) { assertFalse(it) } }
+        assertEquals(1,sql.query("SELECT * FROM notes").size)
+    }
+    @Test fun voiceNewWriteFailureKeepsExactEditorAndDoesNotSwitch()=scenario { model,ui,sql ->
+        val ticket=runBlocking(ui) { model.newNote();model.body("失败后仍可编辑");model.voiceAnchor()!! }
+        sql.execute("CREATE TRIGGER fail_voice_draft BEFORE INSERT ON drafts BEGIN SELECT RAISE(ABORT,'synthetic_write_failure'); END")
+        val done=CountDownLatch(1)
+        runBlocking(ui) { model.confirmVoiceCommand(ticket,com.example.thinkv2.voice.VoiceCommand.NEW) { assertFalse(it);done.countDown() } }
+        assertTrue(done.await(5,TimeUnit.SECONDS));val state=await(ui,model) { !it.busy && it.error!=null }
+        assertEquals(ticket.noteId,state.editor!!.note.id);assertEquals("失败后仍可编辑",state.editor.note.body);assertTrue(sql.query("SELECT * FROM notes").isEmpty())
+        sql.execute("DROP TRIGGER fail_voice_draft")
+    }
 }

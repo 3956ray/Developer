@@ -1,0 +1,29 @@
+{
+  "purpose": "Bounded explicit-command engineering examples, not V7 quality evaluation",
+  "voice": "com.apple.voice.compact.zh-CN.Tingting",
+  "rate": 0.45,
+  "sampleRate": 16000,
+  "source": "existing reviewed macOS offline TTS callback to RAM/pipe only",
+  "cases": [
+    {
+      "id": "CMD01",
+      "text": "新建笔记",
+      "intent": "NEW"
+    },
+    {
+      "id": "CMD02",
+      "text": "保存当前草稿",
+      "intent": "SAVE"
+    },
+    {
+      "id": "CMD03",
+      "text": "取消本次输入",
+      "intent": "CANCEL"
+    },
+    {
+      "id": "NEG01",
+      "text": "今天的笔记里写着保存当前草稿",
+      "intent": null
+    }
+  ]
+}

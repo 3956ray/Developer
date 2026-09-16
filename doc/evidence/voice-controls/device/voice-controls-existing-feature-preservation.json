@@ -1,0 +1,7 @@
+{
+  "backupPayloadExactBeforeAfter": true,
+  "existingReminderStillEnabled": true,
+  "calendarAiRelationsUnchanged": true,
+  "schemaAndBackupUnchanged": true,
+  "recognitionEvidence": "scripted decoder; not real ASR"
+}

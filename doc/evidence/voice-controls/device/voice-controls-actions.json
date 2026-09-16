@@ -1,0 +1,9 @@
+{
+  "ordinaryCommandLikeTextOnly": true,
+  "emptySaveRejected": true,
+  "dismissNoWrites": true,
+  "cancelPreservesExisting": true,
+  "newPreservesPriorDraft": true,
+  "confirmedSaveExactlyOnce": true,
+  "recognitionEvidence": "scripted decoder; not real ASR"
+}

@@ -1,0 +1,417 @@
+{
+  "task_id": "V2-VOICE-CONTROLS-001",
+  "attempt_id": "ee161236-6248-44c9-b597-d8842df793a2",
+  "contract_sha256": "c4ea01635c9faf6e1881938f84ddb5414c236760f2e4f162bed6d38ae528cdd9",
+  "files": [
+    {
+      "path": "apk-inspection.json",
+      "bytes": 3055,
+      "sha256": "66e62193308260760c4a401c6c81bd3c0c3f3707417787898579a41283cdccb7"
+    },
+    {
+      "path": "cleanup.json",
+      "bytes": 877,
+      "sha256": "48d28c944eb056adc1415fb9e58f94bc20cf72e4918ca0e8696aece506f99467"
+    },
+    {
+      "path": "device/VoiceCommandLifecycleTest#deniedActualMicrophonePermissionCannotProduceCommandOrChangeText.attempt-1.log",
+      "bytes": 1012,
+      "sha256": "8aa1ce835a2031d105cbb07838ff9114f0e4517a1945a52173e6425528335f62"
+    },
+    {
+      "path": "device/VoiceCommandLifecycleTest#deniedActualMicrophonePermissionCannotProduceCommandOrChangeText.attempt-2.log",
+      "bytes": 80,
+      "sha256": "40487c1604f5e332e3117dbdc6cf1c35736f4672fd042b1335d0d67ff8a4a0e2"
+    },
+    {
+      "path": "device/VoiceCommandLifecycleTest#deniedActualMicrophonePermissionCannotProduceCommandOrChangeText.log",
+      "bytes": 81,
+      "sha256": "83de4e8fd667bbb592259f99a0cf9ab42c338e670d12a8514032bddef2fcf062"
+    },
+    {
+      "path": "device/VoiceCommandLifecycleTest#realMicrophoneCommandCaptureBackgroundAndExplicitExitKeepDraft.attempt-1.log",
+      "bytes": 81,
+      "sha256": "6eeb224a43cbaefa0c0338eb8585719c8025a6324022329d53c685ea8212a94d"
+    },
+    {
+      "path": "device/VoiceCommandLifecycleTest#realMicrophoneCommandCaptureBackgroundAndExplicitExitKeepDraft.attempt-2.log",
+      "bytes": 81,
+      "sha256": "efdb51c56a752ab3a5e72bcbef9380033143393e27ea71cf86c2701cf2a80c6b"
+    },
+    {
+      "path": "device/VoiceCommandLifecycleTest#realMicrophoneCommandCaptureBackgroundAndExplicitExitKeepDraft.log",
+      "bytes": 79,
+      "sha256": "37a9361bf46652b0288b9fb05a3db31e402b22de439b278f36dae9328b438f91"
+    },
+    {
+      "path": "device/VoiceCommandStateTest#commandEntryExitAndCancellationRetainEarlierCorrectionSuggestions.attempt-1.log",
+      "bytes": 75,
+      "sha256": "d03f83857bc78a2a8ee1630b87de74a0e25156b00fbca13557436cf016f5b983"
+    },
+    {
+      "path": "device/VoiceCommandStateTest#commandEntryExitAndCancellationRetainEarlierCorrectionSuggestions.attempt-2.log",
+      "bytes": 77,
+      "sha256": "67a81099ebd652607d234a01a631dea6dcaa8257b23d4c6f8173f2280c7e3877"
+    },
+    {
+      "path": "device/VoiceCommandStateTest#commandEntryExitAndCancellationRetainEarlierCorrectionSuggestions.log",
+      "bytes": 77,
+      "sha256": "183f7c4af2a8c2586fc15f5f00c195d9472e5a9f3cfc48bfda0ade01007cd33d"
+    },
+    {
+      "path": "device/VoiceCommandStateTest#commandNewPreservesExistingReminderCalendarAiRelationsAndBackupData.log",
+      "bytes": 77,
+      "sha256": "27f02e8dc92cb12721d9e490d8c382bda74642241169a631192686160e334c27"
+    },
+    {
+      "path": "device/VoiceCommandStateTest#failedDraftAndFormalWritesKeepCurrentEditorAndRetryNeedsNewConfirmation.attempt-1.log",
+      "bytes": 77,
+      "sha256": "8b8293b86313f7a185dfa415f0a213f5482d00590aa84a79bd708168ec3f7cc0"
+    },
+    {
+      "path": "device/VoiceCommandStateTest#failedDraftAndFormalWritesKeepCurrentEditorAndRetryNeedsNewConfirmation.attempt-2.log",
+      "bytes": 77,
+      "sha256": "728b1c554730b1c7e44fd86664a05fd1e2436aa60290f074e5bb2222839de67b"
+    },
+    {
+      "path": "device/VoiceCommandStateTest#failedDraftAndFormalWritesKeepCurrentEditorAndRetryNeedsNewConfirmation.log",
+      "bytes": 77,
+      "sha256": "fcd4e8a71ad8b9aafbd93235c37eeb492929ab466411c1a614ee2d0d2a3ad603"
+    },
+    {
+      "path": "device/VoiceCommandStateTest#ordinaryTextEmptySaveDismissCancelAndConfirmedActionsPreserveDurableFields.attempt-1.log",
+      "bytes": 76,
+      "sha256": "f7e0ff27b0dd05c65dd3e77f803092a0d9d0a44913c63d0100b6badbd49d3772"
+    },
+    {
+      "path": "device/VoiceCommandStateTest#ordinaryTextEmptySaveDismissCancelAndConfirmedActionsPreserveDurableFields.attempt-2.log",
+      "bytes": 77,
+      "sha256": "936a3d7da7b213d5f29d7bc65c502e8da05479da683d8b680430902d92d5a4c5"
+    },
+    {
+      "path": "device/VoiceCommandStateTest#ordinaryTextEmptySaveDismissCancelAndConfirmedActionsPreserveDurableFields.log",
+      "bytes": 77,
+      "sha256": "4d02c176325a1eef2bf8c3334f1989a30d92cd3900035d40143376ea4f0701e1"
+    },
+    {
+      "path": "device/VoiceCommandStateTest#unknownEditingRepeatedCaptureAndLateCompletionNeverExecuteStaleIntent.attempt-1.log",
+      "bytes": 77,
+      "sha256": "ed2719a03cb35d055db43d838ee9fb432f262831204592d535bd25e7c7cc49d8"
+    },
+    {
+      "path": "device/VoiceCommandStateTest#unknownEditingRepeatedCaptureAndLateCompletionNeverExecuteStaleIntent.attempt-2.log",
+      "bytes": 77,
+      "sha256": "cd03e699918ea4293c2e47fec305d7ebb548a9bed9b88eba962da7c21c528d2a"
+    },
+    {
+      "path": "device/VoiceCommandStateTest#unknownEditingRepeatedCaptureAndLateCompletionNeverExecuteStaleIntent.log",
+      "bytes": 77,
+      "sha256": "b128bfaf670807cdad2dbe6ae48e48b3db7de4884f418225e4eafb39eb07206e"
+    },
+    {
+      "path": "device/app-files-after-real-engine.txt",
+      "bytes": 1096,
+      "sha256": "d6e1d3ecbfd1f7df3bfd38d2733292359960ce2326fe4bce89c2154334746b38"
+    },
+    {
+      "path": "device/real-ui-screenshot-final.log",
+      "bytes": 79,
+      "sha256": "5ebfb17f1a18db3c971fca2cc94b437764c0b354f4a61d0c931048e2221531b3"
+    },
+    {
+      "path": "device/realEngineCommandsAndOrdinaryDictationThroughActualConfirmationUi.log",
+      "bytes": 79,
+      "sha256": "18010fcc08cccb6860c95cae986c087605fd4aaaf5122ca8e20ef5f278527b7e"
+    },
+    {
+      "path": "device/realEngineFixedCommandSamples.log",
+      "bytes": 73,
+      "sha256": "404a46eb62b76845b3115d2719c6193e233210b5dd661fe30feb14acbadf59c9"
+    },
+    {
+      "path": "device/voice-controls-actions.json",
+      "bytes": 261,
+      "sha256": "7f39cf7e9c9dcebfd69c867837e329d8993809cdb269a563b3e9ee11fca781ea"
+    },
+    {
+      "path": "device/voice-controls-correction-preservation.json",
+      "bytes": 221,
+      "sha256": "418b38d0ea375c67a08e75c0c56250447d2065574317f7038515b340fa65cde3"
+    },
+    {
+      "path": "device/voice-controls-existing-feature-preservation.json",
+      "bytes": 218,
+      "sha256": "12288bd8f734282f6073612962c717f0ba1a80e08260c3aab74f8a65e90198e9"
+    },
+    {
+      "path": "device/voice-controls-lifecycle.json",
+      "bytes": 177,
+      "sha256": "c9a193c995d62801d56d403f69a7f63e453044fd1a43ff9f3a66463775c2f7ad"
+    },
+    {
+      "path": "device/voice-controls-permission.json",
+      "bytes": 77,
+      "sha256": "31d25e2b91ca6be5c199077dcf7c50039358a8c89b0936641d6b8d0c3ff8d435"
+    },
+    {
+      "path": "device/voice-controls-real-cancel-confirm.png",
+      "bytes": 200561,
+      "sha256": "5ebcc09479c2fae06afc851bffeda7942c03acfdf449f1190b50fc4f9f999870"
+    },
+    {
+      "path": "device/voice-controls-real-database.json",
+      "bytes": 1071,
+      "sha256": "c50cfc9229cfbc99c1f6881f2042fa50dd0634cc1bf81a93683845163a22087f"
+    },
+    {
+      "path": "device/voice-controls-real-engine-ui.json",
+      "bytes": 2733,
+      "sha256": "e6eedbaea9da4300c66d27a454a6c68005bef703ebaa45c6bf30b8bc03b217b0"
+    },
+    {
+      "path": "device/voice-controls-real-new-confirm.png",
+      "bytes": 177629,
+      "sha256": "204599321db15869da186dd30c4bc5060dd1a3f179dedbce6037131c03030a81"
+    },
+    {
+      "path": "device/voice-controls-real-save-confirm.png",
+      "bytes": 178739,
+      "sha256": "a711f58590046e46569f7df924caf424e142ca133d5fa432edfa60ff0ce5ddd2"
+    },
+    {
+      "path": "device/voice-controls-stale.json",
+      "bytes": 239,
+      "sha256": "4321b1ea08d7c511641bf74058f58671469b436150ec4cf30ddfc2ed907ec627"
+    },
+    {
+      "path": "device/voice-controls-write-failure.json",
+      "bytes": 242,
+      "sha256": "030389e81c28f518ca1986dd3ae04caf3d0a0895f33e371258f1defe95267e6a"
+    },
+    {
+      "path": "final-test-build.log",
+      "bytes": 5083,
+      "sha256": "dd35aaa2eac35919d1535f4936aa5d492ea542c5559d782f0ebb3416074f9b18"
+    },
+    {
+      "path": "final-test-build6.log",
+      "bytes": 5201,
+      "sha256": "d8c44a495cdd946ccd94979e816d22aba0af187400cf3fb977839df8eaa4be18"
+    },
+    {
+      "path": "fixtures/generator-identity.json",
+      "bytes": 486,
+      "sha256": "29083e0d1469150051e425be8fd3505b0528baa6c6f1e3cefaaae132863aca89"
+    },
+    {
+      "path": "fixtures/plan.json",
+      "bytes": 667,
+      "sha256": "11b63ac4a72f95af7a93d6776b066dd61693eb9e9bf9fa7a9d9c66cd53711b16"
+    },
+    {
+      "path": "fixtures/run-memory-fixtures.py",
+      "bytes": 3356,
+      "sha256": "2875e3fd4f4529a9c3e3d0b6da8cf38ff299b60bcbcf968eefd18ac2a74179ce"
+    },
+    {
+      "path": "fixtures/send-command-ui.py",
+      "bytes": 1644,
+      "sha256": "ab9b20ad2bc680214f296461f731a3fd519d837cc765c108b6e2522c041f253b"
+    },
+    {
+      "path": "fixtures/send-ordinary-ui.py",
+      "bytes": 1310,
+      "sha256": "5289c8107a1369d67ebbb3e4f78777dfdc6c3050a6091e348b45bfad33ea941e"
+    },
+    {
+      "path": "fixtures/synthetic-voice.m",
+      "bytes": 2536,
+      "sha256": "f95ab54d5bb8800d0577c81b48166c15e9195de744abb572c4364b84faf275b6"
+    },
+    {
+      "path": "host-summary.json",
+      "bytes": 67,
+      "sha256": "eede0c375a3324d2278c3bab5ca39458667042eef88f05db5ed1d418356bd344"
+    },
+    {
+      "path": "installed-product.json",
+      "bytes": 195,
+      "sha256": "7c563dbcfaedae3e831223070c4ad3d13ba77b6fea469e6c86556a2a7432df2c"
+    },
+    {
+      "path": "lint-results.xml",
+      "bytes": 18202,
+      "sha256": "6c54657f087a8d54b08ba1500729798320257c362b29d932713b6d783488700b"
+    },
+    {
+      "path": "ordinary-ui-input-identities.json",
+      "bytes": 741,
+      "sha256": "7df207a8a553620b0dfb9e6d468a5ff7d7e372dfe1057e5e2e96a1b2714f0846"
+    },
+    {
+      "path": "product-build.log",
+      "bytes": 5157,
+      "sha256": "554fbb45955d13bb505af4d23aa23cd221f6924674ec223e4fa7c82f2967b476"
+    },
+    {
+      "path": "real-ui-input-identities.json",
+      "bytes": 1525,
+      "sha256": "2d8ca8a9147d621c6bf9a6ba8473d4ce0f1ab85195bc8cdf2c2c9f5b537e24db"
+    },
+    {
+      "path": "recognition-results.json",
+      "bytes": 3476,
+      "sha256": "ffc819f6b0fc84ce1b9d26e06a96eb78a63d31e7454e6af54c68e5b2bc91a62d"
+    },
+    {
+      "path": "regression/AndroidLifecycleTest.log",
+      "bytes": 70,
+      "sha256": "5160239cb1e0a58bf80911f57b6af5a19720448e6d629ba3eec81c14f102ecb4"
+    },
+    {
+      "path": "regression/AndroidPersistenceTest.log",
+      "bytes": 72,
+      "sha256": "402a35e7b597c28e4bf48bb4a998fda7d031da3d89d0e356d176c3b447c39fbb"
+    },
+    {
+      "path": "regression/AndroidReminderTest.log",
+      "bytes": 71,
+      "sha256": "f9372b30bba3b2f3ede625fb44399ad89e02c9298b66a9d3b7874e863282cd09"
+    },
+    {
+      "path": "regression/ExampleInstrumentedTest.log",
+      "bytes": 73,
+      "sha256": "4008dd6e40be67e22c9a90f764937f9047b08718d0eaa5b9cf1ae61c592f1551"
+    },
+    {
+      "path": "regression/NotesUiTest.log",
+      "bytes": 62,
+      "sha256": "99a01a5d1b45f9980133eeda3dbf0f8b47d26f57f011e6c294115028141232fe"
+    },
+    {
+      "path": "regression/ReminderUiTest.log",
+      "bytes": 64,
+      "sha256": "d07e31b3d07d9d5ef3de23da07f8afcdc8ac9e7190944ac81bfd2f93424a4dc4"
+    },
+    {
+      "path": "regression/backup.AndroidBackupTest.log",
+      "bytes": 76,
+      "sha256": "8453242e4f35b8a6144ed2e1f77d4b7915c8cb4de2b7d69d96cbdea4f10c19c8"
+    },
+    {
+      "path": "regression/backup.BackupRestoreStateDeviceTest#actualRestoreButtonDisablesInMemoryAiAndReloadsVocabularyAndRejectsStalePreview.log",
+      "bytes": 85,
+      "sha256": "8ac34933231f56459f83888c808d2eb21f1897462657e93e27b66d52887ddca3"
+    },
+    {
+      "path": "regression/calendar.CalendarImportDeviceTest#actualProviderUiFaithfulImportCancelIdempotenceAndSourceUnchanged.log",
+      "bytes": 84,
+      "sha256": "d8f0263ed85b3adeaeb0264af096382898f6dcf2049daae3ef1df505a2dde16e"
+    },
+    {
+      "path": "regression/relations.RelationsDeviceTest#realUiPairsSameTitlesExactNavigationRenameTrashRestoreAndRemove.log",
+      "bytes": 79,
+      "sha256": "4ff836802787b461adc94b483210ef7be159376523a7f66849576c9b00744379"
+    },
+    {
+      "path": "regression/voice.VoiceLifecycleTest#actualMicrophoneBackgroundAndCancelKeepExistingDraft.log",
+      "bytes": 73,
+      "sha256": "beceebfe309a845f740c243e50bdc4d8a4cde84f9ca050ef78984953b89550ac"
+    },
+    {
+      "path": "regression/voice.VoiceLifecycleTest#deniedPlatformPermissionDoesNotChangeText.log",
+      "bytes": 74,
+      "sha256": "a9df2d70917416eacafa4507ae06b5a590e20e52f441240eca741422f5af3d89"
+    },
+    {
+      "path": "regression/voice.VoiceUiTest#realChineseDraftCursorCorrectionCancelAndLateEdit.log",
+      "bytes": 68,
+      "sha256": "3c50aa182eac16ba4836e1e0ad93d9708f48db4f98354da329d83090930897ee"
+    },
+    {
+      "path": "ui/actual-command-recording.png",
+      "bytes": 253761,
+      "sha256": "99f4cb49023bdb50858bb2e10f4068d475f278dd03149e14399c849920a2eea0"
+    },
+    {
+      "path": "ui/actual-command-recording.xml",
+      "bytes": 13658,
+      "sha256": "f1726fad61ff91d90b2a5f398bc5d2503bc77a6ac857518c5efe828f40b1ff1e"
+    },
+    {
+      "path": "ui/after-revoke-reopened.png",
+      "bytes": 229744,
+      "sha256": "f432af0a7b4903d379e1abeffac754513f9c7d2dd6c6a31836aef1d761cfa3b6"
+    },
+    {
+      "path": "ui/after-revoke-reopened.xml",
+      "bytes": 14241,
+      "sha256": "9d229d1bb019aeb15ee98ab4dfd93da49077a13c9272c46b2bb82b5e20f258f4"
+    },
+    {
+      "path": "ui/after-revoke-restart.json",
+      "bytes": 505,
+      "sha256": "86e9c0058060217b5dfe7c8798a58c0f5a64a7ce85f922fdebd2a943019e39d3"
+    },
+    {
+      "path": "ui/after-revoke.json",
+      "bytes": 505,
+      "sha256": "86e9c0058060217b5dfe7c8798a58c0f5a64a7ce85f922fdebd2a943019e39d3"
+    },
+    {
+      "path": "ui/before-revoke.json",
+      "bytes": 505,
+      "sha256": "86e9c0058060217b5dfe7c8798a58c0f5a64a7ce85f922fdebd2a943019e39d3"
+    },
+    {
+      "path": "ui/command-mode-before-revoke.png",
+      "bytes": 271807,
+      "sha256": "a82af909b03dbb17dcb14d909b5b9e4acad63fc4b9ea784929e140ad438114d5"
+    },
+    {
+      "path": "ui/command-mode-before-revoke.xml",
+      "bytes": 12626,
+      "sha256": "12af58358bf8085f173b21125eb018b28bc180890ecf8ff7b4965fd0354eb8e9"
+    },
+    {
+      "path": "ui/manual-draft-entered.png",
+      "bytes": 136044,
+      "sha256": "6d97f30f8985cbecfddd8f5d01043359ce4da0c78236621831e26e6bf186082a"
+    },
+    {
+      "path": "ui/manual-draft-entered.xml",
+      "bytes": 7962,
+      "sha256": "35f2e31998309d9cf8bddc406cf3b4ba6392a725f60a501f5c3031589dfebd1f"
+    },
+    {
+      "path": "ui/manual-editor.png",
+      "bytes": 112849,
+      "sha256": "21d7bafff425457c8b6557a74f1d7d7b6eefc3d5aebf11862b03a1e814b16866"
+    },
+    {
+      "path": "ui/manual-editor.xml",
+      "bytes": 11866,
+      "sha256": "1a2de5ba8d64739fc00289e464660656569ee9d03d23dd4f242a6c9d3e71fe0b"
+    },
+    {
+      "path": "ui/manual-home.png",
+      "bytes": 163871,
+      "sha256": "0c64a982c72eba8faee6e30b924e054f6f9e02f37c3de38c92f0abd21d872ccc"
+    },
+    {
+      "path": "ui/manual-home.xml",
+      "bytes": 15421,
+      "sha256": "934eaf4370cfb0e5ea5aa8a0438450cd560f3e986f7a6df5c8d77de41e5b1d78"
+    },
+    {
+      "path": "ui/revocation-process.json",
+      "bytes": 261,
+      "sha256": "15a8184bcd44d9156d0c35d28d45e752b72aa44e44bed7f3b6e8e0cdce43185b"
+    },
+    {
+      "path": "validation-summary.json",
+      "bytes": 3124,
+      "sha256": "6a77858d875035b2deb43c54fa336876ef510f5be073552fb6349588680a297b"
+    }
+  ]
+}

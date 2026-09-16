@@ -1,0 +1,10 @@
+{
+  "pidBefore": "19927",
+  "pidAfter": "",
+  "actualRecordingObserved": true,
+  "actualPermissionRevoked": true,
+  "androidKilledProcess": true,
+  "noClaimOfAppCallbackBeforeKill": true,
+  "pidRestarted": "20840",
+  "commandModeDefaultOffAfterRestart": true
+}

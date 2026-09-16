@@ -1,0 +1,7 @@
+{
+  "explicitModeEntryExit": true,
+  "priorCorrectionPreserved": true,
+  "cancelDoesNotErasePreviousInput": true,
+  "permissionCallbackInvalidatesPending": true,
+  "recognitionEvidence": "scripted decoder; not real ASR"
+}

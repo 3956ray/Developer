@@ -1,0 +1,8 @@
+{
+  "unknownNoWrites": true,
+  "repeatedIntentInvalidatesPrevious": true,
+  "editInvalidatesConfirmation": true,
+  "lateResultDiscarded": true,
+  "differentEditorProtected": true,
+  "recognitionEvidence": "scripted decoder; not real ASR"
+}

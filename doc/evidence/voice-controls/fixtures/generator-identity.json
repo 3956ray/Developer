@@ -1,0 +1,8 @@
+{
+  "objcSourceSha256": "f95ab54d5bb8800d0577c81b48166c15e9195de744abb572c4364b84faf275b6",
+  "compiledGeneratorSha256": "a2535b51a24045803d31f0937d7eac79b023d33672557a0bd949faa069c7d32d",
+  "planSha256": "11b63ac4a72f95af7a93d6776b066dd61693eb9e9bf9fa7a9d9c66cd53711b16",
+  "ttsProcessSandbox": "deny network* and file-write*",
+  "rawAudioSaved": false,
+  "systemSpeechServiceInternalBehavior": "not fully observable; no new privacy guarantee beyond prior approved fixture boundary"
+}

@@ -1,0 +1,103 @@
+{
+  "host": {
+    "tests": 127,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "newAndroidTests": 9,
+  "newAndroidBreakdown": {
+    "scriptedDecoderState": 5,
+    "actualMicrophoneLifecycle": 2,
+    "actualVoskCommandUI": 1,
+    "actualVoskFourFixedSamples": 1
+  },
+  "newAndroidStateLifecycleLogs": [
+    "device/VoiceCommandLifecycleTest#deniedActualMicrophonePermissionCannotProduceCommandOrChangeText.log",
+    "device/VoiceCommandLifecycleTest#realMicrophoneCommandCaptureBackgroundAndExplicitExitKeepDraft.log",
+    "device/VoiceCommandStateTest#commandEntryExitAndCancellationRetainEarlierCorrectionSuggestions.log",
+    "device/VoiceCommandStateTest#commandNewPreservesExistingReminderCalendarAiRelationsAndBackupData.log",
+    "device/VoiceCommandStateTest#failedDraftAndFormalWritesKeepCurrentEditorAndRetryNeedsNewConfirmation.log",
+    "device/VoiceCommandStateTest#ordinaryTextEmptySaveDismissCancelAndConfirmedActionsPreserveDurableFields.log",
+    "device/VoiceCommandStateTest#unknownEditingRepeatedCaptureAndLateCompletionNeverExecuteStaleIntent.log"
+  ],
+  "regressionTests": 14,
+  "regressions": [
+    {
+      "file": "regression/AndroidLifecycleTest.log",
+      "tests": 1,
+      "pass": true
+    },
+    {
+      "file": "regression/AndroidPersistenceTest.log",
+      "tests": 1,
+      "pass": true
+    },
+    {
+      "file": "regression/AndroidReminderTest.log",
+      "tests": 1,
+      "pass": true
+    },
+    {
+      "file": "regression/ExampleInstrumentedTest.log",
+      "tests": 1,
+      "pass": true
+    },
+    {
+      "file": "regression/NotesUiTest.log",
+      "tests": 1,
+      "pass": true
+    },
+    {
+      "file": "regression/ReminderUiTest.log",
+      "tests": 1,
+      "pass": true
+    },
+    {
+      "file": "regression/backup.AndroidBackupTest.log",
+      "tests": 2,
+      "pass": true
+    },
+    {
+      "file": "regression/backup.BackupRestoreStateDeviceTest#actualRestoreButtonDisablesInMemoryAiAndReloadsVocabularyAndRejectsStalePreview.log",
+      "tests": 1,
+      "pass": true
+    },
+    {
+      "file": "regression/calendar.CalendarImportDeviceTest#actualProviderUiFaithfulImportCancelIdempotenceAndSourceUnchanged.log",
+      "tests": 1,
+      "pass": true
+    },
+    {
+      "file": "regression/relations.RelationsDeviceTest#realUiPairsSameTitlesExactNavigationRenameTrashRestoreAndRemove.log",
+      "tests": 1,
+      "pass": true
+    },
+    {
+      "file": "regression/voice.VoiceLifecycleTest#actualMicrophoneBackgroundAndCancelKeepExistingDraft.log",
+      "tests": 1,
+      "pass": true
+    },
+    {
+      "file": "regression/voice.VoiceLifecycleTest#deniedPlatformPermissionDoesNotChangeText.log",
+      "tests": 1,
+      "pass": true
+    },
+    {
+      "file": "regression/voice.VoiceUiTest#realChineseDraftCursorCorrectionCancelAndLateEdit.log",
+      "tests": 1,
+      "pass": true
+    }
+  ],
+  "lint": {
+    "errors": 0,
+    "warnings": 18
+  },
+  "screenshotsVisuallyChecked": [
+    "real-new-confirm",
+    "real-save-confirm",
+    "real-cancel-confirm"
+  ],
+  "actualOsRevoke": "ui/revocation-process.json",
+  "noFullCP2OrASRQualityAcceptance": true
+}

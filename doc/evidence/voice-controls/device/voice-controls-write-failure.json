@@ -1,0 +1,8 @@
+{
+  "newDraftFailureNoSwitch": true,
+  "formalSaveFailureNoSuccess": true,
+  "editableBodyRetained": true,
+  "oldConfirmationConsumed": true,
+  "freshConfirmationRetryCommits": true,
+  "recognitionEvidence": "scripted decoder; not real ASR"
+}
