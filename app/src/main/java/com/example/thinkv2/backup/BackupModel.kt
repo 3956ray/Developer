@@ -67,7 +67,7 @@ class BackupModel(context: Context,private val runtime: ReminderRuntime): ViewMo
         try {
             val file=candidate ?: throw BackupFailure("missing_candidate")
             val p=withContext(runtime.dispatcher) { repository().preview(file,state.policy) }
-            state=state.copy(busy=false,preview=p,error=null,notice=if(p.alreadyImported) "这个备份已导入过，不会新增副本或改变提醒。" else null)
+            state=state.copy(busy=false,preview=p,error=null,notice=if(p.alreadyImported) "这个备份已处理过（可能包含主动跳过项）；不会补入跳过项、新增副本或改变提醒。" else null)
         } catch(e: Exception) { state=state.copy(busy=false,preview=null,error=message(e),canRepreview=candidate!=null) }
     }
     fun repreview() { if(!state.busy) { state=state.copy(busy=true,error=null);scope.launch { loadPreview() } } }
@@ -82,7 +82,7 @@ class BackupModel(context: Context,private val runtime: ReminderRuntime): ViewMo
                 val labels=preview.records.filter { it.visible }.associate { it.targetId to it.label }
                 val visible=result.importedIds.filter { it in labels }
                 state=state.copy(busy=false,preview=null,restored=visible.map { it to labels[it].orEmpty() },notice=
-                    if(result.alreadyImported) "这个备份已导入过，本次没有修改内容。" else "恢复已提交：新增 ${visible.size} 条可查看记录（含冲突副本 ${preview.records.count { it.visible && it.action==ImportAction.COPY }} 条），跳过 ${preview.records.count { it.visible && it.action==ImportAction.SKIP }} 条。导入的提醒保持关闭。")
+                    if(result.alreadyImported) "这个备份已处理过（可能包含主动跳过项），本次没有修改内容。" else "恢复已提交：新增 ${visible.size} 条可查看记录（含冲突副本 ${preview.records.count { it.visible && it.action==ImportAction.COPY }} 条），跳过 ${preview.records.count { it.visible && it.action==ImportAction.SKIP }} 条。导入的提醒保持关闭；AI需本机重新确认。")
                 candidate=null;onChanged()
             } catch(e: Exception) { state=state.copy(busy=false,preview=if(e is BackupFailure && e.code=="stale_preview") null else state.preview,error=message(e),canRepreview=candidate!=null) }
         }
@@ -96,8 +96,9 @@ class BackupModel(context: Context,private val runtime: ReminderRuntime): ViewMo
         error is BackupFailure -> when(error.code) {
             "size_limit","count_limit","structure_limit" -> "备份超出保护上限，已拒绝且未修改本机数据。文件最多64MiB、内容32MiB、10000条记录、深度32。"
             "unsupported_version","unknown_or_missing_field","unsupported_relations" -> "备份包含不支持的版本或字段，未降级导入，本机内容不变。"
+            "vocabulary_merge_limit" -> "合并后的纠错词表超过200项，尚未修改任何数据。请整理本机词表后重新预览。"
             "export_id_reused" -> "这个备份编号曾用于不同内容，已拒绝恢复。"
-            "stale_preview" -> "本机笔记、草稿、分类或提醒已变化，请重新预览后确认。"
+            "stale_preview" -> "本机持久化资料已变化，请重新预览后确认。"
             else -> "备份格式、校验或引用无效，未修改本机内容。请检查原文件。"
         }
         else -> "操作未完成，请检查文件权限或可用空间后重试。本机原有内容保持不变。"

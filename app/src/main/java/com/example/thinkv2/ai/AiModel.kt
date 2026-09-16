@@ -40,8 +40,8 @@ class AiModel(private val vault: AiVault,internal var callFactory: ()->AiCall = 
     fun enable(confirmed: Boolean) {
         if(!confirmed || state.saving) return
         val next=config?.enabled(true) ?: return
-        invalidate();state=state.copy(saving=true)
-        scope.launch { try { withContext(Dispatchers.IO) { vault.save(next) };config=next;state=state.copy(saving=false,enabled=true,message="已启用手动请求；每次仍需核对发送字段并确认。真实服务尚未验证。") }
+        invalidate();val token=generation;state=state.copy(saving=true)
+        scope.launch { try { withContext(Dispatchers.IO) { vault.save(next) };if(token!=generation) return@launch;config=next;state=state.copy(saving=false,enabled=true,message="已启用手动请求；每次仍需核对发送字段并确认。真实服务尚未验证。") }
             catch(_: Exception) { state=state.copy(saving=false,message=message("credential_storage")) } }
     }
     fun disable(clear: Boolean=false) {
@@ -53,6 +53,11 @@ class AiModel(private val vault: AiVault,internal var callFactory: ()->AiCall = 
             if(clear) { config=null;state=state.copy(configured=false,endpoint="",model="") }
             state=state.copy(saving=false)
         } catch(_: Exception) { state=state.copy(saving=false,message=message("credential_storage")) } }
+    }
+    fun afterRestore() {
+        invalidate("恢复后AI已关闭，请在本机设置中重新确认启用。")
+        config=config?.enabled(false)
+        state=state.copy(enabled=false,saving=false,screen="",text="",selected=emptySet(),candidates=emptyList())
     }
     fun prepare(notes: NotesModel) {
         if(!state.loaded || state.saving) return

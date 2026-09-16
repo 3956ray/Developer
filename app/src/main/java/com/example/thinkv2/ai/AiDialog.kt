@@ -45,7 +45,7 @@ fun AiDialog(ai: AiModel,notes: NotesModel) {
                         Button(onClick={ ai.enable(enableConsent) },enabled=enableConsent && !s.saving && endpoint==s.endpoint && model==s.model && credential.isEmpty(),modifier=Modifier.heightIn(min=56.dp)) { Text("确认启用AI") }
                         OutlinedButton(onClick={ ai.disable() },enabled=!s.saving,modifier=Modifier.heightIn(min=56.dp)) { Text("关闭AI并取消请求") }
                         OutlinedButton(onClick={ ai.disable(true);credential="";enableConsent=false },enabled=!s.saving,modifier=Modifier.heightIn(min=56.dp)) { Text("清除配置及凭据") }
-                        Text("凭据由Android Keystore保护并排除备份。当前备份不含设置或AI接受来源记录；最终笔记文字仍按原格式备份。")
+                        Text("凭据由Android Keystore保护并排除备份。v2备份包含已接受的标题／分类来源及最终笔记文字，不含设置、凭据或未接受建议。恢复后须在本机重新确认启用。")
                     } else {
                         Text("供应商：${s.endpoint.ifBlank { "未配置" }}\n模型：${s.model}\n当前笔记：${notes.state.editor?.note?.title.orEmpty()}")
                         if(!s.enabled) Text("AI关闭或未配置。请关闭面板，在AI建议设置中配置并确认启用。")

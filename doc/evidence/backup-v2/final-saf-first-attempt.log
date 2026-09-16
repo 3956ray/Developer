@@ -1,0 +1,9 @@
+final SAF export passed
+final cancel and ENOSPC passed
+final SAF empty restore exact fields passed
+Traceback (most recent call last):
+  File "/private/tmp/thinkv2-backup-final-saf.py", line 56, in <module>
+    phase='repeat';enter();importfile('cp8-final.thinkbackup.json');wait('这个备份已处理过',True);shot('repeat');assert database('repeat')==restored;tap('取消预览',scroll=True);tap('返回笔记');enter()
+  File "/private/tmp/thinkv2-backup-final-saf.py", line 18, in wait
+    raise AssertionError('not visible: '+text)
+AssertionError: not visible: 这个备份已处理过

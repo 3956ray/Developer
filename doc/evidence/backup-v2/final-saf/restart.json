@@ -1,0 +1,356 @@
+{
+  "notes": [
+    [
+      "0b9e8c60-54cd-4ed8-9e34-dac986e3aeee",
+      "日历原始标题：合成全天事件\n日历原始描述：\n全天日期\n\n来源日历：合成测试日历\n事件ID：33\n类型：单次事件\n开始：2026-09-02 [UTC]（原始毫秒 1788307200000）\n结束：2026-09-03 [UTC]（原始毫秒 1788393600000）\n全天：true（全天结束日期为不含当天）\n",
+      "合成全天事件",
+      1,
+      "",
+      1789563499108,
+      1789563499108,
+      0,
+      "合成全天事件",
+      "日历原始标题：合成全天事件\n日历原始描述：\n全天日期\n\n来源日历：合成测试日历\n事件id：33\n类型：单次事件\n开始：2026-09-02 [utc]（原始毫秒 1788307200000）\n结束：2026-09-03 [utc]（原始毫秒 1788393600000）\n全天：true（全天结束日期为不含当天）\n",
+      "",
+      "manual",
+      0
+    ],
+    [
+      "10b4ca99-7e56-4e1f-965e-9348186fa15e",
+      "日历原始标题：相似标题\n日历原始描述：\n相同日期不同身份\n\n来源日历：合成测试日历\n事件ID：39\n类型：单次事件\n开始：2026-09-01 08:00:00 [Asia/Shanghai]（原始毫秒 1788220800000）\n结束：2026-09-01 09:00:00 [Asia/Shanghai]（原始毫秒 1788224400000）\n全天：false（全天结束日期为不含当天）\n",
+      "相似标题",
+      1,
+      "",
+      1789563499138,
+      1789563499138,
+      0,
+      "相似标题",
+      "日历原始标题：相似标题\n日历原始描述：\n相同日期不同身份\n\n来源日历：合成测试日历\n事件id：39\n类型：单次事件\n开始：2026-09-01 08:00:00 [asia/shanghai]（原始毫秒 1788220800000）\n结束：2026-09-01 09:00:00 [asia/shanghai]（原始毫秒 1788224400000）\n全天：false（全天结束日期为不含当天）\n",
+      "",
+      "manual",
+      0
+    ],
+    [
+      "1c903693-facb-4b28-a35c-fea918518b93",
+      "日历原始标题：合成移动例外\n日历原始描述：\n从9月3日移到9月5日\n\n来源日历：合成测试日历\n事件ID：36\n类型：系列例外（状态原样保留）\n开始：2026-09-05 08:00:00 [Asia/Shanghai]（原始毫秒 1788566400000）\n结束：2026-09-05 09:00:00 [Asia/Shanghai]（原始毫秒 1788570000000）\n全天：false（全天结束日期为不含当天）\n重复、例外或源提醒元数据未转换为本机提醒；本机提醒未开启。\n",
+      "合成移动例外",
+      1,
+      "",
+      1789563499126,
+      1789563499126,
+      0,
+      "合成移动例外",
+      "日历原始标题：合成移动例外\n日历原始描述：\n从9月3日移到9月5日\n\n来源日历：合成测试日历\n事件id：36\n类型：系列例外（状态原样保留）\n开始：2026-09-05 08:00:00 [asia/shanghai]（原始毫秒 1788566400000）\n结束：2026-09-05 09:00:00 [asia/shanghai]（原始毫秒 1788570000000）\n全天：false（全天结束日期为不含当天）\n重复、例外或源提醒元数据未转换为本机提醒；本机提醒未开启。\n",
+      "",
+      "manual",
+      0
+    ],
+    [
+      "49586e01-1a1e-41c5-a379-1f6ddbb0769b",
+      "日历原始标题：合成跨时区行程\n日历原始描述：\n起止时区分别保留\n\n来源日历：合成测试日历\n事件ID：34\n类型：单次事件\n开始：2026-09-01 08:00:00 [Asia/Shanghai]（原始毫秒 1788220800000）\n结束：2026-08-31 18:00:00 [America/Los_Angeles]（原始毫秒 1788224400000）\n全天：false（全天结束日期为不含当天）\n",
+      "合成跨时区行程",
+      1,
+      "",
+      1789563499116,
+      1789563499116,
+      0,
+      "合成跨时区行程",
+      "日历原始标题：合成跨时区行程\n日历原始描述：\n起止时区分别保留\n\n来源日历：合成测试日历\n事件id：34\n类型：单次事件\n开始：2026-09-01 08:00:00 [asia/shanghai]（原始毫秒 1788220800000）\n结束：2026-08-31 18:00:00 [america/los_angeles]（原始毫秒 1788224400000）\n全天：false（全天结束日期为不含当天）\n",
+      "",
+      "manual",
+      0
+    ],
+    [
+      "63ae61c7-a5c6-45a1-90ff-80102be6f32a",
+      "日历原始标题：范围前开始的每日系列\n日历原始描述：\n按主事件只导入一条\n\n来源日历：合成测试日历\n事件ID：35\n类型：重复主事件（仅一条）\n开始：2026-08-01 08:00:00 [Asia/Shanghai]（原始毫秒 1785542400000）\n结束：未提供\n全天：false（全天结束日期为不含当天）\n重复、例外或源提醒元数据未转换为本机提醒；本机提醒未开启。\n",
+      "范围前开始的每日系列",
+      1,
+      "",
+      1789563499121,
+      1789563499121,
+      0,
+      "范围前开始的每日系列",
+      "日历原始标题：范围前开始的每日系列\n日历原始描述：\n按主事件只导入一条\n\n来源日历：合成测试日历\n事件id：35\n类型：重复主事件（仅一条）\n开始：2026-08-01 08:00:00 [asia/shanghai]（原始毫秒 1785542400000）\n结束：未提供\n全天：false（全天结束日期为不含当天）\n重复、例外或源提醒元数据未转换为本机提醒；本机提醒未开启。\n",
+      "",
+      "manual",
+      0
+    ],
+    [
+      "77021261-4e3c-414c-90aa-4c541407f7fa",
+      "日历原始标题：合成取消例外\n日历原始描述：\n取消状态保留\n\n来源日历：合成测试日历\n事件ID：37\n类型：系列例外（状态原样保留）\n开始：2026-09-04 08:00:00 [Asia/Shanghai]（原始毫秒 1788480000000）\n结束：2026-09-04 09:00:00 [Asia/Shanghai]（原始毫秒 1788483600000）\n全天：false（全天结束日期为不含当天）\n重复、例外或源提醒元数据未转换为本机提醒；本机提醒未开启。\n",
+      "合成取消例外",
+      1,
+      "",
+      1789563499130,
+      1789563499130,
+      0,
+      "合成取消例外",
+      "日历原始标题：合成取消例外\n日历原始描述：\n取消状态保留\n\n来源日历：合成测试日历\n事件id：37\n类型：系列例外（状态原样保留）\n开始：2026-09-04 08:00:00 [asia/shanghai]（原始毫秒 1788480000000）\n结束：2026-09-04 09:00:00 [asia/shanghai]（原始毫秒 1788483600000）\n全天：false（全天结束日期为不含当天）\n重复、例外或源提醒元数据未转换为本机提醒；本机提醒未开启。\n",
+      "",
+      "manual",
+      0
+    ],
+    [
+      "a4b64970-0b19-4c47-9776-25fbea92b956",
+      "日历原始标题：只有标题也能导入\n日历原始描述：\n\n\n来源日历：合成测试日历\n事件ID：32\n类型：单次事件\n开始：2026-09-01 08:00:00 [Asia/Shanghai]（原始毫秒 1788220800000）\n结束：2026-09-01 09:00:00 [Asia/Shanghai]（原始毫秒 1788224400000）\n全天：false（全天结束日期为不含当天）\n",
+      "只有标题也能导入",
+      1,
+      "",
+      1789563499097,
+      1789563499097,
+      0,
+      "只有标题也能导入",
+      "日历原始标题：只有标题也能导入\n日历原始描述：\n\n\n来源日历：合成测试日历\n事件id：32\n类型：单次事件\n开始：2026-09-01 08:00:00 [asia/shanghai]（原始毫秒 1788220800000）\n结束：2026-09-01 09:00:00 [asia/shanghai]（原始毫秒 1788224400000）\n全天：false（全天结束日期为不含当天）\n",
+      "",
+      "manual",
+      0
+    ],
+    [
+      "dea9fc4c-ec05-4245-87c6-d1500ef058e3",
+      "日历原始标题：合成中文事件\n日历原始描述：\n原始中文描述\n第二行不能丢失\n\n来源日历：合成测试日历\n事件ID：31\n类型：单次事件\n开始：2026-09-01 08:00:00 [Asia/Shanghai]（原始毫秒 1788220800000）\n结束：2026-09-01 09:00:00 [Asia/Shanghai]（原始毫秒 1788224400000）\n全天：false（全天结束日期为不含当天）\n重复、例外或源提醒元数据未转换为本机提醒；本机提醒未开启。\n",
+      "合成中文事件",
+      1,
+      "",
+      1789563499085,
+      1789563499085,
+      0,
+      "合成中文事件",
+      "日历原始标题：合成中文事件\n日历原始描述：\n原始中文描述\n第二行不能丢失\n\n来源日历：合成测试日历\n事件id：31\n类型：单次事件\n开始：2026-09-01 08:00:00 [asia/shanghai]（原始毫秒 1788220800000）\n结束：2026-09-01 09:00:00 [asia/shanghai]（原始毫秒 1788224400000）\n全天：false（全天结束日期为不含当天）\n重复、例外或源提醒元数据未转换为本机提醒；本机提醒未开启。\n",
+      "",
+      "manual",
+      0
+    ],
+    [
+      "e51398ea-a867-4d6e-a43d-0f86ab7d68fb",
+      "日历原始标题：相似标题\n日历原始描述：\n相同日期不同身份\n\n来源日历：合成测试日历\n事件ID：38\n类型：单次事件\n开始：2026-09-01 08:00:00 [Asia/Shanghai]（原始毫秒 1788220800000）\n结束：2026-09-01 09:00:00 [Asia/Shanghai]（原始毫秒 1788224400000）\n全天：false（全天结束日期为不含当天）\n",
+      "相似标题",
+      1,
+      "",
+      1789563499134,
+      1789563499134,
+      0,
+      "相似标题",
+      "日历原始标题：相似标题\n日历原始描述：\n相同日期不同身份\n\n来源日历：合成测试日历\n事件id：38\n类型：单次事件\n开始：2026-09-01 08:00:00 [asia/shanghai]（原始毫秒 1788220800000）\n结束：2026-09-01 09:00:00 [asia/shanghai]（原始毫秒 1788224400000）\n全天：false（全天结束日期为不含当天）\n",
+      "",
+      "manual",
+      0
+    ],
+    [
+      "v2-other",
+      "关系另一端🙂",
+      "人工标题",
+      1,
+      "兼容合成分类",
+      1789563499208,
+      1789563499208,
+      4,
+      "人工标题",
+      "关系另一端🙂",
+      "6250ce7f-692f-402f-812e-98a8b81fe546",
+      "manual",
+      1789563499220
+    ]
+  ],
+  "drafts": [
+    [
+      "dea9fc4c-ec05-4245-87c6-d1500ef058e3",
+      "保留本机日历编辑草稿🙂",
+      "合成中文事件",
+      1,
+      "",
+      1789563499085,
+      1789563499085,
+      1,
+      0,
+      1,
+      "",
+      "manual"
+    ],
+    [
+      "v2-draft",
+      "草稿独有记录",
+      "草稿独有记录",
+      0,
+      "",
+      1789563499212,
+      1789563499212,
+      1,
+      -1,
+      1,
+      "",
+      "manual"
+    ],
+    [
+      "v2-other",
+      "",
+      "",
+      1,
+      "",
+      1789563499208,
+      1789563499208,
+      5,
+      4,
+      0,
+      "",
+      "manual"
+    ]
+  ],
+  "categories": [
+    [
+      "6250ce7f-692f-402f-812e-98a8b81fe546",
+      "兼容合成分类",
+      0,
+      1
+    ]
+  ],
+  "reminders": [
+    [
+      "5ded746d-d9fe-4db8-a6d6-cab168c18d56",
+      "dea9fc4c-ec05-4245-87c6-d1500ef058e3",
+      1,
+      "WEEKLY",
+      "2030-01-01",
+      9,
+      0,
+      17,
+      0,
+      "DISABLED",
+      "",
+      0,
+      "",
+      ""
+    ]
+  ],
+  "reminder_events": [],
+  "backup_imports": [
+    [
+      "8f2c0c4d-12a9-4231-ad38-bb20110c0b6e",
+      "f3c3553c01aa604bce2aff69123765ba71cc689768e97fc26a6d756ce6b557d1",
+      1789563723336
+    ]
+  ],
+  "backup_origins": [],
+  "calendar_imports": [
+    [
+      "10215bd4472b604e2457a7d6b01a62670e46107de12b46fc79df14409d4318f6",
+      "2937ea34edc97b9a44ecb6bca1b910e36e021920295073f17a4f67c21690564d",
+      "1c903693-facb-4b28-a35c-fea918518b93",
+      "{\"calendar\":{\"_id\":\"1\",\"account_name\":\"thinkV2-calendar-synthetic\",\"account_type\":\"LOCAL\",\"calendar_displayName\":\"合成测试日历\",\"calendar_timezone\":\"Asia/Shanghai\",\"name\":\"ThinkV2Synthetic\",\"ownerAccount\":\"thinkV2-calendar-synthetic\",\"visible\":\"1\"},\"event\":{\"_id\":\"36\",\"_sync_id\":null,\"allDay\":\"0\",\"calendar_id\":\"1\",\"deleted\":\"0\",\"description\":\"从9月3日移到9月5日\",\"dtend\":\"1788570000000\",\"dtstart\":\"1788566400000\",\"duration\":null,\"eventEndTimezone\":\"Asia/Shanghai\",\"eventLocation\":\"合成地点\",\"eventStatus\":\"1\",\"eventTimezone\":\"Asia/Shanghai\",\"exdate\":null,\"exrule\":null,\"hasAlarm\":\"0\",\"originalAllDay\":\"0\",\"originalInstanceTime\":\"1788393600000\",\"original_id\":\"35\",\"original_sync_id\":null,\"rdate\":null,\"rrule\":null,\"title\":\"合成移动例外\",\"uid2445\":null},\"reminders\":[]}",
+      "日历原始标题：合成移动例外\n日历原始描述：\n从9月3日移到9月5日\n\n来源日历：合成测试日历\n事件ID：36\n类型：系列例外（状态原样保留）\n开始：2026-09-05 08:00:00 [Asia/Shanghai]（原始毫秒 1788566400000）\n结束：2026-09-05 09:00:00 [Asia/Shanghai]（原始毫秒 1788570000000）\n全天：false（全天结束日期为不含当天）\n重复、例外或源提醒元数据未转换为本机提醒；本机提醒未开启。\n\n源字段原样快照（null表示未提供）：\n{\"calendar\":{\"_id\":\"1\",\"account_name\":\"thinkV2-calendar-synthetic\",\"account_type\":\"LOCAL\",\"calendar_displayName\":\"合成测试日历\",\"calendar_timezone\":\"Asia/Shanghai\",\"name\":\"ThinkV2Synthetic\",\"ownerAccount\":\"thinkV2-calendar-synthetic\",\"visible\":\"1\"},\"event\":{\"_id\":\"36\",\"_sync_id\":null,\"allDay\":\"0\",\"calendar_id\":\"1\",\"deleted\":\"0\",\"description\":\"从9月3日移到9月5日\",\"dtend\":\"1788570000000\",\"dtstart\":\"1788566400000\",\"duration\":null,\"eventEndTimezone\":\"Asia/Shanghai\",\"eventLocation\":\"合成地点\",\"eventStatus\":\"1\",\"eventTimezone\":\"Asia/Shanghai\",\"exdate\":null,\"exrule\":null,\"hasAlarm\":\"0\",\"originalAllDay\":\"0\",\"originalInstanceTime\":\"1788393600000\",\"original_id\":\"35\",\"original_sync_id\":null,\"rdate\":null,\"rrule\":null,\"title\":\"合成移动例外\",\"uid2445\":null},\"reminders\":[]}",
+      "98eef217b5f05a4246207288e1f0105a72a1ebfc890e6b50e3a5d66a78f05557"
+    ],
+    [
+      "5903e7e0243fd2c3c41bebce4dd1c968bcb22115f6b74eb1fbd6702d2846a7e8",
+      "4b74dd39ef0d0d1948efc5eb516459ec029732a41662a013d5a6848c33468768",
+      "63ae61c7-a5c6-45a1-90ff-80102be6f32a",
+      "{\"calendar\":{\"_id\":\"1\",\"account_name\":\"thinkV2-calendar-synthetic\",\"account_type\":\"LOCAL\",\"calendar_displayName\":\"合成测试日历\",\"calendar_timezone\":\"Asia/Shanghai\",\"name\":\"ThinkV2Synthetic\",\"ownerAccount\":\"thinkV2-calendar-synthetic\",\"visible\":\"1\"},\"event\":{\"_id\":\"35\",\"_sync_id\":null,\"allDay\":\"0\",\"calendar_id\":\"1\",\"deleted\":\"0\",\"description\":\"按主事件只导入一条\",\"dtend\":null,\"dtstart\":\"1785542400000\",\"duration\":\"PT3600S\",\"eventEndTimezone\":\"Asia/Shanghai\",\"eventLocation\":\"合成地点\",\"eventStatus\":\"1\",\"eventTimezone\":\"Asia/Shanghai\",\"exdate\":null,\"exrule\":null,\"hasAlarm\":\"0\",\"originalAllDay\":null,\"originalInstanceTime\":null,\"original_id\":null,\"original_sync_id\":null,\"rdate\":null,\"rrule\":\"FREQ=DAILY;COUNT=60\",\"title\":\"范围前开始的每日系列\",\"uid2445\":null},\"reminders\":[]}",
+      "日历原始标题：范围前开始的每日系列\n日历原始描述：\n按主事件只导入一条\n\n来源日历：合成测试日历\n事件ID：35\n类型：重复主事件（仅一条）\n开始：2026-08-01 08:00:00 [Asia/Shanghai]（原始毫秒 1785542400000）\n结束：未提供\n全天：false（全天结束日期为不含当天）\n重复、例外或源提醒元数据未转换为本机提醒；本机提醒未开启。\n\n源字段原样快照（null表示未提供）：\n{\"calendar\":{\"_id\":\"1\",\"account_name\":\"thinkV2-calendar-synthetic\",\"account_type\":\"LOCAL\",\"calendar_displayName\":\"合成测试日历\",\"calendar_timezone\":\"Asia/Shanghai\",\"name\":\"ThinkV2Synthetic\",\"ownerAccount\":\"thinkV2-calendar-synthetic\",\"visible\":\"1\"},\"event\":{\"_id\":\"35\",\"_sync_id\":null,\"allDay\":\"0\",\"calendar_id\":\"1\",\"deleted\":\"0\",\"description\":\"按主事件只导入一条\",\"dtend\":null,\"dtstart\":\"1785542400000\",\"duration\":\"PT3600S\",\"eventEndTimezone\":\"Asia/Shanghai\",\"eventLocation\":\"合成地点\",\"eventStatus\":\"1\",\"eventTimezone\":\"Asia/Shanghai\",\"exdate\":null,\"exrule\":null,\"hasAlarm\":\"0\",\"originalAllDay\":null,\"originalInstanceTime\":null,\"original_id\":null,\"original_sync_id\":null,\"rdate\":null,\"rrule\":\"FREQ=DAILY;COUNT=60\",\"title\":\"范围前开始的每日系列\",\"uid2445\":null},\"reminders\":[]}",
+      "f10cc0b7f56dda0241eaf3acbdbbfce2c23247c9e3747cb3fc5dd476be3c8aef"
+    ],
+    [
+      "5d947ba7b6c1055fd7ef0e750a7785306a2201882ce600e56b699bec4b656446",
+      "08f92897179da57e5e8158401d96aae6f29c26f048bcd011c971baacd6a3d664",
+      "49586e01-1a1e-41c5-a379-1f6ddbb0769b",
+      "{\"calendar\":{\"_id\":\"1\",\"account_name\":\"thinkV2-calendar-synthetic\",\"account_type\":\"LOCAL\",\"calendar_displayName\":\"合成测试日历\",\"calendar_timezone\":\"Asia/Shanghai\",\"name\":\"ThinkV2Synthetic\",\"ownerAccount\":\"thinkV2-calendar-synthetic\",\"visible\":\"1\"},\"event\":{\"_id\":\"34\",\"_sync_id\":null,\"allDay\":\"0\",\"calendar_id\":\"1\",\"deleted\":\"0\",\"description\":\"起止时区分别保留\",\"dtend\":\"1788224400000\",\"dtstart\":\"1788220800000\",\"duration\":null,\"eventEndTimezone\":\"America/Los_Angeles\",\"eventLocation\":\"合成地点\",\"eventStatus\":\"1\",\"eventTimezone\":\"Asia/Shanghai\",\"exdate\":null,\"exrule\":null,\"hasAlarm\":\"0\",\"originalAllDay\":null,\"originalInstanceTime\":null,\"original_id\":null,\"original_sync_id\":null,\"rdate\":null,\"rrule\":null,\"title\":\"合成跨时区行程\",\"uid2445\":null},\"reminders\":[]}",
+      "日历原始标题：合成跨时区行程\n日历原始描述：\n起止时区分别保留\n\n来源日历：合成测试日历\n事件ID：34\n类型：单次事件\n开始：2026-09-01 08:00:00 [Asia/Shanghai]（原始毫秒 1788220800000）\n结束：2026-08-31 18:00:00 [America/Los_Angeles]（原始毫秒 1788224400000）\n全天：false（全天结束日期为不含当天）\n\n源字段原样快照（null表示未提供）：\n{\"calendar\":{\"_id\":\"1\",\"account_name\":\"thinkV2-calendar-synthetic\",\"account_type\":\"LOCAL\",\"calendar_displayName\":\"合成测试日历\",\"calendar_timezone\":\"Asia/Shanghai\",\"name\":\"ThinkV2Synthetic\",\"ownerAccount\":\"thinkV2-calendar-synthetic\",\"visible\":\"1\"},\"event\":{\"_id\":\"34\",\"_sync_id\":null,\"allDay\":\"0\",\"calendar_id\":\"1\",\"deleted\":\"0\",\"description\":\"起止时区分别保留\",\"dtend\":\"1788224400000\",\"dtstart\":\"1788220800000\",\"duration\":null,\"eventEndTimezone\":\"America/Los_Angeles\",\"eventLocation\":\"合成地点\",\"eventStatus\":\"1\",\"eventTimezone\":\"Asia/Shanghai\",\"exdate\":null,\"exrule\":null,\"hasAlarm\":\"0\",\"originalAllDay\":null,\"originalInstanceTime\":null,\"original_id\":null,\"original_sync_id\":null,\"rdate\":null,\"rrule\":null,\"title\":\"合成跨时区行程\",\"uid2445\":null},\"reminders\":[]}",
+      "9596eaf09aa3d40d803bd11bf6bc75d75f01d8e95fd97ba80d0f9b00ba851748"
+    ],
+    [
+      "661df5f28deaa978eae41e702a13a1dbd53a22715d49200a05dda34ed3e2cf34",
+      "c4221493acdeffa00c40fdc98bbe313304567c855bd738a89962c4566afc7f99",
+      "0b9e8c60-54cd-4ed8-9e34-dac986e3aeee",
+      "{\"calendar\":{\"_id\":\"1\",\"account_name\":\"thinkV2-calendar-synthetic\",\"account_type\":\"LOCAL\",\"calendar_displayName\":\"合成测试日历\",\"calendar_timezone\":\"Asia/Shanghai\",\"name\":\"ThinkV2Synthetic\",\"ownerAccount\":\"thinkV2-calendar-synthetic\",\"visible\":\"1\"},\"event\":{\"_id\":\"33\",\"_sync_id\":null,\"allDay\":\"1\",\"calendar_id\":\"1\",\"deleted\":\"0\",\"description\":\"全天日期\",\"dtend\":\"1788393600000\",\"dtstart\":\"1788307200000\",\"duration\":null,\"eventEndTimezone\":\"UTC\",\"eventLocation\":\"合成地点\",\"eventStatus\":\"1\",\"eventTimezone\":\"UTC\",\"exdate\":null,\"exrule\":null,\"hasAlarm\":\"0\",\"originalAllDay\":null,\"originalInstanceTime\":null,\"original_id\":null,\"original_sync_id\":null,\"rdate\":null,\"rrule\":null,\"title\":\"合成全天事件\",\"uid2445\":null},\"reminders\":[]}",
+      "日历原始标题：合成全天事件\n日历原始描述：\n全天日期\n\n来源日历：合成测试日历\n事件ID：33\n类型：单次事件\n开始：2026-09-02 [UTC]（原始毫秒 1788307200000）\n结束：2026-09-03 [UTC]（原始毫秒 1788393600000）\n全天：true（全天结束日期为不含当天）\n\n源字段原样快照（null表示未提供）：\n{\"calendar\":{\"_id\":\"1\",\"account_name\":\"thinkV2-calendar-synthetic\",\"account_type\":\"LOCAL\",\"calendar_displayName\":\"合成测试日历\",\"calendar_timezone\":\"Asia/Shanghai\",\"name\":\"ThinkV2Synthetic\",\"ownerAccount\":\"thinkV2-calendar-synthetic\",\"visible\":\"1\"},\"event\":{\"_id\":\"33\",\"_sync_id\":null,\"allDay\":\"1\",\"calendar_id\":\"1\",\"deleted\":\"0\",\"description\":\"全天日期\",\"dtend\":\"1788393600000\",\"dtstart\":\"1788307200000\",\"duration\":null,\"eventEndTimezone\":\"UTC\",\"eventLocation\":\"合成地点\",\"eventStatus\":\"1\",\"eventTimezone\":\"UTC\",\"exdate\":null,\"exrule\":null,\"hasAlarm\":\"0\",\"originalAllDay\":null,\"originalInstanceTime\":null,\"original_id\":null,\"original_sync_id\":null,\"rdate\":null,\"rrule\":null,\"title\":\"合成全天事件\",\"uid2445\":null},\"reminders\":[]}",
+      "9a9135d1f9daee9283afafff8c513aff6096e0a5eee5c364d70741612f00c94a"
+    ],
+    [
+      "66b1be55e22a75ae394911e0567b5d32ae55704ab5e669df0614c0fc81cd793a",
+      "ae20cc1967f9e89f802b546169680690c33468399ca2c0bf3677b24b3e8f5d65",
+      "e51398ea-a867-4d6e-a43d-0f86ab7d68fb",
+      "{\"calendar\":{\"_id\":\"1\",\"account_name\":\"thinkV2-calendar-synthetic\",\"account_type\":\"LOCAL\",\"calendar_displayName\":\"合成测试日历\",\"calendar_timezone\":\"Asia/Shanghai\",\"name\":\"ThinkV2Synthetic\",\"ownerAccount\":\"thinkV2-calendar-synthetic\",\"visible\":\"1\"},\"event\":{\"_id\":\"38\",\"_sync_id\":null,\"allDay\":\"0\",\"calendar_id\":\"1\",\"deleted\":\"0\",\"description\":\"相同日期不同身份\",\"dtend\":\"1788224400000\",\"dtstart\":\"1788220800000\",\"duration\":null,\"eventEndTimezone\":\"Asia/Shanghai\",\"eventLocation\":\"合成地点\",\"eventStatus\":\"1\",\"eventTimezone\":\"Asia/Shanghai\",\"exdate\":null,\"exrule\":null,\"hasAlarm\":\"0\",\"originalAllDay\":null,\"originalInstanceTime\":null,\"original_id\":null,\"original_sync_id\":null,\"rdate\":null,\"rrule\":null,\"title\":\"相似标题\",\"uid2445\":null},\"reminders\":[]}",
+      "日历原始标题：相似标题\n日历原始描述：\n相同日期不同身份\n\n来源日历：合成测试日历\n事件ID：38\n类型：单次事件\n开始：2026-09-01 08:00:00 [Asia/Shanghai]（原始毫秒 1788220800000）\n结束：2026-09-01 09:00:00 [Asia/Shanghai]（原始毫秒 1788224400000）\n全天：false（全天结束日期为不含当天）\n\n源字段原样快照（null表示未提供）：\n{\"calendar\":{\"_id\":\"1\",\"account_name\":\"thinkV2-calendar-synthetic\",\"account_type\":\"LOCAL\",\"calendar_displayName\":\"合成测试日历\",\"calendar_timezone\":\"Asia/Shanghai\",\"name\":\"ThinkV2Synthetic\",\"ownerAccount\":\"thinkV2-calendar-synthetic\",\"visible\":\"1\"},\"event\":{\"_id\":\"38\",\"_sync_id\":null,\"allDay\":\"0\",\"calendar_id\":\"1\",\"deleted\":\"0\",\"description\":\"相同日期不同身份\",\"dtend\":\"1788224400000\",\"dtstart\":\"1788220800000\",\"duration\":null,\"eventEndTimezone\":\"Asia/Shanghai\",\"eventLocation\":\"合成地点\",\"eventStatus\":\"1\",\"eventTimezone\":\"Asia/Shanghai\",\"exdate\":null,\"exrule\":null,\"hasAlarm\":\"0\",\"originalAllDay\":null,\"originalInstanceTime\":null,\"original_id\":null,\"original_sync_id\":null,\"rdate\":null,\"rrule\":null,\"title\":\"相似标题\",\"uid2445\":null},\"reminders\":[]}",
+      "9898527619756ba95dfe299320fb3eb8af63937eba719b3f72732a94675ab493"
+    ],
+    [
+      "8940c63a467dba05b00de6912ddc9fab44515e9a56cdd91cab470d9574dcc5f1",
+      "3d15bbd493e7a029f1dccb8f6ee6fdbc7c08155d835feb3d6267f5b851890bf2",
+      "dea9fc4c-ec05-4245-87c6-d1500ef058e3",
+      "{\"calendar\":{\"_id\":\"1\",\"account_name\":\"thinkV2-calendar-synthetic\",\"account_type\":\"LOCAL\",\"calendar_displayName\":\"合成测试日历\",\"calendar_timezone\":\"Asia/Shanghai\",\"name\":\"ThinkV2Synthetic\",\"ownerAccount\":\"thinkV2-calendar-synthetic\",\"visible\":\"1\"},\"event\":{\"_id\":\"31\",\"_sync_id\":null,\"allDay\":\"0\",\"calendar_id\":\"1\",\"deleted\":\"0\",\"description\":\"原始中文描述\\u000a第二行不能丢失\",\"dtend\":\"1788224400000\",\"dtstart\":\"1788220800000\",\"duration\":null,\"eventEndTimezone\":\"Asia/Shanghai\",\"eventLocation\":\"合成地点\",\"eventStatus\":\"1\",\"eventTimezone\":\"Asia/Shanghai\",\"exdate\":null,\"exrule\":null,\"hasAlarm\":\"1\",\"originalAllDay\":null,\"originalInstanceTime\":null,\"original_id\":null,\"original_sync_id\":null,\"rdate\":null,\"rrule\":null,\"title\":\"合成中文事件\",\"uid2445\":null},\"reminders\":[{\"_id\":\"1\",\"event_id\":\"31\",\"method\":\"1\",\"minutes\":\"15\"}]}",
+      "日历原始标题：合成中文事件\n日历原始描述：\n原始中文描述\n第二行不能丢失\n\n来源日历：合成测试日历\n事件ID：31\n类型：单次事件\n开始：2026-09-01 08:00:00 [Asia/Shanghai]（原始毫秒 1788220800000）\n结束：2026-09-01 09:00:00 [Asia/Shanghai]（原始毫秒 1788224400000）\n全天：false（全天结束日期为不含当天）\n重复、例外或源提醒元数据未转换为本机提醒；本机提醒未开启。\n\n源字段原样快照（null表示未提供）：\n{\"calendar\":{\"_id\":\"1\",\"account_name\":\"thinkV2-calendar-synthetic\",\"account_type\":\"LOCAL\",\"calendar_displayName\":\"合成测试日历\",\"calendar_timezone\":\"Asia/Shanghai\",\"name\":\"ThinkV2Synthetic\",\"ownerAccount\":\"thinkV2-calendar-synthetic\",\"visible\":\"1\"},\"event\":{\"_id\":\"31\",\"_sync_id\":null,\"allDay\":\"0\",\"calendar_id\":\"1\",\"deleted\":\"0\",\"description\":\"原始中文描述\\u000a第二行不能丢失\",\"dtend\":\"1788224400000\",\"dtstart\":\"1788220800000\",\"duration\":null,\"eventEndTimezone\":\"Asia/Shanghai\",\"eventLocation\":\"合成地点\",\"eventStatus\":\"1\",\"eventTimezone\":\"Asia/Shanghai\",\"exdate\":null,\"exrule\":null,\"hasAlarm\":\"1\",\"originalAllDay\":null,\"originalInstanceTime\":null,\"original_id\":null,\"original_sync_id\":null,\"rdate\":null,\"rrule\":null,\"title\":\"合成中文事件\",\"uid2445\":null},\"reminders\":[{\"_id\":\"1\",\"event_id\":\"31\",\"method\":\"1\",\"minutes\":\"15\"}]}",
+      "8d806f0d1fe994f5a61311201f3e3813df5a05b3f1722fd0f5b49a381b6c4dff"
+    ],
+    [
+      "9dda58ff2228c3aa478e13faa79544b735e43543af91e9d858c76002246537a3",
+      "15bd5f2657667906ffee3aa336f5ce2a15cb9843b364aacf0989c2b1e29cb65d",
+      "10b4ca99-7e56-4e1f-965e-9348186fa15e",
+      "{\"calendar\":{\"_id\":\"1\",\"account_name\":\"thinkV2-calendar-synthetic\",\"account_type\":\"LOCAL\",\"calendar_displayName\":\"合成测试日历\",\"calendar_timezone\":\"Asia/Shanghai\",\"name\":\"ThinkV2Synthetic\",\"ownerAccount\":\"thinkV2-calendar-synthetic\",\"visible\":\"1\"},\"event\":{\"_id\":\"39\",\"_sync_id\":null,\"allDay\":\"0\",\"calendar_id\":\"1\",\"deleted\":\"0\",\"description\":\"相同日期不同身份\",\"dtend\":\"1788224400000\",\"dtstart\":\"1788220800000\",\"duration\":null,\"eventEndTimezone\":\"Asia/Shanghai\",\"eventLocation\":\"合成地点\",\"eventStatus\":\"1\",\"eventTimezone\":\"Asia/Shanghai\",\"exdate\":null,\"exrule\":null,\"hasAlarm\":\"0\",\"originalAllDay\":null,\"originalInstanceTime\":null,\"original_id\":null,\"original_sync_id\":null,\"rdate\":null,\"rrule\":null,\"title\":\"相似标题\",\"uid2445\":null},\"reminders\":[]}",
+      "日历原始标题：相似标题\n日历原始描述：\n相同日期不同身份\n\n来源日历：合成测试日历\n事件ID：39\n类型：单次事件\n开始：2026-09-01 08:00:00 [Asia/Shanghai]（原始毫秒 1788220800000）\n结束：2026-09-01 09:00:00 [Asia/Shanghai]（原始毫秒 1788224400000）\n全天：false（全天结束日期为不含当天）\n\n源字段原样快照（null表示未提供）：\n{\"calendar\":{\"_id\":\"1\",\"account_name\":\"thinkV2-calendar-synthetic\",\"account_type\":\"LOCAL\",\"calendar_displayName\":\"合成测试日历\",\"calendar_timezone\":\"Asia/Shanghai\",\"name\":\"ThinkV2Synthetic\",\"ownerAccount\":\"thinkV2-calendar-synthetic\",\"visible\":\"1\"},\"event\":{\"_id\":\"39\",\"_sync_id\":null,\"allDay\":\"0\",\"calendar_id\":\"1\",\"deleted\":\"0\",\"description\":\"相同日期不同身份\",\"dtend\":\"1788224400000\",\"dtstart\":\"1788220800000\",\"duration\":null,\"eventEndTimezone\":\"Asia/Shanghai\",\"eventLocation\":\"合成地点\",\"eventStatus\":\"1\",\"eventTimezone\":\"Asia/Shanghai\",\"exdate\":null,\"exrule\":null,\"hasAlarm\":\"0\",\"originalAllDay\":null,\"originalInstanceTime\":null,\"original_id\":null,\"original_sync_id\":null,\"rdate\":null,\"rrule\":null,\"title\":\"相似标题\",\"uid2445\":null},\"reminders\":[]}",
+      "277623654cf96d3cea22b65c3743f30b7f8f75691de2f69f3046c5a2b66406d1"
+    ],
+    [
+      "bb17a5f4e19970666593162cb69b50147d4ecb8724067d5af2ca2c069cf0acfd",
+      "f06aab7057ece84f032afeaa8ec59b5bf26de3529c3717b99acb0125b5a47e51",
+      "a4b64970-0b19-4c47-9776-25fbea92b956",
+      "{\"calendar\":{\"_id\":\"1\",\"account_name\":\"thinkV2-calendar-synthetic\",\"account_type\":\"LOCAL\",\"calendar_displayName\":\"合成测试日历\",\"calendar_timezone\":\"Asia/Shanghai\",\"name\":\"ThinkV2Synthetic\",\"ownerAccount\":\"thinkV2-calendar-synthetic\",\"visible\":\"1\"},\"event\":{\"_id\":\"32\",\"_sync_id\":null,\"allDay\":\"0\",\"calendar_id\":\"1\",\"deleted\":\"0\",\"description\":\"\",\"dtend\":\"1788224400000\",\"dtstart\":\"1788220800000\",\"duration\":null,\"eventEndTimezone\":\"Asia/Shanghai\",\"eventLocation\":\"合成地点\",\"eventStatus\":\"1\",\"eventTimezone\":\"Asia/Shanghai\",\"exdate\":null,\"exrule\":null,\"hasAlarm\":\"0\",\"originalAllDay\":null,\"originalInstanceTime\":null,\"original_id\":null,\"original_sync_id\":null,\"rdate\":null,\"rrule\":null,\"title\":\"只有标题也能导入\",\"uid2445\":null},\"reminders\":[]}",
+      "日历原始标题：只有标题也能导入\n日历原始描述：\n\n\n来源日历：合成测试日历\n事件ID：32\n类型：单次事件\n开始：2026-09-01 08:00:00 [Asia/Shanghai]（原始毫秒 1788220800000）\n结束：2026-09-01 09:00:00 [Asia/Shanghai]（原始毫秒 1788224400000）\n全天：false（全天结束日期为不含当天）\n\n源字段原样快照（null表示未提供）：\n{\"calendar\":{\"_id\":\"1\",\"account_name\":\"thinkV2-calendar-synthetic\",\"account_type\":\"LOCAL\",\"calendar_displayName\":\"合成测试日历\",\"calendar_timezone\":\"Asia/Shanghai\",\"name\":\"ThinkV2Synthetic\",\"ownerAccount\":\"thinkV2-calendar-synthetic\",\"visible\":\"1\"},\"event\":{\"_id\":\"32\",\"_sync_id\":null,\"allDay\":\"0\",\"calendar_id\":\"1\",\"deleted\":\"0\",\"description\":\"\",\"dtend\":\"1788224400000\",\"dtstart\":\"1788220800000\",\"duration\":null,\"eventEndTimezone\":\"Asia/Shanghai\",\"eventLocation\":\"合成地点\",\"eventStatus\":\"1\",\"eventTimezone\":\"Asia/Shanghai\",\"exdate\":null,\"exrule\":null,\"hasAlarm\":\"0\",\"originalAllDay\":null,\"originalInstanceTime\":null,\"original_id\":null,\"original_sync_id\":null,\"rdate\":null,\"rrule\":null,\"title\":\"只有标题也能导入\",\"uid2445\":null},\"reminders\":[]}",
+      "e46e81121ef9e84abb423e0b0e33e113826903eb84493bc498614b17e18a6809"
+    ],
+    [
+      "d5795ddeceed13986892f58e7f28297a7d21cc09fec696f68f7a8ef231cee930",
+      "457d1df1ce4729562c62f59a58510686b247ce7258dd79f6cc694b92b800e85c",
+      "77021261-4e3c-414c-90aa-4c541407f7fa",
+      "{\"calendar\":{\"_id\":\"1\",\"account_name\":\"thinkV2-calendar-synthetic\",\"account_type\":\"LOCAL\",\"calendar_displayName\":\"合成测试日历\",\"calendar_timezone\":\"Asia/Shanghai\",\"name\":\"ThinkV2Synthetic\",\"ownerAccount\":\"thinkV2-calendar-synthetic\",\"visible\":\"1\"},\"event\":{\"_id\":\"37\",\"_sync_id\":null,\"allDay\":\"0\",\"calendar_id\":\"1\",\"deleted\":\"0\",\"description\":\"取消状态保留\",\"dtend\":\"1788483600000\",\"dtstart\":\"1788480000000\",\"duration\":null,\"eventEndTimezone\":\"Asia/Shanghai\",\"eventLocation\":\"合成地点\",\"eventStatus\":\"2\",\"eventTimezone\":\"Asia/Shanghai\",\"exdate\":null,\"exrule\":null,\"hasAlarm\":\"0\",\"originalAllDay\":\"0\",\"originalInstanceTime\":\"1788480000000\",\"original_id\":\"35\",\"original_sync_id\":null,\"rdate\":null,\"rrule\":null,\"title\":\"合成取消例外\",\"uid2445\":null},\"reminders\":[]}",
+      "日历原始标题：合成取消例外\n日历原始描述：\n取消状态保留\n\n来源日历：合成测试日历\n事件ID：37\n类型：系列例外（状态原样保留）\n开始：2026-09-04 08:00:00 [Asia/Shanghai]（原始毫秒 1788480000000）\n结束：2026-09-04 09:00:00 [Asia/Shanghai]（原始毫秒 1788483600000）\n全天：false（全天结束日期为不含当天）\n重复、例外或源提醒元数据未转换为本机提醒；本机提醒未开启。\n\n源字段原样快照（null表示未提供）：\n{\"calendar\":{\"_id\":\"1\",\"account_name\":\"thinkV2-calendar-synthetic\",\"account_type\":\"LOCAL\",\"calendar_displayName\":\"合成测试日历\",\"calendar_timezone\":\"Asia/Shanghai\",\"name\":\"ThinkV2Synthetic\",\"ownerAccount\":\"thinkV2-calendar-synthetic\",\"visible\":\"1\"},\"event\":{\"_id\":\"37\",\"_sync_id\":null,\"allDay\":\"0\",\"calendar_id\":\"1\",\"deleted\":\"0\",\"description\":\"取消状态保留\",\"dtend\":\"1788483600000\",\"dtstart\":\"1788480000000\",\"duration\":null,\"eventEndTimezone\":\"Asia/Shanghai\",\"eventLocation\":\"合成地点\",\"eventStatus\":\"2\",\"eventTimezone\":\"Asia/Shanghai\",\"exdate\":null,\"exrule\":null,\"hasAlarm\":\"0\",\"originalAllDay\":\"0\",\"originalInstanceTime\":\"1788480000000\",\"original_id\":\"35\",\"original_sync_id\":null,\"rdate\":null,\"rrule\":null,\"title\":\"合成取消例外\",\"uid2445\":null},\"reminders\":[]}",
+      "661055c20a50262149ae0cbf68339d0308f14a4f67fd8614e28c55a91ef5cdf6"
+    ]
+  ],
+  "ai_acceptances": [
+    [
+      "accepted-category",
+      "request-two",
+      "dea9fc4c-ec05-4245-87c6-d1500ef058e3",
+      "category",
+      "https://example.invalid/v1/chat/completions",
+      "synthetic",
+      "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "6250ce7f-692f-402f-812e-98a8b81fe546",
+      "兼容合成分类",
+      2,
+      1
+    ],
+    [
+      "accepted-title",
+      "request-one",
+      "dea9fc4c-ec05-4245-87c6-d1500ef058e3",
+      "title",
+      "https://example.invalid/v1/chat/completions",
+      "synthetic",
+      "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "模型原建议",
+      "用户确认标题",
+      1,
+      1
+    ]
+  ],
+  "note_relations": [
+    [
+      "3c4e257a-5b6e-4600-82b0-40af421b670a",
+      "dea9fc4c-ec05-4245-87c6-d1500ef058e3",
+      "v2-other",
+      "manual",
+      1
+    ]
+  ],
+  "correction_vocabulary": [
+    [
+      0,
+      "纳瓦",
+      "纳瓦尔"
+    ],
+    [
+      1,
+      "纳瓦",
+      "另一个纠正"
+    ]
+  ]
+}

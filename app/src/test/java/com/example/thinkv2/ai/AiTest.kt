@@ -41,7 +41,7 @@ class AiTest {
         }
         assertNotNull(AiJson("{\"usage\":1.25}".toByteArray()).parse())
     }
-    private fun acceptance(request: String,field: String,chosen: String,candidates: List<Category>,id: String?=null,create: Boolean=false)=AiAcceptance(request,"https://example.invalid/v1/chat/completions","synthetic-model","synthetic-hash",field,"original-model-proposal",chosen,candidates,id,create)
+    private fun acceptance(request: String,field: String,chosen: String,candidates: List<Category>,id: String?=null,create: Boolean=false)=AiAcceptance(request,"https://example.invalid/v1/chat/completions","synthetic-model","a".repeat(64),field,"original-model-proposal",chosen,candidates,id,create)
     private fun store(block: (NoteRepository,PythonSql)->Unit) { PythonSql(temp.newFile()).use { db ->val n=NoteRepository(db);n.initialize();block(n,db) } }
     @Test fun bothAcceptanceOrdersKeepBodyAndSeparateOriginFromManualFinalChoice()=store { n,db ->
         val c=n.createCategory("已有分类")
@@ -77,20 +77,20 @@ class AiTest {
         val next=n.acceptAi(e,a);assertEquals("确认新分类",next.note.category);assertEquals(1,n.categories().size)
         try { n.acceptAi(next,a);fail() } catch(_: IllegalStateException) {};assertEquals(1,db.query("SELECT * FROM ai_acceptances").size)
     }
-    @Test fun schemaFiveUpgradePreservesAllExistingRowsAndBackupExcludesAiMetadata()=store { n,db ->
+    @Test fun schemaFiveUpgradePreservesAllExistingRowsAndBackupIncludesAcceptedAiMetadata()=store { n,db ->
         val e=Editing(Note().bodyChanged("迁移正文"));n.save(e);n.persistDraft(n.open(e.note.id)!!.let { it.copy(note=it.note.bodyChanged("迁移草稿")) })
         val tables=listOf("notes","drafts","categories","reminders","calendar_imports","backup_imports","backup_origins")
-        val before=tables.map { db.query("SELECT * FROM $it") };db.execute("DROP TABLE ai_acceptances");db.execute("DROP TABLE note_relations");db.execute("PRAGMA user_version=5");n.initialize()
-        assertEquals(before,tables.map { db.query("SELECT * FROM $it") });assertEquals("7",db.query("PRAGMA user_version").single().single())
+        val before=tables.map { db.query("SELECT * FROM $it") };db.execute("DROP TABLE ai_acceptances");db.execute("DROP TABLE note_relations");db.execute("DROP TABLE correction_vocabulary");db.execute("PRAGMA user_version=5");n.initialize()
+        assertEquals(before,tables.map { db.query("SELECT * FROM $it") });assertEquals("8",db.query("PRAGMA user_version").single().single())
         val accepted=n.acceptAi(n.open(e.note.id)!!,acceptance("migration","title","接受标题",emptyList()));n.save(accepted)
         val export=com.example.thinkv2.backup.BackupRepository(db).export()
         val payload=export.payload.toString(Charsets.UTF_8)
         val decoded=AiJson(export.payload).parse() as Map<*,*>
-        assertEquals(setOf("notes","drafts","categories","reminders","origins","relations"),decoded.keys)
-        for(excluded in listOf("ai_acceptances","credential","synthetic-model","example.invalid","original-model-proposal","synthetic-hash")) assertFalse(payload.contains(excluded))
+        assertEquals(setOf("notes","drafts","categories","reminders","origins","relations","vocabulary","calendar","ai","receipts"),decoded.keys)
+        for(excluded in listOf("credential","unaccepted-response","rawAudio")) assertFalse(payload.contains(excluded))
         val serialized=java.io.ByteArrayOutputStream().also { com.example.thinkv2.backup.BackupCodec.write(export,it) }.toByteArray()
         val restored=com.example.thinkv2.backup.BackupCodec.read(serialized.inputStream()).data
         assertEquals("接受标题",restored.notes.single().note.title);assertEquals("迁移草稿",restored.notes.single().note.body);assertTrue(restored.notes.single().note.manualTitle)
-        assertEquals(1,db.query("SELECT * FROM ai_acceptances").size)
+        assertEquals(1,db.query("SELECT * FROM ai_acceptances").size);assertEquals(1,restored.ai.size)
     }
 }

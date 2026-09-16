@@ -53,6 +53,7 @@ fun matchingExcerpt(body: String,query: String): String {
 interface Sql : AutoCloseable {
     fun execute(statement: String, args: List<String> = emptyList())
     fun query(statement: String, args: List<String> = emptyList()): List<List<String>>
+    fun legacyVocabulary(): List<com.example.thinkv2.voice.Correction> = emptyList()
     fun begin()
     fun commit()
     fun rollback()

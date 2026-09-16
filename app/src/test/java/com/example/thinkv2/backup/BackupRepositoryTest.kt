@@ -29,7 +29,7 @@ class BackupRepositoryTest {
         assertEquals(before,digest(source));assertEquals(0,target.notes.search("").total)
         val result=target.backup.apply(preview);assertEquals(2,result.importedIds.size)
         val expected=c.data.copy(reminders=c.data.reminders.map { it.copy(enabled=false) })
-        assertEquals(expected,target.backup.data());assertEquals("尚未保存的不同草稿",target.notes.open(id)!!.note.body)
+        assertEquals(expected,target.backup.data().copy(receipts=emptyList()));assertEquals("尚未保存的不同草稿",target.notes.open(id)!!.note.body)
         assertEquals("DISABLED",ReminderRepository(target.sql).forNote(id)!!.status)
         assertTrue(target.sql.query("SELECT * FROM reminder_events").isEmpty())
     } }
@@ -38,7 +38,7 @@ class BackupRepositoryTest {
         source.notes.softDelete(source.notes.open(id)!!);source.notes.deleteCategory(cat)
         source.notes.discard(source.notes.open("only-draft")!!)
         val c=candidate(source.backup.export());target.backup.apply(target.backup.preview(c))
-        assertEquals(c.data,target.backup.data());assertEquals("尚未保存的不同草稿",target.notes.trash().single().let { target.notes.restore(it.note);target.notes.open(id)!!.note.body })
+        assertEquals(c.data,target.backup.data().copy(receipts=emptyList()));assertEquals("尚未保存的不同草稿",target.notes.trash().single().let { target.notes.restore(it.note);target.notes.open(id)!!.note.body })
         assertFalse(ReminderRepository(target.sql).forNote(id)!!.requested)
     } }
     @Test fun conflictsCopyWholeRecordIncludingDraftReminderAndCategoryMapping()=Store().use { source ->Store().use { target ->

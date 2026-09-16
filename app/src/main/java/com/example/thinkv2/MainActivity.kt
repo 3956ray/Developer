@@ -66,7 +66,7 @@ class MainActivity : ComponentActivity() {
                     { notes.openIncoming(it,true) },{ if(Build.VERSION.SDK_INT>=33) notificationPermission.launch(Manifest.permission.POST_NOTIFICATIONS) else openNotificationSettings() },::openNotificationSettings)
                 else if(notes.state.page==NotesPage.BACKUP) BackupScreen(backups,modifier,{ notes.navigate(NotesPage.HOME) },
                     { backups.prepareExport { createBackup.launch(it) } },{ backups.beginImport { openBackup.launch(arrayOf("*/*")) } },
-                    { notes.refresh() },{ notes.openIncoming(it,true) })
+                    { ai.afterRestore();voice.reloadMappings();notes.refresh() },{ notes.openIncoming(it,true) })
                 else if(notes.state.page==NotesPage.CALENDAR) CalendarImportScreen(calendarImport,modifier,{ notes.navigate(NotesPage.HOME) },notes::refresh)
                 else if(notes.state.page==NotesPage.RELATIONS) RelationsScreen(relations,modifier,notes::closeRelations,{ notes.openIncoming(it,true) })
                 else NotesScreen(notes,modifier,voice=voice,ai=ai,onReminders={ id -> reminders.open(id);notes.showReminders() },onBackup={ notes.navigate(NotesPage.BACKUP) },onCalendar={ notes.navigate(NotesPage.CALENDAR) },onRelations={ notes.showRelations(relations::open) })

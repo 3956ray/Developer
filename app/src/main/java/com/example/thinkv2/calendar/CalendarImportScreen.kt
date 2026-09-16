@@ -31,7 +31,7 @@ fun CalendarImportScreen(model: CalendarImportModel,modifier: Modifier=Modifier,
         TextButton(onClick={ model.cancel();back() },enabled=!s.committing,modifier=Modifier.heightIn(min=56.dp)) { Text("返回笔记") }
         LazyColumn(Modifier.weight(1f).testTag("calendar-list"),verticalArrangement=Arrangement.spacedBy(12.dp)) {
             item { Text("先选择日历和有限日期，再预览确认。源日历不会改变，导入不会开启本机提醒或发送AI。",fontSize=18.sp) }
-            item { Text("当前备份保留导入笔记文字，但不含原始来源快照和去重映射；恢复后再次导入须核对副本。",fontSize=16.sp) }
+            item { Text("v2备份保留原始来源和去重映射；恢复后相同源版本会跳过，源变化仍须明确另建副本。旧v1备份没有这些来源字段。",fontSize=16.sp) }
             s.error?.let { item { Text(it,color=MaterialTheme.colorScheme.error,fontSize=18.sp) } }
             s.message?.let { item { Text(it,fontSize=18.sp) } }
             item { OutlinedButton(onClick={ if(model.permitted()) model.calendars() else permission.launch(Manifest.permission.READ_CALENDAR) },enabled=!s.busy,modifier=Modifier.heightIn(min=56.dp)) { Text("读取可选日历") } }

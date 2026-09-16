@@ -59,14 +59,15 @@ class RelationTest {
     }
     @Test fun schemaSixMigrationPreservesPriorDataAndFailureRollsBack()=scenario { db,n,_ ->
         val a=create(n,"迁移原文");n.persistDraft(n.open(a.id)!!.let { it.copy(note=it.note.bodyChanged("迁移草稿")) })
-        db.execute("INSERT INTO calendar_imports VALUES (?,?,?,?,?,?)",listOf("synthetic-key","fingerprint",a.id,"{}","合成原始快照","hash"))
-        n.acceptAi(n.open(a.id)!!,com.example.thinkv2.ai.AiAcceptance("synthetic-request","https://example.invalid/chat/completions","synthetic","hash","title","AI原建议","用户最后标题",emptyList()))
+        val event=com.example.thinkv2.calendar.CalendarEvent(com.example.thinkv2.calendar.CalendarRef(mapOf("_id" to "7")),mapOf("_id" to "8","title" to "合成标题"),emptyList())
+        db.execute("INSERT INTO calendar_imports VALUES (?,?,?,?,?,?)",listOf(event.key,event.fingerprint,a.id,event.payload,event.originalText(),"a".repeat(64)))
+        n.acceptAi(n.open(a.id)!!,com.example.thinkv2.ai.AiAcceptance("synthetic-request","https://example.invalid/chat/completions","synthetic","a".repeat(64),"title","AI原建议","用户最后标题",emptyList()))
         val tables=listOf("notes","drafts","categories","reminders","calendar_imports","ai_acceptances","backup_origins","backup_imports")
         val before=tables.map { db.query("SELECT * FROM $it ORDER BY 1") }
-        db.execute("DROP TABLE note_relations");db.execute("PRAGMA user_version=6")
+        db.execute("DROP TABLE correction_vocabulary");db.execute("DROP TABLE note_relations");db.execute("PRAGMA user_version=6")
         val fail=object: Sql by db { override fun execute(statement: String,args: List<String>) { db.execute(statement,args);if(statement.startsWith("CREATE INDEX relations_to")) error("synthetic_migration_failure") } }
         fails { NoteRepository(fail).initialize() };assertEquals("6",db.query("PRAGMA user_version").single().single());assertTrue(db.query("SELECT name FROM sqlite_master WHERE name='note_relations'").isEmpty())
-        n.initialize();assertEquals("7",db.query("PRAGMA user_version").single().single());assertEquals(before,tables.map { db.query("SELECT * FROM $it ORDER BY 1") })
+        n.initialize();assertEquals("8",db.query("PRAGMA user_version").single().single());assertEquals(before,tables.map { db.query("SELECT * FROM $it ORDER BY 1") })
         val exported=com.example.thinkv2.backup.BackupRepository(db).export();assertTrue(exported.payload.toString(Charsets.UTF_8).contains("\"relations\":[]"))
     }
     @Test fun pagingTokenRejectsOwnAndOtherConnectionChangesBeforeContinuing() {

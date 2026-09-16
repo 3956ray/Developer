@@ -79,7 +79,7 @@ private fun VocabularyDialog(initial: List<Correction>,save: (List<Correction>)-
     var editing by remember { mutableStateOf<Int?>(null) };var error by remember { mutableStateOf("") }
     AlertDialog(onDismissRequest=dismiss,title={ Text("本机纠错词表") },text={
         Column {
-            Text("只保存文字，逐次确认；不会训练模型。同音词可保留多个候选。当前备份尚不包含此词表。")
+            Text("只保存文字，逐次确认；不会训练模型。同音词可保留多个候选。v2备份包含此词表；恢复时保留本机纠错对并追加不同候选。")
             OutlinedTextField(value=from,onValueChange={ from=it },label={ Text("识别出的词") },singleLine=true)
             OutlinedTextField(value=to,onValueChange={ to=it },label={ Text("期望的词") },singleLine=true)
             TextButton(onClick={

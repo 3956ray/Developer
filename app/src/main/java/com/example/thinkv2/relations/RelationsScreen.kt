@@ -33,7 +33,7 @@ fun RelationsScreen(model: RelationsModel,modifier: Modifier=Modifier,back: ()->
         LazyColumn(Modifier.weight(1f).testTag("relations-list"),verticalArrangement=Arrangement.spacedBy(12.dp)) {
             item {
                 Text("${s.page?.source?.title ?: "当前笔记"}\n记录：${s.sourceId}",fontSize=18.sp)
-                Text("手工建立双向“相关”，不复制正文。回收站中的笔记暂不显示，恢复原记录后关系可重新显示。当前备份不包含这些关系。",fontSize=18.sp)
+                Text("手工建立双向“相关”，不复制正文。回收站中的笔记暂不显示，恢复原记录后关系可重新显示。v2备份包含这些关系及端点映射。",fontSize=18.sp)
             }
             s.error?.let { item { Text(it,color=MaterialTheme.colorScheme.error,fontSize=18.sp) } }
             s.message?.let { item { Text(it,fontSize=18.sp) } }

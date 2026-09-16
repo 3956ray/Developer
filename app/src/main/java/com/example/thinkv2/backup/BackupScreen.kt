@@ -7,6 +7,7 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.semantics.heading
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
@@ -23,10 +24,10 @@ fun BackupScreen(model: BackupModel,modifier: Modifier=Modifier,back: ()->Unit,e
         if(s.busy) Text("正在处理，请稍候…",fontSize=18.sp)
         s.error?.let { Text(it,fontSize=18.sp,color=MaterialTheme.colorScheme.error) }
         s.notice?.let { Text(it,fontSize=18.sp) }
-        LazyColumn(Modifier.weight(1f),verticalArrangement=Arrangement.spacedBy(12.dp),contentPadding=PaddingValues(bottom=24.dp)) {
+        LazyColumn(Modifier.weight(1f).testTag("backup-list"),verticalArrangement=Arrangement.spacedBy(12.dp),contentPadding=PaddingValues(bottom=24.dp)) {
             item {
                 Text("备份含私人文字，属于明文。base64不是加密，校验仅检测损坏、不认证来源。",fontSize=18.sp)
-                Text("当前备份包含笔记、草稿、分类、回收站和提醒配置，暂不包含语音纠错词表、日历原始来源快照和导入去重映射、AI设置及接受来源记录、笔记关系。凭据和未接受建议不会导出；已确认的最终标题/分类按笔记字段备份。恢复后的日历笔记文字仍在，但再次导入日历可能产生副本，须重新核对来源。",fontSize=16.sp)
+                Text("v2备份包含笔记、草稿、分类、回收站、提醒配置、纠错词表、日历原始来源和去重映射、已接受AI来源及笔记关系。不会导出AI配置和凭据、未接受建议、原始音频、模型、日志或缓存。恢复后AI关闭，须在本机重新确认。",fontSize=16.sp)
                 Text("请选本机安全目录。系统文件选择器也可能提供云盘；选择云盘可能上传文件。本应用不会自动上传或同步。",fontSize=18.sp)
             }
             if(preview==null) {
@@ -45,6 +46,10 @@ fun BackupScreen(model: BackupModel,modifier: Modifier=Modifier,back: ()->Unit,e
                     Text("恢复预览 · 尚未写入",fontSize=22.sp,modifier=Modifier.semantics { heading() })
                     val d=preview.candidate.data
                     Text("文件内容：笔记 ${d.notes.size}（回收站 ${d.notes.count { it.deletedAt>0 }}）、草稿 ${d.drafts.count { it.active }}、分类 ${d.categories.size}、提醒 ${d.reminders.size}。",fontSize=18.sp)
+                    Text("文件版本 ${preview.candidate.schemaVersion}；词表 ${d.vocabulary.size}、日历来源 ${d.calendar.size}、AI接受来源 ${d.ai.size}、关系 ${d.relations.size}。",fontSize=18.sp)
+                    if(preview.candidate.schemaVersion==1) Text("旧版v1只包含文字、分类、草稿和提醒；没有词表、日历来源、AI来源或关系。无法补回文件未包含的数据；本机已有这些资料保留。",fontSize=18.sp)
+                    Text("词表按完整纠错对去重，保留本机顺序后追加备份项。同一原词的不同改法均保留，仍需逐次确认。关系映射到合并后的笔记；已有相同端点的关系保留本机边。来源冲突副本保留原始日历/AI来源；再次导入同版日历跳过。",fontSize=16.sp)
+                    Text("关系新增/副本 ${preview.relations.count { it.action in setOf(ImportAction.NEW,ImportAction.COPY) }}、已有端点对 ${preview.relations.count { it.action==ImportAction.SAME }}、跳过 ${preview.relations.count { it.action==ImportAction.SKIP }}。",fontSize=16.sp)
                     Text("新增 ${preview.records.count { it.visible && it.action==ImportAction.NEW }}，相同 ${preview.records.count { it.visible && it.action==ImportAction.SAME }}，冲突副本 ${preview.records.count { it.visible && it.action==ImportAction.COPY }}，跳过 ${preview.records.count { it.visible && it.action==ImportAction.SKIP }}。",fontSize=18.sp)
                     Text("仅合并，保留本机版本；导入的提醒一律关闭。本机已有未冲突提醒不改变。",fontSize=18.sp)
                     Text("确认后此文件视为已导入，重复导入不会补入本次跳过的冲突项。",fontSize=16.sp)

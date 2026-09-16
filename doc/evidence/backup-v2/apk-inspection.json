@@ -1,0 +1,15 @@
+{
+  "productSha256": "1f246d3ded802097cab0250df0cd6e252335ff3d16b91148b25840e9be2cc4fc",
+  "testSha256": "aa91a166914b0985ceb81b4ed16c148c5e4d71df7cfb925312b218491953edde",
+  "nativeLibraries": [
+    "lib/arm64-v8a/libandroidx.graphics.path.so",
+    "lib/arm64-v8a/libjnidispatch.so",
+    "lib/arm64-v8a/libvosk.so"
+  ],
+  "testFixtureFilesInProduct": [],
+  "manifestAndDependenciesChanged": false,
+  "manifestBinaryIdenticalToAcceptedBaseline": true,
+  "manifestSha256": "6da978dad3776adbc246043de3e06267af8756b85d041a7e8c6103cc39e2ff95",
+  "previousRegressionTestSha256": "3e0d722a8d74c6a5466072da81dce60e3095ae7a165cf12d09eb01643a1b334d",
+  "testOnlyRefinement": "Added Android category/edge collision test and narrowed AI delayed-acceptance injection to VALUES; product APK unchanged"
+}

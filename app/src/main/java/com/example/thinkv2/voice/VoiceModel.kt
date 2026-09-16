@@ -8,8 +8,8 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import com.example.thinkv2.notes.NotesModel
-import org.json.JSONArray
-import org.json.JSONObject
+import com.example.thinkv2.notes.AndroidSql
+import com.example.thinkv2.notes.NoteRepository
 import java.util.concurrent.Executors
 
 enum class VoicePhase { UNREADY, PREPARING, IDLE, RECORDING, PROCESSING, CANCELLING }
@@ -21,7 +21,16 @@ class VoiceModel(context: Context,private val createCapture: (Context)->VoiceCap
     private val main=Handler(Looper.getMainLooper())
     private val worker=Executors.newSingleThreadExecutor()
     private val engine=OfflineEngine(app)
-    private val preferences=app.getSharedPreferences("voice-corrections",Context.MODE_PRIVATE)
+    private fun <T> vocabulary(block: (VocabularyRepository)->T): T = AndroidSql(app).use { db ->
+        NoteRepository(db).initialize();block(VocabularyRepository(db))
+    }
+    fun reloadMappings() {
+        cancel()
+        worker.execute {
+            val result=runCatching { vocabulary { it.rows() } }
+            main.post { if(!closed) state=if(result.isSuccess) state.copy(mappings=result.getOrThrow(),suggestions=emptyList()) else state.copy(message="词表读取失败，请重试。") }
+        }
+    }
     var state by mutableStateOf(VoiceState())
         private set
     private var capture: VoiceCapture?=null
@@ -35,7 +44,7 @@ class VoiceModel(context: Context,private val createCapture: (Context)->VoiceCap
         state=state.copy(phase=VoicePhase.PREPARING,message="正在准备本机模型…")
         worker.execute {
             val result=runCatching {
-                val array=JSONArray(preferences.getString("rows","[]"));val rows=(0 until array.length()).map { val r=array.getJSONObject(it);Correction(r.getString("from"),r.getString("to")) }
+                val rows=vocabulary { it.rows() }
                 VoiceText.validate(rows);engine.prepare();rows
             }
             main.post { if(!closed) state=if(result.isSuccess) state.copy(phase=VoicePhase.IDLE,message="按住说话，松手处理；最长90秒",mappings=result.getOrThrow())
@@ -100,9 +109,9 @@ class VoiceModel(context: Context,private val createCapture: (Context)->VoiceCap
     fun saveMappings(rows: List<Correction>) {
         if(active) return
         try { VoiceText.validate(rows) } catch(_: Exception) { state=state.copy(message="词表未保存：最多200项，每项1–80字，不能相同、重复或含换行。");return }
-        val json=JSONArray();rows.forEach { json.put(JSONObject().put("from",it.from).put("to",it.to)) }
+        val expected=state.mappings
         worker.execute {
-            val saved=runCatching { preferences.edit().putString("rows",json.toString()).commit() }.getOrDefault(false)
+            val saved=runCatching { vocabulary { it.replace(expected,rows) };true }.getOrDefault(false)
             main.post { if(!closed) state=if(saved) state.copy(mappings=rows,suggestions=VoiceText.suggestions(inserted,rows),message="本机纠错词表已保存。仅提供确认建议，不是模型热词。") else state.copy(message="词表未保存，请重试。") }
         }
     }

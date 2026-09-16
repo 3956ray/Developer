@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<map>
+    <int name="rename_same_id" value="1" />
+    <int name="open" value="3" />
+    <int name="ENOSPC" value="3" />
+</map>

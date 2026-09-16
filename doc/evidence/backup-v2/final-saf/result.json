@@ -1,0 +1,15 @@
+{
+  "finalApk": true,
+  "systemSAFExport": true,
+  "cancel": true,
+  "syntheticENOSPC": true,
+  "cleanupStatus": "UI honestly cannot confirm partial cleanup",
+  "emptyPreviewNoWrites": true,
+  "allFieldsRestoredExceptDisabledReminderAndReceipt": true,
+  "restartExact": true,
+  "repeatNoWrites": true,
+  "corruptNoWrites": true,
+  "actualCalendarUiSame8Changed1": true,
+  "explicitChangedCopyOnlyOneNewRecord": true,
+  "allExistingRowsUnchanged": true
+}

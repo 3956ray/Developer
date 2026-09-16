@@ -1,0 +1,17 @@
+{
+  "emulator": {
+    "name": "ThinkV2Backup",
+    "pid": 93838
+  },
+  "adb": {
+    "port": 5051,
+    "pid": 94042
+  },
+  "syntheticTls": {
+    "port": 18443,
+    "pid": 99856
+  },
+  "allOwnedProcessesVerifiedExited": true,
+  "adbReverseRemoved": true,
+  "otherDevicesTouched": false
+}

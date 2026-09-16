@@ -1,0 +1,122 @@
+{
+  "device": {
+    "passed": 7,
+    "logs": [
+      {
+        "file": "device/actualCategoryAndEdgeIdConflictsMapCopiesWithoutChangingOriginals.log",
+        "passed": 1
+      },
+      {
+        "file": "device/actualRestoreButtonDisablesInMemoryAiAndReloadsVocabularyAndRejectsStalePreview.log",
+        "passed": 1
+      },
+      {
+        "file": "device/androidAllFieldsEmptyConflictRepeatRollbackAndCalendarAfterRestore.log",
+        "passed": 1
+      },
+      {
+        "file": "device/legacyPreferencesMigrateOnceAndRollbackOnRealAndroid.log",
+        "passed": 1
+      },
+      {
+        "file": "device/oldFileOnAndroidPreservesNewFieldsAndUnknownV2FieldsReject.log",
+        "passed": 1
+      },
+      {
+        "file": "device/receiptSkipPropagationAndHashConflictsLeaveAllRowsUnchanged.log",
+        "passed": 1
+      },
+      {
+        "file": "device/verifyMigrationAfterProcessRestart.log",
+        "passed": 1
+      }
+    ]
+  },
+  "regression": {
+    "passed": 20,
+    "logs": [
+      {
+        "file": "regression/AndroidLifecycleTest.log",
+        "passed": 1
+      },
+      {
+        "file": "regression/AndroidPersistenceTest.log",
+        "passed": 1
+      },
+      {
+        "file": "regression/AndroidReminderTest.log",
+        "passed": 1
+      },
+      {
+        "file": "regression/ExampleInstrumentedTest.log",
+        "passed": 1
+      },
+      {
+        "file": "regression/NotesUiTest.log",
+        "passed": 1
+      },
+      {
+        "file": "regression/ReminderUiTest.log",
+        "passed": 1
+      },
+      {
+        "file": "regression/ai.AiDeviceTest#actualUiConsentMinimalFieldsEditedTitleAndCategoryAcceptedSeparately.log",
+        "passed": 1
+      },
+      {
+        "file": "regression/ai.AiDeviceTest#endpointModelChangesInvalidateConsentAndLateResponse.log",
+        "passed": 1
+      },
+      {
+        "file": "regression/ai.AiDeviceTest#keystoreCiphertextClearAndNewSessionDefaultsOff.log",
+        "passed": 1
+      },
+      {
+        "file": "regression/ai.AiDeviceTest#systemBackAndCloseDuringDelayedAcceptanceDoNotStrandSavingState.log",
+        "passed": 1
+      },
+      {
+        "file": "regression/backup.AndroidBackupTest.log",
+        "passed": 2
+      },
+      {
+        "file": "regression/calendar.CalendarImportDeviceTest#actualProviderUiFaithfulImportCancelIdempotenceAndSourceUnchanged.log",
+        "passed": 1
+      },
+      {
+        "file": "regression/calendar.CalendarImportDeviceTest#actualSourceEditDeletionAndLocalChangeRejectStalePreview.log",
+        "passed": 1
+      },
+      {
+        "file": "regression/calendar.CalendarImportDeviceTest#androidLargeSourceFailsClosedAndAcceptedRowsRemainReadableAfterReopen.log",
+        "passed": 1
+      },
+      {
+        "file": "regression/relations.RelationsDeviceTest#actualAndroidTransactionFailureShowsErrorThenRetryCommits.log",
+        "passed": 1
+      },
+      {
+        "file": "regression/relations.RelationsDeviceTest#realUiPairsSameTitlesExactNavigationRenameTrashRestoreAndRemove.log",
+        "passed": 1
+      },
+      {
+        "file": "regression/relations.RelationsDeviceTest#thousandNotesFiveThousandEdgesBoundedPagesLargeFontAndAccessibilityFocus.log",
+        "passed": 1
+      },
+      {
+        "file": "regression/voice.VoiceLifecycleTest#actualMicrophoneBackgroundAndCancelKeepExistingDraft.log",
+        "passed": 1
+      },
+      {
+        "file": "regression/voice.VoiceLifecycleTest#deniedPlatformPermissionDoesNotChangeText.log",
+        "passed": 1
+      }
+    ]
+  },
+  "productSha256": "1f246d3ded802097cab0250df0cd6e252335ff3d16b91148b25840e9be2cc4fc",
+  "testArtifacts": {
+    "final": "aa91a166914b0985ceb81b4ed16c148c5e4d71df7cfb925312b218491953edde",
+    "previousRegressionFixture": "3e0d722a8d74c6a5466072da81dce60e3095ae7a165cf12d09eb01643a1b334d",
+    "explanation": "7 CP8 and last 2 AI regressions use final test APK; 18 earlier regressions use earlier test APK. Only added collision test and narrowed test-only AI injection; product APK identical."
+  }
+}

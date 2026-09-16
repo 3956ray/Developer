@@ -15,7 +15,7 @@ class BackupCodecTest {
     private fun rejected(expected: String?=null,action: ()->Unit) {
         try { action();fail("input must be rejected") } catch(e: BackupFailure) { if(expected!=null) assertEquals(expected,e.code) }
     }
-    private fun envelope(payload: ByteArray,version: Int=1,id: String="export-1",hash: String=BackupCodec.sha(payload)): ByteArray {
+    private fun envelope(payload: ByteArray,version: Int=2,id: String="export-1",hash: String=BackupCodec.sha(payload)): ByteArray {
         return """{"format":"thinkV2-backup","schemaVersion":$version,"exportId":"$id","createdAtUTC":"2026-09-16T00:00:00.000Z","payloadBytes":${payload.size},"payloadSha256":"$hash","payload":"${Base64.getEncoder().encodeToString(payload)}"}""".toByteArray()
     }
     @Test fun roundTripPreservesDraftOnlyTrashCategoryTombstoneAndUnicode() {
@@ -29,7 +29,7 @@ class BackupCodecTest {
         rejected("payload_hash") { BackupCodec.read(envelope(padded,hash=BackupCodec.sha(raw)).inputStream()) }
     }
     @Test fun unknownVersionUnknownFieldsAndDuplicateKeysReject() {
-        val payload=BackupCodec.payload(data());rejected("unsupported_version") { BackupCodec.read(envelope(payload,2).inputStream()) }
+        val payload=BackupCodec.payload(data());rejected("unsupported_version") { BackupCodec.read(envelope(payload,3).inputStream()) }
         val unknown=String(bytes()).replace("{\"format\"","{\"future\":true,\"format\"")
         rejected("unknown_or_missing_field") { BackupCodec.read(unknown.byteInputStream()) }
         rejected("duplicate_key") { StrictJson("{\"a\":1,\"a\":2}".byteInputStream(),100).parse() }
@@ -37,7 +37,7 @@ class BackupCodecTest {
     @Test fun truncatedAndTrailingAndWrongTypesReject() {
         val input=bytes();rejected { BackupCodec.read(input.copyOf(input.size-4).inputStream()) }
         rejected { BackupCodec.read((String(input)+"{}").byteInputStream()) }
-        rejected("invalid_type") { BackupCodec.read(String(input).replace("\"schemaVersion\":1","\"schemaVersion\":true").byteInputStream()) }
+        rejected("invalid_type") { BackupCodec.read(String(input).replace("\"schemaVersion\":2","\"schemaVersion\":true").byteInputStream()) }
         for(number in listOf("01","1.0","1e0","9223372036854775808")) rejected { StrictJson(number.byteInputStream(),100).parse() }
     }
     @Test fun malformedUtf8AndLoneSurrogatesReject() {
@@ -69,7 +69,7 @@ class BackupCodecTest {
         val notes=(0..10000).map { BackupNote(n.copy(id="n-$it",category="",categoryId=""),0) }
         rejected("count_limit") { BackupCodec.prepare(BackupData(notes,emptyList(),emptyList(),emptyList())) }
         val raw=String(BackupCodec.payload(data())).replace("\"relations\":[]","\"relations\":[{\"from\":\"missing\"}]")
-        rejected("unsupported_relations") { BackupCodec.read(envelope(raw.toByteArray()).inputStream()) }
+        rejected("unknown_or_missing_field") { BackupCodec.read(envelope(raw.toByteArray()).inputStream()) }
     }
     @Test fun partialOutputFailurePropagatesWithoutSuccessfulExport() {
         val output=object: OutputStream() { override fun write(b: Int) { throw IOException("synthetic write failure") } }

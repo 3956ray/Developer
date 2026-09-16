@@ -70,7 +70,7 @@ class AndroidBackupTest {
             NoteRepository(sql).initialize();val target=BackupRepository(sql);val preview=target.preview(candidate)
             assertFalse(preview.records.single { it.sourceId=="backup-discarded" }.visible)
             val result=target.apply(preview);assertEquals(4,result.importedIds.size)
-            assertEquals(before.copy(reminders=before.reminders.map { it.copy(enabled=false) }),target.data())
+            assertEquals(before.copy(reminders=before.reminders.map { it.copy(enabled=false) }),target.data().copy(receipts=emptyList()))
             assertTrue(target.apply(target.preview(candidate)).alreadyImported)
             assertEquals("DISABLED",ReminderRepository(sql).forNote(n.id)!!.status)
             assertEquals("备份合成未保存草稿。",NoteRepository(sql).open(n.id)!!.note.body)

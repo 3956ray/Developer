@@ -150,7 +150,7 @@ class AiDeviceTest {
         val db=AndroidSql(context,"ai-delayed-accept.db")
         val wrapped=object: Sql by db {
             override fun execute(statement: String,args: List<String>) {
-                if(statement.startsWith("INSERT INTO ai_acceptances")) { entered.countDown();check(release.await(10,TimeUnit.SECONDS)) }
+                if(statement.startsWith("INSERT INTO ai_acceptances VALUES")) { entered.countDown();check(release.await(10,TimeUnit.SECONDS)) }
                 db.execute(statement,args)
             }
         }
