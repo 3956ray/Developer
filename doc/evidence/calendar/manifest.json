@@ -15,53 +15,53 @@
     },
     {
       "path": "build.log",
-      "bytes": 5136,
-      "sha256": "0212d05e20c76ceff33c66b7f80746957024b1383e18c9be98cf240a99e41882"
+      "bytes": 5135,
+      "sha256": "39eb32577a21fe8d66c269aa5bef4fe733373a853541c046281fd809e616eff2"
     },
     {
       "path": "final-device/1-calendar.CalendarImportDeviceTest.log",
-      "bytes": 86,
-      "sha256": "0bbe2018e75bcab5c5ed9c3f6f1bb913f0276bea1a1875548ec4e92a44342a15"
+      "bytes": 83,
+      "sha256": "3d7b23774f53229bcddfc98e028b332ff368e490a759c34eaa03e996e0d681ec"
     },
     {
       "path": "final-device/2-calendar.CalendarImportDeviceTest.log",
-      "bytes": 86,
-      "sha256": "ee8dc389e6132b1de986edce2aa3ea7d92dc928fe3b08255efb89fb50b7f9515"
+      "bytes": 83,
+      "sha256": "9bb32c205e8eb815c41f635566ce524a98e71375ed25805fcff369209560f064"
     },
     {
       "path": "final-device/3-ExampleInstrumentedTest.log",
-      "bytes": 75,
-      "sha256": "696fc73632239b67af8d81fdec044074a47209b184bd405c0f5aeccf2f98afdc"
+      "bytes": 72,
+      "sha256": "57e7e7f5912a5fbc516dd83baf7e9144a95b1dcd5a2fcd8d6a6f60b5cc4f7f7d"
     },
     {
       "path": "final-device/4-AndroidPersistenceTest.log",
-      "bytes": 74,
-      "sha256": "4140b18af37f1a2d994f07691d5bb95b51f985fb8a55824bf95a1a641fd1e6b4"
+      "bytes": 71,
+      "sha256": "3e7f3b25dd656b36a48d569875f8e7dab9e9f620d969ecd5770dc4033f22a0da"
     },
     {
       "path": "final-device/5-AndroidLifecycleTest.log",
-      "bytes": 72,
-      "sha256": "4fe1f6809218c8e6930d52c3ebe4723c856e6d77021c9c52bc9f2eee7cd59d26"
+      "bytes": 69,
+      "sha256": "5c1bdd93c2281cbb270d69e9ec77bc1b23f5bf457dbb1420d3e57b4efb8fd736"
     },
     {
       "path": "final-device/6-NotesUiTest.log",
-      "bytes": 64,
-      "sha256": "826ad3fa03e3d03615fd331adc43f1bb412514755f985a10657f32776e91a837"
+      "bytes": 61,
+      "sha256": "71a5a2d6349e1f6312f669148eea097222c573ec161c7a042985fd6fadab3265"
     },
     {
       "path": "final-device/7-ReminderUiTest.log",
-      "bytes": 66,
-      "sha256": "16e7da6002b31293352235c2d5285e55f849b7571c911475cf693c52520e6fa9"
+      "bytes": 63,
+      "sha256": "781026cfcc1ffc5f278e9a343f3eb8b7b6fefdd071aab2a04eee736188365937"
     },
     {
       "path": "final-device/8-AndroidReminderTest.log",
-      "bytes": 72,
-      "sha256": "b1905064d1f5c1c356e690705ae89693b760761b348407c4232da6b8ed2e7832"
+      "bytes": 69,
+      "sha256": "b1527fdaabc7a95a25935e4079d273ed52d1ddae32e42fb02a24add07bcd6ed2"
     },
     {
       "path": "final-device/9-backup.AndroidBackupTest.log",
-      "bytes": 78,
-      "sha256": "b073a49974ba8fa0f0e83cfd5c9d3f2527ee90d1c3ca77a02cf45354eca13940"
+      "bytes": 75,
+      "sha256": "00c2fca76fcb77ec7193429e9d913fa289faf203e8b290d736bca5c061bfe52c"
     },
     {
       "path": "final-device/calendar-local-after-copy.json",
@@ -105,18 +105,18 @@
     },
     {
       "path": "final-size-guard/actualProviderUiFaithfulImportCancelIdempotenceAndSourceUnchanged.log",
-      "bytes": 82,
-      "sha256": "74a92dbf2c2d5da2a1d35baf1320af8c9a3be60e7072baedb313e215db67b930"
+      "bytes": 79,
+      "sha256": "974391a6a20d97086ad9e4469902af79295c95a4c45d3480b40e8e937ee3b927"
     },
     {
       "path": "final-size-guard/actualSourceEditDeletionAndLocalChangeRejectStalePreview.log",
-      "bytes": 86,
-      "sha256": "a94d9f1e734078d0df424454ad2624b0bade15a4c662539009fb6b868ee67aa9"
+      "bytes": 83,
+      "sha256": "87a3b83b646c482f34f7f3ef12595e956fdfc842b18ab0b2e878b70c5dba9156"
     },
     {
       "path": "final-size-guard/androidLargeSourceFailsClosedAndAcceptedRowsRemainReadableAfterReopen.log",
-      "bytes": 85,
-      "sha256": "f2a0b92841f5ebd64e0947098697d17a1e7cd5d805a70fdf7b1c0a2813045b05"
+      "bytes": 82,
+      "sha256": "b8e776f2239bfe94685a869f5d642c50230c46e967a1c604d29488bfecb2110a"
     },
     {
       "path": "final-size-guard/calendar-android-size-boundary.json",

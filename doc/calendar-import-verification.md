@@ -77,9 +77,11 @@ APK权限反查没有WRITE_CALENDAR/INTERNET；只有既有Vosk/JNA/Compose nati
 - `final-device/`：取消修复版两项日历与原有8项回归日志及合成快照。
 - `ui/`：实际系统权限提示、拒绝、进程重启预览、拒绝权限后成功文字保存的PNG/XML/DB表快照。
 - `apk-inspection.json`、`apk-permissions.txt`、`host-summary.json`、`lint-results.xml`、`build.log`：构建与边界证据。
-- 完整外部归档：`/private/tmp/thinkv2-V2-CALENDAR-IMPORT-001-9b7b85da/`，包含各轮失败日志、host XML、两版APK、合同、脚本及绑定最终commit的 `result.json`。
+- 完整外部归档：`/private/tmp/thinkv2-V2-CALENDAR-IMPORT-001-9b7b85da/`，包含未经空白整理的raw-evidence、各轮失败日志、host XML、两版APK、合同、脚本及绑定最终commit的 `result.json`。
 
 本单完成后停止专用AVD/server5050；未触碰真机、私人日历或其他项目。建议下一步由指挥官审查CP4交付；备份来源元数据兼容与D6设备试用需另单授权。
+
+仓库内日志仅整理行尾空格/末尾空行，原始输出保存在外部raw-evidence。
 
 首轮测试夹具失败记录保留：Kotlin 独立 test APK 进程缺少 Intrinsics，改为 Java 无新依赖；第二轮 Runtime.exec 将重定向字符串作为参数，改 executeShellCommandRwe 并发读取 stdout/stderr。两次均在产品导入前失败，不作为产品成功证据。
 
