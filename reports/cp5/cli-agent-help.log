@@ -1,0 +1,36 @@
+[0916/110724.987249:ERROR:electron/shell/common/mac/codesign_util.cc:109] SecCodeCheckValidity: Error Domain=NSOSStatusErrorDomain Code=-67061 "(null)" (-67061)
+Usage: cli agent <command>
+
+Commands:
+  cli agent start           Start persistent agent automation server
+  cli agent tool            Execute an agent atomic tool
+  cli agent chat            Execute an agent chat request
+  cli agent render          Execute an agent atomic tool and capture card render
+                            result
+  cli agent card-click      Click an agent atomic card
+  cli agent get-dom         Get DOM from agent atomic card or detail half page
+  cli agent get-card-image  Get Agent atomic card image base64
+  cli agent clear           Clear agent conversation
+  cli agent debug           Set agent LLM debug mode
+  cli agent overlay         Set AgentUI interaction overlay
+  cli agent detail-close    Close agent detail half page
+
+Project options:
+  --project    project path
+  --appid      miniprogram appid or 3rd platform appid. Ignored when --project
+               is provided
+  --ext-appid  miniprogram appid to be developed by 3rd platform. Ignored when
+               --project is provided
+
+Other global options:
+  --port         Optional. IDE HTTP server port. If IDE hasn't been launched, it
+                 will be launched and start HTTP server at <port>. If IDE has
+                 launched with a HTTP server of different port, you must quit
+                 IDE before re-run the command.                         [number]
+  --token        Optional. CLI access token configured in IDE Security Settings.
+                 It can also be set with the WECHAT_DEVTOOLS_CLI_TOKEN
+                 environment variable.                                  [string]
+  --lang         Optional. 'en' or 'zh'. Defaults to 'en'.
+  --debug        Optional. Turn on debug mode
+  --disable-gpu  Disable GPU Acceleration when launching IDE           [boolean]
+  -h, --help     Show help                                             [boolean]

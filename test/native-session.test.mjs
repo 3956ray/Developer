@@ -2,19 +2,19 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import vm from 'node:vm';
-function harness({ existing = false, confirm = false, failure, requestHook } = {}) {
-  let page, prompt, logins = 0, calls = [], saved, cleared = false, idsGenerated = 0;
+function harness({ existing = false, confirm = false, failure, requestHook, deferConfirmation=false } = {}) {
+  let page, prompt, logins = 0, calls = [], saved, cleared = false, idsGenerated = 0, navigations = 0, confirmModal;
   const token = 'a'.repeat(43), serverNow = '2026-09-16T00:00:00.000Z';
   const session = { environment: 'test', simulation: true, token, sessionRevision: 1, accountRevision: 1, expiresAt: '2026-09-23T00:00:00.000Z', idleExpiresAt: '2026-09-17T00:00:00.000Z' };
   const api = { config: { environment: 'test' }, configured: () => true, load: () => existing ? token : null,
     save: t => { saved = t; }, clear: () => { cleared = true; }, loginCode: async () => { logins++; return 'synthetic-code'; },
     operationId: async () => { idsGenerated++; return '00000000-0000-4000-8000-' + String(idsGenerated).padStart(12, '0'); },
     request: async (path, method, data) => { calls.push({ path, method, data }); if (requestHook) return requestHook(path, { serverNow, data: session }); if (failure) throw failure; return { serverNow, data: session }; } };
-  const timers = []; const context = { require: () => api, Page: p => { page = p; }, wx: { showModal: options => { prompt = options.success({ confirm }); } },
+  const timers = []; const context = { require: () => api, Page: p => { page = p; }, wx: {navigateTo:()=>{navigations++;}, showModal: options => { confirmModal=options.success;if(!deferConfirmation)prompt = options.success({ confirm }); } },
     setInterval: fn => { timers.push(fn); return timers.length; }, clearInterval() {}, setTimeout: fn => { timers.push(fn); return timers.length; }, clearTimeout() {} };
   vm.runInNewContext(readFileSync('miniprogram/pages/me/index.js', 'utf8'), context);
   page.setData = data => Object.assign(page.data, data); page.onLoad();
-  return { page, timers, done: () => prompt, stats: () => ({ logins, calls, saved, cleared, idsGenerated }) };
+  return { page, timers, confirmModal:()=>{prompt=confirmModal({confirm:true});return prompt;}, done: () => prompt, stats: () => ({ logins, calls, saved, cleared, idsGenerated, navigations }) };
 }
 test('P01: public/refusal path never calls wx.login or exchanges identity', async () => {
   const h = harness(); h.page.onShow(); h.page.showPrivacy(); h.page.login(); await h.done();
@@ -97,4 +97,14 @@ test('I01: unconfirmed logout retains original operation key until explicit retr
   const writes = h.stats().calls.filter(c => c.path === '/session/logout');
   assert.equal(writes.length, 2); assert.equal(writes[0].data.operationId, writes[1].data.operationId);
   assert.equal(h.stats().idsGenerated, 1); assert.equal(h.stats().cleared, true);
+});
+
+test('CP5 hidden role response cannot navigate to maintenance',async()=>{
+ let finish;const h=harness({existing:true,requestHook:(path,response)=>path==='/operator/role'?new Promise(r=>{finish=()=>r({data:{isOperator:true}});}):Promise.resolve(response)});
+ h.page.onShow();await new Promise(r=>setImmediate(r));const operation=h.page.openMaintenance();h.page.onHide();finish();await operation;assert.equal(h.page._visible,false);assert.equal(h.stats().navigations,0);
+});
+
+
+test('CP5 login confirmation received after hiding does not start platform login',async()=>{
+ const h=harness({deferConfirmation:true});h.page.onShow();h.page.login();h.page.onHide();await h.confirmModal();assert.equal(h.stats().logins,0);assert.equal(h.stats().calls.length,0);
 });

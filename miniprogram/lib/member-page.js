@@ -36,8 +36,8 @@ module.exports=function(){return {
    }
    if(generation!==this._generation||!this._visible)return;if(target!==this.target())throw{status:409};
    const pending={scope:scope(),userId:s.data.userId,path,type,body};if(action!=='delete')wx.setStorageSync(PENDING,pending);this._pending=pending;this.setData({pending:true});
-   try{await api.request(path,'POST',body,token);this.clearPending();this.setData({message:action==='delete'?'账户已停用，数据清理处理中。':'操作已提交，正在刷新当前状态。'});}finally{if(action==='delete'){clearPersonal();this._generation++;this._pending=null;this._profile=null;this._pair=null;this.setData({authenticated:false,pairCode:'',pending:false,title:'正在确认删除结果'});}}
-  }catch(e){this.failure(e);}finally{this.setData({busy:false});if(this._visible)this.refresh();}
+   try{await api.request(path,'POST',body,token);if(generation!==this._generation||api.load()!==token)return;this.clearPending();this.setData({message:action==='delete'?'账户已停用，数据清理处理中。':'操作已提交，正在刷新当前状态。'});}finally{if(action==='delete'){const ownsSession=api.load()===token;if(ownsSession)clearPersonal();this._pending=null;if(generation===this._generation&&ownsSession){this._generation++;this._profile=null;this._pair=null;this.setData({authenticated:false,pairCode:'',pending:false,title:'正在确认删除结果'});}}}
+  }catch(e){if(generation===this._generation)this.failure(e);}finally{this.setData({busy:false});if(this._visible)this.refresh();}
  },
  clearPending(){this._pending=null;try{wx.removeStorageSync(PENDING);}catch(_){}this.setData({pending:false});},
  failure(e){if(e.code==='FRESH_AUTH_REQUIRED'){this.setData({message:'请返回“我的”主动重新登录，再重新确认此操作。'});return;}if([400,409,410,422].includes(e.status)){this.clearPending();this.setData({message:'状态已变化或请求无效，请刷新后重新确认。'});}else this.setData({message:'结果待确认，请查询原操作，不要重复申请。'});},

@@ -1,0 +1,272 @@
+[
+  {
+    "ac": "AC-B01",
+    "scenario": "公开场馆/今日本周、未配置空态，无登录前置",
+    "evidence": "observations.test.mjs: B01/O01/O02; schedule-integration.test.mjs: two public HTTP clients; native-schedule.test.mjs",
+    "engineering": "PASS",
+    "tool": "BLOCKED",
+    "device": "NOT_RUN",
+    "venue": "NOT_RUN"
+  },
+  {
+    "ac": "AC-O01",
+    "scenario": "两客户端相同观察revision/时间、持久化和60秒轮询",
+    "evidence": "observation-integration.test.mjs: two independent unsigned clients; native-observation.test.mjs",
+    "engineering": "PASS",
+    "tool": "BLOCKED",
+    "device": "NOT_RUN",
+    "venue": "NOT_RUN"
+  },
+  {
+    "ac": "AC-O02",
+    "scenario": "899/900边界，课程/会员/清理不续TTL",
+    "evidence": "observations.test.mjs: B01/O01/O02; integrated-lifecycle.test.mjs: cross-domain writes",
+    "engineering": "PASS",
+    "tool": "BLOCKED",
+    "device": "NOT_RUN",
+    "venue": "NOT_RUN"
+  },
+  {
+    "ac": "AC-O03",
+    "scenario": "未更新/暂停/撤回、坏时间不回退旧等级",
+    "evidence": "observations.test.mjs: control states and bad timestamps; integrated-lifecycle.test.mjs: preserves controls",
+    "engineering": "PASS",
+    "tool": "BLOCKED",
+    "device": "NOT_RUN",
+    "venue": "NOT_RUN"
+  },
+  {
+    "ac": "AC-O04",
+    "scenario": "写响应丢失、CAS/幂等/审计同事务，旧意图不自动重写",
+    "evidence": "observations.test.mjs: CAS, single audit/idempotence; native-observation.test.mjs",
+    "engineering": "PASS",
+    "tool": "BLOCKED",
+    "device": "NOT_RUN",
+    "venue": "NOT_RUN"
+  },
+  {
+    "ac": "AC-O05",
+    "scenario": "前后台单在途/重建时钟，离线历史不新鲜",
+    "evidence": "native-observation.test.mjs; native-session.test.mjs: foreground polls never relogin",
+    "engineering": "PASS",
+    "tool": "BLOCKED",
+    "device": "NOT_RUN",
+    "venue": "NOT_RUN"
+  },
+  {
+    "ac": "AC-L01",
+    "scenario": "一次性code/错误/重放拒绝；适配器合约仅替身验证",
+    "evidence": "identity.test.mjs: invalid/replayed/platform code; official adapter transport contract; http-identity.test.mjs",
+    "engineering": "PASS",
+    "tool": "BLOCKED",
+    "device": "NOT_RUN",
+    "venue": "NOT_RUN"
+  },
+  {
+    "ac": "AC-M01",
+    "scenario": "未绑定→配对→前台核验→同身份读取服务器关联",
+    "evidence": "membership.test.mjs: leading zero, encrypted code; member-integration.test.mjs; native-membership.test.mjs",
+    "engineering": "PASS",
+    "tool": "BLOCKED",
+    "device": "NOT_RUN",
+    "venue": "NOT_RUN"
+  },
+  {
+    "ac": "AC-M02",
+    "scenario": "600秒/单消费/唯一性、错误限流、不抢占",
+    "evidence": "membership.test.mjs: one use and exact 600s expiry; member-integration.test.mjs: same member and same requester races",
+    "engineering": "PASS",
+    "tool": "BLOCKED",
+    "device": "NOT_RUN",
+    "venue": "NOT_RUN"
+  },
+  {
+    "ac": "AC-M03",
+    "scenario": "revoked优先、明确期限与到期、显式恢复",
+    "evidence": "membership.test.mjs: revoked precedence; explicit pending/fixed/no-expiry; native-membership.test.mjs: member states",
+    "engineering": "PASS",
+    "tool": "BLOCKED",
+    "device": "NOT_RUN",
+    "venue": "NOT_RUN"
+  },
+  {
+    "ac": "AC-M04",
+    "scenario": "当前角色/命名空间，角色撤销先提交则旧管理写拒绝",
+    "evidence": "identity.test.mjs: foreign-store token denied; concurrency.test.mjs; schedule-integration.test.mjs: role write lock",
+    "engineering": "PASS",
+    "tool": "BLOCKED",
+    "device": "NOT_RUN",
+    "venue": "NOT_RUN"
+  },
+  {
+    "ac": "AC-M05",
+    "scenario": "新鲜认证/解绑/删除、回执、缓存及新会话不被旧响应清除",
+    "evidence": "membership.test.mjs: fresh auth boundaries; native-membership.test.mjs: CP5 late deletion response",
+    "engineering": "PASS",
+    "tool": "BLOCKED",
+    "device": "NOT_RUN",
+    "venue": "NOT_RUN"
+  },
+  {
+    "ac": "AC-P01",
+    "scenario": "用途与拒绝/主动登录分开，隐藏后的旧确认不得登录",
+    "evidence": "native-session.test.mjs: public/refusal path; CP5 login confirmation received after hiding; native-membership.test.mjs",
+    "engineering": "PASS",
+    "tool": "BLOCKED",
+    "device": "NOT_RUN",
+    "venue": "NOT_RUN"
+  },
+  {
+    "ac": "AC-S01",
+    "scenario": "私有草稿→完整原子快照、公共同revision",
+    "evidence": "schedules.test.mjs: draft private; schedule-integration.test.mjs: two public HTTP clients",
+    "engineering": "PASS",
+    "tool": "BLOCKED",
+    "device": "NOT_RUN",
+    "venue": "NOT_RUN"
+  },
+  {
+    "ac": "AC-S02",
+    "scenario": "未发布/空日/覆盖结束/覆盖外/部分覆盖/撤回区分",
+    "evidence": "schedules.test.mjs: coverage replacement/withdrawal; native-schedule.test.mjs: exact coverage end",
+    "engineering": "PASS",
+    "tool": "BLOCKED",
+    "device": "NOT_RUN",
+    "venue": "NOT_RUN"
+  },
+  {
+    "ac": "AC-S03",
+    "scenario": "稳定ID取消改期、跨日周相交/并发冲突",
+    "evidence": "schedules.test.mjs: stable ID; local/UTC exact boundaries; schedule-integration.test.mjs",
+    "engineering": "PASS",
+    "tool": "BLOCKED",
+    "device": "NOT_RUN",
+    "venue": "NOT_RUN"
+  },
+  {
+    "ac": "AC-S04",
+    "scenario": "HTTP/业务错误与离线历史、unknown原key查询/重试",
+    "evidence": "native-schedule.test.mjs: native public; native operator unknown publication; native-session.test.mjs",
+    "engineering": "PASS",
+    "tool": "BLOCKED",
+    "device": "NOT_RUN",
+    "venue": "NOT_RUN"
+  },
+  {
+    "ac": "AC-D01",
+    "scenario": "隔离SQLite持久化、多进程/重启、不自动模拟回退",
+    "evidence": "foundation.test.mjs; identity.test.mjs: adapter isolation; observation/member/schedule-integration.test.mjs",
+    "engineering": "PASS",
+    "tool": "BLOCKED",
+    "device": "NOT_RUN",
+    "venue": "NOT_RUN"
+  },
+  {
+    "ac": "AC-W01",
+    "scenario": "真实iOS/Android、合法域名证书、非调试官方登录",
+    "evidence": "后续CP6；无设备/真实服务链路证据",
+    "engineering": "NOT_RUN",
+    "tool": "NOT_RUN",
+    "device": "NOT_RUN",
+    "venue": "NOT_RUN"
+  },
+  {
+    "ac": "AC-T01",
+    "scenario": "真实现场观察→会员读取与7天效果指标",
+    "evidence": "后续CP7；无门店观察或试点样本",
+    "engineering": "NOT_RUN",
+    "tool": "NOT_RUN",
+    "device": "NOT_RUN",
+    "venue": "NOT_RUN"
+  },
+  {
+    "ac": "AC-T02",
+    "scenario": "真实原系统核验及一周核定课表",
+    "evidence": "后续CP7；无真实会员/馆方课程资料",
+    "engineering": "NOT_RUN",
+    "tool": "NOT_RUN",
+    "device": "NOT_RUN",
+    "venue": "NOT_RUN"
+  },
+  {
+    "ac": "AC-F01",
+    "scenario": "闲置/绝对期限/5会话/退出/删除，后台轮询不续期",
+    "evidence": "identity.test.mjs: exact idle/absolute boundaries; concurrent first exchange; native-session.test.mjs",
+    "engineering": "PASS",
+    "tool": "BLOCKED",
+    "device": "NOT_RUN",
+    "venue": "NOT_RUN"
+  },
+  {
+    "ac": "AC-R01",
+    "scenario": "120/分钟与3/600、5/600持久化、双维/unknown计数",
+    "evidence": "concurrency.test.mjs; member-integration.test.mjs: independent processes/session switching; identity.test.mjs: DB failure",
+    "engineering": "PASS",
+    "tool": "BLOCKED",
+    "device": "NOT_RUN",
+    "venue": "NOT_RUN"
+  },
+  {
+    "ac": "AC-R02",
+    "scenario": "1次碰撞成功重抽、5次全回滚、码密文和单消费",
+    "evidence": "integrated-lifecycle.test.mjs: one secure pairing collision; membership.test.mjs: five collisions rollback",
+    "engineering": "PASS",
+    "tool": "BLOCKED",
+    "device": "NOT_RUN",
+    "venue": "NOT_RUN"
+  },
+  {
+    "ac": "AC-I01",
+    "scenario": "跨域scope/body/CAS，24小时淘汰后旧intent不执行",
+    "evidence": "identity/observations/membership/schedules.test.mjs; integrated-lifecycle.test.mjs: old intents cannot execute",
+    "engineering": "PASS",
+    "tool": "BLOCKED",
+    "device": "NOT_RUN",
+    "venue": "NOT_RUN"
+  },
+  {
+    "ac": "AC-X01",
+    "scenario": "真实进程bind/delete双顺序、角色撤销竞争、无资格回生",
+    "evidence": "member-integration.test.mjs: real write locks; concurrency.test.mjs; integrated-lifecycle.test.mjs: cross-domain writes",
+    "engineering": "PASS",
+    "tool": "BLOCKED",
+    "device": "NOT_RUN",
+    "venue": "NOT_RUN"
+  },
+  {
+    "ac": "AC-Z01",
+    "scenario": "1–14日/半开/DST显式offset/跨周/单当前发布",
+    "evidence": "schedules.test.mjs: local/UTC; schedule-integration.test.mjs: draft-write lock before publication",
+    "engineering": "PASS",
+    "tool": "BLOCKED",
+    "device": "NOT_RUN",
+    "venue": "NOT_RUN"
+  },
+  {
+    "ac": "AC-C01",
+    "scenario": "100行批次、各领域保留期/当前例外；实际入口小时接线失败恢复",
+    "evidence": "observations/membership/schedules.test.mjs cleanup cases; integrated-lifecycle.test.mjs: production cleanup wiring",
+    "engineering": "PASS",
+    "tool": "BLOCKED",
+    "device": "NOT_RUN",
+    "venue": "NOT_RUN"
+  },
+  {
+    "ac": "AC-C02",
+    "scenario": "deleting身份锁、去关联/延迟/重启恢复、回执7日",
+    "evidence": "membership.test.mjs: lost-response receipt and bounded deletion; member-integration.test.mjs: failing cleanup/new identity; integrated-lifecycle.test.mjs",
+    "engineering": "PASS",
+    "tool": "BLOCKED",
+    "device": "NOT_RUN",
+    "venue": "NOT_RUN"
+  },
+  {
+    "ac": "AC-E01",
+    "scenario": "独立根/依赖/迁移/清理、工具真实导入编译分层",
+    "evidence": "foundation.test.mjs; teardown.test.mjs; final-check.log; tool-status.md",
+    "engineering": "PASS",
+    "tool": "BLOCKED",
+    "device": "NOT_RUN",
+    "venue": "NOT_RUN"
+  }
+]

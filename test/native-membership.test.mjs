@@ -103,3 +103,10 @@ test('native member unknown request keeps original operation; query then retry u
  lost=false;await h.page.retry();await h.flush();assert.equal(posts.length,2);assert.equal(posts[0].operationId,posts[1].operationId);assert.equal(h.page.data.pending,false);
  h.api.request=async(path,method,body,...rest)=>{if(path==='/me/pairing'&&method==='POST')throw{status:409};return original(path,method,body,...rest);};await h.page.perform('create');await h.flush();assert.equal(h.page.data.pending,false);assert.match(h.page.data.message,/重新确认/);
 });
+
+test('CP5 late deletion response cannot clear a newer session or its pending personal operation',async()=>{
+ const h=harness();h.page.onShow();await h.flush();const original=h.api.request;let resolveDelete;
+ h.api.request=async(path,...args)=>{if(path==='/me/account/delete')return new Promise(r=>{resolveDelete=()=>r({data:{state:'pending'}});});return original(path,...args);};
+ const deletion=h.page.perform('delete');await h.flush();h.page.onHide();h.loginNew();h.stores.set('gym.schedule-operation.v1',{userId:'new-user'});resolveDelete();await deletion;
+ assert.equal(h.get().token,'new-session');assert.equal(h.stores.get('gym.schedule-operation.v1').userId,'new-user');assert.ok(h.stores.has('gym.deletion-receipt.v1'));
+});

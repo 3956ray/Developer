@@ -2,7 +2,7 @@
 
 ## 项目定位
 
-- 单店健身房原生微信小程序；当前CP4课表维护与发布；CP0–CP3已验收。
+- 单店健身房原生微信小程序；当前CP5工程集成与真实工具验收；CP0–CP4及清理返工已验收。
 - 技术栈：原生JS/WXML/WXSS，Node 24.18.0 ESM、内置SQLite与node:test，零第三方npm依赖。
 - Git根必须为`/Users/orderly_ray/Projects/gym-miniapp`，写Git前核对，不使用父级Projects历史。
 - 入口：`miniprogram/app.js`、`server/main.mjs`；目录和命令见README。

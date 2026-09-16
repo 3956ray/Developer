@@ -1,0 +1,28 @@
+✔ receipt SHA256 ASCII implementation matches standard vectors; secure receipt is generated before use (4.958916ms)
+✔ P01/M05 native refusal sends no mutation and stale auth requires active reauthentication (5.43775ms)
+✔ C02 native lost delete response preserves receipt, erases personal caches; old completed receipt never logs out newly created account (1.498625ms)
+✔ P01 native session clear covers all personal-operation keys but leaves deletion receipt (0.742958ms)
+✔ native operator date conversion delegates to configured-zone backend; raw references never go to durable operation cache (0.866125ms)
+✔ native member confirmation freezes membership revisions rather than silently unbinding refreshed target (1.233333ms)
+✔ native operator ignores delayed inspection after reference edit (0.918541ms)
+✔ native operator confirmation and awaited expiry reject changed input; actual lost submit cache excludes raw credentials (2.864667ms)
+✔ native member states: empty/revoked/expiry boundary/offline hide codes; cancel/unbind submit frozen revisions (1.703ms)
+✔ native member unknown request keeps original operation; query then retry uses same key; conflict requires reconfirmation (1.87825ms)
+✔ CP5 late deletion response cannot clear a newer session or its pending personal operation (2.198833ms)
+✔ P01: public/refusal path never calls wx.login or exchanges identity (1.84625ms)
+✔ P01/L01: only explicit consent logs in; simulation label and token outside view data (0.705375ms)
+✔ F01/P01: foreground polls never relogin; failures/401 are honest; hidden timer sends nothing (3.358458ms)
+✔ F01: logged in -> hidden past expiry -> foreground pending/failure/401 never shows stale authenticated state (1.65975ms)
+✔ F01: response from before hiding cannot restore authenticated state or an expiry timer (0.696125ms)
+✔ F01: hide/show and late A response serialize queued B/manual refresh with one in-flight session read (0.5865ms)
+✔ native request boundary: non-2xx/business failure rejected, cross-environment cached token ignored (1.392459ms)
+✔ I01: unconfirmed logout retains original operation key until explicit retry resolves (0.668167ms)
+✔ CP5 hidden role response cannot navigate to maintenance (3.169292ms)
+ℹ tests 20
+ℹ suites 0
+ℹ pass 20
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 584.882666

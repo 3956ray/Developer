@@ -1,0 +1,10 @@
+[0916/110733.231669:ERROR:electron/shell/common/mac/codesign_util.cc:109] SecCodeCheckValidity: Error Domain=NSOSStatusErrorDomain Code=-67061 "(null)" (-67061)
+- initialize
+
+(node:12112) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+(Use `Electron --trace-deprecation ...` to show where the warning was created)
+✖ initialize error: Error: listen EPERM: operation not permitted 127.0.0.1:3799, Error: listen EPERM: operation not permitted 127.0.0.1:3799
+    at Server.setupListenHandle [as _listen2] (node:net:1917:21)
+    at listenInCluster (node:net:1996:12)
+    at node:net:2205:7
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)

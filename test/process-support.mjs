@@ -8,7 +8,7 @@ export async function bounded(promise,ms=5000,label='CHILD_WAIT_TIMEOUT'){
 }
 export function fixtureLifetime(t,path,close=()=>{}){
  const owned=new Set(),closers=[close];let finished=false;
- const lifetime={beforeRemove:fn=>closers.push(fn),async cleanup(){
+ const lifetime={beforeRemove:fn=>closers.unshift(fn),async cleanup(){
   if(finished)return;const results=await Promise.allSettled([...owned].map(p=>stop(p)));
   const errors=results.filter(r=>r.status==='rejected').map(r=>r.reason);
   if([...owned].some(p=>!children.get(p).closed))throw new AggregateError(errors,'OWNED_CHILD_STILL_RUNNING_FIXTURE_RETAINED');

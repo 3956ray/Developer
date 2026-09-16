@@ -41,13 +41,16 @@ Page({
   refreshNow() { return this.refresh('interactive'); },
   login() {
     if (this.data.busy || !api.configured()) return;
+    const confirmedGeneration=this._generation;
     wx.showModal({ title: '登录用途说明', content: PURPOSE, confirmText: '同意登录', cancelText: '暂不登录',
       success: async result => {
+        if(!this._visible||confirmedGeneration!==this._generation)return;
         if (!result.confirm) { this.setData({ detail: '已拒绝本次登录，你仍可浏览场馆。' }); return; }
         if (this.data.busy) return;
         this.setData({ busy: true }); const generation = ++this._generation;
         try {
           const code = await api.loginCode();
+          if(generation!==this._generation||!this._visible)return;
           const response = await api.request('/sessions/exchange', 'POST', { code, privacyNoticeVersion: 'cp3-purpose-v1', consent: true });
           if (generation !== this._generation) return;
           const token = response.data.token;
@@ -61,11 +64,13 @@ Page({
   openMembership() { wx.navigateTo({ url: '/pages/membership/index' }); },
   async openMaintenance() {
     if (!this._token || this.data.busy) return;
+    const generation=this._generation,token=this._token;
     try {
       const response = await api.request('/operator/role', 'GET', undefined, this._token);
+      if(generation!==this._generation||!this._visible||token!==this._token)return;
       if (response.data.isOperator) wx.navigateTo({ url: '/pages/maintenance/index' });
       else this.setData({ detail: '当前账号没有馆方维护权限。' });
-    } catch (e) { this.showError(e); }
+    } catch (e) { if(generation===this._generation)this.showError(e); }
   },
   async logout() {
     if (!this._token || this.data.busy || this._refreshing) return;

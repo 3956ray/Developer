@@ -1,0 +1,33 @@
+✔ CP5 cross-domain writes, cleanup and deletion never renew observation TTL or restore revoked qualification (93.706916ms)
+✔ CP5 production cleanup wiring runs all domains at startup/hourly, preserves controls and retries failed retention (29.367ms)
+✔ CP5 old intents cannot execute after 24-hour result eviction and fresh operator reauthentication (18.196458ms)
+✔ CP5 one secure pairing collision retries successfully without replacing another user request (12.242084ms)
+✔ receipt SHA256 ASCII implementation matches standard vectors; secure receipt is generated before use (12.43325ms)
+✔ P01/M05 native refusal sends no mutation and stale auth requires active reauthentication (13.862208ms)
+✔ C02 native lost delete response preserves receipt, erases personal caches; old completed receipt never logs out newly created account (2.191917ms)
+✔ P01 native session clear covers all personal-operation keys but leaves deletion receipt (1.171208ms)
+✔ native operator date conversion delegates to configured-zone backend; raw references never go to durable operation cache (1.160541ms)
+✔ native member confirmation freezes membership revisions rather than silently unbinding refreshed target (1.2625ms)
+✔ native operator ignores delayed inspection after reference edit (0.849084ms)
+✔ native operator confirmation and awaited expiry reject changed input; actual lost submit cache excludes raw credentials (1.65ms)
+✔ native member states: empty/revoked/expiry boundary/offline hide codes; cancel/unbind submit frozen revisions (1.312041ms)
+✔ native member unknown request keeps original operation; query then retry uses same key; conflict requires reconfirmation (1.217417ms)
+✔ CP5 late deletion response cannot clear a newer session or its pending personal operation (1.221333ms)
+✔ P01: public/refusal path never calls wx.login or exchanges identity (2.774416ms)
+✔ P01/L01: only explicit consent logs in; simulation label and token outside view data (1.8835ms)
+✔ F01/P01: foreground polls never relogin; failures/401 are honest; hidden timer sends nothing (5.879959ms)
+✔ F01: logged in -> hidden past expiry -> foreground pending/failure/401 never shows stale authenticated state (2.875584ms)
+✔ F01: response from before hiding cannot restore authenticated state or an expiry timer (1.1525ms)
+✔ F01: hide/show and late A response serialize queued B/manual refresh with one in-flight session read (0.96125ms)
+✔ native request boundary: non-2xx/business failure rejected, cross-environment cached token ignored (4.135833ms)
+✔ I01: unconfirmed logout retains original operation key until explicit retry resolves (1.695166ms)
+✔ CP5 hidden role response cannot navigate to maintenance (1.954583ms)
+✔ CP5 login confirmation received after hiding does not start platform login (1.388875ms)
+ℹ tests 25
+ℹ suites 0
+ℹ pass 25
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 238.697833
