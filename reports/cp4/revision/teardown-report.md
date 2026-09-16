@@ -16,7 +16,7 @@ setupIdentity先注册关闭DB/删除目录的after hook；各测试随后注册
 - foundation、http-identity、concurrency、observation/member/schedule-integration全部自有服务/worker接同一归属机制，移除独立较晚停止hook。原业务断言与真实竞争步骤保留。
 - teardown.test/driver/child：新增多个服务+worker关闭顺序；启动无ready/非法JSON/早退；故意断言失败的独立runner，要求exit1且后续hook证实子进程已停/目录已删。
 
-故意失败的嵌套runner须去掉继承的NODE_TEST_CONTEXT，否则不会按独立测试runner执行；第一次新探针因此不符合预期，targeted12/13与full86/87失败保留initial-*.log。修正仅隔离runner环境，不放宽exit1/TEARDOWN_COMPLETE等断言。
+故意失败的嵌套runner须去掉继承的NODE_TEST_CONTEXT，否则不会按独立测试runner执行；第一次新探针因此不符合预期，targeted12/13与full86/87失败保留initial-*.log（仅移除空行尾空格以通过Git whitespace检查，错误内容不变）。修正仅隔离runner环境，不放宽exit1/TEARDOWN_COMPLETE等断言。
 
 ## 验证
 

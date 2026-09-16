@@ -25,9 +25,9 @@
 test at test/teardown.test.mjs:18:1
 ✖ assertion failure subprocess exits nonzero without hanging; later hook verifies stopped child and removed fixture (36.569917ms)
   AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
-  
+
   0 !== 1
-  
+
       at TestContext.<anonymous> (file:///Users/orderly_ray/Projects/gym-miniapp/test/teardown.test.mjs:19:166)
       at Test.runInAsyncScope (node:async_hooks:227:14)
       at Test.run (node:internal/test_runner/test:1325:25)
