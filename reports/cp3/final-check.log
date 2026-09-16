@@ -1,0 +1,5 @@
+
+> gym-miniapp@0.0.0 check
+> node scripts/check.mjs
+
+PASS: JavaScript syntax, JSON, baseline hashes, native page references (not WeChat compilation)

@@ -1,0 +1,20 @@
+✔ F01: exact idle/absolute boundaries, interactive extension and poll non-extension (14.700458ms)
+✔ F01/L01: concurrent first exchange has one identity, five active sessions, oldest eviction (11.547208ms)
+✔ L01/F01: invalid/replayed/platform code never creates identity; logout current only; deleting lock reserved (11.288917ms)
+✔ R01: 120 including platform failures; fixed minute recovery and restart (157.4145ms)
+✔ R01: time sampled after BEGIN IMMEDIATE, crossing old full window uses new window (7.647083ms)
+✔ M04/I01: role inspect, grant/revoke, cached historical result, CAS and audit atomicity (14.617708ms)
+✔ L01/R01: DB failure does not authenticate or bypass count; account creation rolls back with audit (16.2545ms)
+✔ adapter isolation: store refuses fixture mode, namespace cannot silently switch (8.599875ms)
+✔ official adapter transport contract: strict platform errors, missing fields, redirect and secret suppression (29.570417ms)
+✔ strict input: escaped/nested duplicate keys, prototype keys, malformed numbers and extra fields (4.138375ms)
+✔ real role CLI: inspect/apply/result is local, versioned and audited (717.837208ms)
+✔ M04/I01: foreign-store token denied, logout audit failure rolls back, intent window boundaries enforced (9.06775ms)
+ℹ tests 12
+ℹ suites 0
+ℹ pass 12
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1307.710125

@@ -1,0 +1,20 @@
+<view class="page">
+ <view class="title">前台会员核验</view><view wx:if="{{testing}}" class="note">模拟数据 · 测试环境</view>
+ <view class="note">{{message}}</view>
+ <view wx:if="{{authorized && !pending}}">
+  <input placeholder="用户展示的8位配对码（核验现有关联可留空）" type="text" maxlength="8" value="{{code}}" data-field="code" bindinput="input" />
+  <input placeholder="原馆系统稳定会员引用（不保存原文）" value="{{memberRef}}" data-field="memberRef" bindinput="input" />
+  <picker range="{{modes}}" value="{{modeIndex}}" bindchange="chooseMode"><view>有效期：{{modes[modeIndex]}}</view></picker>
+  <input wx:if="{{mode === 'fixed_until'}}" placeholder="有效结束日期 YYYY-MM-DD（按门店时区）" value="{{endDate}}" data-field="endDate" bindinput="input" />
+  <input wx:if="{{mode === 'fixed_until'}}" placeholder="歧义时由馆方确认的UTC截止时刻（可留空）" value="{{validUntilOverride}}" data-field="validUntilOverride" bindinput="input" />
+  <button bindtap="inspect" disabled="{{busy}}">精确查询与核对版本</button><view class="note">{{inspection}}</view>
+  <checkbox-group bindchange="confirm"><label><checkbox value="confirmed" checked="{{confirmation}}" />已当面比对请求并在原系统核验资格与期限</label></checkbox-group>
+  <button data-action="bind" bindtap="act" disabled="{{busy}}">核验并绑定</button>
+  <button data-action="restore" bindtap="act" disabled="{{busy}}">显式重新核验恢复资格</button>
+  <button data-action="reverify" bindtap="act" disabled="{{busy}}">重新核验 / 续期</button>
+  <button data-action="revoke" bindtap="act" disabled="{{busy}}">撤销资格</button>
+ </view>
+ <button wx:if="{{pending}}" bindtap="query" disabled="{{busy}}">查询原操作结果</button>
+ <button wx:if="{{pending && canRetry}}" bindtap="retry" disabled="{{busy}}">重试原表单</button>
+ <button wx:if="{{pending && canRetry}}" bindtap="restart" disabled="{{busy}}">明确重新核对</button>
+</view>

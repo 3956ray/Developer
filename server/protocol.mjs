@@ -60,9 +60,11 @@ export function parseStrict(text) {
   };
   const result = value(0); ws(); if (i !== text.length) fail(400, 'INVALID_JSON'); return result;
 }
-export function validateWrite(body, extra = []) {
+export function validateWrite(body, extra = [], revisionKeys) {
   fields(body, ['operationId', 'requestCreatedAt', 'expectedRevision', ...extra]);
-  if (!uuidPattern.test(body.operationId) || !(body.expectedRevision === 'absent' || (Number.isSafeInteger(body.expectedRevision) && body.expectedRevision > 0))) fail(422, 'INVALID_REQUEST');
+  const revision = value => value === 'absent' || (Number.isSafeInteger(value) && value > 0);
+  if (revisionKeys) { fields(body.expectedRevision, revisionKeys); if (Object.values(body.expectedRevision).some(v => !revision(v))) fail(422, 'INVALID_REQUEST'); }
+  if (!uuidPattern.test(body.operationId) || (!revisionKeys && !revision(body.expectedRevision))) fail(422, 'INVALID_REQUEST');
   if (typeof body.requestCreatedAt !== 'string' || !/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z$/.test(body.requestCreatedAt) || !Number.isFinite(Date.parse(body.requestCreatedAt)) || new Date(body.requestCreatedAt).toISOString() !== body.requestCreatedAt) fail(422, 'INVALID_REQUEST');
 }
 export function validateIntent(body, now, maximumAge = 300000) {

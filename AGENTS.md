@@ -2,7 +2,7 @@
 
 ## 项目定位
 
-- 单店健身房原生微信小程序；当前CP2人工观察与公共展示；CP0、CP1已验收。
+- 单店健身房原生微信小程序；当前CP3会员配对、核验与删除；CP0–CP2已验收。
 - 技术栈：原生JS/WXML/WXSS，Node 24.18.0 ESM、内置SQLite与node:test，零第三方npm依赖。
 - Git根必须为`/Users/orderly_ray/Projects/gym-miniapp`，写Git前核对，不使用父级Projects历史。
 - 入口：`miniprogram/app.js`、`server/main.mjs`；目录和命令见README。
@@ -22,6 +22,7 @@
 - 启动：`node server/main.mjs .runtime/test/local-demo/config.json`。
 - 角色检查：`node scripts/role.mjs inspect <config> <userId> <gymId>`；变更须先读README的授权与请求文件说明。
 - 观察清理：`node scripts/observation-cleanup.mjs run <config>`；状态：`node scripts/observation-cleanup.mjs status <config>`。
+- 会员清理：`node scripts/member-cleanup.mjs run <config>`；`status <config>`；`retry <config> <jobId>`。
 - 测试：`npm test`；语法/基线/配置检查：`npm run check`。
 
 ## Agent 使用与完成条件

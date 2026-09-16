@@ -1,0 +1,54 @@
+{
+  "task_id": "GYM-CP3-MEMBERSHIP-001",
+  "owner": "developer",
+  "checkpoint": "CP3",
+  "assigned_thread_id": "01a0a64b-85f8-7790-88d9-fd1188ece566",
+  "status": "dispatched",
+  "goal": "Implement front-desk pairing and verified membership lifecycle, including self unbinding and durable account deletion with recovery receipts.",
+  "dispatch_precondition": "CP2 accepted at the exact baseline_commit; clean worktree verified before dispatch.",
+  "scope": [
+    "Only /Users/orderly_ray/Projects/gym-miniapp; frozen PRD, complete acceptance matrix, checkpoint CP3 and technical contract govern. Native member and operator flows plus actual persistent backend are required.",
+    "Eight-digit leading-zero-safe pairing, 600-second expiry, one active request per account and one-use atomic consumption. Secure random generation and five collision attempts with rollback; encrypted temporary display and digest lookup. Same operation returns same code without logging it.",
+    "Persistent pairing generation and lookup/error limits per frozen parameters, counting under DB lock across processes/restarts. Distinguish unknown code, located requester and infrastructure errors.",
+    "MemberRegistry distinct from Binding; HMAC member reference normalized exactly as contract. Unique current binding per user and member key; revoked registry survives unbind/delete and cannot be overwritten by ordinary bind. Exact operator inspect supplies independently verified revisions.",
+    "Implement front-desk confirmation, bind, revoke, reverify, restore and expiry modes fixed_until/no_fixed_expiry/pending_confirmation. Explicit trusted time and date/time-zone conversion, no null-as-permanent or expired-as-valid.",
+    "Self unbinding and deletion require five-minute fresh authentication. Immediate deleting state revokes access, blocks recreation, and enqueues durable bounded deletion work; receipt securely generated and saved before submission, recoverable after lost response and valid seven days after completion.",
+    "Deletion clears personal associations/caches and sessions without restoring registry eligibility. Fresh identity after completed deletion has new userId and no inherited role/membership. Preserve minimal revoked memberKey. Persist cleanup cursors, errors and retry state; startup/hourly recovery follows contract.",
+    "All relevant mutations use scoped body digest, intent window, CAS and atomic audit/idempotency. Implement native normal/empty/expired/revoked/offline/conflict/unknown-result/refusal flows, current-state reads after operation results. Regression tests preserve CP0-CP2 behavior."
+  ],
+  "out_of_scope": [
+    "No schedule implementation or later checkpoint functionality. No payments, door control, phone/face/location, QR scanning, automated gym-system integration or expanded role administration.",
+    "No real user/member data, real platform credentials, deployment/upload/publication or edits to frozen product baseline. New third-party dependencies require security gate."
+  ],
+  "acceptance": [
+    "AC-M01/M02/R02: complete pairing-to-verification native/backend flow; collision rollback, exact expiry, terminal one-use, same-key display and both uniqueness constraints under actual concurrency.",
+    "AC-R01 pairing: persistent three creations/600s and five errors/600s operator/requester limits; lock-time window boundaries, restart/session switching and DB failure fail closed.",
+    "AC-M03/M04: revoked precedence, correct explicit expiry modes, authorized restore/reverify only, occupied-slot conflicts, cross-user/store/role denial and no identity/token disclosure.",
+    "AC-M05/X01/C02: fresh-auth boundaries, unbind/rebind, immediate deletion denial, lost-response receipt recovery, interrupted-job restart, concurrent login/write/delete ordering and no post-deletion role/qualification resurrection.",
+    "AC-L01/P01/D01/I01/C01 applicable membership layers: explicit purpose/refusal and cache erasure, independent clients and process restart, transaction rollback/operation replay, bounded cleanup with current revoked registry preserved.",
+    "Exact tested source manifest, prior regression checks, no unreviewed dependencies, final scoped clean local commit. Actual WeChat/tool/device/front-desk validation remains NOT_RUN unless separately authorized and evidenced."
+  ],
+  "evidence_required": [
+    "RESULT COMPLETE/BLOCKED/PRODUCT_DECISION_REQUIRED; reports/cp3 with each AC and layer, base/final commit, file purposes, exact commands/exit codes and logs, synthetic fixture provenance, source hashes, scope deviations and unverified items.",
+    "Actual competing processes/HTTP clients and deletion failure/recovery; no raw member references, codes, tokens or real identity in evidence. Local scoped commit authorized for this task."
+  ],
+  "stop_conditions": [
+    "Stop after CP3 delivery; do not begin CP4 until commander acceptance.",
+    "Stop affected path for product behavior/data-boundary conflict; report concrete required decision rather than silently weaken verification or deletion semantics."
+  ],
+  "baseline_commit": "6729bb7f2579a559e44a920d5cf92347e3791564",
+  "input_documents": [
+    {
+      "path": "/Users/orderly_ray/Documents/Products Manager/product-knowledge-base/ideas/gym-occupancy/prd-mvp-v1.0-2026-09-16.md",
+      "sha256": "7d9948f302f13119120c03043902fba7455437764eb57d4923efebda4254e1bd"
+    },
+    {
+      "path": "/Users/orderly_ray/Documents/Products Manager/product-knowledge-base/ideas/gym-occupancy/acceptance-mvp-v1.0-2026-09-16.md",
+      "sha256": "89cded4a468deaa20e6090d19b35dc31c77b6a01e3e45081d3d996484188ae71"
+    },
+    {
+      "path": "/Users/orderly_ray/Documents/Products Manager/product-knowledge-base/ideas/gym-occupancy/checkpoints-mvp-v1.0-2026-09-16.md",
+      "sha256": "13060548afb17731e033364817f0e7ee6b0569c334bbfc4138e308ee64678882"
+    }
+  ]
+}

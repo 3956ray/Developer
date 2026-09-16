@@ -1,0 +1,85 @@
+
+> gym-miniapp@0.0.0 test
+> node --test test/*.test.mjs
+
+✔ R01/F01: four real processes share 120-count bucket, one identity, five-session cap; restart stays limited (888.553833ms)
+✔ M04: concurrent management write waits for revoke commit; reverse order preserves committed write (230.419333ms)
+✔ durable probe survives full process restart and abrupt termination (1163.790291ms)
+ℹ migration: {"migrations":[{"name":"001-foundation.sql","sha256":"f3efa02831adad9a5e73cee958cb48b3e3911cb325327cc0828af94c4ab2ee5d"},{"name":"002-identity.sql","sha256":"7aaff7aa4bf881049a1680125d204a4dbf6699ff5ec776752eea5f142fdddde4"},{"name":"003-observations.sql","sha256":"873031ae2edf137a52589054a4006b4132edd213d0288fa79ad3636049b6017d"},{"name":"004-membership.sql","sha256":"d22109f448322a2f7d9d24ce7e5aa1fe3c192835f5ead18b5ebbf7dfb8cf574c"}],"integrity":{"integrity_check":"ok"}}
+ℹ health: {"ok":true,"serverNow":"2026-09-16T02:02:51.794Z","data":{"status":"ready","checkpoint":"CP3","environment":"test","gymId":"cp0-b3568522-0499-46be-a58a-e49b591e24e7","simulation":false,"identityMode":"disabled","migrations":4}}
+ℹ full restart: pid changed; persisted {"probe_id":"probe-restart","value":"synthetic-non-member","created_at":1789524171918}
+ℹ abrupt SIGKILL restart: same committed probe retained
+✔ migration replay is stable; changed migration rejected without modifying ledger (39.867542ms)
+✔ failed new migration rolls back DDL and ledger atomically (16.90975ms)
+✔ write rollback preserves original value and no partial row (7.992333ms)
+✔ environment/store namespaces, keys and persistent files are isolated (333.462291ms)
+✔ configuration, simulation, keys and accidental initialization fail closed (45.550666ms)
+✔ cross-process writer lock prevents partial competing write (2265.328416ms)
+✔ HTTP: strict body, status/Retry-After, authorization, response loss/restart, no secret diagnostics (827.79925ms)
+✔ F01: exact idle/absolute boundaries, interactive extension and poll non-extension (69.788709ms)
+✔ F01/L01: concurrent first exchange has one identity, five active sessions, oldest eviction (34.48425ms)
+✔ L01/F01: invalid/replayed/platform code never creates identity; logout current only; deleting lock reserved (97.860333ms)
+✔ R01: 120 including platform failures; fixed minute recovery and restart (790.150833ms)
+✔ R01: time sampled after BEGIN IMMEDIATE, crossing old full window uses new window (17.34725ms)
+✔ M04/I01: role inspect, grant/revoke, cached historical result, CAS and audit atomicity (24.361458ms)
+✔ L01/R01: DB failure does not authenticate or bypass count; account creation rolls back with audit (15.972958ms)
+✔ adapter isolation: store refuses fixture mode, namespace cannot silently switch (9.866791ms)
+✔ official adapter transport contract: strict platform errors, missing fields, redirect and secret suppression (33.400917ms)
+✔ strict input: escaped/nested duplicate keys, prototype keys, malformed numbers and extra fields (11.395708ms)
+✔ real role CLI: inspect/apply/result is local, versioned and audited (368.6575ms)
+✔ M04/I01: foreign-store token denied, logout audit failure rolls back, intent window boundaries enforced (16.057292ms)
+✔ M02 actual processes: same member and same requester races preserve both unique constraints (416.815ms)
+✔ X01 real write locks: delete before bind rejects old work; bind before delete closes its effect (562.507625ms)
+✔ D01/C02 real HTTP clients and process restart: lost receipt recovery, failing cleanup, new identity without inheritance (536.700959ms)
+ℹ two HTTP clients, failed deletion cleanup and whole-process restart recovered; new user has no role or binding
+✔ M01/M02/R02: leading zero, encrypted code, same-key display, one use and exact 600s expiry (76.944708ms)
+✔ R02: five collisions rollback replacement and generation counter; no weak random fallback (95.884167ms)
+✔ R01: three creations and five operator/requester errors persist, new window recovers; cleanup race cannot recreate personal error bucket (144.309542ms)
+✔ M03: revoked precedence, same binding explicit restoration and occupied slots; unbind cannot reset revoked registry (63.056208ms)
+✔ M03: explicit pending/fixed/no-expiry and server time boundary; dates reject invalid/overflow and handle leap/cross-year (91.841875ms)
+✔ I01/M04: path target is in idempotency digest and audit failure rolls back bind (49.71425ms)
+✔ M05/X01/C02: fresh auth boundaries, lost-response receipt, failed bounded deletion resumes and new login inherits nothing (154.23825ms)
+✔ M03 timezone conversion: configured non+8 zones, DST changes, skipped and repeated midnight (4.233541ms)
+✔ receipt SHA256 ASCII implementation matches standard vectors; secure receipt is generated before use (9.636166ms)
+✔ P01/M05 native refusal sends no mutation and stale auth requires active reauthentication (9.488833ms)
+✔ C02 native lost delete response preserves receipt, erases personal caches; old completed receipt never logs out newly created account (6.147125ms)
+✔ P01 native session clear covers all personal-operation keys but leaves deletion receipt (2.961542ms)
+✔ native operator date conversion delegates to configured-zone backend; raw references never go to durable operation cache (1.062709ms)
+✔ native member confirmation freezes membership revisions rather than silently unbinding refreshed target (1.597625ms)
+✔ native operator ignores delayed inspection after reference edit (1.2375ms)
+✔ native operator confirmation and awaited expiry reject changed input; actual lost submit cache excludes raw credentials (3.474916ms)
+✔ O02/O03/O05 native model: exact TTL, controls, future/invalid times and monotonic failure (34.75975ms)
+✔ O05 native venue: offline restart preserves historical timestamp only; hides/queued late response cannot regain freshness (8.4845ms)
+✔ O01/O03 native maintenance: publish and all controls are confirmable, role denial hides write actions (27.014458ms)
+✔ O04 native unknown result: preserve key, query before retry, old intent cannot be reissued (6.052583ms)
+✔ O04 native committed history always refreshes current state; failed intent persistence prevents submission (130.026375ms)
+✔ O04 native confirmation freezes visible revision even when polling changes current state (17.597125ms)
+✔ O02/O05 native page expiry and network failure retain original timestamp without freshness (18.503209ms)
+✔ P01: public/refusal path never calls wx.login or exchanges identity (4.677875ms)
+✔ P01/L01: only explicit consent logs in; simulation label and token outside view data (0.901542ms)
+✔ F01/P01: foreground polls never relogin; failures/401 are honest; hidden timer sends nothing (6.066834ms)
+✔ F01: logged in -> hidden past expiry -> foreground pending/failure/401 never shows stale authenticated state (3.232375ms)
+✔ F01: response from before hiding cannot restore authenticated state or an expiry timer (5.372916ms)
+✔ F01: hide/show and late A response serialize queued B/manual refresh with one in-flight session read (3.764917ms)
+✔ native request boundary: non-2xx/business failure rejected, cross-environment cached token ignored (14.932916ms)
+✔ I01: unconfirmed logout retains original operation key until explicit retry resolves (4.39975ms)
+✔ O01/D01/C01 HTTP: two independent unsigned clients see same published snapshot through process restart and startup cleanup (611.33675ms)
+ℹ two unsigned HTTP clients: same revision/source/observedAt/validUntil, no actor or counts
+ℹ full process restart retained current head; startup cleanup removed 31-day history only
+✔ O04/M04: real competing processes commit only one CAS writer and one idempotent event; revoke barrier rejects pending write (275.160584ms)
+OBSERVATION_DATA_INVALID
+OBSERVATION_DATA_INVALID
+✔ B01/O01/O02: public empty -> two consistent reads, 899/900 boundary, unrelated activity cannot renew TTL (84.092ms)
+✔ O03: control states and bad timestamps never resurrect prior observations (42.448542ms)
+✔ O04/I01: CAS, single audit/idempotence, exact 60s intent, role recheck, and atomic failure (58.185875ms)
+✔ D01/M04: readonly public, no numeric/simulation injection, unauthorized cannot write, idle only extends on new successful publication (17.374417ms)
+✔ C01/D01: bounded cleanup rollback/resume after DB restart preserves current head/TTL and exact 30-day boundary (221.965375ms)
+✔ C01: completion-based scheduler does not skip next hour when batches take time (167.975541ms)
+ℹ tests 64
+ℹ suites 0
+ℹ pass 64
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 3947.875916

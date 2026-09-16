@@ -10,12 +10,12 @@ function load() {
   catch (_) { return null; }
 }
 function save(token) { wx.setStorageSync(STORAGE, { scope: scope(), token }); }
-function clear() { wx.removeStorageSync(STORAGE); }
-function request(path, method, data, token) {
+function clear() { for (const key of [STORAGE,'gym.member-intent.v1','gym.observation-write.v1','gym.operator-member-operation.v1']) { try { wx.removeStorageSync(key); } catch (_) {} } }
+function request(path, method, data, token, scheme = 'Bearer') {
   if (!configured()) return Promise.reject({ code: 'NOT_CONFIGURED' });
   return new Promise((resolve, reject) => wx.request({
     url: config.baseUrl + '/v1' + path, method, data, timeout: 10000,
-    header: { 'content-type': 'application/json', ...(token ? { Authorization: 'Bearer ' + token } : {}) },
+    header: { 'content-type': 'application/json', ...(token ? { Authorization: scheme + ' ' + token } : {}) },
     success(response) {
       const b = response.data;
       if (response.statusCode >= 200 && response.statusCode < 300 && b && b.ok === true && Number.isFinite(Date.parse(b.serverNow))) resolve(b);

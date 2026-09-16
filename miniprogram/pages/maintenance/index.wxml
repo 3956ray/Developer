@@ -9,6 +9,7 @@
     <view wx:if="{{history}}" class="history">{{history}}</view>
   </view>
   <button bindtap="refreshNow" loading="{{refreshing}}" disabled="{{busy}}">刷新现场信息</button>
+  <button wx:if="{{authorized}}" bindtap="openMembers">会员核验与资格管理</button>
   <view class="note message">{{message}}</view>
   <view wx:if="{{authorized && !pending}}">
     <view class="note">刚刚现场观察后提交；未巡视或无法判断请选择“暂无法判断”。</view>

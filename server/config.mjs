@@ -16,7 +16,8 @@ export function loadConfig(path) {
   } else if (c.simulation !== false) throw new Error('SIMULATION_NOT_SUPPORTED');
   if (identity.mode === 'wechat' && !/^wx[0-9a-f]{16}$/.test(identity.appId)) throw new Error('APPID_INVALID');
   if (c.host !== '127.0.0.1' || !Number.isInteger(c.port) || c.port < 0 || c.port > 65535) throw new Error('CONFIG_LISTENER_INVALID');
-  if (c.timeZone !== 'Asia/Taipei') throw new Error('CP0_TIMEZONE_INVALID');
+  if (typeof c.timeZone !== 'string' || !c.timeZone) throw new Error('TIMEZONE_INVALID');
+  try { new Intl.DateTimeFormat('en',{timeZone:c.timeZone}).format(0); } catch { throw new Error('TIMEZONE_INVALID'); }
   const dir = resolve(root, '.runtime', c.environment, c.gymId);
   if (c.stateDir !== dir || realpathSync(dir) !== dir) throw new Error('CONFIG_STORAGE_SCOPE_INVALID');
   const keyFile = resolve(dir, 'keys.json');

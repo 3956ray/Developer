@@ -1,7 +1,7 @@
 const api = require('../../lib/session');
-const PURPOSE = '我们使用微信返回的应用身份建立可撤销的登录会话。登录不代表本店会员资格，也不授予馆方管理权限。本阶段不索取手机号、姓名、头像、位置或人脸。你可以拒绝并继续浏览场馆。这是应用用途说明，不代表已完成微信平台隐私接口授权。';
+const PURPOSE = '我们使用微信返回的应用身份建立可撤销的登录会话。登录不代表本店会员资格，也不授予馆方管理权限。会员核验由馆方现场确认，我们保留假名会员引用摘要与资格状态；解绑或删除不注销原馆合同，最小资格/撤销登记仍保留。我们不索取手机号、姓名、头像、位置或人脸。你可以拒绝并继续浏览场馆。这是应用用途说明，不代表已完成微信平台隐私接口授权。';
 Page({
-  data: { status: '未登录', detail: '登录后可使用个人服务；会员核验尚未开放。', authenticated: false, busy: false,
+  data: { status: '未登录', detail: '登录后可使用个人服务；会员身份需馆方现场核验。', authenticated: false, busy: false,
     configured: api.configured(), testing: api.config.environment === 'test', privacy: PURPOSE, showPrivacy: false },
   onLoad() { this._generation = 0; this._token = api.load(); this._visible = false; },
   onShow() { this._visible = true; if (this._token) { this.setData({ authenticated: false, status: '正在确认登录状态' }); this.refresh('poll'); } this.startTimer(); },
@@ -48,7 +48,7 @@ Page({
         this.setData({ busy: true }); const generation = ++this._generation;
         try {
           const code = await api.loginCode();
-          const response = await api.request('/sessions/exchange', 'POST', { code, privacyNoticeVersion: 'cp1-purpose-v1', consent: true });
+          const response = await api.request('/sessions/exchange', 'POST', { code, privacyNoticeVersion: 'cp3-purpose-v1', consent: true });
           if (generation !== this._generation) return;
           const token = response.data.token;
           if (typeof token !== 'string' || !/^[A-Za-z0-9_-]{43}$/.test(token)) throw { code: 'INVALID_RESPONSE' };
@@ -58,6 +58,7 @@ Page({
       }
     });
   },
+  openMembership() { wx.navigateTo({ url: '/pages/membership/index' }); },
   async openMaintenance() {
     if (!this._token || this.data.busy) return;
     try {

@@ -1,0 +1,18 @@
+✔ receipt SHA256 ASCII implementation matches standard vectors; secure receipt is generated before use (10.212042ms)
+✔ P01/M05 native refusal sends no mutation and stale auth requires active reauthentication (12.523583ms)
+✔ C02 native lost delete response preserves receipt, erases personal caches; old completed receipt never logs out newly created account (1.5125ms)
+✔ P01 native session clear covers all personal-operation keys but leaves deletion receipt (0.585583ms)
+✔ native operator date conversion delegates to configured-zone backend; raw references never go to durable operation cache (0.628792ms)
+✔ native member confirmation freezes membership revisions rather than silently unbinding refreshed target (1.890041ms)
+✔ native operator ignores delayed inspection after reference edit (0.780958ms)
+✔ native operator confirmation and awaited expiry reject changed input; actual lost submit cache excludes raw credentials (1.30975ms)
+✔ native member states: empty/revoked/expiry boundary/offline hide codes; cancel/unbind submit frozen revisions (0.912958ms)
+✔ native member unknown request keeps original operation; query then retry uses same key; conflict requires reconfirmation (1.183709ms)
+ℹ tests 10
+ℹ suites 0
+ℹ pass 10
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 102.967166

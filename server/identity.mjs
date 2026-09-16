@@ -3,7 +3,7 @@ import { transaction } from './database.mjs';
 import { createAdapter, codeDigest } from './wechat.mjs';
 import { fail, fields, digest, hmac, canonical, validateWrite, validateIntent, uuidPattern } from './protocol.mjs';
 
-export const NOTICE_VERSION = 'cp1-purpose-v1';
+export const NOTICE_VERSION = 'cp3-purpose-v1';
 export const DAY = 86400000;
 export function createIdentityService(db, c, options = {}) {
   if (c.environment !== 'test' && (options.now || options.transport)) fail(503, 'TEST_HOOK_FORBIDDEN');
@@ -45,8 +45,8 @@ export function createIdentityService(db, c, options = {}) {
       sessionRevision: s.revision, accountRevision: s.account_revision,
       environment: c.environment, simulation: c.simulation, identityMode: c.identity.mode };
   }
-  function operation(actor, type, body, time, apply, maximumAge = 300000) {
-    const hash = hmac(c.keys.intentHmac, canonical([c.environment, c.gymId, actor, type, body]));
+  function operation(actor, type, body, time, apply, maximumAge = 300000, resource = null) {
+    const hash = hmac(c.keys.intentHmac, canonical([c.environment, c.gymId, actor, type, body, ...(resource === null ? [] : [resource])]));
     const old = db.prepare('SELECT * FROM operations WHERE actor_id=? AND operation_type=? AND operation_key=?').get(actor, type, body.operationId);
     if (old && time < old.created_at + DAY) {
       if (old.body_hmac !== hash) fail(409, 'IDEMPOTENCY_CONFLICT');
@@ -55,7 +55,7 @@ export function createIdentityService(db, c, options = {}) {
     validateIntent(body, time, maximumAge);
     const result = apply();
     if (old) db.prepare('DELETE FROM operations WHERE actor_id=? AND operation_type=? AND operation_key=?').run(actor, type, body.operationId);
-    db.prepare('INSERT INTO operations VALUES (?,?,?,?,?,?,?)').run(actor, type, body.operationId, hash, JSON.stringify(result.data), result.revision, time);
+    db.prepare('INSERT INTO operations (actor_id,operation_type,operation_key,body_hmac,result_json,applied_revision,created_at,subject_id) VALUES (?,?,?,?,?,?,?,?)').run(actor, type, body.operationId, hash, JSON.stringify(result.data), result.revision, time, result.subjectId ?? null);
     return { data: result.data, operation: { operationId: body.operationId, type, committedAt: new Date(time).toISOString(), appliedRevision: result.revision, replayed: false }, current: { refreshRequired: true } };
   }
   return {
@@ -79,7 +79,7 @@ export function createIdentityService(db, c, options = {}) {
         if (account && account.state !== 'active') fail(409, 'ACCOUNT_DELETING');
         if (!account) {
           account = { user_id: randomUUID(), revision: 1 };
-          db.prepare("INSERT INTO accounts VALUES (?,?,'active',1,?)").run(account.user_id, c.gymId, time);
+          db.prepare("INSERT INTO accounts (user_id,gym_id,state,revision,created_at) VALUES (?,?,'active',1,?)").run(account.user_id, c.gymId, time);
           db.prepare('INSERT INTO wechat_identities VALUES (?,?,?)').run(c.identity.appId, identity.openId, account.user_id);
         }
         const active = db.prepare(`SELECT session_id FROM sessions WHERE user_id=? AND revoked_at IS NULL AND expires_at>?
@@ -126,6 +126,22 @@ export function createIdentityService(db, c, options = {}) {
     withOperator(token, action) {
       return transaction(db, () => { const time = now(); const s = authenticate(token, time, true); return action({ userId: s.user_id, time, audit }); });
     },
+    authorized(token, options, apply) {
+      return transaction(db, () => {
+        const time = now(), session = authenticate(token, time, Boolean(options.operator));
+        if (options.fresh && time - session.auth_at > 300000) fail(422, 'FRESH_AUTH_REQUIRED');
+        return apply({ userId: session.user_id, session, time, audit });
+      });
+    },
+    domainOperation(token, type, body, options, apply) {
+      const allowed = ['pairing.create','pairing.cancel','membership.bind','membership.restore','membership.revoke','membership.reverify','membership.unbind','account.delete'];
+      if (!allowed.includes(type)) fail(422, 'INVALID_OPERATION');
+      return this.authorized(token, options, context => operation(context.userId, type, body, context.time, () => {
+        const result = apply(context);
+        if (type !== 'account.delete') db.prepare('UPDATE sessions SET last_interactive_at=? WHERE session_id=?').run(context.time, context.session.session_id);
+        return result;
+      }, 300000, options.resource ?? null));
+    },
     operatorOperation(token, type, body, apply) {
       if (!['observation.publish', 'observation.control'].includes(type)) fail(422, 'INVALID_OPERATION');
       return transaction(db, () => {
@@ -166,14 +182,14 @@ export function createIdentityService(db, c, options = {}) {
           const revision = (old?.revision ?? 0) + 1;
           db.prepare('INSERT INTO operator_roles VALUES (?,?,?,?) ON CONFLICT(user_id) DO UPDATE SET granted=excluded.granted,revision=excluded.revision,updated_at=excluded.updated_at').run(body.userId, Number(body.action === 'grant'), revision, time);
           audit(actor, body.userId, `role.${body.action}`, revision, time, body.reasonCategory);
-          return { revision, data: { userId: body.userId, roleRevision: revision, granted: body.action === 'grant' } };
+          return { revision, subjectId: body.userId, data: { userId: body.userId, roleRevision: revision, granted: body.action === 'grant' } };
         });
       });
     },
     operationResult(token, id, type) {
-      if (!uuidPattern.test(id) || !['session.logout', 'observation.publish', 'observation.control'].includes(type)) fail(422, 'INVALID_OPERATION');
+      if (!uuidPattern.test(id) || !['session.logout','observation.publish','observation.control','pairing.create','pairing.cancel','membership.bind','membership.restore','membership.revoke','membership.reverify','membership.unbind','account.delete'].includes(type)) fail(422, 'INVALID_OPERATION');
       return transaction(db, () => {
-        const time = now(), s = authenticate(token, time, type.startsWith('observation.'));
+        const time = now(), s = authenticate(token, time, type.startsWith('observation.') || ['membership.bind','membership.restore','membership.revoke','membership.reverify'].includes(type));
         const row = db.prepare('SELECT * FROM operations WHERE actor_id=? AND operation_type=? AND operation_key=?').get(s.user_id, type, id);
         if (!row || time >= row.created_at + DAY) return { state: 'unknown' };
         return { state: 'committed', appliedRevision: row.applied_revision, committedAt: new Date(row.created_at).toISOString(), result: JSON.parse(row.result_json), refreshRequired: true };

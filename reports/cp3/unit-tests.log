@@ -1,0 +1,21 @@
+✔ M01/M02/R02: leading zero, encrypted code, same-key display, one use and exact 600s expiry (31.715917ms)
+✔ R02: five collisions rollback replacement and generation counter; no weak random fallback (11.109584ms)
+✔ R01: three creations and five operator/requester errors persist, new window recovers; cleanup race cannot recreate personal error bucket (19.194375ms)
+✔ M03: revoked precedence, same binding explicit restoration and occupied slots; unbind cannot reset revoked registry (17.152125ms)
+✔ M03: explicit pending/fixed/no-expiry and server time boundary; dates reject invalid/overflow and handle leap/cross-year (10.462167ms)
+✔ I01/M04: path target is in idempotency digest and audit failure rolls back bind (17.722833ms)
+✔ M05/X01/C02: fresh auth boundaries, lost-response receipt, failed bounded deletion resumes and new login inherits nothing (27.712375ms)
+✔ M03 timezone conversion: configured non+8 zones, DST changes, skipped and repeated midnight (1.055583ms)
+✔ receipt SHA256 ASCII implementation matches standard vectors; secure receipt is generated before use (3.697625ms)
+✔ P01/M05 native refusal sends no mutation and stale auth requires active reauthentication (3.467375ms)
+✔ C02 native lost delete response preserves receipt, erases personal caches; old completed receipt never logs out newly created account (1.377084ms)
+✔ P01 native session clear covers all personal-operation keys but leaves deletion receipt (0.583625ms)
+✔ native operator date conversion delegates to configured-zone backend; raw references never go to durable operation cache (0.650417ms)
+ℹ tests 13
+ℹ suites 0
+ℹ pass 13
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 569.376917

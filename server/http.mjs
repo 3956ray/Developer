@@ -1,6 +1,7 @@
 import { ApiError, fail, parseStrict } from './protocol.mjs';
 import { createIdentityService, NOTICE_VERSION } from './identity.mjs';
 import { createObservationService } from './observations.mjs';
+import { createMembershipService } from './membership.mjs';
 
 async function body(req) {
   if (!/^application\/json(?:\s*;\s*charset=utf-8)?$/i.test(req.headers['content-type'] ?? '')) fail(415, 'JSON_REQUIRED');
@@ -22,6 +23,7 @@ function query(url, allowed) {
 export function createHandler(db, c, options = {}) {
   const identity = createIdentityService(db, c, options);
   const observations = createObservationService(db, c, identity);
+  const members = createMembershipService(db, c, identity);
   return async (req, res) => {
     res.setHeader('Content-Type', 'application/json; charset=utf-8');
     res.setHeader('Cache-Control', 'no-store');
@@ -32,7 +34,7 @@ export function createHandler(db, c, options = {}) {
         query(url, []);
         const row = db.prepare('SELECT environment,gym_id FROM deployment WHERE singleton=1').get();
         if (!row || row.environment !== c.environment || row.gym_id !== c.gymId) fail(503, 'STORAGE_UNAVAILABLE');
-        data = { status: 'ready', checkpoint: 'CP2', environment: c.environment, gymId: c.gymId,
+        data = { status: 'ready', checkpoint: 'CP3', environment: c.environment, gymId: c.gymId,
           simulation: c.simulation, identityMode: c.identity.mode, migrations: db.prepare('SELECT count(*) AS count FROM schema_migrations').get().count };
       } else if (req.method === 'GET' && ['/v1/venue', '/v1/observations/current'].includes(url.pathname)) {
         query(url, []); const snapshot = url.pathname === '/v1/venue' ? observations.venue() : observations.current();
@@ -41,8 +43,26 @@ export function createHandler(db, c, options = {}) {
         query(url, []); const token = bearer(req); const input = await body(req);
         operation = url.pathname.endsWith('/control') ? observations.control(token, input) : observations.publish(token, input);
         data = operation.data;
+      } else if (req.method === 'POST' && url.pathname === '/v1/operator/members/expiry-preview') {
+        query(url, []);data=members.expiryPreview(bearer(req),await body(req));
+      } else if (req.method === 'GET' && ['/v1/me/membership','/v1/me/pairing'].includes(url.pathname)) {
+        query(url, []); data = url.pathname.endsWith('/pairing') ? members.pairing(bearer(req)) : members.profile(bearer(req));
+      } else if (req.method === 'POST' && url.pathname === '/v1/deletions/status') {
+        query(url, []); const receipt = /^DeletionReceipt ([a-f0-9]{64})$/.exec(req.headers.authorization ?? '');
+        if (!receipt) fail(400,'INVALID_RECEIPT'); data = members.deletionStatus(receipt[1]);
+      } else if (req.method === 'POST' && ['/v1/me/pairing','/v1/me/pairing/cancel','/v1/me/membership/unbind','/v1/me/account/delete'].includes(url.pathname)) {
+        query(url, []); const token = bearer(req), input = await body(req);
+        const action = {'/v1/me/pairing':'createPair','/v1/me/pairing/cancel':'cancelPair','/v1/me/membership/unbind':'unbind','/v1/me/account/delete':'deleteAccount'}[url.pathname];
+        operation = members[action](token,input); data = operation.data;
+      } else if (req.method === 'POST' && ['/v1/operator/pairing/lookup','/v1/operator/members/inspect','/v1/operator/members/bind','/v1/operator/members/restore'].includes(url.pathname)) {
+        query(url, []); const token = bearer(req), input = await body(req), action = url.pathname.split('/').at(-1);
+        const result = members[action](token,input);
+        if (['bind','restore'].includes(action)) {operation=result;data=result.data;} else data=result;
+      } else if (req.method === 'POST' && /^\/v1\/operator\/members\/[^/]+\/(revoke|reverify)$/.test(url.pathname)) {
+        query(url, []); const token = bearer(req), input = await body(req), parts = url.pathname.split('/');
+        operation=members.update(token,parts.at(-2),input,parts.at(-1)==='revoke');data=operation.data;
       } else if (req.method === 'GET' && url.pathname === '/v1/privacy') {
-        query(url, []); data = { version: NOTICE_VERSION, text: '用于建立本应用身份与维护登录会话。登录不代表会员资格或馆方管理权限；本阶段不索取手机号、姓名、头像、位置或人脸。你可以拒绝并继续浏览场馆。应用用途同意不等于微信平台隐私接口授权。', simulation: c.simulation };
+        query(url, []); data = { version: NOTICE_VERSION, text: '用于建立本应用身份与维护登录会话。登录不代表会员资格或馆方管理权限；会员核验保存假名引用摘要和资格状态；解绑/删除不注销原馆合同，最小资格/撤销登记仍保留。不索取手机号、姓名、头像、位置或人脸。你可以拒绝并继续浏览场馆。应用用途同意不等于微信平台隐私接口授权。', simulation: c.simulation };
       } else if (req.method === 'POST' && url.pathname === '/v1/sessions/exchange') {
         query(url, []); data = await identity.login(await body(req)); status = 201;
       } else if (req.method === 'GET' && url.pathname === '/v1/session') {

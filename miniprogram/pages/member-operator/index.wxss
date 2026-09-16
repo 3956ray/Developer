@@ -1,0 +1,2 @@
+input,picker { margin: 24rpx 0; padding: 20rpx; background: #fff; font-size: 28rpx; }
+button { margin-top: 24rpx; font-size: 28rpx; }

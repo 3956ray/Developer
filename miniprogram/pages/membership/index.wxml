@@ -1,0 +1,16 @@
+<view class="page">
+ <view wx:if="{{testing}}" class="note">模拟数据 · 测试环境</view>
+ <view class="title">{{title}}</view><view class="note">{{detail}}</view>
+ <view class="note">{{expiryText}}</view><view class="note">核验时间：{{verifiedText}}</view>
+ <view wx:if="{{pairCode}}" class="title">{{pairCode}}</view><view wx:if="{{pairLabel}}" class="note">请求标识：{{pairLabel}} · 仅用于当面核对</view>
+ <view class="note">{{message}}</view><view class="note">{{deletionState}}</view>
+ <button bindtap="refreshNow" disabled="{{busy}}">刷新状态 / 查询删除进度</button>
+ <view wx:if="{{authenticated && !pending}}">
+  <button data-action="create" bindtap="ask" disabled="{{busy}}">申请 / 重建前台核验</button>
+  <button data-action="cancel" bindtap="ask" disabled="{{busy}}">取消核验请求</button>
+  <button data-action="unbind" bindtap="ask" disabled="{{busy}}">解除会员关联</button>
+  <button data-action="delete" bindtap="ask" disabled="{{busy}}">删除本应用账户</button>
+ </view>
+ <button wx:if="{{pending}}" bindtap="resolvePending" disabled="{{busy}}">查询原操作结果</button>
+ <button wx:if="{{pending && canRetry}}" bindtap="retry" disabled="{{busy}}">重试原请求</button>
+</view>

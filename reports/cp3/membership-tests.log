@@ -1,0 +1,17 @@
+✔ M01/M02/R02: leading zero, encrypted code, same-key display, one use and exact 600s expiry (51.461625ms)
+✔ R02: five collisions rollback replacement and generation counter; no weak random fallback (11.1955ms)
+✔ R01: three creations and five operator/requester errors persist, new window recovers; cleanup race cannot recreate personal error bucket (16.862292ms)
+✔ M03: revoked precedence, same binding explicit restoration and occupied slots; unbind cannot reset revoked registry (15.609792ms)
+✔ M03: explicit pending/fixed/no-expiry and server time boundary; dates reject invalid/overflow and handle leap/cross-year (10.365708ms)
+✔ I01/M04: path target is in idempotency digest and audit failure rolls back bind (23.497541ms)
+✔ M05/X01/C02: fresh auth boundaries, lost-response receipt, failed bounded deletion resumes and new login inherits nothing (24.86125ms)
+✔ M03 timezone conversion: configured non+8 zones, DST changes, skipped and repeated midnight (1.563125ms)
+✔ C01 bounded deletion/retention cursor: at most 100 rows, exact cutoffs and permanent revoked registry (90.596084ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 9
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 317.033625

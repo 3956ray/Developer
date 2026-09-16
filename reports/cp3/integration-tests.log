@@ -1,0 +1,13 @@
+✔ M02 actual processes: same member and same requester races preserve both unique constraints (159.926ms)
+✔ X01 real write locks: delete before bind rejects old work; bind before delete closes its effect (239.107167ms)
+✔ D01/C02 real HTTP clients and process restart: lost receipt recovery, failing cleanup, new identity without inheritance (242.434709ms)
+ℹ two HTTP clients, failed deletion cleanup and whole-process restart recovered; new user has no role or binding
+✔ R01 independent processes/session switching: persistent generation/errors; lock-time next window and storage failure (649.518958ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1349.395958

@@ -1,0 +1,19 @@
+{
+  "tests": {
+    "command": "npm test",
+    "exitCode": 0,
+    "passed": 68,
+    "failed": 0,
+    "log": "final-tests.log"
+  },
+  "check": {
+    "command": "npm run check",
+    "exitCode": 0,
+    "log": "final-check.log"
+  },
+  "diffCheckExitCode": 0,
+  "sourceHashFilesVerified": 82,
+  "sourceUnchangedSinceFinalTestStart": true,
+  "priorEvidenceAndBaselineUnmodified": true,
+  "weChatToolDeviceFrontDesk": "NOT_RUN"
+}
