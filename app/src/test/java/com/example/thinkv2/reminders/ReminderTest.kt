@@ -136,7 +136,7 @@ class ReminderTest {
         val sql=PythonSql(temp.newFile());val notes=NoteRepository(sql);notes.initialize()
         val cat=notes.createCategory("原分类");val n=notes.save(Editing(Note().bodyChanged("原正文").categorized(cat)))
         val e=notes.open(n.id)!!;notes.persistDraft(e.copy(note=e.note.bodyChanged("原草稿")))
-        for(table in listOf("reminders","reminder_events","reminder_runtime","backup_imports","backup_origins","calendar_imports","ai_acceptances")) sql.execute("DROP TABLE $table")
+        for(table in listOf("reminders","reminder_events","reminder_runtime","backup_imports","backup_origins","calendar_imports","ai_acceptances","note_relations")) sql.execute("DROP TABLE $table")
         sql.execute("PRAGMA user_version=2")
         val oldNotes=sql.query("SELECT * FROM notes");val oldDrafts=sql.query("SELECT * FROM drafts");val oldCategories=sql.query("SELECT * FROM categories")
         sql.execute("CREATE TABLE reminder_events (collision TEXT)")
@@ -145,7 +145,7 @@ class ReminderTest {
         assertTrue(sql.query("SELECT name FROM sqlite_master WHERE name='reminders'").isEmpty())
         sql.execute("DROP TABLE reminder_events");notes.initialize()
         assertEquals(oldNotes,sql.query("SELECT * FROM notes"));assertEquals(oldDrafts,sql.query("SELECT * FROM drafts"));assertEquals(oldCategories,sql.query("SELECT * FROM categories"))
-        assertEquals(listOf(listOf("6")),sql.query("PRAGMA user_version"));notes.close()
+        assertEquals(listOf(listOf("7")),sql.query("PRAGMA user_version"));notes.close()
     }
 
     @Test fun cancellationFailureStillRejectsOldCallbackAndRetriesAfterRestore()=Fixture().use { f ->

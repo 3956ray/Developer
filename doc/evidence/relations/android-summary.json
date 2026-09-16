@@ -1,0 +1,81 @@
+{
+  "relationsTests": 3,
+  "regressionTests": 13,
+  "results": [
+    {
+      "file": "device/actualAndroidTransactionFailureShowsErrorThenRetryCommits.log",
+      "tests": 1,
+      "seconds": 3.036
+    },
+    {
+      "file": "device/realUiPairsSameTitlesExactNavigationRenameTrashRestoreAndRemove.log",
+      "tests": 1,
+      "seconds": 5.551
+    },
+    {
+      "file": "device/thousandNotesFiveThousandEdgesBoundedPagesLargeFontAndAccessibilityFocus.log",
+      "tests": 1,
+      "seconds": 8.368
+    },
+    {
+      "file": "regression/AndroidLifecycleTest.log",
+      "tests": 1,
+      "seconds": 0.052
+    },
+    {
+      "file": "regression/AndroidPersistenceTest.log",
+      "tests": 1,
+      "seconds": 0.052
+    },
+    {
+      "file": "regression/AndroidReminderTest.log",
+      "tests": 1,
+      "seconds": 19.211
+    },
+    {
+      "file": "regression/ExampleInstrumentedTest.log",
+      "tests": 1,
+      "seconds": 0.004
+    },
+    {
+      "file": "regression/NotesUiTest.log",
+      "tests": 1,
+      "seconds": 14.713
+    },
+    {
+      "file": "regression/ReminderUiTest.log",
+      "tests": 1,
+      "seconds": 4.803
+    },
+    {
+      "file": "regression/backup.AndroidBackupTest.log",
+      "tests": 2,
+      "seconds": 0.302
+    },
+    {
+      "file": "regression/calendar.CalendarImportDeviceTest#actualProviderUiFaithfulImportCancelIdempotenceAndSourceUnchanged.log",
+      "tests": 1,
+      "seconds": 20.041
+    },
+    {
+      "file": "regression/calendar.CalendarImportDeviceTest#actualSourceEditDeletionAndLocalChangeRejectStalePreview.log",
+      "tests": 1,
+      "seconds": 11.459
+    },
+    {
+      "file": "regression/calendar.CalendarImportDeviceTest#androidLargeSourceFailsClosedAndAcceptedRowsRemainReadableAfterReopen.log",
+      "tests": 1,
+      "seconds": 9.624
+    },
+    {
+      "file": "regression/voice.VoiceLifecycleTest#actualMicrophoneBackgroundAndCancelKeepExistingDraft.log",
+      "tests": 1,
+      "seconds": 7.205
+    },
+    {
+      "file": "regression/voice.VoiceLifecycleTest#deniedPlatformPermissionDoesNotChangeText.log",
+      "tests": 1,
+      "seconds": 5.726
+    }
+  ]
+}

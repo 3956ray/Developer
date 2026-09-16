@@ -1,0 +1,162 @@
+{
+  "android-summary.json": {
+    "bytes": 2127,
+    "sha256": "457802cbd08e3f9309e125212a506bb8163d04c20466ff04994b1168020994b0"
+  },
+  "apk-inspection.json": {
+    "bytes": 507,
+    "sha256": "a28859e709c65f45d79951f89b74b9625259c15066cdd409f4432e940fa83091"
+  },
+  "apk-permissions.txt": {
+    "bytes": 480,
+    "sha256": "7643175b7a0ecc9eb62c2686a32857529fb0091dedf71b840b21ecac9fa7b1fd"
+  },
+  "build.log": {
+    "bytes": 5212,
+    "sha256": "54c087eee62a5fe7c3377166c90db1064a4975a6e248bf1b164a5f33e08081d8"
+  },
+  "device/actualAndroidTransactionFailureShowsErrorThenRetryCommits.attempt-1.log": {
+    "bytes": 79,
+    "sha256": "9b3db94b8e274a9ff0be3b5cd1b094fc6f0cdd182e7993445c4b524ef6259045"
+  },
+  "device/actualAndroidTransactionFailureShowsErrorThenRetryCommits.attempt-2.log": {
+    "bytes": 79,
+    "sha256": "da21045e4980715b6a74d47c4400e61b8d7ce734e7a4e9fd3c3db2223ff4ba90"
+  },
+  "device/actualAndroidTransactionFailureShowsErrorThenRetryCommits.log": {
+    "bytes": 79,
+    "sha256": "70bd533c81f96fb406ff954d7b5b8ca0e2d6b83c698c277ac3699cdaaf7b008a"
+  },
+  "device/realUiPairsSameTitlesExactNavigationRenameTrashRestoreAndRemove.attempt-1.log": {
+    "bytes": 79,
+    "sha256": "cd1e21b38b683f10a807e14ff3b421bf8dfa6dd1bfb3cef2bafa96c472fb11bf"
+  },
+  "device/realUiPairsSameTitlesExactNavigationRenameTrashRestoreAndRemove.attempt-2.log": {
+    "bytes": 78,
+    "sha256": "c6ed42d23e64a10253ed6ec1b093d13e0b33f90d22f32c1d6ea72fb028009aa8"
+  },
+  "device/realUiPairsSameTitlesExactNavigationRenameTrashRestoreAndRemove.log": {
+    "bytes": 79,
+    "sha256": "1aa14634e23bf3577760ad6b5a0d7166065d63a909fed271d645b1042bc3739e"
+  },
+  "device/relations-accessibility-node.json": {
+    "bytes": 3216,
+    "sha256": "51aa72bb6dcbe692cb386cbd1ae16e24872b47edaab50332d9c84abc128ff491"
+  },
+  "device/relations-large-font.png": {
+    "bytes": 176041,
+    "sha256": "b44ab9c5443bd2462e9b60cddf6cb492aed1ce757074811704ff1cf24b3f9184"
+  },
+  "device/relations-rollback.json": {
+    "bytes": 119,
+    "sha256": "561e55383cdf28c12c880b650945b8dd3070cfafe0601e9f7ad8c591e04662e6"
+  },
+  "device/relations-same-titles.png": {
+    "bytes": 214399,
+    "sha256": "c01753ff91f98d38b0f8865c11b200f9368d3c05cbac7f29c7c3976a4927199f"
+  },
+  "device/relations-scale-database.json": {
+    "bytes": 982955,
+    "sha256": "e6128b03df6144bf3dc531bc80d549bed57e69f2dc77a799bc539b47b14c6829"
+  },
+  "device/relations-scale.json": {
+    "bytes": 5000,
+    "sha256": "881599f64a90f85932b368df5f734048a58717f4f20fdb9d666e0aeb4da7da2b"
+  },
+  "device/relations-ui-database.json": {
+    "bytes": 982,
+    "sha256": "581134d623c7bf305de602e5ef7d1575558abad13650bb50af5b5a1dc243b3d6"
+  },
+  "device/relations-ui-result.json": {
+    "bytes": 295,
+    "sha256": "5f3a1e13b22d30ae0075d66ffc910fa2eafffe9d977cfc6a4f8906f5228f6af8"
+  },
+  "device/thousandNotesFiveThousandEdgesBoundedPagesLargeFontAndAccessibilityFocus.attempt-1.log": {
+    "bytes": 964,
+    "sha256": "90ea2dfcc3a1545d1298a95d6e1c3f60dfc5db1e2e8ae7c715418d1f9d171f24"
+  },
+  "device/thousandNotesFiveThousandEdgesBoundedPagesLargeFontAndAccessibilityFocus.attempt-2.log": {
+    "bytes": 79,
+    "sha256": "e98bee102759018371398888b2cf040755e01247e69ca94823fb08492ae061a5"
+  },
+  "device/thousandNotesFiveThousandEdgesBoundedPagesLargeFontAndAccessibilityFocus.log": {
+    "bytes": 79,
+    "sha256": "1ff22f47af599a1101d3981278a51eedf22a7d756e37d2cb04deced0f0c421ed"
+  },
+  "device/thousandNotesFiveThousandEdgesBoundedPagesLargeFontAndAccessibilityFocus.previous.log": {
+    "bytes": 964,
+    "sha256": "1f036a1ffef2f2c60c2b923a2fd6d5614ab2eb0c2125a1c948e1d5c6807e3c03"
+  },
+  "host-summary.json": {
+    "bytes": 67,
+    "sha256": "3ba115e16c823332fcd68cd517633f325fa0f3e7821b14fd0ba36801fcd18d71"
+  },
+  "lint-results.xml": {
+    "bytes": 19107,
+    "sha256": "8eea07d44ad25c6d2ea47b0c9ecad328f8c1c6657339fff483b68648878191f5"
+  },
+  "regression/AndroidLifecycleTest.log": {
+    "bytes": 70,
+    "sha256": "bac71698de94391b43e7c6225c4af0794d69253f62961a8901fcccf33de5c4dd"
+  },
+  "regression/AndroidPersistenceTest.log": {
+    "bytes": 72,
+    "sha256": "ac07d6823079389b79034774d598cc23234f5e3ab672d3dd83ccb847d340c474"
+  },
+  "regression/AndroidReminderTest.log": {
+    "bytes": 70,
+    "sha256": "60b62f8331047006e12ae12ebe806e6447466ea47f00f584bcf5abdf5695b427"
+  },
+  "regression/ExampleInstrumentedTest.log": {
+    "bytes": 73,
+    "sha256": "ad079512acd4edf3be0a5653f99a18e565ad556c698923962c8b2f6c91738bda"
+  },
+  "regression/NotesUiTest.log": {
+    "bytes": 62,
+    "sha256": "faa169baf6e873060f821beb1534cb9321478c94cb6dd8f9318d8e887b2f41ae"
+  },
+  "regression/ReminderUiTest.log": {
+    "bytes": 64,
+    "sha256": "90e4b98fc3ee44876a51e713aedc4f9ec959b42f94a6700e9f2d7b101e7f9bfc"
+  },
+  "regression/backup.AndroidBackupTest.log": {
+    "bytes": 76,
+    "sha256": "4c943b4e8634642219163fb937ef7379d65e3a04d5ed8e57510e6b6507359ca9"
+  },
+  "regression/calendar.CalendarImportDeviceTest#actualProviderUiFaithfulImportCancelIdempotenceAndSourceUnchanged.log": {
+    "bytes": 84,
+    "sha256": "7d482f04a457b294b6f23239256ccb83c272620709ae4a69e7c151afbf6efd6c"
+  },
+  "regression/calendar.CalendarImportDeviceTest#actualSourceEditDeletionAndLocalChangeRejectStalePreview.log": {
+    "bytes": 84,
+    "sha256": "dd8a55ef06bc7522b3add44b21794a833ab784dc174c164a44e4e1f2d0afedd0"
+  },
+  "regression/calendar.CalendarImportDeviceTest#androidLargeSourceFailsClosedAndAcceptedRowsRemainReadableAfterReopen.log": {
+    "bytes": 83,
+    "sha256": "777d309253e4de983425581ec1af80810c62c6d61903818ee3a593ae3e4e030a"
+  },
+  "regression/voice.VoiceLifecycleTest#actualMicrophoneBackgroundAndCancelKeepExistingDraft.log": {
+    "bytes": 74,
+    "sha256": "d91a34a4172864d7c572181a8ce1ca1122a9f45bec2d7237dfa69e2159fd2f9c"
+  },
+  "regression/voice.VoiceLifecycleTest#deniedPlatformPermissionDoesNotChangeText.log": {
+    "bytes": 74,
+    "sha256": "6dba68baa381682f284c61899a7196322a70601822d280e4894646ee34689853"
+  },
+  "ui/after-process-restart.json": {
+    "bytes": 1144320,
+    "sha256": "742e76b9effb0d8a8f36d4b017e4c3e33bc7d5927db0cbe7ef35ebb6869ad63d"
+  },
+  "ui/before-process-restart.json": {
+    "bytes": 1144320,
+    "sha256": "742e76b9effb0d8a8f36d4b017e4c3e33bc7d5927db0cbe7ef35ebb6869ad63d"
+  },
+  "ui/process-restart-relations.png": {
+    "bytes": 225482,
+    "sha256": "650c7067d89403a9238e5b5befffe252dd6a05fcefd95d33797b52009e1bd5b7"
+  },
+  "ui/process-restart-relations.xml": {
+    "bytes": 13751,
+    "sha256": "db218631d6cc3d933bf2cbabba194d6a858cfcf5412b6b675ffd5806163a1603"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "writeThenExceptionRolledBack": true,
+  "errorInsteadOfSuccess": true,
+  "retryCommitted": true,
+  "noteCount": 2
+}

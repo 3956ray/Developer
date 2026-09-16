@@ -25,7 +25,7 @@ import androidx.compose.ui.text.TextRange
 import com.example.thinkv2.voice.*
 
 @Composable
-fun NotesScreen(model: NotesModel,modifier: Modifier = Modifier,onReminders: (String?)->Unit = {},onBackup: ()->Unit = {},voice: VoiceModel?=null,onCalendar: ()->Unit = {},ai: com.example.thinkv2.ai.AiModel?=null) {
+fun NotesScreen(model: NotesModel,modifier: Modifier = Modifier,onReminders: (String?)->Unit = {},onBackup: ()->Unit = {},voice: VoiceModel?=null,onCalendar: ()->Unit = {},ai: com.example.thinkv2.ai.AiModel?=null,onRelations: ()->Unit = {}) {
     val s=model.state
     val editor=s.editor
     var originalOpen by remember { mutableStateOf(false) }
@@ -102,6 +102,8 @@ fun NotesScreen(model: NotesModel,modifier: Modifier = Modifier,onReminders: (St
                     enabled=!s.busy,modifier=Modifier.fillMaxWidth().heightIn(min=240.dp),textStyle=LocalTextStyle.current.copy(fontSize=18.sp))
                 if(editor.baseRevision>=0) OutlinedButton(onClick={ onReminders(editor.note.id) },enabled=!s.busy,modifier=Modifier.fillMaxWidth().heightIn(min=56.dp)) { Text("设置笔记提醒",fontSize=18.sp) }
                 else Text("正式保存笔记后可设置提醒。",fontSize=18.sp)
+                if(editor.baseRevision>=0) OutlinedButton(onClick=onRelations,enabled=!s.busy,modifier=Modifier.heightIn(min=56.dp)) { Text("相关笔记",fontSize=18.sp) }
+                else Text("正式保存后可建立笔记关系。",fontSize=18.sp)
                 if(s.calendarOriginal!=null) OutlinedButton(onClick={ originalOpen=true },modifier=Modifier.heightIn(min=56.dp)) { Text("查看日历原始快照") }
                 if(ai!=null) {
                     OutlinedButton(onClick=ai::settings,enabled=!s.busy,modifier=Modifier.heightIn(min=56.dp)) { Text("AI建议设置") }

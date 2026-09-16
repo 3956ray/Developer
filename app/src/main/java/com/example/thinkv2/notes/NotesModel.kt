@@ -9,7 +9,7 @@ import java.util.concurrent.Executors
 import com.example.thinkv2.voice.VoiceAnchor
 import com.example.thinkv2.voice.VoiceText
 
-enum class NotesPage { HOME, CATEGORIES, TRASH, REMINDERS, BACKUP, CALENDAR }
+enum class NotesPage { HOME, CATEGORIES, TRASH, REMINDERS, BACKUP, CALENDAR, RELATIONS }
 
 enum class DraftState { UNSAVED, SAVING, SAVED, FORMAL, ERROR }
 data class NotesState(
@@ -194,6 +194,17 @@ class NotesModel(
         if(state.editor?.note?.id==id) return
         if(state.editor!=null) finish(Action.KEEP,id) else open(id)
     }
+    fun showRelations(ready: (String)->Unit) {
+        val editing=state.editor ?: return
+        if(state.busy || editing.baseRevision<0) return
+        timer?.cancel();state=state.copy(busy=true,error=null)
+        scope.launch { try {
+            val saved=withContext(worker) { store().persistDraft(editing) }
+            state=state.copy(busy=false,editor=saved,page=NotesPage.RELATIONS,draftState=DraftState.SAVED)
+            ready(saved.note.id)
+        } catch(_: Exception) { state=state.copy(busy=false,error="草稿未能保存，暂未打开关系；当前编辑保留。") } }
+    }
+    fun closeRelations() { state=state.copy(page=NotesPage.HOME) }
     fun showReminders() { if(!state.busy) state=state.copy(page=NotesPage.REMINDERS) }
     fun closeReminders() { state=state.copy(page=NotesPage.HOME);if(state.editor==null) refresh() }
     fun navigate(page: NotesPage) {

@@ -80,8 +80,8 @@ class AiTest {
     @Test fun schemaFiveUpgradePreservesAllExistingRowsAndBackupExcludesAiMetadata()=store { n,db ->
         val e=Editing(Note().bodyChanged("迁移正文"));n.save(e);n.persistDraft(n.open(e.note.id)!!.let { it.copy(note=it.note.bodyChanged("迁移草稿")) })
         val tables=listOf("notes","drafts","categories","reminders","calendar_imports","backup_imports","backup_origins")
-        val before=tables.map { db.query("SELECT * FROM $it") };db.execute("DROP TABLE ai_acceptances");db.execute("PRAGMA user_version=5");n.initialize()
-        assertEquals(before,tables.map { db.query("SELECT * FROM $it") });assertEquals("6",db.query("PRAGMA user_version").single().single())
+        val before=tables.map { db.query("SELECT * FROM $it") };db.execute("DROP TABLE ai_acceptances");db.execute("DROP TABLE note_relations");db.execute("PRAGMA user_version=5");n.initialize()
+        assertEquals(before,tables.map { db.query("SELECT * FROM $it") });assertEquals("7",db.query("PRAGMA user_version").single().single())
         val accepted=n.acceptAi(n.open(e.note.id)!!,acceptance("migration","title","接受标题",emptyList()));n.save(accepted)
         val export=com.example.thinkv2.backup.BackupRepository(db).export()
         val payload=export.payload.toString(Charsets.UTF_8)

@@ -1,0 +1,13 @@
+{
+  "productSha256": "c777c739b8f1e78d642d440a61cad32a0e86c161fc638c1401a7e483f9aa1986",
+  "testSha256": "a91e58302fa5d3bd943560c561f3ac9458388085b218278afd09dfe15f5b4916",
+  "nativeLibraries": [
+    "lib/arm64-v8a/libandroidx.graphics.path.so",
+    "lib/arm64-v8a/libjnidispatch.so",
+    "lib/arm64-v8a/libvosk.so"
+  ],
+  "newDependencies": false,
+  "newPermissions": false,
+  "graphImplemented": false,
+  "preMessageRegressionsSha256": "02dec1fb03ad17d92e762989bb8f2625a4c22d2d7e41ccb7f60fc61edd6253d3"
+}

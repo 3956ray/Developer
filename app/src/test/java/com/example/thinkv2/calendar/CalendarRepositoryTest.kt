@@ -99,8 +99,8 @@ class CalendarRepositoryTest {
     @Test fun schemaFourMigrationPreservesAllExistingTablesAndOriginalFieldNulls()=Store(temp.newFile()).use { s ->
         val note=s.notes.save(Editing(Note().bodyChanged("迁移前正式正文")));s.notes.persistDraft(s.notes.open(note.id)!!.let { it.copy(note=it.note.bodyChanged("迁移前草稿")) })
         val before=listOf("notes","drafts","categories","reminders","backup_imports","backup_origins").associateWith { s.sql.query("SELECT * FROM $it ORDER BY 1") }
-        s.sql.execute("DROP TABLE calendar_imports");s.sql.execute("DROP TABLE ai_acceptances");s.sql.execute("PRAGMA user_version=4");s.notes.initialize()
-        before.forEach { (table,rows) ->assertEquals(rows,s.sql.query("SELECT * FROM $table ORDER BY 1")) };assertEquals("6",s.sql.query("PRAGMA user_version").single().single())
+        s.sql.execute("DROP TABLE calendar_imports");s.sql.execute("DROP TABLE ai_acceptances");s.sql.execute("DROP TABLE note_relations");s.sql.execute("PRAGMA user_version=4");s.notes.initialize()
+        before.forEach { (table,rows) ->assertEquals(rows,s.sql.query("SELECT * FROM $table ORDER BY 1")) };assertEquals("7",s.sql.query("PRAGMA user_version").single().single())
         val e=event(extra=mapOf("rrule" to "FREQ=WEEKLY;BYDAY=MO,WE","originalInstanceTime" to null,"eventEndTimezone" to "UTC"));assertTrue(e.unconverted);assertTrue(e.payload.contains("\"originalInstanceTime\":null"))
         try { CalendarRange("2026-01-01","2027-02-01","UTC");fail() } catch(_: Exception) {}
     }

@@ -14,7 +14,7 @@ class NoteRepository(private val db: Sql) : AutoCloseable {
 
     fun initialize() = transaction {
         val version = db.query("PRAGMA user_version").single().single().toInt()
-        check(version in 0..6) { "unsupported_schema" }
+        check(version in 0..7) { "unsupported_schema" }
         if (version == 0) {
             check(db.query("SELECT name FROM sqlite_master WHERE type='table' AND name NOT LIKE 'sqlite_%' AND name!='android_metadata'").isEmpty()) { "unknown_database" }
             db.execute("CREATE TABLE notes ($fields, title_fold TEXT NOT NULL, body_fold TEXT NOT NULL)")
@@ -47,6 +47,7 @@ class NoteRepository(private val db: Sql) : AutoCloseable {
             db.execute("CREATE TABLE ai_acceptances (id TEXT PRIMARY KEY,request_id TEXT NOT NULL,record_id TEXT NOT NULL,field TEXT NOT NULL,endpoint TEXT NOT NULL,model TEXT NOT NULL,input_hash TEXT NOT NULL,proposed TEXT NOT NULL,chosen TEXT NOT NULL,accepted_at INTEGER NOT NULL,note_revision INTEGER NOT NULL,UNIQUE(request_id,field))")
             db.execute("PRAGMA user_version=6")
         }
+        if(version<7) { com.example.thinkv2.relations.RelationRepository.migrate(db);db.execute("PRAGMA user_version=7") }
     }
 
     private fun note(r: List<String>) = Note(r[0],r[1],r[2],r[3]=="1",r[4],r[5].toLong(),r[6].toLong(),r[7].toLong(),r[8],r[9])

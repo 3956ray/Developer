@@ -1,0 +1,19 @@
+
+com.example.thinkv2.relations.RelationsDeviceTest:
+Error in thousandNotesFiveThousandEdgesBoundedPagesLargeFontAndAccessibilityFocus(com.example.thinkv2.relations.RelationsDeviceTest):
+java.lang.AssertionError: button focusable
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at com.example.thinkv2.relations.RelationsDeviceTest.thousandNotesFiveThousandEdgesBoundedPagesLargeFontAndAccessibilityFocus(RelationsDeviceTest.kt:159)
+
+
+Time: 8.167
+There was 1 failure:
+1) thousandNotesFiveThousandEdgesBoundedPagesLargeFontAndAccessibilityFocus(com.example.thinkv2.relations.RelationsDeviceTest)
+java.lang.AssertionError: button focusable
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at com.example.thinkv2.relations.RelationsDeviceTest.thousandNotesFiveThousandEdgesBoundedPagesLargeFontAndAccessibilityFocus(RelationsDeviceTest.kt:159)
+
+FAILURES!!!
+Tests run: 1,  Failures: 1
