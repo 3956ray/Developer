@@ -9,7 +9,7 @@ import java.util.concurrent.Executors
 import com.example.thinkv2.voice.VoiceAnchor
 import com.example.thinkv2.voice.VoiceText
 
-enum class NotesPage { HOME, CATEGORIES, TRASH, REMINDERS, BACKUP }
+enum class NotesPage { HOME, CATEGORIES, TRASH, REMINDERS, BACKUP, CALENDAR }
 
 enum class DraftState { UNSAVED, SAVING, SAVED, FORMAL, ERROR }
 data class NotesState(
@@ -18,7 +18,7 @@ data class NotesState(
     val total: Int = 0, val loading: Boolean = true, val busy: Boolean = false,
     val editor: Editing? = null, val externalCursor: Int? = null, val draftState: DraftState = DraftState.UNSAVED,
     val error: String? = null, val notice: String? = null,
-    val backupCopies: Set<String> = emptySet(),
+    val backupCopies: Set<String> = emptySet(), val calendarOriginal: String? = null,
     val page: NotesPage = NotesPage.HOME, val trash: List<TrashItem> = emptyList(),
 )
 
@@ -68,7 +68,7 @@ class NotesModel(
     fun newNote() {
         if(state.loading || state.busy || state.error!=null) return
         searchToken++; editorToken++
-        state=state.copy(editor=Editing(Note()),draftState=DraftState.UNSAVED,error=null)
+        state=state.copy(editor=Editing(Note()),calendarOriginal=null,draftState=DraftState.UNSAVED,error=null)
     }
     fun open(id: String) {
         if(state.busy || state.editor!=null) return
@@ -78,9 +78,9 @@ class NotesModel(
             try {
                 val (editing,hasDraft,copies)=withContext(worker) {
                     val db=store()
-                    Triple(db.open(id) ?: error(if(db.isTrashed(id)) "trashed_note" else "missing_note"),db.drafts().any { it.id==id },db.backupCopies())
+                    Triple(db.open(id) ?: error(if(db.isTrashed(id)) "trashed_note" else "missing_note"),db.drafts().any { it.id==id },db.backupCopies() to db.calendarOriginal(id))
                 }
-                if(token==editorToken) state=state.copy(editor=editing,busy=false,loading=false,backupCopies=copies,
+                if(token==editorToken) state=state.copy(editor=editing,busy=false,loading=false,backupCopies=copies.first,calendarOriginal=copies.second,
                     draftState=if(hasDraft) DraftState.SAVED else DraftState.FORMAL)
             } catch(e: Exception) { if(token==editorToken) state=state.copy(busy=false,loading=false,error=when(e.message) {
                 "trashed_note" -> "这条笔记已在回收站，可返回首页后到回收站恢复。"
@@ -161,7 +161,7 @@ class NotesModel(
                     }
                 }
                 editorToken++
-                state=state.copy(editor=null,busy=false,notice=if(action==Action.TRASH) "已移入回收站，可随时恢复。" else null)
+                state=state.copy(editor=null,calendarOriginal=null,busy=false,notice=if(action==Action.TRASH) "已移入回收站，可随时恢复。" else null)
                 if(nextId!=null) open(nextId) else refresh()
             } catch(_: Exception) {
                 state=state.copy(busy=false,draftState=DraftState.ERROR,

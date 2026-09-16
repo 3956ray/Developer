@@ -14,7 +14,7 @@ class NoteRepository(private val db: Sql) : AutoCloseable {
 
     fun initialize() = transaction {
         val version = db.query("PRAGMA user_version").single().single().toInt()
-        check(version in 0..4) { "unsupported_schema" }
+        check(version in 0..5) { "unsupported_schema" }
         if (version == 0) {
             check(db.query("SELECT name FROM sqlite_master WHERE type='table' AND name NOT LIKE 'sqlite_%' AND name!='android_metadata'").isEmpty()) { "unknown_database" }
             db.execute("CREATE TABLE notes ($fields, title_fold TEXT NOT NULL, body_fold TEXT NOT NULL)")
@@ -42,6 +42,7 @@ class NoteRepository(private val db: Sql) : AutoCloseable {
         }
         if(version<3) { ReminderSchema.migrate(db);db.execute("PRAGMA user_version=3") }
         if(version<4) { BackupRepository.migrate(db);db.execute("PRAGMA user_version=4") }
+        if(version<5) { com.example.thinkv2.calendar.CalendarRepository.migrate(db);db.execute("PRAGMA user_version=5") }
     }
 
     private fun note(r: List<String>) = Note(r[0],r[1],r[2],r[3]=="1",r[4],r[5].toLong(),r[6].toLong(),r[7].toLong(),r[8],r[9])
@@ -104,6 +105,7 @@ class NoteRepository(private val db: Sql) : AutoCloseable {
         val category=categories().firstOrNull { it.name==name } ?: insertCategory(name)
         return note.copy(category=category.name,categoryId=category.id)
     }
+    fun calendarOriginal(id: String): String? = db.query("SELECT original_text FROM calendar_imports WHERE note_id=?",listOf(id)).firstOrNull()?.first()
     fun backupCopies(): Set<String> = db.query("SELECT record_id FROM backup_origins").map { it[0] }.toSet()
     fun isTrashed(id: String) = db.query("SELECT id FROM notes WHERE id=? AND deleted_at>0",listOf(id)).isNotEmpty()
     private fun anyNote(id: String) = db.query("SELECT $columns FROM notes WHERE id=?",listOf(id)).firstOrNull()?.let(::note)

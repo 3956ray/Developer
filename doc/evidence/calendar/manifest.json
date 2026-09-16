@@ -1,0 +1,302 @@
+{
+  "task": "V2-CALENDAR-IMPORT-001",
+  "attempt": "9b7b85da-ae29-4198-9f6e-a7e2df71784d",
+  "syntheticOnly": true,
+  "files": [
+    {
+      "path": "apk-inspection.json",
+      "bytes": 350,
+      "sha256": "ce9b6c0f5e405a1f91a24542c0920f5646f6bd7448c5ef777e275445ee55ce21"
+    },
+    {
+      "path": "apk-permissions.txt",
+      "bytes": 428,
+      "sha256": "e97c71db8c1575fa44952291ee53daa2eea7876859799ff6ea8af2dfcc783541"
+    },
+    {
+      "path": "build.log",
+      "bytes": 5136,
+      "sha256": "0212d05e20c76ceff33c66b7f80746957024b1383e18c9be98cf240a99e41882"
+    },
+    {
+      "path": "final-device/1-calendar.CalendarImportDeviceTest.log",
+      "bytes": 86,
+      "sha256": "0bbe2018e75bcab5c5ed9c3f6f1bb913f0276bea1a1875548ec4e92a44342a15"
+    },
+    {
+      "path": "final-device/2-calendar.CalendarImportDeviceTest.log",
+      "bytes": 86,
+      "sha256": "ee8dc389e6132b1de986edce2aa3ea7d92dc928fe3b08255efb89fb50b7f9515"
+    },
+    {
+      "path": "final-device/3-ExampleInstrumentedTest.log",
+      "bytes": 75,
+      "sha256": "696fc73632239b67af8d81fdec044074a47209b184bd405c0f5aeccf2f98afdc"
+    },
+    {
+      "path": "final-device/4-AndroidPersistenceTest.log",
+      "bytes": 74,
+      "sha256": "4140b18af37f1a2d994f07691d5bb95b51f985fb8a55824bf95a1a641fd1e6b4"
+    },
+    {
+      "path": "final-device/5-AndroidLifecycleTest.log",
+      "bytes": 72,
+      "sha256": "4fe1f6809218c8e6930d52c3ebe4723c856e6d77021c9c52bc9f2eee7cd59d26"
+    },
+    {
+      "path": "final-device/6-NotesUiTest.log",
+      "bytes": 64,
+      "sha256": "826ad3fa03e3d03615fd331adc43f1bb412514755f985a10657f32776e91a837"
+    },
+    {
+      "path": "final-device/7-ReminderUiTest.log",
+      "bytes": 66,
+      "sha256": "16e7da6002b31293352235c2d5285e55f849b7571c911475cf693c52520e6fa9"
+    },
+    {
+      "path": "final-device/8-AndroidReminderTest.log",
+      "bytes": 72,
+      "sha256": "b1905064d1f5c1c356e690705ae89693b760761b348407c4232da6b8ed2e7832"
+    },
+    {
+      "path": "final-device/9-backup.AndroidBackupTest.log",
+      "bytes": 78,
+      "sha256": "b073a49974ba8fa0f0e83cfd5c9d3f2527ee90d1c3ca77a02cf45354eca13940"
+    },
+    {
+      "path": "final-device/calendar-local-after-copy.json",
+      "bytes": 37382,
+      "sha256": "7775ebb4a988d895c012f4e0a59fd0cbd81412975e11cea0fe0ad40a2795c904"
+    },
+    {
+      "path": "final-device/calendar-local-after.json",
+      "bytes": 33274,
+      "sha256": "010f0c7ccbdf3084c30ed2fdcb259abec913911ebeddd8cb7fd7777cd7722a95"
+    },
+    {
+      "path": "final-device/calendar-source-after.json",
+      "bytes": 18397,
+      "sha256": "2c46b002d8556a78adc40568d94b71080956c98487d180e4eb07f35a54b489ff"
+    },
+    {
+      "path": "final-device/calendar-source-before.json",
+      "bytes": 18397,
+      "sha256": "2c46b002d8556a78adc40568d94b71080956c98487d180e4eb07f35a54b489ff"
+    },
+    {
+      "path": "final-device/calendar-source-edited-after-copy.json",
+      "bytes": 18377,
+      "sha256": "43ba92c013f54139b70d3d966b08f388fb393af0acd3204cde09d79b737dc0d9"
+    },
+    {
+      "path": "final-device/calendar-source-edited-before-copy.json",
+      "bytes": 18377,
+      "sha256": "43ba92c013f54139b70d3d966b08f388fb393af0acd3204cde09d79b737dc0d9"
+    },
+    {
+      "path": "final-device/calendar-stale-result.json",
+      "bytes": 100,
+      "sha256": "6f5bb6524c65d7b6c9f089936fe8b5436b38757d02b775dd4537fa4fd34017d2"
+    },
+    {
+      "path": "final-device/calendar-ui-result.json",
+      "bytes": 178,
+      "sha256": "776704000fd5d5360d2bd65949c712baf7ae3091f46f866f004aaa7f74a085fb"
+    },
+    {
+      "path": "final-size-guard/actualProviderUiFaithfulImportCancelIdempotenceAndSourceUnchanged.log",
+      "bytes": 82,
+      "sha256": "74a92dbf2c2d5da2a1d35baf1320af8c9a3be60e7072baedb313e215db67b930"
+    },
+    {
+      "path": "final-size-guard/actualSourceEditDeletionAndLocalChangeRejectStalePreview.log",
+      "bytes": 86,
+      "sha256": "a94d9f1e734078d0df424454ad2624b0bade15a4c662539009fb6b868ee67aa9"
+    },
+    {
+      "path": "final-size-guard/androidLargeSourceFailsClosedAndAcceptedRowsRemainReadableAfterReopen.log",
+      "bytes": 85,
+      "sha256": "f2a0b92841f5ebd64e0947098697d17a1e7cd5d805a70fdf7b1c0a2813045b05"
+    },
+    {
+      "path": "final-size-guard/calendar-android-size-boundary.json",
+      "bytes": 161,
+      "sha256": "91177cf2792e12fc64871216ba42b1afc6730dfa3b291ac65f403cc7bf4ed802"
+    },
+    {
+      "path": "final-size-guard/calendar-local-after-copy.json",
+      "bytes": 37382,
+      "sha256": "1040e1434420ad9be3289f32068545dfa0c3dbc9014a486182b6254bfd57db8d"
+    },
+    {
+      "path": "final-size-guard/calendar-local-after.json",
+      "bytes": 33274,
+      "sha256": "0e1938b9cd2468b392a11f4193ec75558104e41f5391b5131ba059a08074ad56"
+    },
+    {
+      "path": "final-size-guard/calendar-source-after.json",
+      "bytes": 18397,
+      "sha256": "cb2e293e1163415239d548882b94408406685871e7567b70564c184c7a2e0fbb"
+    },
+    {
+      "path": "final-size-guard/calendar-source-before.json",
+      "bytes": 18397,
+      "sha256": "cb2e293e1163415239d548882b94408406685871e7567b70564c184c7a2e0fbb"
+    },
+    {
+      "path": "final-size-guard/calendar-source-edited-after-copy.json",
+      "bytes": 18377,
+      "sha256": "7be0cc18e7ada9176d21b87c1676b309db3f7d4b7575de186e383c934491fafc"
+    },
+    {
+      "path": "final-size-guard/calendar-source-edited-before-copy.json",
+      "bytes": 18377,
+      "sha256": "7be0cc18e7ada9176d21b87c1676b309db3f7d4b7575de186e383c934491fafc"
+    },
+    {
+      "path": "final-size-guard/calendar-stale-result.json",
+      "bytes": 100,
+      "sha256": "6f5bb6524c65d7b6c9f089936fe8b5436b38757d02b775dd4537fa4fd34017d2"
+    },
+    {
+      "path": "final-size-guard/calendar-ui-result.json",
+      "bytes": 178,
+      "sha256": "776704000fd5d5360d2bd65949c712baf7ae3091f46f866f004aaa7f74a085fb"
+    },
+    {
+      "path": "host-summary.json",
+      "bytes": 66,
+      "sha256": "89ea7987eb709bdc3475bbc7912e3db8ef838912b18bf55e4783fa14d07c5019"
+    },
+    {
+      "path": "lint-results.xml",
+      "bytes": 19107,
+      "sha256": "571af65909d5b26692ea674f2129e4583201f3f29ff40c3dd1eb22129bc03efc"
+    },
+    {
+      "path": "local-after-copy.json",
+      "bytes": 37324,
+      "sha256": "a4b042ed83c7e083577a7356f4fd875316e0b1ae69603af5da82cc51ae1b8dc0"
+    },
+    {
+      "path": "local-after.json",
+      "bytes": 33223,
+      "sha256": "095fd2cf9a7a032c0b12e840c70c46a598d1d194035890dce61b4bc712426b58"
+    },
+    {
+      "path": "source-after-revoke-deny.json",
+      "bytes": 28476,
+      "sha256": "4e19411283c44ade725fe0ed86769451a47dc4f88e0fec01e60336e867fda231"
+    },
+    {
+      "path": "source-after.json",
+      "bytes": 18385,
+      "sha256": "60f3dcd9630dc6edf0fa08f1e182062dd612ae4ee7f18d4ffb25518353ba156a"
+    },
+    {
+      "path": "source-before-revoke.json",
+      "bytes": 28476,
+      "sha256": "4e19411283c44ade725fe0ed86769451a47dc4f88e0fec01e60336e867fda231"
+    },
+    {
+      "path": "source-before.json",
+      "bytes": 18385,
+      "sha256": "60f3dcd9630dc6edf0fa08f1e182062dd612ae4ee7f18d4ffb25518353ba156a"
+    },
+    {
+      "path": "source-edited-after-copy.json",
+      "bytes": 18365,
+      "sha256": "bf29b94e9e35775f817de92371cd3f6c215182953e387584b115e322fcf83c5c"
+    },
+    {
+      "path": "source-edited-before-copy.json",
+      "bytes": 18365,
+      "sha256": "bf29b94e9e35775f817de92371cd3f6c215182953e387584b115e322fcf83c5c"
+    },
+    {
+      "path": "stale-result.json",
+      "bytes": 100,
+      "sha256": "6f5bb6524c65d7b6c9f089936fe8b5436b38757d02b775dd4537fa4fd34017d2"
+    },
+    {
+      "path": "ui/after-revoke-deny.json",
+      "bytes": 37600,
+      "sha256": "fe7fb4bf031e10da9778c8b07dd7fd55c35f329f867ad663e2a141d37f87f020"
+    },
+    {
+      "path": "ui/permission-denied.png",
+      "bytes": 250618,
+      "sha256": "5750c311b12a7857227454ff91ed0757bf347ea1011960c032d4395dcacc046f"
+    },
+    {
+      "path": "ui/permission-denied.xml",
+      "bytes": 12279,
+      "sha256": "e0144fe6b13e8966b4e84ce10bd729689ed9b233f7470e28b92b0bcc80d41fa8"
+    },
+    {
+      "path": "ui/permission-dialog.png",
+      "bytes": 168006,
+      "sha256": "1f4d14a082c4e78c1c4adcbe596d62f518b3a8d83237299b5ed9d38996419e06"
+    },
+    {
+      "path": "ui/permission-dialog.xml",
+      "bytes": 5429,
+      "sha256": "02f8ea6045424337d8f988f64a12393e6c8aba9d971319e9079b30bd33eb7146"
+    },
+    {
+      "path": "ui/process-restart-local.json",
+      "bytes": 37600,
+      "sha256": "fe7fb4bf031e10da9778c8b07dd7fd55c35f329f867ad663e2a141d37f87f020"
+    },
+    {
+      "path": "ui/process-restart-preview.png",
+      "bytes": 291035,
+      "sha256": "0653f9e3e546320e778327bc5f9496b0c5c460df4b2a2a8a66e8c377cc207532"
+    },
+    {
+      "path": "ui/process-restart-preview.xml",
+      "bytes": 12779,
+      "sha256": "c9970c7c48b2f1578e79a316353dfa6569032ddc17fa97525aba6e72e20e9e77"
+    },
+    {
+      "path": "ui/restart-home.png",
+      "bytes": 184487,
+      "sha256": "eec7bbb18046fa0ac9c3d08b863d5c284eadaabecaac762b34799d108dee3ab9"
+    },
+    {
+      "path": "ui/restart-home.xml",
+      "bytes": 17584,
+      "sha256": "8b8b8fe1e0ed0fb8fb144f052fd80e3d34add3b9a75eb7e444e9662f2c495e3f"
+    },
+    {
+      "path": "ui/text-saved-without-calendar-permission.json",
+      "bytes": 38138,
+      "sha256": "f06019a6b84cc9b8434189b84882bfcc7c34b1b3f9e480581bef0b8054539bf4"
+    },
+    {
+      "path": "ui/text-saved-without-calendar-permission.png",
+      "bytes": 184323,
+      "sha256": "37aa3d29eaa5d57de83bdd92c3d295c26ce6e390757ee83949362a9cf6cd3b9c"
+    },
+    {
+      "path": "ui/text-saved-without-calendar-permission.xml",
+      "bytes": 17593,
+      "sha256": "ccf759eca55732a528e2e79a6c4105c414e00316d105672f81b2498912d98747"
+    },
+    {
+      "path": "ui/text-without-calendar-permission.png",
+      "bytes": 166116,
+      "sha256": "93bb93251e49147675da41efcb311f328ba12f3e64b64f506eb374b557bfad1f"
+    },
+    {
+      "path": "ui/text-without-calendar-permission.xml",
+      "bytes": 10983,
+      "sha256": "e9c3faa6b58686b13c5aeda156e0c18e0a94beb7dccf21ba278f02864490fe69"
+    },
+    {
+      "path": "ui-result.json",
+      "bytes": 178,
+      "sha256": "776704000fd5d5360d2bd65949c712baf7ae3091f46f866f004aaa7f74a085fb"
+    }
+  ]
+}

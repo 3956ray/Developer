@@ -22,6 +22,7 @@ class NotesUiTest {
         ui.onNodeWithText("保存").performClick()
         ui.waitUntil(10000) { ui.onAllNodesWithText("已保存 · 1 条").fetchSemanticsNodes().isNotEmpty() }
         ui.onNodeWithText("搜索标题或正文").performTextInput("恢复")
+        androidx.test.espresso.Espresso.closeSoftKeyboard()
         ui.waitUntil(10000) { ui.onAllNodesWithText("合成验收记录").fetchSemanticsNodes().isNotEmpty() }
         ui.onNodeWithText("合成验收记录").performClick()
         ui.waitUntil(10000) { ui.onAllNodesWithText("正在查看已正式保存的版本").fetchSemanticsNodes().isNotEmpty() }
@@ -35,6 +36,7 @@ class NotesUiTest {
         ui.onNodeWithText("保存").performClick()
         ui.waitUntil(10000) { ui.onAllNodesWithText("更新后的合成文字").fetchSemanticsNodes().isNotEmpty() }
         ui.onNodeWithText("搜索标题或正文").performTextInput("恢复")
+        androidx.test.espresso.Espresso.closeSoftKeyboard()
         ui.waitUntil(10000) { ui.onAllNodesWithText("已保存 · 0 条").fetchSemanticsNodes().isNotEmpty() }
         ui.onNodeWithText("清空").performClick()
         ui.waitUntil(10000) { ui.onAllNodesWithText("已保存 · 1 条").fetchSemanticsNodes().isNotEmpty() }

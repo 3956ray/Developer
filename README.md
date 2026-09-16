@@ -1,6 +1,6 @@
 # 思 · thinkV2
 
-从独立空白 Android 模板开发的本地笔记应用。当前任务为 `V2-OFFLINE-VOICE-002`；文字核心、分类、回收站、提醒与备份已验收。离线语音已接入，识别质量验收尚未通过。
+从独立空白 Android 模板开发的本地笔记应用。当前任务为 `V2-CALENDAR-IMPORT-001`；文字核心、分类、回收站、提醒与备份已验收。离线语音已接入，识别质量验收尚未通过。
 
 当前范围见 [分类与回收站合同](doc/lifecycle-requirements.md)，上一单文字范围见 [需求基线](doc/requirements.md)。实现位于 `app/src/main/java/com/example/thinkv2/notes`。
 
@@ -19,12 +19,14 @@
 
 上一单Vosk冻结合成30段测试的原始专名正确率为47/66（71.21%），严格工程可用性10/30，均未达要求，因此语音不能宣称完整验收。具体证据与剩余条件见[语音验证记录](doc/voice-verification.md)。
 
-语音命令、日历迁移和关系图谱尚未实现。本版本不代表小米15或家庭试用已通过。
+首页「从日历导入」可选择一个源日历和最多366天范围，预览、选择分类和事件后确认导入。只请求读取权限，保留原始来源快照，重复导入跳过已有版本；来源变更默认跳过，可明确另建副本。本机提醒不会自动开启。当前备份只保留笔记文字，不包含日历原始快照或去重映射。见[日历导入验证记录](doc/calendar-import-verification.md)。
+
+语音命令和关系图谱尚未实现。本版本不代表小米15或家庭试用已通过。
 
 构建和验证的实际命令与结果见 [语音验证记录](doc/voice-verification.md)。真机/家庭试用尚未验证。
 
 正式完整产品范围：[2026-09-16独立产品基线](doc/product-baseline-decision-2026-09-16.md)。当前可在编辑器把笔记移入回收站，并在首页回收站恢复原记录；没有永久删除。分类管理支持创建、改名和确认删除分类，笔记内容保留。
 
-本单结果见 [语音验证记录](doc/voice-verification.md)，运行对象审查见 [运行库与模型审查](doc/voice-runtime-review.md)。[备份验证报告](doc/backup-verification.md)、[备份格式](doc/backup-format.md)、[提醒验证报告](doc/reminders-verification.md)及早期报告保留为历史证据。
+历史语音结果见 [语音验证记录](doc/voice-verification.md)，运行对象审查见 [运行库与模型审查](doc/voice-runtime-review.md)。[备份验证报告](doc/backup-verification.md)、[备份格式](doc/backup-format.md)、[提醒验证报告](doc/reminders-verification.md)及早期报告保留为历史证据。
 
 本次SenseVoice仅在显式启用的隔离测试包中评估，未替换日常产品引擎。一次30段结果专名61/66（92.42%），严格工程可用23/30（即使放宽两段也仅25/30），质量未过；私人嵌入许可另为PAUSE。29段PCM与前批完全相同，CN14再生成输入不同，不能当完整同PCM对照。见[002候选评估报告](doc/voice-002-review.md)。

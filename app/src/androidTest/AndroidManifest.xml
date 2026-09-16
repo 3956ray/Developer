@@ -1,5 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+    <uses-permission android:name="android.permission.WRITE_CALENDAR" />
     <application>
+        <provider android:name="com.example.thinkv2.calendar.CalendarFixtureProvider" android:authorities="com.example.thinkv2.test.calendar.fixture" android:exported="true" android:permission="android.permission.DUMP" />
         <provider android:name="com.example.thinkv2.backup.BackupTestDocumentsProvider"
             android:authorities="com.example.thinkv2.test.documents" android:exported="true"
             android:grantUriPermissions="true" android:permission="android.permission.MANAGE_DOCUMENTS">

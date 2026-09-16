@@ -11,6 +11,7 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.semantics.heading
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.font.FontWeight
@@ -24,9 +25,10 @@ import androidx.compose.ui.text.TextRange
 import com.example.thinkv2.voice.*
 
 @Composable
-fun NotesScreen(model: NotesModel,modifier: Modifier = Modifier,onReminders: (String?)->Unit = {},onBackup: ()->Unit = {},voice: VoiceModel?=null) {
+fun NotesScreen(model: NotesModel,modifier: Modifier = Modifier,onReminders: (String?)->Unit = {},onBackup: ()->Unit = {},voice: VoiceModel?=null,onCalendar: ()->Unit = {}) {
     val s=model.state
     val editor=s.editor
+    var originalOpen by remember { mutableStateOf(false) }
     var confirmation by rememberSaveable { mutableStateOf("") }
     BackHandler(editor!=null || s.page!=NotesPage.HOME) { if(!s.busy) { if(editor!=null) model.back() else model.navigate(NotesPage.HOME) } }
     if(editor==null && s.page!=NotesPage.HOME) { LifecycleScreen(model,modifier);return }
@@ -43,6 +45,7 @@ fun NotesScreen(model: NotesModel,modifier: Modifier = Modifier,onReminders: (St
             }
             OutlinedButton(onClick={ onReminders(null) },enabled=!s.busy,modifier=Modifier.fillMaxWidth().heightIn(min=56.dp)) { Text("提醒计划与记录",fontSize=18.sp) }
             OutlinedButton(onClick=onBackup,enabled=!s.busy,modifier=Modifier.fillMaxWidth().heightIn(min=56.dp)) { Text("备份与恢复",fontSize=18.sp) }
+            OutlinedButton(onClick=onCalendar,enabled=!s.busy,modifier=Modifier.fillMaxWidth().heightIn(min=56.dp)) { Text("从日历导入",fontSize=18.sp) }
             s.notice?.let { Text(it,fontSize=18.sp) }
             OutlinedTextField(value=s.query,onValueChange=model::search,label={ Text("搜索标题或正文") },
                 singleLine=true,enabled=!s.busy,modifier=Modifier.fillMaxWidth(),textStyle=LocalTextStyle.current.copy(fontSize=18.sp),
@@ -53,7 +56,7 @@ fun NotesScreen(model: NotesModel,modifier: Modifier = Modifier,onReminders: (St
                 items(s.categories,key={ it.id }) { category -> FilterChip(selected=s.category==category.id,onClick={ model.filter(category.id) },
                     label={ Text(category.name,maxLines=2,overflow=TextOverflow.Ellipsis) },modifier=Modifier.heightIn(min=56.dp)) }
             }
-            LazyColumn(Modifier.weight(1f),verticalArrangement=Arrangement.spacedBy(12.dp),contentPadding=PaddingValues(bottom=24.dp)) {
+            LazyColumn(Modifier.weight(1f).testTag("notes-list"),verticalArrangement=Arrangement.spacedBy(12.dp),contentPadding=PaddingValues(bottom=24.dp)) {
                 item { Text("打开或新建笔记后可使用离线语音输入。",fontSize=18.sp) }
                 if(s.loading || s.busy) item { Text("正在读取…",fontSize=18.sp) }
                 else if(s.error!=null) item {
@@ -98,6 +101,7 @@ fun NotesScreen(model: NotesModel,modifier: Modifier = Modifier,onReminders: (St
                     enabled=!s.busy,modifier=Modifier.fillMaxWidth().heightIn(min=240.dp),textStyle=LocalTextStyle.current.copy(fontSize=18.sp))
                 if(editor.baseRevision>=0) OutlinedButton(onClick={ onReminders(editor.note.id) },enabled=!s.busy,modifier=Modifier.fillMaxWidth().heightIn(min=56.dp)) { Text("设置笔记提醒",fontSize=18.sp) }
                 else Text("正式保存笔记后可设置提醒。",fontSize=18.sp)
+                if(s.calendarOriginal!=null) OutlinedButton(onClick={ originalOpen=true },modifier=Modifier.heightIn(min=56.dp)) { Text("查看日历原始快照") }
                 CategorySelector(model)
                 if(voice!=null) VoiceControls(voice,model,bodyValue.selection.end)
                 OutlinedButton(onClick={ confirmation="discard" },enabled=!s.busy,modifier=Modifier.fillMaxWidth().heightIn(min=56.dp)) { Text("放弃这次编辑",fontSize=18.sp) }
@@ -106,6 +110,8 @@ fun NotesScreen(model: NotesModel,modifier: Modifier = Modifier,onReminders: (St
             }
         }
     }
+    if(originalOpen && s.calendarOriginal!=null && editor!=null) AlertDialog(onDismissRequest={ originalOpen=false },title={ Text("日历原始快照（编辑笔记不会改变原文）") },
+        text={ Text(s.calendarOriginal,Modifier.verticalScroll(rememberScrollState())) },confirmButton={ TextButton(onClick={ originalOpen=false }) { Text("关闭") } })
     if(confirmation.isNotEmpty() && editor!=null) AlertDialog(onDismissRequest={ confirmation="" },
         title={ Text(if(confirmation=="trash") "移入回收站？" else "放弃这次编辑？") },
         text={ Text(if(confirmation=="trash") "已保存的笔记和当前草稿都会保留，可在回收站恢复。提醒会关闭，恢复笔记不会自动重启提醒。" else "清除本次草稿，保留上次正式保存的笔记。") },
