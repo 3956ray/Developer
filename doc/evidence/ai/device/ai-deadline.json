@@ -1,0 +1,8 @@
+{
+  "model": "synthetic-drip",
+  "interByteDelayMs": 500,
+  "configuredDeadlineMs": 20000,
+  "elapsedMs": 20030,
+  "workerTerminated": true,
+  "suggestionApplied": false
+}

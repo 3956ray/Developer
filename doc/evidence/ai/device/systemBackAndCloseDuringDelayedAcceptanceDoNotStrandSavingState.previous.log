@@ -1,0 +1,22 @@
+com.example.thinkv2.ai.AiDeviceTest:
+Error in systemBackAndCloseDuringDelayedAcceptanceDoNotStrandSavingState(com.example.thinkv2.ai.AiDeviceTest):
+java.lang.AssertionError
+	at org.junit.Assert.fail(Assert.java:87)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at org.junit.Assert.assertNotNull(Assert.java:713)
+	at org.junit.Assert.assertNotNull(Assert.java:723)
+	at com.example.thinkv2.ai.AiDeviceTest.systemBackAndCloseDuringDelayedAcceptanceDoNotStrandSavingState(AiDeviceTest.kt:162)
+
+
+Time: 3.995
+There was 1 failure:
+1) systemBackAndCloseDuringDelayedAcceptanceDoNotStrandSavingState(com.example.thinkv2.ai.AiDeviceTest)
+java.lang.AssertionError
+	at org.junit.Assert.fail(Assert.java:87)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at org.junit.Assert.assertNotNull(Assert.java:713)
+	at org.junit.Assert.assertNotNull(Assert.java:723)
+	at com.example.thinkv2.ai.AiDeviceTest.systemBackAndCloseDuringDelayedAcceptanceDoNotStrandSavingState(AiDeviceTest.kt:162)
+
+FAILURES!!!
+Tests run: 1,  Failures: 1

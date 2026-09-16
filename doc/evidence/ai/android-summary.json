@@ -1,0 +1,106 @@
+{
+  "aiTests": 8,
+  "regressionTests": 13,
+  "results": [
+    {
+      "file": "device/actualUiConsentMinimalFieldsEditedTitleAndCategoryAcceptedSeparately.log",
+      "tests": 1,
+      "seconds": 10.996
+    },
+    {
+      "file": "device/continuouslyDrippingResponseStopsAtOverallDeadline.log",
+      "tests": 1,
+      "seconds": 21.409
+    },
+    {
+      "file": "device/endpointModelChangesInvalidateConsentAndLateResponse.log",
+      "tests": 1,
+      "seconds": 5.556
+    },
+    {
+      "file": "device/keystoreCiphertextClearAndNewSessionDefaultsOff.log",
+      "tests": 1,
+      "seconds": 1.745
+    },
+    {
+      "file": "device/rejectedSuggestionsAndExplicitEditedNewCategoryAreIndependent.log",
+      "tests": 1,
+      "seconds": 4.127
+    },
+    {
+      "file": "device/staleManualEditsSwitchCancelDisableAndReverseAcceptancePreserveOwnership.log",
+      "tests": 1,
+      "seconds": 9.833
+    },
+    {
+      "file": "device/systemBackAndCloseDuringDelayedAcceptanceDoNotStrandSavingState.log",
+      "tests": 1,
+      "seconds": 3.038
+    },
+    {
+      "file": "device/tlsRedirectOfflineErrorsTimeoutAndCancellationUseRealAndroidAdapter.log",
+      "tests": 1,
+      "seconds": 12.526
+    },
+    {
+      "file": "regression/AndroidLifecycleTest.log",
+      "tests": 1,
+      "seconds": 0.099
+    },
+    {
+      "file": "regression/AndroidPersistenceTest.log",
+      "tests": 1,
+      "seconds": 0.043
+    },
+    {
+      "file": "regression/AndroidReminderTest.log",
+      "tests": 1,
+      "seconds": 99.598
+    },
+    {
+      "file": "regression/ExampleInstrumentedTest.log",
+      "tests": 1,
+      "seconds": 0.004
+    },
+    {
+      "file": "regression/NotesUiTest.log",
+      "tests": 1,
+      "seconds": 16.241
+    },
+    {
+      "file": "regression/ReminderUiTest.log",
+      "tests": 1,
+      "seconds": 5.694
+    },
+    {
+      "file": "regression/backup.AndroidBackupTest.log",
+      "tests": 2,
+      "seconds": 0.381
+    },
+    {
+      "file": "regression/calendar.CalendarImportDeviceTest#actualProviderUiFaithfulImportCancelIdempotenceAndSourceUnchanged.log",
+      "tests": 1,
+      "seconds": 20.842
+    },
+    {
+      "file": "regression/calendar.CalendarImportDeviceTest#actualSourceEditDeletionAndLocalChangeRejectStalePreview.log",
+      "tests": 1,
+      "seconds": 10.674
+    },
+    {
+      "file": "regression/calendar.CalendarImportDeviceTest#androidLargeSourceFailsClosedAndAcceptedRowsRemainReadableAfterReopen.log",
+      "tests": 1,
+      "seconds": 7.846
+    },
+    {
+      "file": "regression/voice.VoiceLifecycleTest#actualMicrophoneBackgroundAndCancelKeepExistingDraft.log",
+      "tests": 1,
+      "seconds": 6.379
+    },
+    {
+      "file": "regression/voice.VoiceLifecycleTest#deniedPlatformPermissionDoesNotChangeText.log",
+      "tests": 1,
+      "seconds": 3.021
+    }
+  ]
+}

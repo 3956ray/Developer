@@ -1,0 +1,9 @@
+{
+  "mockOnly": true,
+  "providerVerified": false,
+  "requests": 1,
+  "explicitMinimalText": true,
+  "bothSuggestionsAcceptedSeparately": true,
+  "bodyPreserved": true,
+  "credentialCaptured": false
+}

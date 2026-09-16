@@ -14,7 +14,7 @@ class NoteRepository(private val db: Sql) : AutoCloseable {
 
     fun initialize() = transaction {
         val version = db.query("PRAGMA user_version").single().single().toInt()
-        check(version in 0..5) { "unsupported_schema" }
+        check(version in 0..6) { "unsupported_schema" }
         if (version == 0) {
             check(db.query("SELECT name FROM sqlite_master WHERE type='table' AND name NOT LIKE 'sqlite_%' AND name!='android_metadata'").isEmpty()) { "unknown_database" }
             db.execute("CREATE TABLE notes ($fields, title_fold TEXT NOT NULL, body_fold TEXT NOT NULL)")
@@ -43,6 +43,10 @@ class NoteRepository(private val db: Sql) : AutoCloseable {
         if(version<3) { ReminderSchema.migrate(db);db.execute("PRAGMA user_version=3") }
         if(version<4) { BackupRepository.migrate(db);db.execute("PRAGMA user_version=4") }
         if(version<5) { com.example.thinkv2.calendar.CalendarRepository.migrate(db);db.execute("PRAGMA user_version=5") }
+        if(version<6) {
+            db.execute("CREATE TABLE ai_acceptances (id TEXT PRIMARY KEY,request_id TEXT NOT NULL,record_id TEXT NOT NULL,field TEXT NOT NULL,endpoint TEXT NOT NULL,model TEXT NOT NULL,input_hash TEXT NOT NULL,proposed TEXT NOT NULL,chosen TEXT NOT NULL,accepted_at INTEGER NOT NULL,note_revision INTEGER NOT NULL,UNIQUE(request_id,field))")
+            db.execute("PRAGMA user_version=6")
+        }
     }
 
     private fun note(r: List<String>) = Note(r[0],r[1],r[2],r[3]=="1",r[4],r[5].toLong(),r[6].toLong(),r[7].toLong(),r[8],r[9])
@@ -135,6 +139,25 @@ class NoteRepository(private val db: Sql) : AutoCloseable {
         val active=db.query("SELECT id FROM drafts WHERE id=? AND active=1",listOf(e.note.id)).isNotEmpty()
         if(active || !sameContent(find(e.note.id),e.note)) writeDraft(e,true)
         e
+    }
+    /** Explicit acceptance is one transaction: optional confirmed category + draft + immutable provenance. */
+    fun acceptAi(editing: Editing,a: com.example.thinkv2.ai.AiAcceptance): Editing = transaction {
+        ensureCurrent(editing)
+        require(a.field in setOf("title","category"))
+        require(a.chosen.isNotBlank() && a.chosen.codePointCount(0,a.chosen.length)<=if(a.field=="title") 120 else 80)
+        check(db.query("SELECT id FROM ai_acceptances WHERE request_id=? AND field=?",listOf(a.requestId,a.field)).isEmpty()) { "already_accepted" }
+        val changed=if(a.field=="title") editing.note.titleChanged(a.chosen) else {
+            // Do not silently map a deleted/renamed candidate or turn a model string into a new category.
+            check(a.candidates.all { category(it.id)==it }) { "category_changed" }
+            val selected=if(a.createCategory) insertCategory(a.chosen.trim()) else {
+                val expected=a.candidates.singleOrNull { it.id==a.categoryId } ?: error("category_changed")
+                check(expected.name==a.chosen);expected
+            }
+            editing.note.categorized(selected)
+        }
+        val next=editing.copy(note=changed);writeDraft(next,true)
+        db.execute("INSERT INTO ai_acceptances VALUES (?,?,?,?,?,?,?,?,?,?,?)",listOf(UUID.randomUUID().toString(),a.requestId,changed.id,a.field,a.endpoint,a.model,a.inputHash,a.proposed,a.chosen,System.currentTimeMillis().toString(),changed.revision.toString()))
+        next
     }
     fun save(e: Editing, now: Long = System.currentTimeMillis()): Note = transaction {
         require(e.note.body.isNotBlank()) { "body_required" }

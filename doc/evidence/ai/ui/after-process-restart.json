@@ -1,0 +1,86 @@
+{
+  "notes": [],
+  "drafts": [
+    [
+      "3e6a1c71-5abd-417d-b767-d7abe308b6ca",
+      "另一个笔记",
+      "另一个笔记",
+      0,
+      "",
+      1789558159863,
+      1789558159863,
+      1,
+      -1,
+      1,
+      "",
+      "manual"
+    ],
+    [
+      "fb97bde8-4845-4c9f-a465-58b46f32f983",
+      "合成必要文字\nPRIVATE_ACCOUNT_SENTINEL 不得发送的日历账户和来源信息",
+      "两次之间人工编辑",
+      1,
+      "合成已有分类",
+      1789558152663,
+      1789558152663,
+      8,
+      -1,
+      1,
+      "aac8a4d5-a0dc-4a8a-8a33-0196c09e82c7",
+      "manual"
+    ]
+  ],
+  "categories": [
+    [
+      "aac8a4d5-a0dc-4a8a-8a33-0196c09e82c7",
+      "合成已有分类",
+      0,
+      1
+    ]
+  ],
+  "reminders": [],
+  "backup_imports": [],
+  "backup_origins": [],
+  "calendar_imports": [],
+  "ai_acceptances": [
+    [
+      "0f78d6bf-4591-4bfa-ac9e-5f2b3a474968",
+      "99630a4e-46ea-4149-98db-f1b427c96032",
+      "fb97bde8-4845-4c9f-a465-58b46f32f983",
+      "title",
+      "https://localhost:18443/v1/chat/completions",
+      "synthetic-ok",
+      "82c6dff2cc1293a30d936527c8c0ff67d42a175da59b758a884cd96304428677",
+      "合成AI标题",
+      "首次接受",
+      1789558159069,
+      7
+    ],
+    [
+      "2f672e08-f273-47e0-a0f1-d6cde594790a",
+      "102e852a-e880-4ad7-a668-fe41ff6b9728",
+      "fb97bde8-4845-4c9f-a465-58b46f32f983",
+      "title",
+      "https://localhost:18443/v1/chat/completions",
+      "synthetic-ok",
+      "82c6dff2cc1293a30d936527c8c0ff67d42a175da59b758a884cd96304428677",
+      "合成AI标题",
+      "第二顺序接受标题",
+      1789558158800,
+      6
+    ],
+    [
+      "58530dd7-10e9-401b-9727-7478f0151b79",
+      "102e852a-e880-4ad7-a668-fe41ff6b9728",
+      "fb97bde8-4845-4c9f-a465-58b46f32f983",
+      "category",
+      "https://localhost:18443/v1/chat/completions",
+      "synthetic-ok",
+      "82c6dff2cc1293a30d936527c8c0ff67d42a175da59b758a884cd96304428677",
+      "aac8a4d5-a0dc-4a8a-8a33-0196c09e82c7",
+      "合成已有分类",
+      1789558158664,
+      5
+    ]
+  ]
+}

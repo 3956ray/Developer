@@ -25,7 +25,7 @@ import androidx.compose.ui.text.TextRange
 import com.example.thinkv2.voice.*
 
 @Composable
-fun NotesScreen(model: NotesModel,modifier: Modifier = Modifier,onReminders: (String?)->Unit = {},onBackup: ()->Unit = {},voice: VoiceModel?=null,onCalendar: ()->Unit = {}) {
+fun NotesScreen(model: NotesModel,modifier: Modifier = Modifier,onReminders: (String?)->Unit = {},onBackup: ()->Unit = {},voice: VoiceModel?=null,onCalendar: ()->Unit = {},ai: com.example.thinkv2.ai.AiModel?=null) {
     val s=model.state
     val editor=s.editor
     var originalOpen by remember { mutableStateOf(false) }
@@ -57,6 +57,7 @@ fun NotesScreen(model: NotesModel,modifier: Modifier = Modifier,onReminders: (St
                     label={ Text(category.name,maxLines=2,overflow=TextOverflow.Ellipsis) },modifier=Modifier.heightIn(min=56.dp)) }
             }
             LazyColumn(Modifier.weight(1f).testTag("notes-list"),verticalArrangement=Arrangement.spacedBy(12.dp),contentPadding=PaddingValues(bottom=24.dp)) {
+                if(ai!=null) item { OutlinedButton(onClick=ai::settings,enabled=ai.state.loaded && !s.busy,modifier=Modifier.fillMaxWidth().heightIn(min=56.dp)) { Text("AI建议设置") } }
                 item { Text("打开或新建笔记后可使用离线语音输入。",fontSize=18.sp) }
                 if(s.loading || s.busy) item { Text("正在读取…",fontSize=18.sp) }
                 else if(s.error!=null) item {
@@ -102,6 +103,10 @@ fun NotesScreen(model: NotesModel,modifier: Modifier = Modifier,onReminders: (St
                 if(editor.baseRevision>=0) OutlinedButton(onClick={ onReminders(editor.note.id) },enabled=!s.busy,modifier=Modifier.fillMaxWidth().heightIn(min=56.dp)) { Text("设置笔记提醒",fontSize=18.sp) }
                 else Text("正式保存笔记后可设置提醒。",fontSize=18.sp)
                 if(s.calendarOriginal!=null) OutlinedButton(onClick={ originalOpen=true },modifier=Modifier.heightIn(min=56.dp)) { Text("查看日历原始快照") }
+                if(ai!=null) {
+                    OutlinedButton(onClick=ai::settings,enabled=!s.busy,modifier=Modifier.heightIn(min=56.dp)) { Text("AI建议设置") }
+                    OutlinedButton(onClick={ ai.prepare(model) },enabled=!s.busy && editor.note.body.isNotBlank(),modifier=Modifier.heightIn(min=56.dp)) { Text("请求AI标题与分类建议") }
+                }
                 CategorySelector(model)
                 if(voice!=null) VoiceControls(voice,model,bodyValue.selection.end)
                 OutlinedButton(onClick={ confirmation="discard" },enabled=!s.busy,modifier=Modifier.fillMaxWidth().heightIn(min=56.dp)) { Text("放弃这次编辑",fontSize=18.sp) }

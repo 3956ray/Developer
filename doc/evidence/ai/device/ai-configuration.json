@@ -1,0 +1,7 @@
+{
+  "newCredentialRequiredForChangedModel": true,
+  "endpointChangeDisabled": true,
+  "newConsentRequired": true,
+  "oldResponseDiscarded": true,
+  "newDestinationRequests": 0
+}

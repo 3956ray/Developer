@@ -1,0 +1,7 @@
+{
+  "encryptedOnly": true,
+  "androidKeystore": true,
+  "newSessionDisabled": true,
+  "clearRemovedCiphertext": true,
+  "secretInEvidence": false
+}

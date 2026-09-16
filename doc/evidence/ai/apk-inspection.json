@@ -1,0 +1,11 @@
+{
+  "productSha256": "11d679ba6c4bb16e3008e01cf311b1a2bc799a0896ac2eb8c8e126b8ddf8b543",
+  "testSha256": "3afd75fddfc68539e0a352ff6be31b0520575b88f043551411537c8456c789de",
+  "libraries": [
+    "lib/arm64-v8a/libandroidx.graphics.path.so",
+    "lib/arm64-v8a/libjnidispatch.so",
+    "lib/arm64-v8a/libvosk.so"
+  ],
+  "productContainsTestCertificate": false,
+  "newDependencies": false
+}

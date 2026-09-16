@@ -1,0 +1,20 @@
+{
+  "system-trust-rejects-test-ca": "network",
+  "wrong-hostname": "network",
+  "offline-port": "network",
+  "synthetic-401": "credentials",
+  "synthetic-403": "credentials",
+  "synthetic-429": "rate_limit",
+  "synthetic-500": "service",
+  "synthetic-malformed": "invalid_response",
+  "synthetic-inject": "invalid_response",
+  "synthetic-empty": "empty_response",
+  "synthetic-large": "response_limit",
+  "synthetic-redirect": "redirect",
+  "synthetic-timeout": "timeout",
+  "cancel": "cancelled",
+  "mockOnly": true,
+  "providerVerified": false,
+  "redirectTrapRequests": 0,
+  "notesMutated": false
+}

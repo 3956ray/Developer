@@ -1,0 +1,217 @@
+{
+  "task": "V2-AI-SUGGESTIONS-001",
+  "attempt": "b14de6bf-bb39-4bae-a6b9-14953ec4a1ae",
+  "syntheticOnly": true,
+  "files": [
+    {
+      "path": "android-summary.json",
+      "bytes": 2826,
+      "sha256": "a19e92454ba371f536c9db1758323bb8ad8cea9cf69a7f5ec49e9cac1f872a23"
+    },
+    {
+      "path": "apk-inspection.json",
+      "bytes": 387,
+      "sha256": "ed78850a847842f32c33c51f4378b8b4a4e65878b98408976431763859fcf291"
+    },
+    {
+      "path": "apk-permissions.txt",
+      "bytes": 480,
+      "sha256": "7643175b7a0ecc9eb62c2686a32857529fb0091dedf71b840b21ecac9fa7b1fd"
+    },
+    {
+      "path": "build.log",
+      "bytes": 5157,
+      "sha256": "6e8d92927d933afceb1db04a3c0bfca46df56e7bcec2b879dc6395707af907aa"
+    },
+    {
+      "path": "device/actualUiConsentMinimalFieldsEditedTitleAndCategoryAcceptedSeparately.log",
+      "bytes": 65,
+      "sha256": "dfb5d36d23de66b5504845b95c71f921063fca09b37c0c8c4cdb663d1d137cd7"
+    },
+    {
+      "path": "device/ai-accepted.png",
+      "bytes": 172227,
+      "sha256": "65cd595e1d132194b6a5abba2e9df806f122074b0b88fa3d11280909c7984cfa"
+    },
+    {
+      "path": "device/ai-configuration.json",
+      "bytes": 177,
+      "sha256": "6e8b6b0305c8d0c8610671327bda81f125a78ffee11ce7b673d3c592fe4bae8a"
+    },
+    {
+      "path": "device/ai-consent.png",
+      "bytes": 192312,
+      "sha256": "e194463d3219901fe935cca205e7955f1ada2474cbaf8253254f0e3f05398b65"
+    },
+    {
+      "path": "device/ai-deadline.json",
+      "bytes": 171,
+      "sha256": "64c6d318cfe779895ba996588054cf93ce2b01e00250661c0af9a50b2cae50cd"
+    },
+    {
+      "path": "device/ai-dismiss.json",
+      "bytes": 150,
+      "sha256": "9316bc88344e293d91b6dcb0e7876f59297bd4654ddccbd64d95613fd4fa3b3c"
+    },
+    {
+      "path": "device/ai-network.json",
+      "bytes": 601,
+      "sha256": "2d824822d9f5d22fbea9543a9d4e034ba16232c1ae3c22a75f9dc6aa38c4e0dd"
+    },
+    {
+      "path": "device/ai-new-category.json",
+      "bytes": 140,
+      "sha256": "17dd08c3c0b87a425b23d26a2caed96c42a4a11e1c64c3bac9e6253504949a45"
+    },
+    {
+      "path": "device/ai-stale.json",
+      "bytes": 220,
+      "sha256": "dfcfe8d25b2489312d4e48e0a4cec0514ba8a23d20a3c9063fbde72f79308fbb"
+    },
+    {
+      "path": "device/ai-ui.json",
+      "bytes": 200,
+      "sha256": "154ba902854f251cc09914b74d5e4a97524b43477c771402254d90e82f84e602"
+    },
+    {
+      "path": "device/ai-vault.json",
+      "bytes": 147,
+      "sha256": "3b95cdef97d4175614173875d2111694d4b588d3c15063979c0cee59db066f5a"
+    },
+    {
+      "path": "device/continuouslyDrippingResponseStopsAtOverallDeadline.log",
+      "bytes": 65,
+      "sha256": "18ae8973c8de7906055b3ad1635fc53323b2f732d5e0635e5724c68cc972fb89"
+    },
+    {
+      "path": "device/endpointModelChangesInvalidateConsentAndLateResponse.log",
+      "bytes": 64,
+      "sha256": "1678b70a8a7ad7c9f4124953b8cd50731f161c4b3bc3b015c4d339d0ec5eac2a"
+    },
+    {
+      "path": "device/keystoreCiphertextClearAndNewSessionDefaultsOff.log",
+      "bytes": 64,
+      "sha256": "41f37d2a18480ba486cc650b3ee9d14ce11e59ac1f37d2b318aa19edd0edba3f"
+    },
+    {
+      "path": "device/rejectedSuggestionsAndExplicitEditedNewCategoryAreIndependent.log",
+      "bytes": 64,
+      "sha256": "e1719888aaf64e7bc786dc9151532aa3deec3ff138259e57075ece9c9286d1d9"
+    },
+    {
+      "path": "device/staleManualEditsSwitchCancelDisableAndReverseAcceptancePreserveOwnership.log",
+      "bytes": 64,
+      "sha256": "aaf22f92b37eb1a38e34934672bf8ed0587ae9710db5c52705d83e79b420b5a5"
+    },
+    {
+      "path": "device/systemBackAndCloseDuringDelayedAcceptanceDoNotStrandSavingState.log",
+      "bytes": 64,
+      "sha256": "062ae9bebbb493514bc6742ec6128c5ca94690c7fdde5fdf45600bc62a43fdf3"
+    },
+    {
+      "path": "device/systemBackAndCloseDuringDelayedAcceptanceDoNotStrandSavingState.previous.log",
+      "bytes": 1015,
+      "sha256": "229eb9ad0f52743e087a71d535ebe01a5ff948a70af47aad35837fd8f3d83c54"
+    },
+    {
+      "path": "device/tlsRedirectOfflineErrorsTimeoutAndCancellationUseRealAndroidAdapter.log",
+      "bytes": 65,
+      "sha256": "5302df3594b6d6d8a8da037f71814be3cb986b85ae48a3c688f666425fff9f2b"
+    },
+    {
+      "path": "host-summary.json",
+      "bytes": 67,
+      "sha256": "3e4f6d0052233f80683ab604d182ef4c827554eded8141ed1ff57e40088c7c73"
+    },
+    {
+      "path": "lint-results.xml",
+      "bytes": 19107,
+      "sha256": "3ada70191a5b393e7942144e47a6cf216097e2bbe530637e77a9c2dcc7d773b8"
+    },
+    {
+      "path": "regression/AndroidLifecycleTest.log",
+      "bytes": 69,
+      "sha256": "6176c6d76c9035eff3a5e44ad9b3071d2fe87f466e0755b51ceec8e4d1f0c6e9"
+    },
+    {
+      "path": "regression/AndroidPersistenceTest.log",
+      "bytes": 71,
+      "sha256": "b189d35926ac87936bb011bc1adfca654a1e9ecc9f72a44c7b367b475156fe12"
+    },
+    {
+      "path": "regression/AndroidReminderTest.log",
+      "bytes": 69,
+      "sha256": "74e3872ad6ee6293aae6162f8051c8aefc0f4d52ac450024b8006adec462bc33"
+    },
+    {
+      "path": "regression/ExampleInstrumentedTest.log",
+      "bytes": 72,
+      "sha256": "57e7e7f5912a5fbc516dd83baf7e9144a95b1dcd5a2fcd8d6a6f60b5cc4f7f7d"
+    },
+    {
+      "path": "regression/NotesUiTest.log",
+      "bytes": 61,
+      "sha256": "3a960d36f2b6d94cb7596d6fde8bd02e1d226648470244d395144f0d1eb8a2b1"
+    },
+    {
+      "path": "regression/ReminderUiTest.log",
+      "bytes": 63,
+      "sha256": "0afd86f6e53be9568fc9c9025ac386dd8a1afee2ee27135f7ad31ba44ccc5490"
+    },
+    {
+      "path": "regression/backup.AndroidBackupTest.log",
+      "bytes": 75,
+      "sha256": "63e42774e22e257b6a7cd8a4de98d25df41c81b4bae8379adc95705f6a0dadbe"
+    },
+    {
+      "path": "regression/calendar.CalendarImportDeviceTest#actualProviderUiFaithfulImportCancelIdempotenceAndSourceUnchanged.log",
+      "bytes": 83,
+      "sha256": "54b1d1db7c9dc7f5d7ab67fcf882aee4940763db35569d361726ff0d036912b4"
+    },
+    {
+      "path": "regression/calendar.CalendarImportDeviceTest#actualSourceEditDeletionAndLocalChangeRejectStalePreview.log",
+      "bytes": 83,
+      "sha256": "4078f1b9ffacae1511eeb9007fbc3fca9876f5593c8055819d11c8af28a05e24"
+    },
+    {
+      "path": "regression/calendar.CalendarImportDeviceTest#androidLargeSourceFailsClosedAndAcceptedRowsRemainReadableAfterReopen.log",
+      "bytes": 82,
+      "sha256": "e5aec56b1f138afbb3da0021f4c5d1ac251de97cd44a67cf2cc42050439c2796"
+    },
+    {
+      "path": "regression/voice.VoiceLifecycleTest#actualMicrophoneBackgroundAndCancelKeepExistingDraft.log",
+      "bytes": 73,
+      "sha256": "c35521b4e0b66e40367e391580630052f827576c4a4c90c5306629c080a42edc"
+    },
+    {
+      "path": "regression/voice.VoiceLifecycleTest#deniedPlatformPermissionDoesNotChangeText.log",
+      "bytes": 73,
+      "sha256": "4d7072d112d9ffe0ea4f5f841d1ec07c5deb3befc3d1584dd7b8f1a3469d4c71"
+    },
+    {
+      "path": "synthetic-requests.json",
+      "bytes": 40111,
+      "sha256": "ed72e59abc4d6e8acb658fe010ee60a576769bd273ab791fcfe7b2a71fde3ca5"
+    },
+    {
+      "path": "ui/after-process-restart.json",
+      "bytes": 2075,
+      "sha256": "c49fe8bc547059cb68173ab02234a24dbea08a90baa264b35f4c41bb223555f5"
+    },
+    {
+      "path": "ui/before-process-restart.json",
+      "bytes": 2075,
+      "sha256": "c49fe8bc547059cb68173ab02234a24dbea08a90baa264b35f4c41bb223555f5"
+    },
+    {
+      "path": "ui/process-restart-disabled.png",
+      "bytes": 226559,
+      "sha256": "d390fe83ffc62894a4e51cfcab5a41ef097e4d8caba1d2f02f7c577ebae293f2"
+    },
+    {
+      "path": "ui/process-restart-disabled.xml",
+      "bytes": 11549,
+      "sha256": "202f41bb5cb0b782d094bf644b59ae6e1d8c1ed50c90e41ad6a9d45c4b68e449"
+    }
+  ]
+}

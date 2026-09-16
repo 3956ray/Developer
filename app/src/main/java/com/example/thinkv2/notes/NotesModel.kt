@@ -112,6 +112,22 @@ class NotesModel(
         state=state.copy(externalCursor=anchor.cursor+replacement.length)
         return voiceAnchor(anchor.cursor)
     }
+    fun aiAnchor(): com.example.thinkv2.ai.AiAnchor? {
+        val e=state.editor ?: return null
+        if(state.busy || state.page!=NotesPage.HOME || e.note.body.isBlank()) return null
+        return com.example.thinkv2.ai.AiAnchor(editorToken,e.note.id,e.note.revision,e.baseRevision,e.note.manualTitle,e.note.categoryId,e.note.categorySource)
+    }
+    fun acceptAi(anchor: com.example.thinkv2.ai.AiAnchor,a: com.example.thinkv2.ai.AiAcceptance,done: (Boolean)->Unit) {
+        if(aiAnchor()!=anchor) { done(false);return }
+        val editing=state.editor!!;timer?.cancel();state=state.copy(busy=true,error=null)
+        scope.launch {
+            try {
+                val result=withContext(worker) { val db=store();db.acceptAi(editing,a) to db.categories() }
+                state=state.copy(busy=false,editor=result.first,categories=result.second,draftState=DraftState.SAVED)
+                done(true)
+            } catch(_: Exception) { state=state.copy(busy=false,error="建议未应用；笔记或分类可能已变更，请重新请求。原有编辑保留。");done(false) }
+        }
+    }
     fun body(text: String) = edit { it.bodyChanged(text) }
     fun title(text: String) = edit { it.titleChanged(text) }
     fun category(text: String) = edit { it.categoryChanged(text) }

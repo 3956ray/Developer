@@ -1,0 +1,8 @@
+package: com.example.thinkv2
+uses-permission: name='android.permission.POST_NOTIFICATIONS'
+uses-permission: name='android.permission.RECEIVE_BOOT_COMPLETED'
+uses-permission: name='android.permission.READ_CALENDAR'
+uses-permission: name='android.permission.INTERNET'
+uses-permission: name='android.permission.RECORD_AUDIO'
+permission: com.example.thinkv2.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+uses-permission: name='com.example.thinkv2.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION'

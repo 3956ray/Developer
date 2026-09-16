@@ -60,7 +60,7 @@ class CalendarImportDeviceTest {
     }
     @Test fun actualProviderUiFaithfulImportCancelIdempotenceAndSourceUnchanged() {
         val requested=context.packageManager.getPackageInfo(context.packageName,PackageManager.GET_PERMISSIONS).requestedPermissions.orEmpty()
-        assertTrue(requested.contains(Manifest.permission.READ_CALENDAR));assertFalse(requested.contains(Manifest.permission.WRITE_CALENDAR));assertFalse(requested.contains(Manifest.permission.INTERNET))
+        assertTrue(requested.contains(Manifest.permission.READ_CALENDAR));assertFalse(requested.contains(Manifest.permission.WRITE_CALENDAR));assertTrue(requested.contains(Manifest.permission.INTERNET))
         instrumentation.uiAutomation.grantRuntimePermission(context.packageName,Manifest.permission.READ_CALENDAR)
         val seed=fixture("seed");assertNotEquals(context.applicationInfo.uid,seed.getInt("fixtureUid"));assertEquals(PackageManager.PERMISSION_DENIED,context.checkSelfPermission(Manifest.permission.WRITE_CALENDAR));val before=fixture("snapshot").toString();save("source-before",before)
         store { n,_ ->n.createCategory("日历合成分类") }
