@@ -1,6 +1,6 @@
 # 思 · thinkV2
 
-从独立空白 Android 模板开发的本地笔记应用。当前任务为 `V2-NOTES-ACCESSIBILITY-001`；文字核心、分类、回收站、提醒与备份已验收。离线语音已接入，识别质量验收尚未通过。
+从独立空白 Android 模板开发的本地笔记应用。当前任务为 `V2-REMINDERS-USABILITY-001`；文字核心、分类、回收站、提醒与备份已验收。离线语音已接入，识别质量验收尚未通过。
 
 当前范围见 [分类与回收站合同](doc/lifecycle-requirements.md)，上一单文字范围见 [需求基线](doc/requirements.md)。实现位于 `app/src/main/java/com/example/thinkv2/notes`。
 
@@ -36,3 +36,5 @@ AI标题/分类建议默认关闭；在「AI建议设置」填写HTTPS端点、�
 历史语音结果见 [语音验证记录](doc/voice-verification.md)，运行对象审查见 [运行库与模型审查](doc/voice-runtime-review.md)。[CP8兼容验证报告](doc/backup-compatibility-verification.md)、[早期备份验证报告](doc/backup-verification.md)、[备份格式](doc/backup-format.md)、[提醒验证报告](doc/reminders-verification.md)及早期报告保留为历史证据。
 
 本次SenseVoice仅在显式启用的隔离测试包中评估，未替换日常产品引擎。一次30段结果专名61/66（92.42%），严格工程可用23/30（即使放宽两段也仅25/30），质量未过；私人嵌入许可另为PAUSE。29段PCM与前批完全相同，CN14再生成输入不同，不能当完整同PCM对照。见[002候选评估报告](doc/voice-002-review.md)。
+
+提醒表单、计划与触发记录的大字体/窄屏操作和持久化验证见[CP7提醒界面报告](doc/reminders-usability-verification.md)。

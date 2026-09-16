@@ -10,8 +10,8 @@ class ReminderRepository(private val db: Sql) {
     fun get(id: String)=db.query("SELECT $columns FROM reminders WHERE id=?",listOf(id)).firstOrNull()?.let(::plan)
     fun forNote(id: String)=db.query("SELECT $columns FROM reminders WHERE note_id=?",listOf(id)).firstOrNull()?.let(::plan)
     fun noteActive(id: String)=db.query("SELECT id FROM notes WHERE id=? AND deleted_at=0",listOf(id)).isNotEmpty()
-    fun noteLabel(id: String)=db.query("SELECT title,deleted_at FROM notes WHERE id=?",listOf(id)).firstOrNull()
-        ?.let { if(it[1]=="0") it[0] else "笔记已在回收站" } ?: "笔记不存在"
+    fun noteLabel(id: String)=db.query("SELECT title,deleted_at,category,body FROM notes WHERE id=?",listOf(id)).firstOrNull()
+        ?.let { if(it[1]=="0") "${it[0]} · ${it[2].ifBlank { "未分类" }} · ${com.example.thinkv2.notes.matchingExcerpt(it[3],"")}" else "笔记已在回收站" } ?: "笔记不存在"
     fun save(noteId: String,expected: Long,rule: ReminderRule,requested: Boolean,lastKey: String): ReminderPlan=transaction {
         rule.validate();check(noteActive(noteId)) { "note_not_active" }
         val old=forNote(noteId);check((old?.revision ?: -1)==expected) { "stale_rule" }

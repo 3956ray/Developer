@@ -1,0 +1,104 @@
+{
+  "allAssertionsPassed": true,
+  "fontScale": 1,
+  "widthDp": 320,
+  "firstNoteId": "e7709e33-7a5f-482d-a582-70051202eda3",
+  "secondNoteId": "c3e81e9c-7d0f-4724-a66e-2395c977fb7c",
+  "checks": [
+    {
+      "label": "允许通知",
+      "role": "android.widget.Button",
+      "bounds": "[42,691][798,838]",
+      "widthDp": 288,
+      "heightDp": 56
+    },
+    {
+      "label": "打开系统通知设置",
+      "role": "android.widget.Button",
+      "bounds": "[42,838][798,985]",
+      "widthDp": 288,
+      "heightDp": 56
+    },
+    {
+      "label": "启用此提醒",
+      "role": "android.widget.TextView",
+      "roleDescription": "Switch",
+      "bounds": "[42,497][798,650]",
+      "widthDp": 288,
+      "heightDp": 58.285713
+    },
+    {
+      "input": "开始日期",
+      "bounds": "Rect.fromLTRB(42.0, 748.0, 798.0, 983.0)",
+      "viewport": "Rect.fromLTRB(42.0, 210.0, 798.0, 983.0)",
+      "pointerTap": "center of measured field",
+      "focused": true
+    },
+    {
+      "input": "开始日期",
+      "bounds": "Rect.fromLTRB(42.0, 748.0, 798.0, 983.0)",
+      "viewport": "Rect.fromLTRB(42.0, 210.0, 798.0, 983.0)",
+      "pointerTap": "center of measured field",
+      "focused": true
+    },
+    {
+      "input": "当地时间",
+      "bounds": "Rect.fromLTRB(42.0, 734.0, 798.0, 983.0)",
+      "viewport": "Rect.fromLTRB(42.0, 210.0, 798.0, 983.0)",
+      "pointerTap": "center of measured field",
+      "focused": true
+    },
+    {
+      "input": "当地时间",
+      "bounds": "Rect.fromLTRB(42.0, 734.0, 798.0, 983.0)",
+      "viewport": "Rect.fromLTRB(42.0, 210.0, 798.0, 983.0)",
+      "pointerTap": "center of measured field",
+      "focused": true
+    },
+    {
+      "label": "保存提醒规则",
+      "role": "android.widget.Button",
+      "bounds": "[42,1358][798,1505]",
+      "widthDp": 288,
+      "heightDp": 56
+    },
+    {
+      "input": "当地时间",
+      "bounds": "Rect.fromLTRB(42.0, 734.0, 798.0, 983.0)",
+      "viewport": "Rect.fromLTRB(42.0, 210.0, 798.0, 983.0)",
+      "pointerTap": "center of measured field",
+      "focused": true
+    },
+    {
+      "input": "开始日期",
+      "bounds": "Rect.fromLTRB(42.0, 748.0, 798.0, 983.0)",
+      "viewport": "Rect.fromLTRB(42.0, 210.0, 798.0, 983.0)",
+      "pointerTap": "center of measured field",
+      "focused": true
+    },
+    {
+      "label": "查看笔记 相同标题 · 未分类 · 乙：读书计划，只属于第二条笔记。 每天 · 2026-09-24 起 · 09:00",
+      "role": "android.widget.Button",
+      "bounds": "[84,1453][338,1600]",
+      "widthDp": 96.7619,
+      "heightDp": 56
+    },
+    {
+      "label": "查看对应笔记 相同标题 · 未分类 · 乙：读书计划，只属于第二条笔记。 2026-09-26T09:00",
+      "role": "android.widget.Button",
+      "bounds": "[84,1453][338,1600]",
+      "widthDp": 96.7619,
+      "heightDp": 56
+    },
+    {
+      "label": "加载更多记录",
+      "role": "android.widget.Button",
+      "bounds": "[42,1390][453,1537]",
+      "widthDp": 156.57143,
+      "heightDp": 56
+    }
+  ],
+  "historyCount": 52,
+  "naturalRecurrenceTested": false,
+  "talkbackTested": false
+}

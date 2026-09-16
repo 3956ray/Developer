@@ -1,0 +1,15 @@
+{
+  "actualTaps": [
+    {
+      "text": "新增文字",
+      "bounds": "[42,242][798,396]",
+      "package": "com.example.thinkv2"
+    },
+    {
+      "text": "正文",
+      "bounds": "[84,747][234,858]",
+      "package": "com.example.thinkv2"
+    }
+  ],
+  "bannerFoundAndDismissed": false
+}

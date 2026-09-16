@@ -1,0 +1,51 @@
+ReminderUiTest
+com.example.thinkv2.ReminderUiTest:.
+
+Time: 3.865
+
+OK (1 test)
+
+
+
+AndroidReminderTest
+com.example.thinkv2.AndroidReminderTest:.
+
+Time: 56.51
+
+OK (1 test)
+
+
+
+NotesUiTest
+com.example.thinkv2.NotesUiTest:.
+
+Time: 12
+
+OK (1 test)
+
+
+
+AndroidLifecycleTest
+com.example.thinkv2.AndroidLifecycleTest:.
+
+Time: 0.083
+
+OK (1 test)
+
+
+
+backup.AndroidBackupTest
+com.example.thinkv2.backup.AndroidBackupTest:..
+
+Time: 0.371
+
+OK (2 tests)
+
+
+
+backup.BackupRestoreStateDeviceTest#actualRestoreButtonDisablesInMemoryAiAndReloadsVocabularyAndRejectsStalePreview
+com.example.thinkv2.backup.BackupRestoreStateDeviceTest:.
+
+Time: 1.485
+
+OK (1 test)

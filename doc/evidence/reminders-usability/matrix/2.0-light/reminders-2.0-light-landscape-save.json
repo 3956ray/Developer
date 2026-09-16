@@ -1,0 +1,222 @@
+{
+  "screen": "landscape-save",
+  "fontScale": 2,
+  "widthDp": 610,
+  "heightDp": 320,
+  "dark": false,
+  "nodes": [
+    {
+      "depth": 0,
+      "class": "android.widget.FrameLayout",
+      "bounds": "[0,0][1600,840]",
+      "visible": true,
+      "clickable": false,
+      "focusable": false,
+      "focused": false,
+      "accessibilityFocused": false,
+      "checked": false,
+      "checkable": false,
+      "selected": false,
+      "actions": [
+        4,
+        8,
+        64,
+        16908342
+      ]
+    },
+    {
+      "depth": 1,
+      "class": "android.widget.LinearLayout",
+      "bounds": "[0,0][1600,840]",
+      "visible": true,
+      "clickable": false,
+      "focusable": false,
+      "focused": false,
+      "accessibilityFocused": false,
+      "checked": false,
+      "checkable": false,
+      "selected": false,
+      "actions": [
+        4,
+        8,
+        64,
+        16908342
+      ]
+    },
+    {
+      "depth": 2,
+      "class": "android.widget.FrameLayout",
+      "bounds": "[0,0][1600,840]",
+      "visible": true,
+      "clickable": false,
+      "focusable": false,
+      "focused": false,
+      "accessibilityFocused": false,
+      "checked": false,
+      "checkable": false,
+      "selected": false,
+      "actions": [
+        4,
+        8,
+        64,
+        16908342
+      ]
+    },
+    {
+      "depth": 3,
+      "class": "androidx.compose.ui.platform.ComposeView",
+      "bounds": "[0,0][1600,840]",
+      "visible": true,
+      "clickable": false,
+      "focusable": false,
+      "focused": false,
+      "accessibilityFocused": false,
+      "checked": false,
+      "checkable": false,
+      "selected": false,
+      "actions": [
+        4,
+        8,
+        64,
+        16908342
+      ]
+    },
+    {
+      "depth": 4,
+      "class": "android.view.View",
+      "bounds": "[0,0][1600,840]",
+      "visible": true,
+      "clickable": false,
+      "focusable": false,
+      "focused": false,
+      "accessibilityFocused": false,
+      "checked": false,
+      "checkable": false,
+      "selected": false,
+      "actions": [
+        64
+      ]
+    },
+    {
+      "depth": 5,
+      "class": "android.view.View",
+      "bounds": "[0,0][1600,840]",
+      "visible": true,
+      "clickable": false,
+      "focusable": false,
+      "focused": false,
+      "accessibilityFocused": false,
+      "checked": false,
+      "checkable": false,
+      "selected": false,
+      "actions": [
+        64
+      ]
+    },
+    {
+      "depth": 6,
+      "class": "android.widget.ScrollView",
+      "bounds": "[42,217][1558,840]",
+      "visible": true,
+      "clickable": false,
+      "focusable": false,
+      "focused": false,
+      "accessibilityFocused": false,
+      "checked": false,
+      "checkable": false,
+      "selected": false,
+      "actions": [
+        64,
+        4096,
+        16908346,
+        8192,
+        16908344
+      ]
+    },
+    {
+      "depth": 7,
+      "text": "采用系统非精确提醒，可能延迟。跨时区仍保持当地时刻；夏令时缺失时刻顺延到第一个有效时刻，重复时刻仅提醒一次。",
+      "class": "android.widget.TextView",
+      "bounds": "[42,217][1558,404]",
+      "visible": true,
+      "clickable": false,
+      "focusable": false,
+      "focused": false,
+      "accessibilityFocused": false,
+      "checked": false,
+      "checkable": false,
+      "selected": false,
+      "actions": [
+        64,
+        131072,
+        256,
+        512
+      ]
+    },
+    {
+      "depth": 7,
+      "text": "修改或关闭会撤销旧计划和该笔记的当前通知；正文编辑不会更改计划。",
+      "class": "android.widget.TextView",
+      "bounds": "[42,436][1558,654]",
+      "visible": true,
+      "clickable": false,
+      "focusable": false,
+      "focused": false,
+      "accessibilityFocused": false,
+      "checked": false,
+      "checkable": false,
+      "selected": false,
+      "actions": [
+        64,
+        131072,
+        256,
+        512
+      ]
+    },
+    {
+      "depth": 7,
+      "text": "保存提醒规则",
+      "class": "android.widget.Button",
+      "bounds": "[42,686][1558,840]",
+      "visible": true,
+      "clickable": true,
+      "focusable": true,
+      "focused": false,
+      "accessibilityFocused": false,
+      "checked": false,
+      "checkable": false,
+      "selected": false,
+      "actions": [
+        64,
+        1,
+        16,
+        131072,
+        256,
+        512
+      ]
+    },
+    {
+      "depth": 6,
+      "text": "返回提醒列表",
+      "class": "android.widget.Button",
+      "bounds": "[42,63][578,217]",
+      "visible": true,
+      "clickable": true,
+      "focusable": true,
+      "focused": false,
+      "accessibilityFocused": false,
+      "checked": false,
+      "checkable": false,
+      "selected": false,
+      "actions": [
+        64,
+        1,
+        16,
+        131072,
+        256,
+        512
+      ]
+    }
+  ],
+  "talkbackClaim": false
+}

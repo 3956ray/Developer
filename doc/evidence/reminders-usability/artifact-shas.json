@@ -1,0 +1,9 @@
+{
+  "baseline-app-debug.apk": "44668032a613b6426b4f02eef02d4e76e294bedbdc657a3a5e3bfda6576ae1b3",
+  "baseline-androidTest.apk": "8de3286524d6dbe1dcb34dcf304bcec85745e205ffa8c78e59c46936ead45ba0",
+  "app-debug.apk": "23753ee0a9ad763aabad807d3fb1b1055cc55baa883eb29e3771932e671965cc",
+  "app-debug-androidTest.apk": "776599dbb576ba0b743a73e11ebb8d212ba47e3c338716b466f679dadb92562e",
+  "installed-app-debug.apk": "23753ee0a9ad763aabad807d3fb1b1055cc55baa883eb29e3771932e671965cc",
+  "matrix-regression-androidTest.apk": "78f194f5b7d4c867a194a1ed1f329e01f3b35f32aba601a175ff083746ab7fa6",
+  "installed-app-debug-androidTest.apk": "776599dbb576ba0b743a73e11ebb8d212ba47e3c338716b466f679dadb92562e"
+}

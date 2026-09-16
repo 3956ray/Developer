@@ -1,0 +1,51 @@
+1.0-light
+com.example.thinkv2.ReminderUsabilityTest:.
+
+Time: 24.061
+
+OK (1 test)
+
+
+
+1.0-dark
+com.example.thinkv2.ReminderUsabilityTest:.
+
+Time: 23.5
+
+OK (1 test)
+
+
+
+1.5-light
+com.example.thinkv2.ReminderUsabilityTest:.
+
+Time: 25.628
+
+OK (1 test)
+
+
+
+1.5-dark
+com.example.thinkv2.ReminderUsabilityTest:.
+
+Time: 25.866
+
+OK (1 test)
+
+
+
+2.0-light
+com.example.thinkv2.ReminderUsabilityTest:.
+
+Time: 28.423
+
+OK (1 test)
+
+
+
+2.0-dark
+com.example.thinkv2.ReminderUsabilityTest:.
+
+Time: 27.846
+
+OK (1 test)

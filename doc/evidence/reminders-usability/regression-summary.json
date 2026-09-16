@@ -1,0 +1,26 @@
+[
+  {
+    "path": "regression/AndroidLifecycleTest.log",
+    "tests": 1
+  },
+  {
+    "path": "regression/AndroidReminderTest.log",
+    "tests": 1
+  },
+  {
+    "path": "regression/NotesUiTest.log",
+    "tests": 1
+  },
+  {
+    "path": "regression/ReminderUiTest.log",
+    "tests": 1
+  },
+  {
+    "path": "regression/backup.AndroidBackupTest.log",
+    "tests": 2
+  },
+  {
+    "path": "regression/backup.BackupRestoreStateDeviceTest#actualRestoreButtonDisablesInMemoryAiAndReloadsVocabularyAndRejectsStalePreview.log",
+    "tests": 1
+  }
+]

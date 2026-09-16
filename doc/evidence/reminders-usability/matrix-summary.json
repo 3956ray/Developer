@@ -1,0 +1,62 @@
+[
+  {
+    "case": "1.0-dark",
+    "passed": true,
+    "measuredTargets": 7,
+    "inputChecks": 6,
+    "exactNotesUnchanged": true,
+    "plans": 2,
+    "historyCount": 52,
+    "actualPlatformKeyboardFocus": true
+  },
+  {
+    "case": "1.0-light",
+    "passed": true,
+    "measuredTargets": 7,
+    "inputChecks": 6,
+    "exactNotesUnchanged": true,
+    "plans": 2,
+    "historyCount": 52,
+    "actualPlatformKeyboardFocus": true
+  },
+  {
+    "case": "1.5-dark",
+    "passed": true,
+    "measuredTargets": 7,
+    "inputChecks": 6,
+    "exactNotesUnchanged": true,
+    "plans": 2,
+    "historyCount": 52,
+    "actualPlatformKeyboardFocus": true
+  },
+  {
+    "case": "1.5-light",
+    "passed": true,
+    "measuredTargets": 7,
+    "inputChecks": 6,
+    "exactNotesUnchanged": true,
+    "plans": 2,
+    "historyCount": 52,
+    "actualPlatformKeyboardFocus": true
+  },
+  {
+    "case": "2.0-dark",
+    "passed": true,
+    "measuredTargets": 7,
+    "inputChecks": 6,
+    "exactNotesUnchanged": true,
+    "plans": 2,
+    "historyCount": 52,
+    "actualPlatformKeyboardFocus": true
+  },
+  {
+    "case": "2.0-light",
+    "passed": true,
+    "measuredTargets": 7,
+    "inputChecks": 6,
+    "exactNotesUnchanged": true,
+    "plans": 2,
+    "historyCount": 52,
+    "actualPlatformKeyboardFocus": true
+  }
+]

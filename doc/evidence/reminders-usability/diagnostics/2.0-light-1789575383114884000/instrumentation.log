@@ -1,0 +1,21 @@
+
+com.example.thinkv2.ReminderUsabilityTest:
+Error in realReminderRoutesCorrectionPersistenceHistoryAndPlatformNodes(com.example.thinkv2.ReminderUsabilityTest):
+java.lang.AssertionError
+	at org.junit.Assert.fail(Assert.java:87)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at org.junit.Assert.assertTrue(Assert.java:53)
+	at com.example.thinkv2.ReminderUsabilityTest.realReminderRoutesCorrectionPersistenceHistoryAndPlatformNodes(ReminderUsabilityTest.kt:130)
+
+
+Time: 8.476
+There was 1 failure:
+1) realReminderRoutesCorrectionPersistenceHistoryAndPlatformNodes(com.example.thinkv2.ReminderUsabilityTest)
+java.lang.AssertionError
+	at org.junit.Assert.fail(Assert.java:87)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at org.junit.Assert.assertTrue(Assert.java:53)
+	at com.example.thinkv2.ReminderUsabilityTest.realReminderRoutesCorrectionPersistenceHistoryAndPlatformNodes(ReminderUsabilityTest.kt:130)
+
+FAILURES!!!
+Tests run: 1,  Failures: 1

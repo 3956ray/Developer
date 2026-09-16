@@ -1,0 +1,21 @@
+
+com.example.thinkv2.ReminderUsabilityTest:
+Error in realReminderRoutesCorrectionPersistenceHistoryAndPlatformNodes(com.example.thinkv2.ReminderUsabilityTest):
+org.junit.ComparisonFailure: expected:<android.widget.[Switch]> but was:<android.widget.[TextView]>
+	at org.junit.Assert.assertEquals(Assert.java:117)
+	at org.junit.Assert.assertEquals(Assert.java:146)
+	at com.example.thinkv2.ReminderUsabilityTest.target(ReminderUsabilityTest.kt:78)
+	at com.example.thinkv2.ReminderUsabilityTest.realReminderRoutesCorrectionPersistenceHistoryAndPlatformNodes(ReminderUsabilityTest.kt:116)
+
+
+Time: 2.909
+There was 1 failure:
+1) realReminderRoutesCorrectionPersistenceHistoryAndPlatformNodes(com.example.thinkv2.ReminderUsabilityTest)
+org.junit.ComparisonFailure: expected:<android.widget.[Switch]> but was:<android.widget.[TextView]>
+	at org.junit.Assert.assertEquals(Assert.java:117)
+	at org.junit.Assert.assertEquals(Assert.java:146)
+	at com.example.thinkv2.ReminderUsabilityTest.target(ReminderUsabilityTest.kt:78)
+	at com.example.thinkv2.ReminderUsabilityTest.realReminderRoutesCorrectionPersistenceHistoryAndPlatformNodes(ReminderUsabilityTest.kt:116)
+
+FAILURES!!!
+Tests run: 1,  Failures: 1
