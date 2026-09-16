@@ -1,0 +1,6 @@
+Synthetic isolated reference/learning evaluation only. Not licensed here for private daily use or family distribution.
+Original: SenseVoiceSmall / FunAudioLLM, model weights governed by FunASR Model Open Source License Agreement v1.1.
+Conversion: csukuangfj/sherpa-onnx-sense-voice-zh-en-ja-ko-yue-2024-07-17, revision2365baeacb507f821a0c8120fcee3d484dba7a07.
+Sherpa-ONNX v1.13.8 Apache-2.0; ONNX Runtime1.28.2 MIT plus notices; kaldi-native-fbank1.22.3 Apache-2.0.
+Model metadata author: iic; maintainer: k2-fsa
+Bundled AAR default native build includes unused TTS/diarization components: espeak-ng GPL-3.0, piper-phonemize MIT, uni-algo MIT/Unicode, hclust BSD; kaldi-decoder/simple-sentencepiece Apache-2.0, nlohmann-json MIT, KissFFT BSD-3-Clause. They are not invoked. This evaluation APK is not distributed for daily use. See individual license files.

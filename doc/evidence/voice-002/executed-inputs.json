@@ -1,0 +1,9 @@
+{
+  "app/src/senseVoiceEvaluation/kotlin/com/example/thinkv2/voice/SenseVoiceEvaluationTest.kt": "baf73647748a9affa6ae20836ff30f21460f71c2e0ea7d6cb907e06735942572",
+  "app/src/senseVoiceEvaluation/kotlin/com/example/thinkv2/voice/SenseVoiceCandidate.kt": "ade4751abc948a501d2aad46089d8814daaf061631137c5b385b7c0b95b5f9d9",
+  "app/build.gradle.kts": "830d36fb12b2b4c6991f2e30986511c715532b59f131e0267c41d6855b7dee50",
+  "doc/evidence/voice-002/decoding-config.json": "dc81492e82016c969329b7db8bc883639a97186012d50f1c7e4a6b5780bfca40",
+  "doc/evidence/voice-002/fixtures/run-memory-fixtures.py": "5d96d6aeb52e8881c154300a9ba8a8bc845a1e9830bee0d2236460c9b0587b07",
+  "doc/evidence/voice/fixtures/plan.json": "95d97b465918f40831658cbcbc29390cc2b417be6a13adf542826c76d9db0b6b",
+  "doc/evidence/voice/fixtures/synthetic-voice.m": "f95ab54d5bb8800d0577c81b48166c15e9195de744abb572c4364b84faf275b6"
+}

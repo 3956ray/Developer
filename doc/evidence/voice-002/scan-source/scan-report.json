@@ -1,0 +1,134 @@
+{
+  "scanner": {
+    "name": "scan-untrusted-code",
+    "version": "1.1.2"
+  },
+  "target": {
+    "path": "/private/tmp/thinkv2-voice-002-source-review",
+    "sha256": null
+  },
+  "verdict": "sandbox_only",
+  "risk_score": 23,
+  "verdict_basis": "high-severity capability requires isolated review before execution",
+  "block_signals": [],
+  "score_breakdown": [
+    {
+      "rule_id": "DESTRUCTIVE-CLEANUP",
+      "path": "android.yaml",
+      "severity": "high",
+      "source_kind": "source_code",
+      "points": 20
+    },
+    {
+      "rule_id": "TEMP-STAGING",
+      "path": "android.yaml",
+      "severity": "low",
+      "source_kind": "source_code",
+      "points": 3
+    }
+  ],
+  "context_summary": {
+    "source_code": 6
+  },
+  "highest_severity": "high",
+  "summary": {
+    "high": 3,
+    "low": 3
+  },
+  "stats": {
+    "candidates": 15,
+    "text_files": 6,
+    "binary_files": 9,
+    "skipped_large": 0,
+    "skipped_limit": 0,
+    "unreadable": 0,
+    "archives": 0
+  },
+  "findings": [
+    {
+      "rule_id": "DESTRUCTIVE-CLEANUP",
+      "severity": "high",
+      "confidence": "Confirmed",
+      "category": "cleanup",
+      "path": "android.yaml",
+      "line": 68,
+      "evidence": "rm -rf ./build-android-arm64-v8a/",
+      "rationale": "Deletes files or directories, potentially to remove evidence.",
+      "source_kind": "source_code",
+      "reachable": false,
+      "base_severity": "high"
+    },
+    {
+      "rule_id": "DESTRUCTIVE-CLEANUP",
+      "severity": "high",
+      "confidence": "Confirmed",
+      "category": "cleanup",
+      "path": "android.yaml",
+      "line": 85,
+      "evidence": "rm -rf ./build-android-armv7-eabi",
+      "rationale": "Deletes files or directories, potentially to remove evidence.",
+      "source_kind": "source_code",
+      "reachable": false,
+      "base_severity": "high"
+    },
+    {
+      "rule_id": "DESTRUCTIVE-CLEANUP",
+      "severity": "high",
+      "confidence": "Confirmed",
+      "category": "cleanup",
+      "path": "android.yaml",
+      "line": 102,
+      "evidence": "rm -rf ./build-android-x86-64",
+      "rationale": "Deletes files or directories, potentially to remove evidence.",
+      "source_kind": "source_code",
+      "reachable": false,
+      "base_severity": "high"
+    },
+    {
+      "rule_id": "TEMP-STAGING",
+      "severity": "low",
+      "confidence": "Confirmed",
+      "category": "staging",
+      "path": "android.yaml",
+      "line": 179,
+      "evidence": "repo_token: ${{ secrets.UPLOAD_GH_SHERPA_ONNX_TOKEN }}",
+      "rationale": "Creates or references a temporary staging location.",
+      "source_kind": "source_code",
+      "reachable": false,
+      "base_severity": "low"
+    },
+    {
+      "rule_id": "TEMP-STAGING",
+      "severity": "low",
+      "confidence": "Confirmed",
+      "category": "staging",
+      "path": "android.yaml",
+      "line": 226,
+      "evidence": "path: /tmp/jniLibs",
+      "rationale": "Creates or references a temporary staging location.",
+      "source_kind": "source_code",
+      "reachable": false,
+      "base_severity": "low"
+    },
+    {
+      "rule_id": "TEMP-STAGING",
+      "severity": "low",
+      "confidence": "Confirmed",
+      "category": "staging",
+      "path": "android.yaml",
+      "line": 231,
+      "evidence": "ls -lh /tmp/jniLibs",
+      "rationale": "Creates or references a temporary staging location.",
+      "source_kind": "source_code",
+      "reachable": false,
+      "base_severity": "low"
+    }
+  ],
+  "limitations": [
+    "Static inspection cannot prove that an artifact is safe.",
+    "Runtime-fetched, encrypted, obfuscated, oversized, or generated payloads may not be visible.",
+    "A network/upload capability does not prove successful data transfer.",
+    "Repository reputation and dependency vulnerability lookups are outside the offline V1.1 scan.",
+    "Binary metadata, code-signing, and package provenance checks are reserved for a later macOS/Python extension."
+  ]
+}

@@ -1,0 +1,5 @@
+./no_backup/sensevoice-evaluation/model.int8.onnx
+./no_backup/sensevoice-evaluation/tokens.txt
+./files/sensevoice-load.json
+./files/profileInstalled
+./files/sensevoice-synthetic-results.json

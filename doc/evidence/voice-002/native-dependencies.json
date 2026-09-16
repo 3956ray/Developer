@@ -1,0 +1,33 @@
+{
+  "jni/arm64-v8a/libonnxruntime.so": [
+    "libdl.so",
+    "liblog.so",
+    "libm.so",
+    "libc.so"
+  ],
+  "jni/arm64-v8a/libsherpa-onnx-c-api.so": [
+    "libandroid.so",
+    "liblog.so",
+    "libonnxruntime.so",
+    "libm.so",
+    "libdl.so",
+    "libc.so"
+  ],
+  "jni/arm64-v8a/libsherpa-onnx-cxx-api.so": [
+    "libsherpa-onnx-c-api.so",
+    "libandroid.so",
+    "liblog.so",
+    "libonnxruntime.so",
+    "libm.so",
+    "libdl.so",
+    "libc.so"
+  ],
+  "jni/arm64-v8a/libsherpa-onnx-jni.so": [
+    "libandroid.so",
+    "liblog.so",
+    "libonnxruntime.so",
+    "libm.so",
+    "libdl.so",
+    "libc.so"
+  ]
+}

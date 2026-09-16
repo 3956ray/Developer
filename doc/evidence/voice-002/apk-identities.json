@@ -1,0 +1,18 @@
+{
+  "sensevoice-evaluation-test.apk": {
+    "bytes": 198925889,
+    "sha256": "f081f7a0499ce95a720d97debc027a72c987da3910d2b00101e96f20e4a60b44"
+  },
+  "baseline-product-evaluation-host.apk": {
+    "bytes": 67365621,
+    "sha256": "7e43364910b37989a5898e760f868387beb735c948fba183bc8d6e39667c34a1"
+  },
+  "final-normal-app.apk": {
+    "bytes": 67365621,
+    "sha256": "7e43364910b37989a5898e760f868387beb735c948fba183bc8d6e39667c34a1"
+  },
+  "final-normal-test.apk": {
+    "bytes": 1101675,
+    "sha256": "1cb5db135eab045cff114e0d808baef90a9034e01ce7e2a76e9072e7b04d0180"
+  }
+}

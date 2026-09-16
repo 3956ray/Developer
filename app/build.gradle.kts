@@ -54,3 +54,11 @@ dependencies {
     debugImplementation(libs.androidx.compose.ui.test.manifest)
     debugImplementation(libs.androidx.compose.ui.tooling)
 }
+// Explicit opt-in, synthetic isolated evaluation only; never included in the normal app APK.
+if (providers.gradleProperty("senseVoiceEvaluation").orNull == "true") {
+    android.sourceSets.getByName("androidTest") {
+        kotlin.srcDir("src/senseVoiceEvaluation/kotlin")
+        assets.srcDir("src/senseVoiceEvaluation/assets")
+    }
+    dependencies { androidTestImplementation(files("libs/evaluation/sherpa-onnx-1.13.8.aar")) }
+}

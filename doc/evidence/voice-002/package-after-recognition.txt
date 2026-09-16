@@ -1,0 +1,169 @@
+Activity Resolver Table:
+  Non-Data Actions:
+      android.intent.action.MAIN:
+        dff9683 com.example.thinkv2/.MainActivity filter 4e6f4c4
+          Action: "android.intent.action.MAIN"
+          Category: "android.intent.category.LAUNCHER"
+
+Receiver Resolver Table:
+  Non-Data Actions:
+      androidx.profileinstaller.action.SAVE_PROFILE:
+        c96cc8a com.example.thinkv2/androidx.profileinstaller.ProfileInstallReceiver filter 1c09930
+          Action: "androidx.profileinstaller.action.SAVE_PROFILE"
+      androidx.profileinstaller.action.INSTALL_PROFILE:
+        c96cc8a com.example.thinkv2/androidx.profileinstaller.ProfileInstallReceiver filter 1dc62e2
+          Action: "androidx.profileinstaller.action.INSTALL_PROFILE"
+      android.intent.action.TIMEZONE_CHANGED:
+        721a039 com.example.thinkv2/.reminders.ReminderRecoveryReceiver filter 8821fad
+          Action: "android.intent.action.TIMEZONE_CHANGED"
+          Action: "android.intent.action.TIME_SET"
+          Action: "android.intent.action.BOOT_COMPLETED"
+          Action: "android.intent.action.MY_PACKAGE_REPLACED"
+      android.intent.action.TIME_SET:
+        721a039 com.example.thinkv2/.reminders.ReminderRecoveryReceiver filter 8821fad
+          Action: "android.intent.action.TIMEZONE_CHANGED"
+          Action: "android.intent.action.TIME_SET"
+          Action: "android.intent.action.BOOT_COMPLETED"
+          Action: "android.intent.action.MY_PACKAGE_REPLACED"
+      androidx.profileinstaller.action.SKIP_FILE:
+        c96cc8a com.example.thinkv2/androidx.profileinstaller.ProfileInstallReceiver filter dc32673
+          Action: "androidx.profileinstaller.action.SKIP_FILE"
+      androidx.profileinstaller.action.BENCHMARK_OPERATION:
+        c96cc8a com.example.thinkv2/androidx.profileinstaller.ProfileInstallReceiver filter 8ce09a9
+          Action: "androidx.profileinstaller.action.BENCHMARK_OPERATION"
+      android.intent.action.BOOT_COMPLETED:
+        721a039 com.example.thinkv2/.reminders.ReminderRecoveryReceiver filter 8821fad
+          Action: "android.intent.action.TIMEZONE_CHANGED"
+          Action: "android.intent.action.TIME_SET"
+          Action: "android.intent.action.BOOT_COMPLETED"
+          Action: "android.intent.action.MY_PACKAGE_REPLACED"
+      android.intent.action.MY_PACKAGE_REPLACED:
+        721a039 com.example.thinkv2/.reminders.ReminderRecoveryReceiver filter 8821fad
+          Action: "android.intent.action.TIMEZONE_CHANGED"
+          Action: "android.intent.action.TIME_SET"
+          Action: "android.intent.action.BOOT_COMPLETED"
+          Action: "android.intent.action.MY_PACKAGE_REPLACED"
+
+Domain verification status:
+
+Permissions:
+  Permission [com.example.thinkv2.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION] (72cb990):
+    sourcePackage=com.example.thinkv2
+    uid=10229 gids=[] type=0 prot=signature
+    perm=PermissionInfo{3f51289 com.example.thinkv2.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION}
+    flags=0x0
+
+Registered ContentProviders:
+  com.example.thinkv2/androidx.startup.InitializationProvider:
+    Provider{d7306f5 com.example.thinkv2/androidx.startup.InitializationProvider}
+
+ContentProvider Authorities:
+  [com.example.thinkv2.androidx-startup]:
+    Provider{d7306f5 com.example.thinkv2/androidx.startup.InitializationProvider}
+      applicationInfo=ApplicationInfo{9f4d28e com.example.thinkv2}
+
+Key Set Manager:
+  [com.example.thinkv2]
+      Signing KeySets: 65
+
+Packages:
+  Package [com.example.thinkv2] (d391aaf):
+    appId=10229
+    pccId=-1
+    pkg=Package{9cbdebc com.example.thinkv2}
+    codePath=/data/app/~~IK3h-oNqVjfuyVNN0fdx2Q==/com.example.thinkv2-DNUm2iQU9aPOO_cRl7Jq0Q==
+    resourcePath=/data/app/~~IK3h-oNqVjfuyVNN0fdx2Q==/com.example.thinkv2-DNUm2iQU9aPOO_cRl7Jq0Q==
+    legacyNativeLibraryDir=/data/app/~~IK3h-oNqVjfuyVNN0fdx2Q==/com.example.thinkv2-DNUm2iQU9aPOO_cRl7Jq0Q==/lib
+    extractNativeLibs=false
+    primaryCpuAbi=arm64-v8a
+    secondaryCpuAbi=null
+    cpuAbiOverride=null
+    versionCode=1 minSdk=24 targetSdk=37
+    minExtensionVersions=[]
+    versionName=1.0
+    hiddenApiEnforcementPolicy=2
+    usesNonSdkApi=false
+    splits=[base]
+    apkSigningVersion=2
+    flags=[ DEBUGGABLE HAS_CODE ALLOW_CLEAR_USER_DATA ]
+    privateFlags=[ PRIVATE_FLAG_ACTIVITIES_RESIZE_MODE_RESIZEABLE_VIA_SDK_VERSION ALLOW_AUDIO_PLAYBACK_CAPTURE PRIVATE_FLAG_ALLOW_NATIVE_HEAP_POINTER_TAGGING ]
+    forceQueryable=false
+    pageSizeCompat=0
+    scannedAsStoppedSystemApp=false
+    supportsScreens=[small, medium, large, xlarge, resizeable, anyDensity]
+    usesOptionalLibraries:
+      androidx.window.extensions
+      androidx.window.sidecar
+    usesLibraryFiles:
+      /system_ext/framework/androidx.window.extensions.jar
+      /system_ext/framework/androidx.window.sidecar.jar
+    timeStamp=2026-09-16 11:16:27
+    lastUpdateTime=2026-09-16 11:16:28
+    installerPackageName=null
+    installerPackageUid=-1
+    initiatingPackageName=com.android.shell
+    originatingPackageName=null
+    packageSource=1
+    appMetadataFilePath=null
+    appMetadataSource=0
+    signatures=PackageSignatures{b134e45 version:2, signatures:[19d19d0e], past signatures:[]}
+    installPermissionsFixed=false
+    pkgFlags=[ DEBUGGABLE HAS_CODE ALLOW_CLEAR_USER_DATA ]
+    privatePkgFlags=[ PRIVATE_FLAG_ACTIVITIES_RESIZE_MODE_RESIZEABLE_VIA_SDK_VERSION ALLOW_AUDIO_PLAYBACK_CAPTURE PRIVATE_FLAG_ALLOW_NATIVE_HEAP_POINTER_TAGGING ]
+    apexModuleName=null
+    declared permissions:
+      com.example.thinkv2.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION: prot=signature
+    requested permissions:
+      android.permission.POST_NOTIFICATIONS
+      android.permission.RECEIVE_BOOT_COMPLETED
+      com.example.thinkv2.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+      android.permission.RECORD_AUDIO
+    install permissions:
+      android.permission.RECEIVE_BOOT_COMPLETED: granted=true
+      com.example.thinkv2.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION: granted=true
+    User 0: ceDataInode=353037 deDataInode=49473 pccCeDataInode=0 pccDeDataInode=0 installed=true hidden=false suspended=false appLockEnabled=false distractionFlags=0 stopped=false notLaunched=false enabled=0 instant=false virtual=false quarantined=false
+      installReason=0
+      dataDir=/data/user/0/com.example.thinkv2
+      firstInstallTime=2026-09-16 04:16:04
+      uninstallReason=0
+      overlay paths:
+        /product/overlay/NavigationBarModeGestural/NavigationBarModeGesturalOverlay.apk
+        /data/resource-cache/com.android.systemui-neutral-lNkh.frro
+        /data/resource-cache/com.android.systemui-accent-0cXS.frro
+        /data/resource-cache/com.android.systemui-dynamic-DnBL.frro
+      legacy overlay paths:
+        /product/overlay/NavigationBarModeGestural/NavigationBarModeGesturalOverlay.apk
+      runtime permissions:
+        android.permission.POST_NOTIFICATIONS: granted=false, flags=[ USER_SENSITIVE_WHEN_GRANTED|USER_SENSITIVE_WHEN_DENIED]
+        android.permission.RECORD_AUDIO: granted=false, flags=[ USER_SENSITIVE_WHEN_GRANTED|USER_SENSITIVE_WHEN_DENIED]
+
+Queries:
+  system apps queryable: false
+  queries via forceQueryable:
+  queries via package name:
+    com.example.thinkv2:
+      com.example.thinkv2.test
+    com.example.thinkv2.test:
+      com.example.thinkv2
+  queries via component:
+    com.google.android.settings.intelligence:
+      com.example.thinkv2
+    com.google.android.as:
+      com.example.thinkv2
+    com.google.android.as.oss:
+      com.example.thinkv2
+    com.google.android.apps.accessibility.voiceaccess:
+      com.example.thinkv2
+  queryable via interaction:
+    User 0:
+      [com.android.dynsystem,com.android.DeviceAsWebcam,android,com.android.keychain,com.android.emulator.multidisplay,com.android.inputdevices,com.android.settings,com.android.providers.settings,com.android.localtransport,com.android.location.fused,com.android.server.telecom]:
+        com.example.thinkv2
+      com.example.thinkv2:
+        [com.android.dynsystem,com.android.DeviceAsWebcam,android,com.android.keychain,com.android.emulator.multidisplay,com.android.inputdevices,com.android.settings,com.android.providers.settings,com.android.localtransport,com.android.location.fused,com.android.server.telecom]
+  queryable via uses-library:
+
+Dexopt state:
+  [com.example.thinkv2]
+    path: /data/app/~~IK3h-oNqVjfuyVNN0fdx2Q==/com.example.thinkv2-DNUm2iQU9aPOO_cRl7Jq0Q==/base.apk
+      arm64: [status=run-from-apk] [reason=unknown] [primary-abi]
+        [location is error]

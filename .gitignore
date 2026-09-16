@@ -13,3 +13,8 @@
 .externalNativeBuild
 .cxx
 local.properties
+
+# Reviewed, opt-in SenseVoice evaluation objects; exact identities in evidence manifest.
+/app/libs/evaluation/
+/app/src/senseVoiceEvaluation/assets/sensevoice/model.int8.onnx
+/.kotlin/

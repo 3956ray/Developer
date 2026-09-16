@@ -1,0 +1,18 @@
+{
+  "runtime": "sherpa-onnx-1.13.8",
+  "model": "SenseVoice 2024-07-17 int8",
+  "sampleRate": 16000,
+  "featureDim": 80,
+  "language": "zh",
+  "useInverseTextNormalization": true,
+  "provider": "cpu",
+  "numThreads": 2,
+  "debug": false,
+  "decodingMethod": "greedy_search",
+  "hotwords": null,
+  "externalRules": null,
+  "emotionEventFeaturesEnabled": false,
+  "maxSamples": 1440000,
+  "fixturePlanSha256": "95d97b465918f40831658cbcbc29390cc2b417be6a13adf542826c76d9db0b6b",
+  "frozenBeforeFirstInference": true
+}

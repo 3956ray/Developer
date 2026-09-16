@@ -1,0 +1,73 @@
+--------- beginning of main
+I/Zygote  ( 2707): Process 2707 created for com.example.thinkv2
+I/example.thinkv2( 2707): Late-enabling -Xcheck:jni
+I/example.thinkv2( 2707): Using generational CollectorTypeCMC GC.
+D/nativeloader( 2707): Load libframework-connectivity-tiramisu-jni.so using APEX ns com_android_tethering for caller /apex/com.android.tethering/javalib/framework-connectivity-t.jar: ok
+D/CompatChangeReporter( 2707): Compat change id reported: 333566037; UID 10229; state: ENABLED
+D/ApplicationLoaders( 2707): Returning zygote-cached class loader: /system_ext/framework/androidx.window.extensions.jar
+D/ApplicationLoaders( 2707): Returning zygote-cached class loader: /system_ext/framework/androidx.window.sidecar.jar
+D/nativeloader( 2707): Configuring clns-9 for other apk /data/app/~~lMa3I_xLg7Lx8eqk0nHjMw==/com.example.thinkv2-_EkEv-JcB13Tazi62w6q0g==/base.apk. target_sdk_version=37, uses_libraries=, library_path=/data/app/~~lMa3I_xLg7Lx8eqk0nHjMw==/com.example.thinkv2-_EkEv-JcB13Tazi62w6q0g==/lib/arm64:/data/app/~~lMa3I_xLg7Lx8eqk0nHjMw==/com.example.thinkv2-_EkEv-JcB13Tazi62w6q0g==/base.apk!/lib/arm64-v8a, permitted_path=/data:/mnt/expand:/data/user/0/com.example.thinkv2
+--------- beginning of system
+D/ActivityThread( 2707): Set OS env TMPDIR to /data/user/0/com.example.thinkv2/cache
+V/GraphicsEnvironment( 2707): Currently set values for:
+V/GraphicsEnvironment( 2707):   angle_gl_driver_selection_pkgs=[]
+V/GraphicsEnvironment( 2707):   angle_gl_driver_selection_values=[]
+V/GraphicsEnvironment( 2707): com.example.thinkv2 is not listed in per-application setting
+V/GraphicsEnvironment( 2707): No special selections for ANGLE, returning default driver choice
+V/GraphicsEnvironment( 2707): Neither updatable production driver nor prerelease driver is supported.
+D/CompatChangeReporter( 2707): Compat change id reported: 407952621; UID 10229; state: ENABLED
+D/CompatChangeReporter( 2707): Compat change id reported: 419020719; UID 10229; state: ENABLED
+W/JobInfo ( 2707): Job 'com.example.thinkv2/.reminders.ReminderRecoveryService#7101' has a deadline with no functional constraints. The deadline won't improve job execution latency. Consider removing the deadline.
+D/CompatChangeReporter( 2707): Compat change id reported: 418924588; UID 10229; state: ENABLED
+D/ProfileInstaller( 2707): Installing profile for com.example.thinkv2
+I/Zygote  ( 3081): Process 3081 created for com.example.thinkv2
+I/example.thinkv2( 3081): Late-enabling -Xcheck:jni
+I/example.thinkv2( 3081): Using generational CollectorTypeCMC GC.
+D/nativeloader( 3081): Load libframework-connectivity-tiramisu-jni.so using APEX ns com_android_tethering for caller /apex/com.android.tethering/javalib/framework-connectivity-t.jar: ok
+D/CompatChangeReporter( 3081): Compat change id reported: 333566037; UID 10229; state: ENABLED
+D/ApplicationLoaders( 3081): Returning zygote-cached class loader: /system_ext/framework/androidx.window.extensions.jar
+D/ApplicationLoaders( 3081): Returning zygote-cached class loader: /system_ext/framework/androidx.window.sidecar.jar
+D/nativeloader( 3081): Configuring clns-9 for other apk /data/app/~~IK3h-oNqVjfuyVNN0fdx2Q==/com.example.thinkv2-DNUm2iQU9aPOO_cRl7Jq0Q==/base.apk. target_sdk_version=37, uses_libraries=, library_path=/data/app/~~IK3h-oNqVjfuyVNN0fdx2Q==/com.example.thinkv2-DNUm2iQU9aPOO_cRl7Jq0Q==/lib/arm64:/data/app/~~IK3h-oNqVjfuyVNN0fdx2Q==/com.example.thinkv2-DNUm2iQU9aPOO_cRl7Jq0Q==/base.apk!/lib/arm64-v8a, permitted_path=/data:/mnt/expand:/data/user/0/com.example.thinkv2
+D/ActivityThread( 3081): Set OS env TMPDIR to /data/user/0/com.example.thinkv2/cache
+V/GraphicsEnvironment( 3081): Currently set values for:
+V/GraphicsEnvironment( 3081):   angle_gl_driver_selection_pkgs=[]
+V/GraphicsEnvironment( 3081):   angle_gl_driver_selection_values=[]
+V/GraphicsEnvironment( 3081): com.example.thinkv2 is not listed in per-application setting
+V/GraphicsEnvironment( 3081): No special selections for ANGLE, returning default driver choice
+V/GraphicsEnvironment( 3081): Neither updatable production driver nor prerelease driver is supported.
+D/CompatChangeReporter( 3081): Compat change id reported: 407952621; UID 10229; state: ENABLED
+D/CompatChangeReporter( 3081): Compat change id reported: 419020719; UID 10229; state: ENABLED
+W/JobInfo ( 3081): Job 'com.example.thinkv2/.reminders.ReminderRecoveryService#7101' has a deadline with no functional constraints. The deadline won't improve job execution latency. Consider removing the deadline.
+D/CompatChangeReporter( 3081): Compat change id reported: 418924588; UID 10229; state: ENABLED
+I/Zygote  ( 3252): Process 3252 created for com.example.thinkv2
+I/example.thinkv2( 3252): Late-enabling -Xcheck:jni
+I/example.thinkv2( 3252): Using generational CollectorTypeCMC GC.
+D/nativeloader( 3252): Load libframework-connectivity-tiramisu-jni.so using APEX ns com_android_tethering for caller /apex/com.android.tethering/javalib/framework-connectivity-t.jar: ok
+D/CompatChangeReporter( 3252): Compat change id reported: 333566037; UID 10229; state: ENABLED
+D/ApplicationLoaders( 3252): Returning zygote-cached class loader: /system_ext/framework/androidx.window.extensions.jar
+D/ApplicationLoaders( 3252): Returning zygote-cached class loader: /system_ext/framework/androidx.window.sidecar.jar
+D/nativeloader( 3252): Configuring clns-9 for other apk /data/app/~~InCDpp55OtTBMRzvkA_PJw==/com.example.thinkv2.test-bBAucldaPWS5HdzPuhxDPQ==/base.apk:/data/app/~~IK3h-oNqVjfuyVNN0fdx2Q==/com.example.thinkv2-DNUm2iQU9aPOO_cRl7Jq0Q==/base.apk. target_sdk_version=37, uses_libraries=, library_path=/data/app/~~InCDpp55OtTBMRzvkA_PJw==/com.example.thinkv2.test-bBAucldaPWS5HdzPuhxDPQ==/lib/arm64:/data/app/~~IK3h-oNqVjfuyVNN0fdx2Q==/com.example.thinkv2-DNUm2iQU9aPOO_cRl7Jq0Q==/lib/arm64:/data/app/~~InCDpp55OtTBMRzvkA_PJw==/com.example.thinkv2.test-bBAucldaPWS5HdzPuhxDPQ==/base.apk!/lib/arm64-v8a:/data/app/~~IK3h-oNqVjfuyVNN0fdx2Q==/com.example.thinkv2-DNUm2iQU9aPOO_cRl7Jq0Q==/base.apk!/lib/arm64-v8a, permitted_path=/data:/mnt/expand:/data/user/0/com.example.thinkv2
+D/ActivityThread( 3252): Set OS env TMPDIR to /data/user/0/com.example.thinkv2/cache
+V/GraphicsEnvironment( 3252): Currently set values for:
+V/GraphicsEnvironment( 3252):   angle_gl_driver_selection_pkgs=[]
+V/GraphicsEnvironment( 3252):   angle_gl_driver_selection_values=[]
+V/GraphicsEnvironment( 3252): com.example.thinkv2 is not listed in per-application setting
+V/GraphicsEnvironment( 3252): No special selections for ANGLE, returning default driver choice
+V/GraphicsEnvironment( 3252): Neither updatable production driver nor prerelease driver is supported.
+D/CompatChangeReporter( 3252): Compat change id reported: 407952621; UID 10229; state: ENABLED
+D/CompatChangeReporter( 3252): Compat change id reported: 419020719; UID 10229; state: ENABLED
+I/AndroidJUnitRunner( 3252): newApplication android.app.Application
+I/AndroidJUnitRunner( 3252): onCreate Bundle[mParcelledData.dataSize=188]
+D/AndroidJUnitRunner( 3252): Use the raw file system for managing file I/O.
+V/TestEventClient( 3252): No service name argument was given (testDiscoveryService, testRunEventService or orchestratorService)
+D/AndroidJUnitRunner( 3252): onStart is called.
+D/CompatChangeReporter( 3252): Compat change id reported: 458413887; UID 10229; state: ENABLED
+I/InstrConnection( 3252): Could not send broadcast or register receiver (isolatedProcess?)
+I/TestRunner( 3252): run started: 1 tests
+I/TestRunner( 3252): started: syntheticMemoryFixtureServer(com.example.thinkv2.voice.SenseVoiceEvaluationTest)
+W/libc    ( 3252): Access denied finding property "ro.hardware.chipname"
+D/nativeloader( 3252): Load /data/app/~~InCDpp55OtTBMRzvkA_PJw==/com.example.thinkv2.test-bBAucldaPWS5HdzPuhxDPQ==/base.apk!/lib/arm64-v8a/libsherpa-onnx-jni.so using class loader ns clns-9 (caller=/data/app/~~InCDpp55OtTBMRzvkA_PJw==/com.example.thinkv2.test-bBAucldaPWS5HdzPuhxDPQ==/base.apk): ok
+D/CompatChangeReporter( 3252): Compat change id reported: 418924588; UID 10229; state: ENABLED
+D/ProfileInstaller( 3252): Installing profile for com.example.thinkv2
+I/TestRunner( 3252): finished: syntheticMemoryFixtureServer(com.example.thinkv2.voice.SenseVoiceEvaluationTest)
+I/TestRunner( 3252): run finished: 1 tests, 0 failed, 0 ignored
