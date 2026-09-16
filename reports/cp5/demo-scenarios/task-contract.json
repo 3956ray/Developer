@@ -1,0 +1,63 @@
+{
+  "owner": "developer",
+  "assigned_thread_id": "01a0a64b-85f8-7790-88d9-fd1188ece566",
+  "input_documents": [
+    {
+      "path": "/Users/orderly_ray/Documents/Products Manager/product-knowledge-base/ideas/gym-occupancy/prd-mvp-v1.0-2026-09-16.md",
+      "sha256": "7d9948f302f13119120c03043902fba7455437764eb57d4923efebda4254e1bd"
+    },
+    {
+      "path": "/Users/orderly_ray/Documents/Products Manager/product-knowledge-base/ideas/gym-occupancy/acceptance-mvp-v1.0-2026-09-16.md",
+      "sha256": "89cded4a468deaa20e6090d19b35dc31c77b6a01e3e45081d3d996484188ae71"
+    },
+    {
+      "path": "/Users/orderly_ray/Documents/Products Manager/product-knowledge-base/ideas/gym-occupancy/checkpoints-mvp-v1.0-2026-09-16.md",
+      "sha256": "13060548afb17731e033364817f0e7ee6b0569c334bbfc4138e308ee64678882"
+    },
+    {
+      "path": "/Users/orderly_ray/Documents/Products Manager/product-knowledge-base/ideas/gym-occupancy/decision-mock-backend-v1.1-2026-09-16.md",
+      "sha256": "91bc4731b36c3448be4926537091bc98d759e9e9e9eee312beeaa0fab10ef07c"
+    },
+    {
+      "path": "/Users/orderly_ray/Documents/Products Manager/product-knowledge-base/ideas/gym-occupancy/prd-mock-backend-v1.1-2026-09-16.md",
+      "sha256": "1e6589aa1074cfb0c91ff999016d7dcf8fbe562493dacf7724384790f03a1ab5"
+    },
+    {
+      "path": "/Users/orderly_ray/Documents/Products Manager/product-knowledge-base/ideas/gym-occupancy/acceptance-mock-backend-v1.1-2026-09-16.md",
+      "sha256": "1d1aa65ceb25883a785231f9fbb73920de43489ff1dc78ba04ce266c4914af26"
+    },
+    {
+      "path": "/Users/orderly_ray/Documents/Products Manager/product-knowledge-base/ideas/gym-occupancy/checkpoints-mock-backend-v1.1-2026-09-16.md",
+      "sha256": "a041b64972f187b0655996d80dc5d9272c535437d001e7445a55b3ad22d6c6c7"
+    }
+  ],
+  "task_id": "GYM-DEMO-SCENARIOS-001",
+  "checkpoint": "CP5-D2",
+  "status": "dispatched",
+  "goal": "Deliver finite persistent demo scenarios and the first versioned schedule JSON adapter, preserving existing business rules.",
+  "dispatch_precondition": "D1 accepted, final clean commit verified, developer idle.",
+  "scope": [
+    "Implement exactly accepted v1.1 checkpoints C3, PRD P3/P4/P5, AC-DM03 full deletion layer and DM05–09/12 engineering.",
+    "Finite start/step/status/resume/play commands use existing HTTP APIs with current per-actor sessions. Persist safe progress and original operation IDs; one runner per scope, bounded termination, crash reconciliation, conflict/401/403 pause. No token or pairing code persistence; resume cannot grant role or invent fresh intent.",
+    "Versioned full schedule JSON source register/plan/apply/status: strict size/schema/coverage/time validation, stable external key mapping, explicit reviewed draft replacement then separate publish, CAS and source revision/hash rules. Old omitted in-coverage courses become explicit cancelled; no silent removal or partial import.",
+    "Atomic draft/mapping/batch/cursor writes and immutable provenance copy on publish, manual-edit markers, safe public summary, retention retaining mappings/version floor/current provenance.",
+    "Document data dictionary/storage ownership and practical commands/examples. Test real HTTP/process restart, concurrency, unknown-write and retention failure; retain historical evidence and freeze old migrations. Scoped local commit authorized."
+  ],
+  "out_of_scope": [
+    "No arbitrary live DB connectors, member sync, dual write-back, general ETL platform, or automatic scenario execution at startup.",
+    "No D3 native network toggle/preview/upload/deployment/real data; no skipping accepted domain constraints."
+  ],
+  "acceptance": [
+    "Applicable DM03/05–09/12 scenarios have exact final-source engineering evidence, including boundary/malformed input, replay/CAS/rollback/restart/cleanup.",
+    "Dynamic observations/member/schedule state persists and never renews TTL or restores revoked roles through restart/resume.",
+    "Plan cannot alter public/draft state; apply atomic and permission checked; publish separate; stable IDs/provenance and current data preserved through cleanup."
+  ],
+  "evidence_required": [
+    "RESULT, reports/cp5/demo-scenarios per-AC matrix/logs, data dictionary/API/commands/synthetic JSON, affected regression/static checks, final source manifest and scoped clean commit."
+  ],
+  "stop_conditions": [
+    "Stop after D2 delivery and await acceptance; D3 not authorized by this task.",
+    "Escalate ambiguous product behavior; fix domain bypass, silent overwrite, partial commit or replay defects before delivery. Unknown real gym backend is not a blocker."
+  ],
+  "baseline_commit": "aae08a1badfb58c6a4c8dda4db8f7a6d5f312cbb"
+}

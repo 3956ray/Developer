@@ -2,7 +2,7 @@
 
 ## 项目定位
 
-- 单店健身房原生微信小程序；当前CP5-D1隔离演示基础（v1.1增量）；CP0–CP4及清理返工已验收。
+- 单店健身房原生微信小程序；当前CP5-D2有限场景与JSON课表导入（v1.1及批准澄清）；D1已验收；CP0–CP4及清理返工已验收。
 - 技术栈：原生JS/WXML/WXSS，Node 24.18.0 ESM、内置SQLite与node:test，零第三方npm依赖。
 - Git根必须为`/Users/orderly_ray/Projects/gym-miniapp`，写Git前核对，不使用父级Projects历史。
 - 入口：`miniprogram/app.js`、`server/main.mjs`；目录和命令见README。
@@ -16,11 +16,14 @@
 - 缺配置/密钥/数据库失败关闭，不自动切到测试或内存数据。
 
 - 演示仅test + simulation=true + identity=test/test-app + demo.enabled=true + demo-*；不因alias授予角色，不回退假官方登录。
-- 当前只D1；不得提前做D2场景/导入或D3网络开关，见doc/demo-foundation.md。
+- 当前只D2；不得提前做D3网络开关/原生联网，见doc/demo-scenarios.md。
+- 场景业务写走原HTTP API，凭证仅stdin/私有文件；导入apply经当前operator与原课表校验，同事务更新草稿/映射/批次/游标，发布另确认。
+- 导入/场景清理共享每批100条删除预算，包含步骤；外部键与显式重plan按两份clarification基线，不猜测键回收。
 
 ## 常用命令
 
 - 演示：`node scripts/demo.mjs init demo-local`；凭证：`node scripts/demo.mjs ticket <config> member-a`（300秒、不可记录有效凭证）。
+- 场景：`node scripts/demo.mjs run <config> start crowd-v1 --anchor-date <date> --sessions-file <private-file>`；导入：`node scripts/import-schedule.mjs plan <config> <json-file> --session-file <private-file>`。
 - 初始化：`node scripts/init-local.mjs test local-demo`（仅首次）。
 - 迁移：`node scripts/db.mjs migrate .runtime/test/local-demo/config.json`。
 - 启动：`node server/main.mjs .runtime/test/local-demo/config.json`。

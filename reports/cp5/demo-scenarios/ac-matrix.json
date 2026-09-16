@@ -1,0 +1,157 @@
+[
+  {
+    "ac": "AC-DM01",
+    "D2Engineering": "NOT_RUN",
+    "actual": "D1 accepted or D3 future; not claimed newly completed in D2",
+    "evidence": "D1 historical evidence / future D3",
+    "nativeBusinessTool": "NOT_RUN",
+    "officialIdentity": "NOT_RUN",
+    "device": "NOT_RUN",
+    "venue": "NOT_RUN"
+  },
+  {
+    "ac": "AC-DM02",
+    "D2Engineering": "NOT_RUN",
+    "actual": "D1 accepted or D3 future; not claimed newly completed in D2",
+    "evidence": "D1 historical evidence / future D3",
+    "nativeBusinessTool": "NOT_RUN",
+    "officialIdentity": "NOT_RUN",
+    "device": "NOT_RUN",
+    "venue": "NOT_RUN"
+  },
+  {
+    "ac": "AC-DM03",
+    "D2Engineering": "PASS",
+    "actual": "member scenario bind/revoke/restore, explicit member-b409, unbind/delete/restart/new alias session; revoked registry and no role/binding resurrection",
+    "evidence": "demo-runner.test.mjs + D1 deletion regressions",
+    "nativeBusinessTool": "NOT_RUN",
+    "officialIdentity": "NOT_RUN",
+    "device": "NOT_RUN",
+    "venue": "NOT_RUN"
+  },
+  {
+    "ac": "AC-DM04",
+    "D2Engineering": "NOT_RUN",
+    "actual": "D1 accepted or D3 future; not claimed newly completed in D2",
+    "evidence": "D1 historical evidence / future D3",
+    "nativeBusinessTool": "NOT_RUN",
+    "officialIdentity": "NOT_RUN",
+    "device": "NOT_RUN",
+    "venue": "NOT_RUN"
+  },
+  {
+    "ac": "AC-DM05",
+    "D2Engineering": "PASS",
+    "actual": "finite crowd play (controlled wait), one live runner including waits, 401/403/429 pause, actor match, manual conflict, original operation recovery after actual SIGKILL/service restart, aged unknown needs_review",
+    "evidence": "demo-runner.test.mjs; original 899/900 observation tests",
+    "nativeBusinessTool": "NOT_RUN",
+    "officialIdentity": "NOT_RUN",
+    "device": "NOT_RUN",
+    "venue": "NOT_RUN"
+  },
+  {
+    "ac": "AC-DM06",
+    "D2Engineering": "PASS",
+    "actual": "real HTTP membership and draft/publish/cancel/reschedule/withdraw; stable IDs, public isolation, explicit empty/outside, demo labels added (source/VM only)",
+    "evidence": "demo-runner.test.mjs; native-membership/schedule regression",
+    "nativeBusinessTool": "NOT_RUN",
+    "officialIdentity": "NOT_RUN",
+    "device": "NOT_RUN",
+    "venue": "NOT_RUN"
+  },
+  {
+    "ac": "AC-DM07",
+    "D2Engineering": "PASS",
+    "actual": "source ownership/registration, read-only plan, confirmed atomic draft apply, independent publish, stable mapping after omissions/reappearance",
+    "evidence": "schedule-import.test.mjs; import-process.test.mjs",
+    "nativeBusinessTool": "NOT_RUN",
+    "officialIdentity": "NOT_RUN",
+    "device": "NOT_RUN",
+    "venue": "NOT_RUN"
+  },
+  {
+    "ac": "AC-DM08",
+    "D2Engineering": "PASS",
+    "actual": "strict unknown fields/size/duplicate/offset/DST/coverage/overlap, 200 input and cancellation union limit, safe row error, full omission cancellation",
+    "evidence": "schedule-import.test.mjs; schedules.test.mjs",
+    "nativeBusinessTool": "NOT_RUN",
+    "officialIdentity": "NOT_RUN",
+    "device": "NOT_RUN",
+    "venue": "NOT_RUN"
+  },
+  {
+    "ac": "AC-DM09",
+    "D2Engineering": "PASS",
+    "actual": "same hash replay, lower/changed version reject, draft/publication CAS, rollback, expired candidate replacement, immutable provenance, process-lost response, lock503, retained mapping/cursor, shared100-row cleanup",
+    "evidence": "schedule-import.test.mjs; import-process.test.mjs; demo-cleanup.test.mjs",
+    "nativeBusinessTool": "NOT_RUN",
+    "officialIdentity": "NOT_RUN",
+    "device": "NOT_RUN",
+    "venue": "NOT_RUN"
+  },
+  {
+    "ac": "AC-DM10",
+    "D2Engineering": "NOT_RUN",
+    "actual": "D1 accepted or D3 future; not claimed newly completed in D2",
+    "evidence": "D1 historical evidence / future D3",
+    "nativeBusinessTool": "NOT_RUN",
+    "officialIdentity": "NOT_RUN",
+    "device": "NOT_RUN",
+    "venue": "NOT_RUN"
+  },
+  {
+    "ac": "AC-DM11",
+    "D2Engineering": "NOT_RUN",
+    "actual": "D1 accepted or D3 future; not claimed newly completed in D2",
+    "evidence": "D1 historical evidence / future D3",
+    "nativeBusinessTool": "NOT_RUN",
+    "officialIdentity": "NOT_RUN",
+    "device": "NOT_RUN",
+    "venue": "NOT_RUN"
+  },
+  {
+    "ac": "AC-DM12",
+    "D2Engineering": "PASS",
+    "actual": "new migration007, old migrations/docs/reports protected, final130 tests/static/hash, data dictionary/examples/CLI and evidence separation",
+    "evidence": "final-tests.log; check.log; verification.json",
+    "nativeBusinessTool": "NOT_RUN",
+    "officialIdentity": "NOT_RUN",
+    "device": "NOT_RUN",
+    "venue": "NOT_RUN"
+  },
+  {
+    "ac": "DM09-RP1",
+    "D2Engineering": "PASS",
+    "actual": "explicit stale replacement changes only candidates; original source revision retained",
+    "evidence": "schedule-import.test.mjs; import-process.test.mjs",
+    "nativeBusinessTool": "NOT_RUN"
+  },
+  {
+    "ac": "DM09-RP2",
+    "D2Engineering": "PASS",
+    "actual": "old batch permanently rejected; current candidate cannot refresh TTL",
+    "evidence": "schedule-import.test.mjs; import-process.test.mjs",
+    "nativeBusinessTool": "NOT_RUN"
+  },
+  {
+    "ac": "DM09-RP3",
+    "D2Engineering": "PASS",
+    "actual": "apply-first returns original; two real replan processes one successor",
+    "evidence": "schedule-import.test.mjs; import-process.test.mjs",
+    "nativeBusinessTool": "NOT_RUN"
+  },
+  {
+    "ac": "DM09-RP4",
+    "D2Engineering": "PASS",
+    "actual": "confirmed local version change409 and injected rollback preserve old candidate; new candidate CAS",
+    "evidence": "schedule-import.test.mjs; import-process.test.mjs",
+    "nativeBusinessTool": "NOT_RUN"
+  },
+  {
+    "ac": "DM09-RP5",
+    "D2Engineering": "PASS",
+    "actual": "ordinary unexpired plan reuses candidate; explicit branch preserves high-water/hash protection",
+    "evidence": "schedule-import.test.mjs; import-process.test.mjs",
+    "nativeBusinessTool": "NOT_RUN"
+  }
+]

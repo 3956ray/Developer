@@ -1,10 +1,14 @@
-# 健身房小程序 · CP5-D1
+# 健身房小程序 · CP5-D2
 
 独立原生微信小程序与本地服务基础。当前实现主动登录/登出、可撤销会话、馆方权限CLI与持久化登录限流；CP0健康检查、隔离配置和合成探针保留。已加入人工忙闲观察发布、公共展示、过期/撤销及观察历史清理；已实现会员配对、前台核验、资格恢复/撤销、解绑及持久删除；已加入单一草稿/当前公开快照、今日/本周与当前课程摘要。服务不可对外部署。
 
-## 当前演示增量
+## 当前 D2 演示增量
 
-用户已确认没有馆方后端，v1.1增量采用现有Node/SQLite自有动态演示。D1已加入独立demo初始化、一次性短期凭证、显式原生演示登录与命名空间缓存校验；角色和领域写入沿用原规则。完整命令、数据落点及双HTTP客户端重启烟测见 [演示基础说明](doc/demo-foundation.md)。D2场景/JSON导入、D3原生联网尚未执行；缺馆方后端或AppSecret不阻塞D1。
+D1已验收；D2在同一Node/SQLite上加入有限HTTP场景、原操作恢复、课表JSON候选/确认导入、稳定映射、来源摘要和有界清理。命令、数据字典与限制见 [D2说明](doc/demo-scenarios.md)，当前结果见 `reports/cp5/demo-scenarios/developer-report.md`。D3原生网络及工具验收尚未执行。
+
+## D1 演示基础（已验收）
+
+用户已确认没有馆方后端，v1.1增量采用现有Node/SQLite自有动态演示。D1已加入独立demo初始化、一次性短期凭证、显式原生演示登录与命名空间缓存校验；角色和领域写入沿用原规则。完整命令、数据落点及双HTTP客户端重启烟测见 [演示基础说明](doc/demo-foundation.md)。D2场景/JSON导入已加入；D3原生联网尚未执行；缺馆方后端或AppSecret不阻塞D1。
 
 ## 运行
 
@@ -61,7 +65,7 @@ npm run check
 
 ## 范围与提交
 
-当前合同GYM-DEMO-FOUNDATION-001 / CP5-D1；交付后等指挥者验收。不得提前实现CP6–CP7。源码归本项目所有，尚未指定对外开源许可；Node及内置组件许可见依赖报告。只允许本地提交，无远端、部署或上传操作。
+当前合同GYM-DEMO-SCENARIOS-001 / CP5-D2；交付后等指挥者验收。不得提前实现D3或CP6–CP7。源码归本项目所有，尚未指定对外开源许可；Node及内置组件许可见依赖报告。只允许本地提交，无远端、部署或上传操作。
 
 ## CP1 身份配置与安全边界
 
@@ -149,4 +153,4 @@ node scripts/schedule-cleanup.mjs run <config-path>
 
 本机官方工具已完成目标导入和本地编译，基础库3.17.2；六个原生页面、登录用途/拒绝/失败已留截图。保持urlCheck=true；实际loopback HTTP请求被合法域名校验拒绝，尚缺合法服务与官方身份交换配置。CP5整体BLOCKED，工程94/94不能替代工具业务验收；详见reports/cp5/developer-report.md与30AC分层矩阵。
 
-上述历史BLOCKED保留当时证据；v1.1当前D1不以官方身份/后端作为前置，当前分层结果见 `reports/cp5/demo-foundation/developer-report.md`。D3原生演示仍须独立验收。
+上述历史BLOCKED保留当时证据；v1.1演示不以官方身份/馆方后端作为前置，D1历史分层结果见 `reports/cp5/demo-foundation/developer-report.md`，当前D2见 `reports/cp5/demo-scenarios/developer-report.md`。D3原生演示仍须独立验收。

@@ -1,0 +1,14 @@
+✔ DM05 finite crowd play, one runner during waits, true HTTP persistence, conflict/role pause and explicit controls (1186.429083ms)
+✔ DM05 committed write before progress failure reconciles original operation after restart; unknown expired intent never rewritten (312.540459ms)
+✔ DM05 manual state change pauses rather than overwrites; restart does not execute remaining scenario (185.734584ms)
+✔ DM03/06 real member scenario binds/revokes/restores then explicit second-member conflict; unbind/delete do not resurrect registry or role (330.942417ms)
+✔ DM06 schedule scenario private draft, stable cancellation/reschedule, separate publication/withdrawal and explicit empty/outside (252.893167ms)
+✔ DM12 demo cleanup retains active/review runs and removes only 30-day terminal progress atomically (100.117375ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2683.441542

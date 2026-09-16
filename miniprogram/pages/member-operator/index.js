@@ -1,11 +1,11 @@
 const api=require('../../lib/session');
 const STORE='gym.operator-member-operation.v1',scope=()=>api.scope();
 Page({
- data:{authorized:false,busy:false,code:'',memberRef:'',endDate:'',validUntilOverride:'',mode:'pending_confirmation',modes:['有效期待确认','固定结束日期','明确无固定期限'],modeIndex:0,confirmation:false,message:'',inspection:'',pending:false,canRetry:false,testing:api.config.environment==='test'},
+ data:{authorized:false,busy:false,code:'',memberRef:'',endDate:'',validUntilOverride:'',mode:'pending_confirmation',modes:['有效期待确认','固定结束日期','明确无固定期限'],modeIndex:0,confirmation:false,message:'',inspection:'',pending:false,canRetry:false,demo:!!(api.config.demo&&api.config.demo.enabled),testing:api.config.environment==='test'},
  onLoad(){this._generation=0;this._formRevision=0;try{const p=wx.getStorageSync(STORE);if(p&&p.scope===scope()){this._pending=p;this.setData({pending:true});}}catch(_){}},
  onShow(){try{const p=wx.getStorageSync(STORE);this._pending=p&&p.scope===scope()?p:null;}catch(_){this._pending=null;}this.setData({pending:!!this._pending});this._visible=true;this.checkRole();},
  onHide(){this._visible=false;this._generation++;this._intent=null;this._inspected=null;this.setData({authorized:false,code:'',memberRef:'',inspection:'',confirmation:false});},onUnload(){this.onHide();},
- async checkRole(){const generation=this._generation;try{const r=await api.request('/operator/role','GET',undefined,api.load());if(generation===this._generation)this.setData({authorized:r.data.isOperator,message:r.data.isOperator?'请在原馆系统核对，并当面比对用户配对请求。':'没有馆方权限。'});}catch(_){if(generation===this._generation)this.setData({authorized:false,message:'请主动登录并确认馆方权限。'});}},
+ async checkRole(){const generation=this._generation;try{const r=await api.request('/operator/role','GET',undefined,api.load());if(generation===this._generation)this.setData({authorized:r.data.isOperator,message:r.data.isOperator?(this.data.demo?'演示核验仅验证流程；请使用合成引用，不代表真实馆方核验。':'请在原馆系统核对，并当面比对用户配对请求。'):'没有馆方权限。'});}catch(_){if(generation===this._generation)this.setData({authorized:false,message:'请主动登录并确认馆方权限。'});}},
  form(){return {code:this.data.code,memberRef:this.data.memberRef,endDate:this.data.endDate,validUntilOverride:this.data.validUntilOverride,mode:this.data.mode,confirmation:this.data.confirmation};},
  input(e){this._formRevision++;this._inspected=null;this.setData({[e.currentTarget.dataset.field]:e.detail.value,inspection:'',confirmation:false});},
  chooseMode(e){this._formRevision++;const i=Number(e.detail.value);this.setData({modeIndex:i,mode:['pending_confirmation','fixed_until','no_fixed_expiry'][i],confirmation:false});this._inspected=null;},

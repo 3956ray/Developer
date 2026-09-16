@@ -1,0 +1,45 @@
+{
+  "task": "GYM-DEMO-SCENARIOS-001",
+  "baselineCommit": "aae08a1badfb58c6a4c8dda4db8f7a6d5f312cbb",
+  "result": "COMPLETE",
+  "engineering": "PASS",
+  "nativeBusinessTool": "NOT_RUN",
+  "officialIdentity": "NOT_RUN",
+  "device": "NOT_RUN",
+  "venue": "NOT_RUN",
+  "tests": {
+    "command": "npm test",
+    "exitCode": 0,
+    "passed": 130,
+    "failed": 0,
+    "log": "final-tests.log"
+  },
+  "static": {
+    "command": "npm run check",
+    "exitCode": 0,
+    "log": "check.log"
+  },
+  "protectedFilesComparedToBaseline": 162,
+  "allProtectedUnchanged": true,
+  "inputDocumentsVerified": 9,
+  "originalInputs": 7,
+  "approvedClarifications": 2,
+  "sourceFiles": 134,
+  "diffCheckExitCode": 0,
+  "cleanupSharedDeletionBudget": {
+    "limit": 100,
+    "observedBatches": [
+      100,
+      100,
+      90
+    ],
+    "includesChildSteps": true,
+    "rollbackAndYieldVerified": true
+  },
+  "credentialArtifactPatternScan": "PASS; no credential-shaped JSON values in current artifacts; private input/step secrecy tested",
+  "configurationEvidence": "configuration-evidence.json",
+  "defaultClientAndProjectConfigUnchanged": true,
+  "noNewDependencies": true,
+  "scope": "D2 only; no native network toggle/deploy/upload",
+  "commitAndClean": "Reported in post-commit handoff; manifest excludes itself"
+}

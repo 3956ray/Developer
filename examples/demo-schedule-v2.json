@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "sourceId": "synthetic-schedule",
+  "gymId": "demo-local",
+  "sourceRevision": 2,
+  "mode": "full",
+  "capturedAt": "2026-09-17T01:00:00.000Z",
+  "timeZone": "Asia/Taipei",
+  "coverage": { "startDate": "2026-09-17", "endDate": "2026-09-24" },
+  "courses": [
+    { "externalId": "synthetic-yoga-a", "name": "合成舒展课程改期", "localStart": { "local": "2026-09-19T09:00", "offset": "+08:00" }, "localEnd": { "local": "2026-09-19T10:00", "offset": "+08:00" }, "status": "scheduled" }
+  ]
+}

@@ -1,5 +1,6 @@
 <view class="page">
  <view wx:if="{{testing}}" class="note">模拟数据 · 测试环境</view>
+ <view wx:if="{{demo}}" class="note">演示会员资格 · 不代表真实馆方核验</view>
  <view class="title">{{title}}</view><view class="note">{{detail}}</view>
  <view class="note">{{expiryText}}</view><view class="note">核验时间：{{verifiedText}}</view>
  <view wx:if="{{pairCode}}" class="title">{{pairCode}}</view><view wx:if="{{pairLabel}}" class="note">请求标识：{{pairLabel}} · 仅用于当面核对</view>

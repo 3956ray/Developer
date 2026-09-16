@@ -1,0 +1,26 @@
+✔ DM05 finite crowd play, one runner during waits, true HTTP persistence, conflict/role pause and explicit controls (1356.78625ms)
+✔ DM05 committed write before progress failure reconciles original operation after restart; unknown expired intent never rewritten (186.472541ms)
+✔ DM05 manual state change pauses rather than overwrites; restart does not execute remaining scenario (185.022708ms)
+✔ DM03/06 real member scenario binds/revokes/restores then explicit second-member conflict; unbind/delete do not resurrect registry or role (334.672416ms)
+✔ DM06 schedule scenario private draft, stable cancellation/reschedule, separate publication/withdrawal and explicit empty/outside (253.572833ms)
+✔ DM12 demo cleanup retains active/review runs and removes only 30-day terminal progress atomically (99.553291ms)
+✔ DM05 actual killed runner after HTTP commit leaves interrupted progress; resume queries original operation once (250.259875ms)
+ℹ SIGKILL after actual HTTP commit: durable original operation reconciled after service restart, no second observation
+✔ DM09/RP3 two actual apply/replan processes serialize one atomic result/successor and replay safely (892.638041ms)
+ℹ two real processes: apply one audit/revision; explicit replan one usable successor
+✔ DM09 actual CLI register/plan/apply/status, private-token permissions and SQLite lock fail closed (2388.437083ms)
+✔ DM07/09 plan is private, confirmed apply atomic, publish copies immutable safe provenance, omissions cancel and stable IDs survive (48.061292ms)
+✔ DM08 strict schema/size/duplicate/time/coverage/overlap rejects whole candidate with safe course-row errors (16.494042ms)
+✔ DM09 expired same revision/hash replan replaces old batch; CAS and fault rollback preserve every table (18.216833ms)
+✔ DM09 retention retry and restart preserve mappings/version floor/applied result/current provenance (18.583459ms)
+✔ DM09-RP1–RP5 explicit stale candidate replacement is atomic, version-bound, single successor and never applies (24.499917ms)
+✔ DM08 cancellation union over 200 rejects without discarding old rows; DST and 14-day edge use existing domain validation (49.311041ms)
+✔ DM08 import honors DST nonexistent/repeated local time with explicit offsets (10.387459ms)
+ℹ tests 16
+ℹ suites 0
+ℹ pass 16
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 3863.004375

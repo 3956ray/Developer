@@ -1,0 +1,12 @@
+✔ DM07/09 plan is private, confirmed apply atomic, publish copies immutable safe provenance, omissions cancel and stable IDs survive (90.342042ms)
+✔ DM08 strict schema/size/duplicate/time/coverage/overlap rejects whole candidate with safe course-row errors (32.184125ms)
+✔ DM09 expired same revision/hash replan replaces old batch; CAS and fault rollback preserve every table (37.610625ms)
+✔ DM09 retention retry and restart preserve mappings/version floor/applied result/current provenance (30.747208ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 540.802667

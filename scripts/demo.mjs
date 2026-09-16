@@ -18,7 +18,8 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
   let db;
   try {
     const [action, path, actor] = process.argv.slice(2);
-    if (action === 'init' && process.argv.length === 4) console.log(initializeDemo(path));
+    if (action === 'run') { const {runDemo}=await import('./demo-run.mjs'); await runDemo(path,process.argv.slice(4)); }
+    else if (action === 'init' && process.argv.length === 4) console.log(initializeDemo(path));
     else if (action === 'ticket' && process.argv.length === 5) {
       const c = loadConfig(path); requireDemo(c); db = openDatabase(c);
       process.stdout.write(issueDemoTicket(db, c, actor) + '\n');

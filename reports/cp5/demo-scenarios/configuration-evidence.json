@@ -1,0 +1,41 @@
+{
+  "actualTestConfigurations": [
+    {
+      "configSha256": "f189bc924cc4d41a53d4917535e15d81222f9b8e3fafb2e33133fd917461f8d9",
+      "configuration": {
+        "environment": "test",
+        "gymId": "demo-54bcd914-1635-4ba0-b6a3-193db8f40b9f",
+        "simulation": true,
+        "identity": {
+          "mode": "test",
+          "appId": "test-app"
+        },
+        "demo": {
+          "enabled": true
+        },
+        "host": "127.0.0.1",
+        "configuredPort": 0
+      }
+    },
+    {
+      "configSha256": "96cbd76b8a6240a773d9c37ae9350920232ad3a69c5091cee1bad54144786a39",
+      "scope": {
+        "environment": "test",
+        "gymId": "demo-8720526d-c386-4615-b956-df6998a63f42",
+        "simulation": true,
+        "identityMode": "test",
+        "demoEnabled": true
+      },
+      "finitePlayWaits": "controlled 60-second waits; no native TTL claim"
+    }
+  ],
+  "fixtureRemoved": [
+    true,
+    true
+  ],
+  "defaultClientSha256": "cb0861c3fa3b7bee2948e5d04c4ba9b63660ec32d0fa4bcb179e7c4b49a8386b",
+  "projectSha256": "2616d8a022675f9f5566b9c5b3c6702b4da427c36475b635b367541f08f9336b",
+  "trackedUrlCheck": true,
+  "privateUrlCheck": true,
+  "nativeNetworkRun": false
+}

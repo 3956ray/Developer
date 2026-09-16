@@ -126,13 +126,13 @@ test('DM02/03 new ticket provides fresh auth; deleting blocks reconstruction; co
 test('DM12 migration of existing five-migration database preserves data and checksums', t => {
   const x = setupDemo(t); x.db.close();
   const dir = x.c.stateDir + '/old-migrations'; mkdirSync(dir);
-  for (const file of readdirSync(root + '/server/migrations').filter(f => !f.startsWith('006-'))) copyFileSync(root + '/server/migrations/' + file, dir + '/' + file);
+  for (const file of readdirSync(root + '/server/migrations').filter(f => f.slice(0,3)<'006')) copyFileSync(root + '/server/migrations/' + file, dir + '/' + file);
   const c = { ...x.c, databasePath: x.c.stateDir + '/legacy.sqlite' };
   let db = openDatabase(c, pathToFileURL(dir + '/')); const before = db.prepare('SELECT * FROM schema_migrations').all();
   db.prepare("INSERT INTO foundation_probe (probe_id,value,created_at) VALUES ('migration-check','synthetic-non-member',1)").run(); db.close();
   db = openDatabase(c); try {
-    assert.equal(db.prepare('SELECT count(*) n FROM schema_migrations').get().n, 6);
-    assert.deepEqual(db.prepare("SELECT * FROM schema_migrations WHERE name NOT LIKE '006-%'").all(), before);
+    assert.equal(db.prepare('SELECT count(*) n FROM schema_migrations').get().n, 7);
+    assert.deepEqual(db.prepare("SELECT * FROM schema_migrations WHERE name < '006'").all(), before);
     assert.equal(db.prepare("SELECT value FROM foundation_probe WHERE probe_id='migration-check'").get().value, 'synthetic-non-member');
   } finally { db.close(); }
 });

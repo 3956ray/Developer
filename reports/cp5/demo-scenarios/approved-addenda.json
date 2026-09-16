@@ -1,0 +1,13 @@
+{
+  "authority": "Leader approved; PM supplied both finalized clarifications during D2",
+  "documents": [
+    {
+      "path": "/Users/orderly_ray/Documents/Products Manager/product-knowledge-base/ideas/gym-occupancy/clarification-external-key-v1.1-2026-09-17.md",
+      "sha256": "8f0e5da5bb94eff0d0f6111f680b301a183d83892cc0da9705264462d44313e2"
+    },
+    {
+      "path": "/Users/orderly_ray/Documents/Products Manager/product-knowledge-base/ideas/gym-occupancy/clarification-explicit-replan-v1.1-2026-09-17.md",
+      "sha256": "dce434a06635ed83866fa3a701e1b2c90f1a869c22fd3e471ee5a93341fa77c3"
+    }
+  ]
+}
