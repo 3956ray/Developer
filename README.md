@@ -58,3 +58,7 @@
 - 根目录只维护索引、治理规则和模板。新项目以 `PROJECT_AGENTS_TEMPLATE.md` 为起点，删除不适用的条目。
 - 新增已有独立仓库的项目时，更新上方链接，并在根 `.gitignore` 中排除对应目录。没有独立仓库的项目需先检查敏感信息及生成文件，再决定纳入版本控制。
 - `.gitignore` 排除当前四个独立项目、依赖、构建缓存和常见凭证文件；提交前仍需检查差异。
+
+## 健身房小程序迁移
+
+完整源码与原11个提交保存在本仓库独立 [gym-miniapp 分支](https://github.com/3956ray/Developer/tree/gym-miniapp)。`main` 仍只放开发治理。用独立工作树检出，参见 [交接](GYM-HANDOFF.md) 和 [Leader 恢复步骤](https://github.com/3956ray/Leader/blob/main/MIGRATION.md)。
