@@ -59,6 +59,10 @@
 - 新增已有独立仓库的项目时，更新上方链接，并在根 `.gitignore` 中排除对应目录。没有独立仓库的项目需先检查敏感信息及生成文件，再决定纳入版本控制。
 - `.gitignore` 排除当前四个独立项目、依赖、构建缓存和常见凭证文件；提交前仍需检查差异。
 
+## 健身房小程序迁移
+
+完整源码与原11个提交保存在本仓库独立 [gym-miniapp 分支](https://github.com/3956ray/Developer/tree/gym-miniapp)。`main` 仍只放开发治理。用独立工作树检出，参见 [交接](GYM-HANDOFF.md) 和 [Leader 恢复步骤](https://github.com/3956ray/Leader/blob/main/MIGRATION.md)。
+
 ## thinkV2 本地迁移候选
 
 [交接入口](handoff/thinkV2/README.md)：保留原始88d3861及许可安全历史映射、验收制品清单、新电脑恢复与任务重绑指南。**本候选尚未公开推送，等待内部交接资料公开范围批准**；受限原件只能私有/离线迁移。

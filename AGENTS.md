@@ -58,6 +58,10 @@
 
 建立新子项目时，以 `PROJECT_AGENTS_TEMPLATE.md` 为起点，并删除所有不适用或尚未确认的内容；准确的短规则优于推测性的完整规则。
 
+## 健身房换机入口
+
+先读 `GYM-HANDOFF.md` 与 Leader/MIGRATION.md；旧绝对路径按新电脑位置映射。已有模型配置原样保留，不自动启用 disabled 配置。D2 已交付待 Leader 独立验收，不得自行开始 D3。
+
 ## thinkV2 迁移候选
 
 - 入口为`handoff/thinkV2/README.md`，产品保持独立checkout，使用项目自己的AGENTS与manifest。

@@ -37,5 +37,6 @@
   "original_archive_files_verified_in_private_tar": 4110,
   "private_tar_regular_files": 4666,
   "public_history_commit": "6cfd50f5eb6e2a8e6df0968886c9bec9b7d1ba14",
-  "remote_unchanged_head": "c9ce5c9bfa319f9ec36c70b548c8cde5079ef008"
+  "initial_observed_remote_head": "c9ce5c9bfa319f9ec36c70b548c8cde5079ef008",
+  "latest_observed_remote_head": "27746c2590d429ec4975cdd682991dc998a24c31"
 }
