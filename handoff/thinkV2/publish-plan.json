@@ -1,0 +1,16 @@
+{
+  "status": "BLOCKED_PENDING_USER_PUBLICATION_APPROVAL",
+  "repository": "https://github.com/3956ray/Developer",
+  "visibility": "public",
+  "observed_main": "c9ce5c9bfa319f9ec36c70b548c8cde5079ef008",
+  "planned_new_branches": [
+    "codex/migrate-thinkv2-20260917",
+    "codex/thinkv2-public-history"
+  ],
+  "force_push": false,
+  "main_overwrite": false,
+  "planned_asset": "public-acceptance-evidence.tar.gz",
+  "remote_writes_performed": [],
+  "authentication_write_access_tested": false,
+  "restricted_assets_may_be_published": false
+}

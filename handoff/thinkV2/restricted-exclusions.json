@@ -1,0 +1,18 @@
+{
+  "history": [
+    "app/src/senseVoiceEvaluation/assets/sensevoice/tokens.txt"
+  ],
+  "formal_archive_files": [
+    {
+      "path": "archives/thinkv2-V2-OFFLINE-VOICE-002-cb6a5460/sensevoice-evaluation-test.apk",
+      "size": 198925889,
+      "sha256": "f081f7a0499ce95a720d97debc027a72c987da3910d2b00101e96f20e4a60b44",
+      "reason": "SenseVoice evaluation APK contains restricted weights and unresolved binary redistribution obligations"
+    }
+  ],
+  "private_only": [
+    "supplemental-tmp/",
+    "skills/scan-untrusted-code/"
+  ],
+  "reason": "Existing SenseVoice PAUSE and unapproved public redistribution; private originals remain intact. No automatic model restoration or execution."
+}

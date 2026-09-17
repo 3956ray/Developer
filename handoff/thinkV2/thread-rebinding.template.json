@@ -1,0 +1,19 @@
+{
+  "status": "NEEDS_NEW_THREADS_AND_EXPLICIT_REBINDING",
+  "historical_only": {
+    "leader": "01a0a5ce-3e8b-75e1-92be-9eb89ef9ed37",
+    "pm": "01a0768c-7ba7-7f11-bd4f-f5c2fd1fa779",
+    "developer": "01a0a5d3-8ec3-7071-82f6-a49f80ba7d1d"
+  },
+  "new_machine": {
+    "leader": null,
+    "pm": null,
+    "developer": null
+  },
+  "product_state": {
+    "CP7": "DELIVERED_AWAITING_LEADER_ACCEPTANCE",
+    "Voice002": "PARKED_PARTIAL",
+    "provider_verified": false
+  },
+  "automatic_chat_runtime_migration": false
+}

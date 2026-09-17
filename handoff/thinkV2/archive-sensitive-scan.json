@@ -1,0 +1,41 @@
+{
+  "scanned_unique_files": 2488,
+  "findings": [
+    {
+      "path": "supplemental-tmp/thinkv2-emulator-index-before-20260916.md",
+      "pattern": "openai_key",
+      "lines": [
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91
+      ]
+    },
+    {
+      "path": "supplemental-tmp/thinkv2-baseline-20260916/INDEX.before.md",
+      "pattern": "openai_key",
+      "lines": [
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86
+      ]
+    }
+  ]
+}

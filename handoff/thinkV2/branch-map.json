@@ -1,0 +1,67 @@
+[
+  {
+    "original_ref": "refs/heads/codex/v2-ai-suggestions",
+    "original_commit": "186204ee45b2f2664fd8073e53a63fe118e0df04",
+    "public_commit": "36e339b19d03f68163c1120c140926ee96672464"
+  },
+  {
+    "original_ref": "refs/heads/codex/v2-backup-compatibility",
+    "original_commit": "7eb5b4dafe891d10fe65a15c5f67b01c0d2ab3ae",
+    "public_commit": "c12c9571b6dfcbd0ab93a4561eaa92c06cf0243d"
+  },
+  {
+    "original_ref": "refs/heads/codex/v2-backup-restore",
+    "original_commit": "cc957d56e8f5337d6548ed2b0296712fc0cbdcba",
+    "public_commit": "cc957d56e8f5337d6548ed2b0296712fc0cbdcba"
+  },
+  {
+    "original_ref": "refs/heads/codex/v2-calendar-import",
+    "original_commit": "84f3691f97efaae6e9fdbb7c81405e6525770e38",
+    "public_commit": "06fcad55aac91c0702fcf8857e4757890f1a6e18"
+  },
+  {
+    "original_ref": "refs/heads/codex/v2-explicit-relations",
+    "original_commit": "53fb5da83c841d565f8c2f627de4d81905a1abf6",
+    "public_commit": "bfb1b4995f2db4dd247dc07ad4b37d1f4dd79180"
+  },
+  {
+    "original_ref": "refs/heads/codex/v2-notes-accessibility",
+    "original_commit": "8a98e09d1276a17016a4e71f7f7385f6c57e402c",
+    "public_commit": "3e878e573f9275d1a1f5b89df1bbbb41a931b465"
+  },
+  {
+    "original_ref": "refs/heads/codex/v2-notes-core",
+    "original_commit": "e2f6f4a2e91ec367dea034dff263368341212fe6",
+    "public_commit": "e2f6f4a2e91ec367dea034dff263368341212fe6"
+  },
+  {
+    "original_ref": "refs/heads/codex/v2-notes-lifecycle",
+    "original_commit": "e363ea92615c8b0594388e9a9992e0782ab545aa",
+    "public_commit": "e363ea92615c8b0594388e9a9992e0782ab545aa"
+  },
+  {
+    "original_ref": "refs/heads/codex/v2-offline-voice",
+    "original_commit": "23ede0961ff83e5637493d7eb5f6c5ecf6b84f59",
+    "public_commit": "23ede0961ff83e5637493d7eb5f6c5ecf6b84f59"
+  },
+  {
+    "original_ref": "refs/heads/codex/v2-offline-voice-002",
+    "original_commit": "c22345b1ef18335e11df15f4595879464a385f5b",
+    "public_commit": "eaa9c01230d6c4bd6995ec93e74c26aeff79f9d3"
+  },
+  {
+    "original_ref": "refs/heads/codex/v2-reminders",
+    "original_commit": "1dde8ec7bd34caac991097c9f3962958cc753fab",
+    "public_commit": "1dde8ec7bd34caac991097c9f3962958cc753fab"
+  },
+  {
+    "original_ref": "refs/heads/codex/v2-reminders-usability",
+    "original_commit": "88d38616c5a5947d4ca798d4039c6368fa465624",
+    "public_commit": "6cfd50f5eb6e2a8e6df0968886c9bec9b7d1ba14"
+  },
+  {
+    "original_ref": "refs/heads/codex/v2-voice-controls",
+    "original_commit": "29482c49d17fc9c6470c0ea964419288b8931f67",
+    "public_commit": "233358b94bfdff08d2d010cb7897937f98601268"
+  }
+]

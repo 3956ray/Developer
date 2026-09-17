@@ -1,0 +1,11 @@
+{
+  "source_history_commits_verified": 18,
+  "actual_archive_subset_restored_and_hash_checked": 2,
+  "path_traversal_rejected": true,
+  "existing_different_file_preserved": true,
+  "complete_public_archive_objects_sha256_verified": 2333,
+  "complete_public_archive_logical_files": 4110,
+  "complete_private_archive_original_files_sha256_verified": 4110,
+  "new_machine_build_executed": false,
+  "remote_upload_verified": false
+}

@@ -35,3 +35,7 @@ local.properties
 .codex/auth.json
 .codex/sessions/
 .codex/log/
+
+# Migration verification bytecode is not a deliverable.
+__pycache__/
+*.pyc

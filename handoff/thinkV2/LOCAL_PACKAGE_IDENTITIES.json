@@ -1,0 +1,41 @@
+{
+  "status": "LOCAL_VERIFIED_NOT_UPLOADED",
+  "packages": [
+    {
+      "name": "thinkV2-original-all.bundle",
+      "local_path": "/Users/orderly_ray/Projects/thinkV2-migration-private-20260917/thinkV2-original-all.bundle",
+      "bytes": 113407051,
+      "sha256": "9db106c70021fb004a7f8b9e70ef66825084737b3248ca0e94c53cdedaec331a",
+      "uploaded": false,
+      "private_only": true
+    },
+    {
+      "name": "thinkV2-public-history.bundle",
+      "local_path": "/Users/orderly_ray/Projects/thinkV2-migration-private-20260917/thinkV2-public-history.bundle",
+      "bytes": 113955408,
+      "sha256": "8ac80d72ce0377fca26c93f4f7c9954bc521e58bae4290c1d8d42d5794e9fd86",
+      "uploaded": false,
+      "private_only": false
+    },
+    {
+      "name": "complete-original-transfer.tar.gz",
+      "local_path": "/Users/orderly_ray/Projects/thinkV2-migration-private-20260917/complete-original-transfer.tar.gz",
+      "bytes": 1849004421,
+      "sha256": "e45bfc25e368b1f823fa2477d03c9c2ac6a899b4bf1cd773b22ff5ac01abd5c9",
+      "uploaded": false,
+      "private_only": true
+    },
+    {
+      "name": "public-acceptance-evidence.tar.gz",
+      "local_path": "/Users/orderly_ray/Projects/thinkV2-migration-private-20260917/public-acceptance-evidence.tar.gz",
+      "bytes": 1172246269,
+      "sha256": "f286e9712e5badbaca062398f3ed7c6301fecbfdcec77e236ace04627bce8706",
+      "uploaded": false,
+      "private_only": false
+    }
+  ],
+  "original_archive_files_verified_in_private_tar": 4110,
+  "private_tar_regular_files": 4666,
+  "public_history_commit": "6cfd50f5eb6e2a8e6df0968886c9bec9b7d1ba14",
+  "remote_unchanged_head": "c9ce5c9bfa319f9ec36c70b548c8cde5079ef008"
+}

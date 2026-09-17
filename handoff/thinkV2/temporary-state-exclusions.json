@@ -1,0 +1,54 @@
+[
+  {
+    "path": "/private/tmp/thinkv2-accessibility-288f5fe5",
+    "reason": "Disposable emulator disk/cache/lock/signing state; retained AVD definitions and external logs; recreate fresh synthetic AVD"
+  },
+  {
+    "path": "/private/tmp/thinkv2-ai-emulator",
+    "reason": "Disposable emulator disk/cache/lock/signing state; retained AVD definitions and external logs; recreate fresh synthetic AVD"
+  },
+  {
+    "path": "/private/tmp/thinkv2-ai-mock/key.pem",
+    "reason": "Private key/credential; regenerate test TLS material, do not migrate"
+  },
+  {
+    "path": "/private/tmp/thinkv2-backup-emulator",
+    "reason": "Disposable emulator disk/cache/lock/signing state; retained AVD definitions and external logs; recreate fresh synthetic AVD"
+  },
+  {
+    "path": "/private/tmp/thinkv2-backup-tls/key.pem",
+    "reason": "Private key/credential; regenerate test TLS material, do not migrate"
+  },
+  {
+    "path": "/private/tmp/thinkv2-calendar-emulator",
+    "reason": "Disposable emulator disk/cache/lock/signing state; retained AVD definitions and external logs; recreate fresh synthetic AVD"
+  },
+  {
+    "path": "/private/tmp/thinkv2-emulator",
+    "reason": "Disposable emulator disk/cache/lock/signing state; retained AVD definitions and external logs; recreate fresh synthetic AVD"
+  },
+  {
+    "path": "/private/tmp/thinkv2-lifecycle-emulator",
+    "reason": "Disposable emulator disk/cache/lock/signing state; retained AVD definitions and external logs; recreate fresh synthetic AVD"
+  },
+  {
+    "path": "/private/tmp/thinkv2-relations-emulator",
+    "reason": "Disposable emulator disk/cache/lock/signing state; retained AVD definitions and external logs; recreate fresh synthetic AVD"
+  },
+  {
+    "path": "/private/tmp/thinkv2-reminders-8da8a67a",
+    "reason": "Disposable emulator disk/cache/lock/signing state; retained AVD definitions and external logs; recreate fresh synthetic AVD"
+  },
+  {
+    "path": "/private/tmp/thinkv2-reminders-emulator",
+    "reason": "Disposable emulator disk/cache/lock/signing state; retained AVD definitions and external logs; recreate fresh synthetic AVD"
+  },
+  {
+    "path": "/private/tmp/thinkv2-voice-controls-ee161236",
+    "reason": "Disposable emulator disk/cache/lock/signing state; retained AVD definitions and external logs; recreate fresh synthetic AVD"
+  },
+  {
+    "path": "/private/tmp/thinkv2-voice-emulator",
+    "reason": "Disposable emulator disk/cache/lock/signing state; retained AVD definitions and external logs; recreate fresh synthetic AVD"
+  }
+]

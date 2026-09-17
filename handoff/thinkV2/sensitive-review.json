@@ -1,0 +1,8 @@
+{
+  "history_small_blobs_scanned": 1570,
+  "archive_and_supplemental_unique_small_files_scanned": 2488,
+  "true_credential_findings": 0,
+  "false_positive_review": "The sk- pattern matched the suffix of vosk-runtime file names in two historical PM index snapshots, not API keys. Those supplemental snapshots are private-only regardless.",
+  "scan_limits": "Pattern-based credential checks; large binaries classified using origin and APK ZIP contents, not an exhaustive malware/privacy proof. Internal paths/thread IDs/history remain publication-approval gated.",
+  "credentials_excluded": "Private TLS keys, account tokens, global auth/chat databases, signing keys and emulator userdata are not in transfer packages."
+}

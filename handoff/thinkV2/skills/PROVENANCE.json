@@ -1,0 +1,12 @@
+{
+  "karpathy-guidelines": {
+    "original_path": "/Users/orderly_ray/.codex/skills/karpathy-guidelines/SKILL.md",
+    "sha256": "6e22cc54cb02a5e98ae42d06d9d7292db0c1b43894831b32879beb0166b2aea7",
+    "license_metadata": "MIT, retained verbatim from original SKILL.md"
+  },
+  "scan-untrusted-code": {
+    "location": "private transfer package skills/scan-untrusted-code",
+    "public_copy": false,
+    "reason": "Personal complete copy retained privately; no blanket third-party/public licensing assumption"
+  }
+}
