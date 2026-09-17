@@ -67,4 +67,4 @@
 - 入口为`handoff/thinkV2/README.md`，产品保持独立checkout，使用项目自己的AGENTS与manifest。
 - 编写、审查或重构thinkV2时优先读取所附`handoff/thinkV2/skills/karpathy-guidelines/SKILL.md`（若独立checkout路径不同，按交接指南定位）。
 - 原始CP7提交88d3861仍待Leader验收；新机需新建任务并显式重绑角色，不继承旧聊天运行态或授权。
-- 当前交接候选含内部资料，公开推送等待用户批准；受限SenseVoice原件只作私有保全，不公开、不自动执行。
+- 交接内部资料已获用户明确公开批准；受限SenseVoice原件只作私有保全，不公开、不自动执行。

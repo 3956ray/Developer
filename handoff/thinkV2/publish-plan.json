@@ -1,5 +1,5 @@
 {
-  "status": "BLOCKED_PENDING_USER_PUBLICATION_APPROVAL",
+  "status": "APPROVED_READY_TO_PUBLISH",
   "repository": "https://github.com/3956ray/Developer",
   "visibility": "public",
   "observed_main": "27746c2590d429ec4975cdd682991dc998a24c31",
@@ -14,5 +14,6 @@
   "authentication_write_access_tested": false,
   "restricted_assets_may_be_published": false,
   "initial_observed_main": "c9ce5c9bfa319f9ec36c70b548c8cde5079ef008",
-  "external_update_preserved": true
+  "external_update_preserved": true,
+  "approval": "User explicitly approved public internal handoff publication through Leader; restricted assets and credentials remain excluded."
 }
