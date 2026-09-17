@@ -4,7 +4,7 @@
 
 - 单店健身房原生微信小程序；当前CP5-D2有限场景与JSON课表导入（v1.1及批准澄清）；D1已验收；CP0–CP4及清理返工已验收。
 - 技术栈：原生JS/WXML/WXSS，Node 24.18.0 ESM、内置SQLite与node:test，零第三方npm依赖。
-- Git根必须为`/Users/orderly_ray/Projects/gym-miniapp`，写Git前核对，不使用父级Projects历史。
+- Git根必须为当前小程序独立工作树（`git rev-parse --show-toplevel`），写Git前核对；换机使用 Developer 仓库的 `gym-miniapp` 分支，不在 Developer/main 执行产品开发。
 - 入口：`miniprogram/app.js`、`server/main.mjs`；目录和命令见README。
 
 ## 工程规范
@@ -38,3 +38,7 @@
 - 当前有界连续工作由主agent完成；只有主agent可按适用授权委派，subagent不得再委派。
 - 通过当前CP必要验证，报告逐AC证据与未验证层；COMPLETE不代表指挥者ACCEPTED。
 - 不触碰项目外文件，不部署/上传/发布，不使用真实凭证或门店数据，不扩展后续CP。
+
+## 换机交接
+
+先读 `GYM-HANDOFF.md`；旧绝对路径为历史来源，按 Leader 的迁移说明映射。源文件改动仅迁移规则，不表示 D2 已验收。
