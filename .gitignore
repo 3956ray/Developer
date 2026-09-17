@@ -39,3 +39,6 @@ local.properties
 # Migration verification bytecode is not a deliverable.
 __pycache__/
 *.pyc
+
+# Independent thinkV2 checkout from the licensed history branch.
+/thinkV2/

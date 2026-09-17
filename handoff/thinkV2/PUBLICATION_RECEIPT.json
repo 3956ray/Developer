@@ -1,0 +1,37 @@
+{
+  "status": "PUBLISHED_AND_PUBLIC_DOWNLOAD_VERIFIED",
+  "verified_at_utc": "2026-09-17T11:51:35.050824+00:00",
+  "repository": "https://github.com/3956ray/Developer",
+  "source_branch": "codex/thinkv2-public-history",
+  "source_commit": "6cfd50f5eb6e2a8e6df0968886c9bec9b7d1ba14",
+  "original_product_commit": "88d38616c5a5947d4ca798d4039c6368fa465624",
+  "handoff_branch": "codex/migrate-thinkv2-20260917",
+  "initial_published_handoff_commit": "73b18497bcb3f1d97caaab481f4f02765e91a1eb",
+  "release_url": "https://github.com/3956ray/Developer/releases/tag/thinkv2-migration-20260917",
+  "release_id": 390655047,
+  "asset_id": 570118921,
+  "download_verification": {
+    "public_url": "https://github.com/3956ray/Developer/releases/download/thinkv2-migration-20260917/public-acceptance-evidence.tar.gz",
+    "downloaded_bytes": 1172246269,
+    "download_sha256": "f286e9712e5badbaca062398f3ed7c6301fecbfdcec77e236ace04627bce8706",
+    "matches_local_verified_package": true,
+    "github_digest": "sha256:f286e9712e5badbaca062398f3ed7c6301fecbfdcec77e236ace04627bce8706",
+    "checksum_file_download_verified": true,
+    "authentication_used_for_download": false,
+    "transport": "4 concurrent validated HTTP byte ranges; every byte hashed in original order",
+    "range_count": 35
+  },
+  "public_source_check": {
+    "public_source_url": "https://raw.githubusercontent.com/3956ray/Developer/codex/thinkv2-public-history/app/src/main/java/com/example/thinkv2/reminders/ReminderScreen.kt",
+    "sha256": "bf9b17f961afea4623bab6da928760ff6255442aefa5c5428cbc2e207ab38970",
+    "matches_original_product_source": true,
+    "authenticated": false
+  },
+  "force_push_used": false,
+  "main_modified_by_this_migration": false,
+  "full_original_history_uploaded": false,
+  "restricted_models_or_evaluation_apk_uploaded": false,
+  "credentials_uploaded": false,
+  "private_backup_still_requires_private_or_offline_copy": true,
+  "upload_note": "Initial large-asset response timed out after sending. GitHub subsequently confirmed the existing complete asset; it was not overwritten. Full unauthenticated download then matched SHA256."
+}

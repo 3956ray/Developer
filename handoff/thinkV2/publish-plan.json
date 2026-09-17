@@ -1,5 +1,5 @@
 {
-  "status": "APPROVED_READY_TO_PUBLISH",
+  "status": "PUBLISHED_AND_PUBLIC_DOWNLOAD_VERIFIED",
   "repository": "https://github.com/3956ray/Developer",
   "visibility": "public",
   "observed_main": "27746c2590d429ec4975cdd682991dc998a24c31",
@@ -10,8 +10,13 @@
   "force_push": false,
   "main_overwrite": false,
   "planned_asset": "public-acceptance-evidence.tar.gz",
-  "remote_writes_performed": [],
-  "authentication_write_access_tested": false,
+  "remote_writes_performed": [
+    "new licensed source branch",
+    "new handoff branch",
+    "migration Release",
+    "public evidence and checksum assets"
+  ],
+  "authentication_write_access_tested": true,
   "restricted_assets_may_be_published": false,
   "initial_observed_main": "c9ce5c9bfa319f9ec36c70b548c8cde5079ef008",
   "external_update_preserved": true,

@@ -1,5 +1,5 @@
 {
-  "status": "LOCAL_VERIFIED_NOT_UPLOADED",
+  "status": "PUBLIC_LICENSE_SAFE_PACK_PUBLISHED_PRIVATE_ORIGINALS_LOCAL",
   "packages": [
     {
       "name": "thinkV2-original-all.bundle",
@@ -14,8 +14,9 @@
       "local_path": "/Users/orderly_ray/Projects/thinkV2-migration-private-20260917/thinkV2-public-history.bundle",
       "bytes": 113955408,
       "sha256": "8ac80d72ce0377fca26c93f4f7c9954bc521e58bae4290c1d8d42d5794e9fd86",
-      "uploaded": false,
-      "private_only": false
+      "uploaded": true,
+      "private_only": false,
+      "public_transport": "Inside public-acceptance-evidence.tar.gz content-addressed store; restore with restore_evidence.py"
     },
     {
       "name": "complete-original-transfer.tar.gz",
@@ -30,8 +31,9 @@
       "local_path": "/Users/orderly_ray/Projects/thinkV2-migration-private-20260917/public-acceptance-evidence.tar.gz",
       "bytes": 1172246269,
       "sha256": "f286e9712e5badbaca062398f3ed7c6301fecbfdcec77e236ace04627bce8706",
-      "uploaded": false,
-      "private_only": false
+      "uploaded": true,
+      "private_only": false,
+      "public_transport": "https://github.com/3956ray/Developer/releases/download/thinkv2-migration-20260917/public-acceptance-evidence.tar.gz"
     }
   ],
   "original_archive_files_verified_in_private_tar": 4110,

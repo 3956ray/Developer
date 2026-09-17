@@ -1,5 +1,16 @@
 # 新电脑构建与验收恢复
 
+## 在线恢复许可安全版本
+
+```sh
+git clone -b codex/migrate-thinkv2-20260917 https://github.com/3956ray/Developer.git Developer
+git clone -b codex/thinkv2-public-history https://github.com/3956ray/Developer.git Developer/thinkV2
+```
+
+随后在[迁移Release](https://github.com/3956ray/Developer/releases/tag/thinkv2-migration-20260917)下载public-acceptance-evidence.tar.gz和PUBLIC-SHA256SUMS.txt，先用`shasum -a 256 -c PUBLIC-SHA256SUMS.txt`核对，再使用本指南的restore_evidence.py还原。最终发布与回下载校验结果见PUBLICATION_RECEIPT.json。
+
+公开安全历史不包含原始SenseVoice词表，不能代替完整私有包；旧机器清理前仍需离线/私有复制原件。GitHub main保留其他任务的工作区内容，thinkV2在以上两个明确分支。
+
 ## 先确认交付层
 
 用户已批准公开许可安全交接资料；以PUBLICATION_RECEIPT.json确认远端发布结果。完整原始历史仍需先将`PRIVATE_TRANSFER.md`列出的本地包通过用户选择的离线/私有渠道复制到新机器；校验包SHA后使用。不要以旧机器`/private/tmp`路径作为长期恢复来源。
